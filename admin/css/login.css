@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+  background: rgb(193, 11, 11);
+  background: linear-gradient(
+    45deg,
+    rgba(193, 11, 11, 1) 0%,
+    rgba(230, 201, 12, 1) 50%,
+    rgba(14, 159, 190, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#particles-js {
+  height: 100vh;
+}
+
+#login {
+  margin: auto;
+  background-color: #ffffff;
+  opacity: 0.8;
+  padding: 2rem;
+  border: #ccc 1px solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 15px #999;
+}
+
+.card {
+  border: none;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 38px;
+}
+
+#error-message {
+  color: red;
+  display: none;
+}
+
+@media (max-width: 928px) {
+  #login {
+    width: 55%;
+  }
+  .card-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 842px) {
+  #login {
+    width: 60%;
+  }
+  .card-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  #login {
+    width: 70%;
+  }
+  .card-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 628px) {
+  #login {
+    width: 80%;
+  }
+}
+
+@media (max-width: 468px) {
+  #login {
+    width: 90%;
+  }
+  .card {
+    height: 60%;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "973016a7-c00f-4b7a-b898-6b765a2901bc",
+		"name": "artsndeco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "artsndeco",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "cutter",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add fest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fest",
+							"value": "waves",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "photos",
+							"type": "file",
+							"src": [
+								"/Users/sachinbang/Desktop/festBackend/Screenshot 2020-06-07 at 2.44.53 PM.png",
+								"/Users/sachinbang/Desktop/festBackend/Screenshot 2020-06-07 at 2.45.22 PM.png"
+							]
+						},
+						{
+							"key": "titles",
+							"value": "hello,world",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/change/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"change",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete fest",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fest",
+							"value": "waves",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2000",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/change/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"change",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add images",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fest",
+							"value": "waves",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "titles",
+							"value": "javascript",
+							"type": "text"
+						},
+						{
+							"key": "photos",
+							"type": "file",
+							"src": "/Users/sachinbang/Desktop/festBackend/Screenshot 2020-06-05 at 12.19.14 PM.png"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/change/addImages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"change",
+						"addImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all details of a single fest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fest",
+							"value": "waves",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2000",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/display/fest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"display",
+						"fest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete images",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fest",
+							"value": "waves",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2000",
+							"type": "text"
+						},
+						{
+							"key": "remove",
+							"value": "images/aa032ad40eb25007856b6e4b67fc5a04,images/c55198de8a39c33702cc2344d4f0f4ec",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/change/removeImages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"change",
+						"removeImages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all fests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/display/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"display",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/verifytoken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"verifytoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFydHNuZGVjbyIsImlhdCI6MTU5MTkzNzkyNCwiZXhwIjoxNTkyMDI0MzI0fQ.Pn-4NxvSfketTdli13LyK-Z-ZgqNtVUIIJckz1SmUOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "cutter",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/updatepass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"updatepass"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
