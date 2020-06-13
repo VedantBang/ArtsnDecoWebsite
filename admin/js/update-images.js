@@ -1,5 +1,5 @@
 // Check if user is logged in or not
-fetch("http://localhost:3000/user/verifytoken", {
+fetch("http://herokuapp.com/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -79,7 +79,7 @@ document.getElementById("update-artwork").addEventListener("click", (e) => {
   formData.append("name", name);
   formData.append("titles", newTitle);
 
-  fetch("http://localhost:3000/change/addImages", {
+  fetch("http://herokuapp.com/change/addImages", {
     method: "PUT",
     body: formData,
     headers: {
@@ -111,7 +111,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://localhost:3000/user/login", {
+  fetch("http://herokuapp.com/user/login", {
     method: "POST",
     body: formData,
   })

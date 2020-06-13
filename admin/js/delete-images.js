@@ -1,5 +1,5 @@
 // Check if user is logged in or not
-fetch("http://localhost:3000/user/verifytoken", {
+fetch("http://herokuapp.com/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -50,7 +50,7 @@ document.getElementById("get-existing-photos").addEventListener(
     formData.append("year", year);
     formData.append("name", name);
 
-    fetch("http://localhost:3000/display/fest", {
+    fetch("http://herokuapp.com/display/fest", {
       method: "POST",
       body: formData,
       headers: {
@@ -76,7 +76,7 @@ document.getElementById("get-existing-photos").addEventListener(
                                   class="card card-common display-card"
                                   id="${res.data.images[i].link}">
                                     <img 
-                                      src="http://localhost:3000/${res.data.images[i].link}" 
+                                      src="http://herokuapp.com/${res.data.images[i].link}" 
                                       alt="${res.data.images[i].title}" 
                                       class="card-img-top"
                                     />
@@ -137,7 +137,7 @@ document.getElementById("get-existing-photos").addEventListener(
                 formData.append("year", year);
                 formData.append("name", name);
 
-                fetch("http://localhost:3000/change/removeImages", {
+                fetch("http://herokuapp.com/change/removeImages", {
                   method: "PUT",
                   body: formData,
                   headers: {
@@ -188,7 +188,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://localhost:3000/user/login", {
+  fetch("http://herokuapp.com/user/login", {
     method: "POST",
     body: formData,
   })
