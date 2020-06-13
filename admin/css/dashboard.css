@@ -27,6 +27,7 @@ body {
 
 .sidebar-link {
   transition: all 0.4s;
+  font-size: 14px;
 }
 
 .sidebar-link:hover {
@@ -107,7 +108,7 @@ body {
 .selected-card {
   color: white;
   opacity: 0.4;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .delete-option {
@@ -119,12 +120,19 @@ body {
 }
 /* End Of Delete Images */
 
+/* Delete Fest */
+.delete-fest-successful {
+  display: none;
+}
+/* End Of Delete Fest */
+
 /* Error Messages */
 #error-uploads,
 #error-updates,
 #error-get-existing-photos,
 #error-message,
-#error-delete-images {
+#error-delete-images,
+#error-delete-fest {
   color: red;
 }
 /* End Of Error Messages */
