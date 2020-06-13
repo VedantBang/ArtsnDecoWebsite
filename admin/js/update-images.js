@@ -1,5 +1,5 @@
 // Check if user is logged in or not
-fetch("http://herokuapp.com/user/verifytoken", {
+fetch("http://artsndeco.herokuapp.com/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -79,7 +79,7 @@ document.getElementById("update-artwork").addEventListener("click", (e) => {
   formData.append("name", name);
   formData.append("titles", newTitle);
 
-  fetch("http://herokuapp.com/change/addImages", {
+  fetch("http://artsndeco.herokuapp.com/change/addImages", {
     method: "PUT",
     body: formData,
     headers: {
@@ -111,7 +111,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://herokuapp.com/user/login", {
+  fetch("http://artsndeco.herokuapp.com/user/login", {
     method: "POST",
     body: formData,
   })

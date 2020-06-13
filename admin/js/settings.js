@@ -1,5 +1,5 @@
 // Check if user can access settings or not
-fetch("http://herokuapp.com/user/verifytoken", {
+fetch("http://artsndeco.herokuapp.com/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -30,7 +30,7 @@ document.getElementById("change-password").addEventListener("click", () => {
 
     formData.append("password", password);
 
-    fetch("http://herokuapp.com/user/updatepass", {
+    fetch("http://artsndeco.herokuapp.com/user/updatepass", {
       method: "PUT",
       body: formData,
       headers: {

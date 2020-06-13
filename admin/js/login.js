@@ -8,7 +8,7 @@ document.getElementById("login-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://herokuapp.com/user/login", {
+  fetch("http://artsndeco.herokuapp.com/user/login", {
     method: "POST",
     body: formData,
   })
