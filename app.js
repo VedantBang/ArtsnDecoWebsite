@@ -10,7 +10,7 @@ const displayRouter = require('./routes/displayRouter');
 const app = express();
 
 app.use(morgan('dev'));
-app.use(express.static('public'));
+app.use(express.static('admin'));
 app.use('/images', express.static('images'));
 
 app.get('/', (req,res,next) => {
