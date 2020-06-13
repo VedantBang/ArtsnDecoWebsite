@@ -11,4 +11,3 @@ const bcrypt = require('bcrypt');
 	console.log('username:artsndeco');
 	console.log('password:styrofoam');
 })();
-process.exit(0);
