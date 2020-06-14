@@ -8,7 +8,7 @@ document.getElementById("login-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://artsndeco.herokuapp.com/user/login", {
+  fetch("https://artsndeco.netlify.app/user/login", {
     method: "POST",
     body: formData,
   })

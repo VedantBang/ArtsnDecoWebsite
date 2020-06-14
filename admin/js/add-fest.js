@@ -1,5 +1,5 @@
 // Check if user is logged in or not
-fetch("http://artsndeco.herokuapp.com/user/verifytoken", {
+fetch("https://artsndeco.netlify.app/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -31,7 +31,7 @@ addNameField = () => {
     document.querySelector(".label-name-of-event").style.display = "none";
     document.querySelector(".input-name-of-event").style.display = "none";
     document.querySelector(".label-theme").style.display = "inline";
-    document.querySelector(".input-theme").style.display = "inline";
+    documentq.uerySelector(".input-theme").style.display = "inline";
   }
 };
 
@@ -85,7 +85,7 @@ document.getElementById("upload-artwork").addEventListener("click", (e) => {
   formData.append("theme", theme);
   formData.append("titles", newTitle);
 
-  fetch("http://artsndeco.herokuapp.com/change/new", {
+  fetch("https://artsndeco.netlify.app/change/new", {
     method: "POST",
     body: formData,
     headers: {
@@ -117,7 +117,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("http://artsndeco.herokuapp.com/user/login", {
+  fetch("https://artsndeco.netlify.app/user/login", {
     method: "POST",
     body: formData,
   })

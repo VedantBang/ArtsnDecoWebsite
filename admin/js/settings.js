@@ -1,5 +1,5 @@
 // Check if user can access settings or not
-fetch("http://artsndeco.herokuapp.com/user/verifytoken", {
+fetch("https://artsndeco.netlify.app/user/verifytoken", {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -30,7 +30,7 @@ document.getElementById("change-password").addEventListener("click", () => {
 
     formData.append("password", password);
 
-    fetch("http://artsndeco.herokuapp.com/user/updatepass", {
+    fetch("https://artsndeco.netlify.app/user/updatepass", {
       method: "PUT",
       body: formData,
       headers: {
