@@ -254,7 +254,7 @@ document
                 console.log(newSelectedProfile);
                 const formData = new FormData();
 
-                formData.append("_id", newSelectedProfile);
+                formData.append("ids", newSelectedProfile);
 
                 fetch(`${url}/profile/delete`, {
                   method: "DELETE",
