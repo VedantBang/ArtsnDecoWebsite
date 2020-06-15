@@ -1,5 +1,3 @@
-const url = require("./url");
-
 // Check if user can access settings or not
 fetch(`${url}/user/verifytoken`, {
   method: "GET",
