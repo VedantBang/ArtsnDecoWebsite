@@ -1,5 +1,8 @@
+const url =
+  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+
 // Check if user is logged in or not
-fetch("https://artsndeco.netlify.app/user/verifytoken", {
+fetch(`${url}/user/verifytoken`, {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -18,20 +21,16 @@ fetch("https://artsndeco.netlify.app/user/verifytoken", {
     console.log(err);
   });
 
-// Adding name field in case of "Others" option in upload form and removing theme field
+// Adding name field in case of "Others" option in upload form
 addNameField = () => {
   const fest = document.querySelector("#fest").value;
 
   if (fest === "other") {
     document.querySelector(".label-name-of-event").style.display = "inline";
     document.querySelector(".input-name-of-event").style.display = "inline";
-    document.querySelector(".label-theme").style.display = "none";
-    document.querySelector(".input-theme").style.display = "none";
   } else {
     document.querySelector(".label-name-of-event").style.display = "none";
     document.querySelector(".input-name-of-event").style.display = "none";
-    document.querySelector(".label-theme").style.display = "inline";
-    documentq.uerySelector(".input-theme").style.display = "inline";
   }
 };
 
@@ -85,7 +84,7 @@ document.getElementById("upload-artwork").addEventListener("click", (e) => {
   formData.append("theme", theme);
   formData.append("titles", newTitle);
 
-  fetch("https://artsndeco.netlify.app/change/new", {
+  fetch(`${url}/change/new`, {
     method: "POST",
     body: formData,
     headers: {
@@ -117,7 +116,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("https://artsndeco.netlify.app/user/login", {
+  fetch(`${url}/user/login`, {
     method: "POST",
     body: formData,
   })

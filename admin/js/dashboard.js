@@ -1,5 +1,8 @@
+const url =
+  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+
 // Check if user is logged in or not
-fetch("https://artsndeco.netlify.app/user/verifytoken", {
+fetch(`${url}/user/verifytoken`, {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -28,7 +31,7 @@ document.getElementById("settings-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("https://artsndeco.netlify.app/user/login", {
+  fetch(`${url}/user/login`, {
     method: "POST",
     body: formData,
   })

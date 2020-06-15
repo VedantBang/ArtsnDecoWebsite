@@ -1,3 +1,6 @@
+const url =
+  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+
 // Send login credentials to backend
 document.getElementById("login-button").addEventListener("click", () => {
   const username = document.getElementById("username").value;
@@ -8,7 +11,7 @@ document.getElementById("login-button").addEventListener("click", () => {
   formData.append("username", username);
   formData.append("password", password);
 
-  fetch("https://artsndeco.netlify.app/user/login", {
+  fetch(`${url}/user/login`, {
     method: "POST",
     body: formData,
   })

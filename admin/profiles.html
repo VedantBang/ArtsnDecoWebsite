@@ -269,14 +269,62 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-5 mt-5 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <h2 class="text-center">
+          <div class="row pt-5 mt-md-5 mb-5 justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-sm-10 p-2 border-bottom">
+              <h2 class="text-center mb-4">
                 Add New Profile
               </h2>
-              <form id="add-new-profile">
+              <form id="add-new-profile" class="pr-4 pl-4">
                 <div class="form-group row">
-                  <label for="name"></label>
+                  <label for="name" class="col-sm-4 col-form-label">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="col-sm-8 form-control"
+                    placeholder="Enter name"
+                    required
+                  />
+                </div>
+                <div class="form-group row">
+                  <label for="post" class="col-sm-4 col-form-label">
+                    Post
+                  </label>
+                  <input
+                    type="text"
+                    id="post"
+                    class="col-sm-8 form-control"
+                    placeholder="Enter Post"
+                    required
+                  />
+                </div>
+                <div class="form-group row">
+                  <label for="link" class="col-sm-4 col-form-label">
+                    Instagram Link
+                  </label>
+                  <input
+                    type="text"
+                    id="link"
+                    class="col-sm-8 form-control"
+                    placeholder="Enter Insta Link"
+                    required
+                  />
+                </div>
+                <div class="form-group row">
+                  <label for="photo" class="col-4 col-form-label">
+                    Photo
+                  </label>
+                  <input type="file" id="photo" class="col-8 mt-1 pl-0" />
+                </div>
+                <div class="form-group row justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary mt-2"
+                    id="submit-credentials"
+                  >
+                    Add Profile
+                  </button>
                 </div>
               </form>
             </div>

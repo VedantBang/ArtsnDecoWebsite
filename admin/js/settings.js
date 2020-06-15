@@ -1,5 +1,8 @@
+const url =
+  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+
 // Check if user can access settings or not
-fetch("https://artsndeco.netlify.app/user/verifytoken", {
+fetch(`${url}/user/verifytoken`, {
   method: "GET",
   headers: {
     token: `${localStorage.getItem("token")}`,
@@ -30,7 +33,7 @@ document.getElementById("change-password").addEventListener("click", () => {
 
     formData.append("password", password);
 
-    fetch("https://artsndeco.netlify.app/user/updatepass", {
+    fetch(`${url}/user/updatepass`, {
       method: "PUT",
       body: formData,
       headers: {
