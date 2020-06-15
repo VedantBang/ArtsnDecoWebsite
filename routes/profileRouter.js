@@ -93,9 +93,10 @@ router.put('/update', upload.none(), async (req,res,next) => {
 
 router.delete('/delete', upload.none(), async (req,res,next) => {
 	try{
-		let { _id } = req.body;
-		let out = await Profile.deleteOne({ _id });
-		if(out.deletedCount === 1){
+		let { ids } = req.body;
+		ids = ids.split(',');
+		let out = await Profile.deleteMany({ _id: {$in: ids} });
+		if(out.deletedCount){
 			res.status(200).json({ ok:1 });
 		} else {
 			let err = new Error('Could not delete');
