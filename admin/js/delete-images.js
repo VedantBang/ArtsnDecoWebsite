@@ -1,5 +1,4 @@
-const url =
-  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+const url = "http://localhost:3000";
 
 // Check if user is logged in or not
 fetch(`${url}/user/verifytoken`, {

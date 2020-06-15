@@ -126,13 +126,67 @@ body {
 }
 /* End Of Delete Fest */
 
+/* Add Profile */
+.add-profile-successful {
+  display: none;
+}
+
+#error-add-profile {
+  display: none;
+}
+/* End Of Add Profile */
+
+/* Edit Profiles */
+.edit-profiles {
+  display: none;
+}
+
+.list-group-item-dark {
+  background: #eee;
+}
+
+.choose-profile {
+  color: rgb(56, 56, 56);
+  opacity: 0.8;
+}
+
+.update-profile-successful {
+  display: none;
+}
+
+#error-update-profile {
+  display: none;
+}
+
+.no-profiles {
+  display: none;
+}
+/* End Of Edit Profiles */
+
+/* Delete Profiles */
+.delete-profiles {
+  display: none;
+}
+
+.delete-profiles-successful {
+  display: none;
+}
+
+#error-delete-profiles {
+  display: none;
+}
+/* End Of Delete Profiles */
+
 /* Error Messages */
 #error-uploads,
 #error-updates,
 #error-get-existing-photos,
 #error-message,
 #error-delete-images,
-#error-delete-fest {
+#error-delete-fest,
+#error-add-profile,
+#error-update-profile,
+#error-delete-profiles {
   color: red;
 }
 /* End Of Error Messages */

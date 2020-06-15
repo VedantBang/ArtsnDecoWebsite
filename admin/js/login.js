@@ -1,5 +1,4 @@
-const url =
-  "https://cors-anywhere.herokuapp.com/https://artsndeco-backend.netlify.app";
+const url = "http://localhost:3000";
 
 // Send login credentials to backend
 document.getElementById("login-button").addEventListener("click", () => {
