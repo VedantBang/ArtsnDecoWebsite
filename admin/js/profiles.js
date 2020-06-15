@@ -46,7 +46,6 @@ document.getElementById("add-profile").addEventListener("click", () => {
       if (res.ok) {
         document.querySelector(".add-profile-successful").style.display =
           "block";
-        document.querySelector("#add-new-profile").reset();
       } else {
         document.querySelector("#error-add-profile").style.display = "block";
       }
