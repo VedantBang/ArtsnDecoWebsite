@@ -1,4 +1,4 @@
-const url = "http://localhost:3000";
+const url = require("./url");
 
 // Check if user can access settings or not
 fetch(`${url}/user/verifytoken`, {

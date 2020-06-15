@@ -1,5 +1,3 @@
-const url = "http://localhost:3000";
-
 // Send login credentials to backend
 document.getElementById("login-button").addEventListener("click", () => {
   const username = document.getElementById("username").value;
