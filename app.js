@@ -6,12 +6,12 @@ require('./config/db')();
 const userRouter = require('./routes/userRouter');
 const changeRouter = require('./routes/changeRouter');
 const displayRouter = require('./routes/displayRouter');
+const profileRouter = require('./routes/profileRouter');
 
 const app = express();
 
 app.use(morgan('dev'));
 app.use(express.static('admin'));
-app.use('/images', express.static('images'));
 
 app.get('/', (req,res,next) => {
 	res.redirect('/login.html');
@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 app.use('/display', displayRouter);
 app.use('/user', userRouter);
 app.use('/change', changeRouter);
+app.use('/profile', profileRouter);
 
 app.use((req, res, next) => {
 	let err = new Error("Undefined route");

@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const Album = require('../models/album');
 const multer = require('multer');
-const upload = multer({ dest: 'images/' });
+const upload = multer();
 const cut = require('../utilities/cut');
 const router = express.Router();
 
@@ -25,9 +25,9 @@ router.use((req,res,next)=>{
 });
 
 
-router.post('/new', upload.array('photos'), async (req,res,next) => {
+router.post('/new', upload.none(), async (req,res,next) => {
 	try{
-		let { fest, year, name, theme, titles } = req.body;
+		let { fest, year, name, theme, titles, links } = req.body;
 
 		if(!year || !fest) {
       		let err = new Error("Invalid input");
@@ -38,10 +38,11 @@ router.post('/new', upload.array('photos'), async (req,res,next) => {
 
 		year = parseInt(year);
 		titles = titles.split(',');
+		links = links.split(',');
 		if(!theme) theme = "";
 
-		if(titles.length !== req.files.length){
-			let err = new Error('Number of titles do not match number of files');
+		if(titles.length !== links.length){
+			let err = new Error('Number of titles do not match number of links');
 			err.status = 400;
 			next(err);
 			return;
@@ -65,12 +66,11 @@ router.post('/new', upload.array('photos'), async (req,res,next) => {
       		return;
 		}
 
-		let photolinks = req.files.map(file => file.path);
 		let images = [];
-		for(let x = 0; x < photolinks.length; x++){
+		for(let x = 0; x < links.length; x++){
 			images.push({
 				title: titles[x],
-				link: photolinks[x],
+				link: links[x],
 			});
 		}
 
@@ -83,9 +83,9 @@ router.post('/new', upload.array('photos'), async (req,res,next) => {
 });
 
 
-router.put('/addImages', upload.array('photos'), async (req,res,next) => {
+router.put('/addImages', upload.none(), async (req,res,next) => {
 	try{
-		let { fest, year, name, titles } = req.body;
+		let { fest, year, name, titles, links } = req.body;
 
 		if(!year || !fest) {
       		let err = new Error("Invalid input");
@@ -96,9 +96,10 @@ router.put('/addImages', upload.array('photos'), async (req,res,next) => {
 
     	year = parseInt(year);
     	titles = titles.split(',');
+    	links = links.split(',');
 
-    	if(titles.length !== req.files.length){
-			let err = new Error('Number of titles do not match number of files');
+    	if(titles.length !== links.length){
+			let err = new Error('Number of titles do not match number of links');
 			err.status = 400;
 			next(err);
 			return;
@@ -122,12 +123,11 @@ router.put('/addImages', upload.array('photos'), async (req,res,next) => {
 			return;
 		}
 
-		let photolinks = req.files.map(file => file.path);
 		let newImages = [];
 		for(let x = 0; x < photolinks.length; x++){
 			newImages.push({
 				title: titles[x],
-				link: photolinks[x]
+				link: links[x]
 			});
 		}
 
@@ -207,9 +207,9 @@ router.delete('/delete', upload.none(), async (req,res,next) => {
 			}
 		}
 
-		let del = await Album.remove({ fest, year, name });
+		let out = await Album.deleteOne({ fest, year, name });
 
-		if(del){
+		if(out.deletedCount === 1){
 			res.status(200).json({ ok:1 });
 		} else {
 			let err = new Error('Could not delete');

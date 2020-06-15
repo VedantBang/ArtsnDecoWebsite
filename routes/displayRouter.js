@@ -1,7 +1,7 @@
 const express = require('express');
 const Album = require('../models/album');
 const multer = require('multer');
-const upload = multer({ dest: 'images/' });
+const upload = multer();
 const cut = require('../utilities/cut');
 const router = express.Router();
 
