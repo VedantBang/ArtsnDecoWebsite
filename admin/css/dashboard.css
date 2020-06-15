@@ -146,8 +146,8 @@ body {
 }
 
 .choose-profile {
-  color: rgb(56, 56, 56);
-  opacity: 0.8;
+  background: #fabc35;
+  color: rgb(53, 53, 53);
 }
 
 .update-profile-successful {
@@ -173,6 +173,10 @@ body {
 }
 
 #error-delete-profiles {
+  display: none;
+}
+
+.no-delete-profiles {
   display: none;
 }
 /* End Of Delete Profiles */

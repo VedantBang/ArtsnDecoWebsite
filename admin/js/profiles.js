@@ -95,14 +95,16 @@ document.getElementById("show-existing-profiles").addEventListener(
             // Selecting profile to update
             let selectedProfile = "";
             for (let i = 0; i < res.data.length; i++) {
-              document
-                .getElementById(`${res.data[i]._id}`)
-                .addEventListener("click", () => {
+              document.getElementById(`${res.data[i]._id}`).addEventListener(
+                "click",
+                () => {
                   // Toggling selected profile
                   document
                     .getElementById(`${res.data[i]._id}`)
                     .classList.toggle("choose-profile");
-                });
+                },
+                { once: true }
+              );
             }
 
             // Sending selected profile to update in database
@@ -183,9 +185,9 @@ document.getElementById("show-existing-profiles").addEventListener(
 );
 
 // Getting existing profiles from backend
-document
-  .getElementById("show-existing-profiles-to-delete")
-  .addEventListener("click", () => {
+document.getElementById("show-existing-profiles-to-delete").addEventListener(
+  "click",
+  () => {
     const displayProfiles = document.getElementById(
       "display-profiles-to-delete"
     );
@@ -251,7 +253,6 @@ document
 
                 const newSelectedProfile = selectedProfile.slice(0, -1);
 
-                console.log(newSelectedProfile);
                 const formData = new FormData();
 
                 formData.append("ids", newSelectedProfile);
@@ -267,21 +268,35 @@ document
                     return res.json();
                   })
                   .then((res) => {
-                    console.log(res);
+                    if (res.ok) {
+                      document.querySelector(
+                        ".delete-profiles-successful"
+                      ).style.display = "block";
+                    } else {
+                      document.querySelector(
+                        "#error-delete-profiles"
+                      ).style.display = "block";
+                    }
                   })
                   .catch((err) => {
                     console.log(err);
                   });
               });
           } else {
-            document.querySelector(".no-profiles").style.display = "block";
+            document.querySelector(".no-delete-profiles").style.display =
+              "block";
           }
+        } else {
+          document.querySelector("#error-delete-profiles").style.display =
+            "block";
         }
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  },
+  { once: true }
+);
 
 // Settings form
 document.getElementById("settings-button").addEventListener("click", () => {
