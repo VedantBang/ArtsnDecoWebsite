@@ -347,7 +347,7 @@
                 </div>
                 <div class="form-group row justify-content-center">
                   <button
-                    type="submit"
+                    type="button"
                     class="btn btn-primary mt-2"
                     id="add-profile"
                   >
@@ -363,104 +363,261 @@
     </div>
     <!-- End Of Add New Profile -->
 
-    <!-- Edit Existing Profile -->
+    <!-- Tab Section for Update and Delete Profiles -->
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-1 mt-1 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2 border-bottom">
-              <h2 class="text-center mb-4">
-                Edit Existing Profiles
-              </h2>
-              <div class="row justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-info"
-                  id="show-existing-profiles"
-                >
-                  <i class="fas fa-user-circle fa-lg text-white mr-1"></i>
-                  Show Existing Profiles
-                </button>
-              </div>
-              <div class="container no-profiles">
-                <div class="row justify-content-center mt-3">
-                  <p class="col-12 text-center text-muted mt-3 mb-4">
-                    Looks Like you haven't added any Profiles yet, please go up
-                    and add a profile
-                  </p>
-                </div>
-              </div>
-              <div class="container edit-profiles">
-                <div class="row justify-content-center mt-3">
-                  <h4 class="col-12 text-center mt-2">
-                    Select Any One Existing profile to Update
-                  </h4>
-                  <p class="col-12 text-center text-muted mt-2 mb-3">
-                    (You can click only once to edit a profile, so make sure
-                    that you select the right profile to edit)
-                  </p>
-                  <ul class="list-group mt-2" id="display-profiles"></ul>
-                </div>
-                <div class="row justify-content-center mt-4">
-                  <h4 class="col-12 text-center mt-2 mb-3">
-                    Enter New Profile Details
-                  </h4>
-                  <p class="col-12 text-center text-muted">
-                    (Only fill the fields which you want to edit)
-                  </p>
-                  <form
-                    id="update-profile-form"
-                    class="col-xl-8 col-lg-10 col-sm-12"
+          <div class="row pt-1 mt-1 justify-content-center">
+            <div class="col-sm-10">
+              <ul class="nav nav-tabs" id="ud-profiles-tab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    href="#edit-profiles-tab"
+                    class="nav-link active card-common mr-1"
+                    id="update-profiles-tab"
+                    data-toggle="tab"
+                    role="tab"
+                    aria-controls="edit-profiles"
+                    aria-selected="true"
                   >
-                    <div class="form-group row">
-                      <label for="update-name" class="col-sm-4 col-form-label">
-                        Edit Name
-                      </label>
-                      <input
-                        type="text"
-                        id="update-name"
-                        class="col-sm-8 form-control"
-                        placeholder="Enter Name to Update"
-                      />
+                    Edit Existing Profiles
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="#delete-profiles-tab"
+                    class="nav-link card-common ml-1"
+                    id="remove-profiles-tab"
+                    data-toggle="tab"
+                    role="tab"
+                    aria-controls="delete-profiles"
+                    aria-selected="false"
+                  >
+                    Delete Existing Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Tab Section for Update and Delete Profiles -->
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="ud-profiles-tab-content">
+      <div
+        class="tab-pane fade show active"
+        id="edit-profiles-tab"
+        role="tabpanel"
+        aria-labelledby="edit-profiles-tab"
+      >
+        <!-- Edit Existing Profile -->
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+              <div class="row mb-5 justify-content-center">
+                <div class="col-sm-10 edit-profiles-tab card-common">
+                  <h2 class="text-center mb-4 pt-4">
+                    Edit Existing Profiles
+                  </h2>
+                  <div class="row justify-content-center">
+                    <button
+                      type="button"
+                      class="btn btn-info mb-4"
+                      id="show-existing-profiles"
+                    >
+                      <i class="fas fa-user-circle fa-lg text-white mr-1"></i>
+                      Show Existing Profiles
+                    </button>
+                  </div>
+                  <div class="container no-profiles">
+                    <div class="row justify-content-center mt-3">
+                      <p class="col-12 text-center text-muted mt-3 mb-4">
+                        Looks Like you haven't added any Profiles yet, please go
+                        up and add a profile
+                      </p>
                     </div>
-                    <div class="form-group row">
-                      <label for="update-post" class="col-sm-4 col-form-label">
-                        Edit Post
-                      </label>
-                      <input
-                        type="text"
-                        id="update-post"
-                        class="col-sm-8 form-control"
-                        placeholder="Enter Post to Update"
-                      />
+                  </div>
+                  <div class="container edit-profiles">
+                    <div class="row justify-content-center mt-3">
+                      <h4 class="col-12 text-center mt-2">
+                        Select Any One Existing profile to Update
+                      </h4>
+                      <p class="col-12 text-center text-muted mt-2 mb-3">
+                        (You can click only once to edit a profile, so make sure
+                        that you select the right profile to edit)
+                      </p>
+                      <ul class="list-group mt-2" id="display-profiles"></ul>
                     </div>
-                    <div class="form-group row">
-                      <label for="update-link" class="col-sm-4 col-form-label">
-                        Edit Insta Link
-                      </label>
-                      <input
-                        type="text"
-                        id="update-link"
-                        class="col-sm-8 form-control"
-                        placeholder="Enter Insta Link to Update"
-                      />
+                    <div class="row justify-content-center mt-4">
+                      <h4 class="col-12 text-center mt-2 mb-3">
+                        Enter New Profile Details
+                      </h4>
+                      <p class="col-12 text-center text-muted">
+                        (Only fill the fields which you want to edit)
+                      </p>
+                      <form
+                        id="update-profile-form"
+                        class="col-xl-8 col-lg-10 col-sm-12"
+                      >
+                        <div class="form-group row">
+                          <label
+                            for="update-name"
+                            class="col-sm-4 col-form-label"
+                          >
+                            Edit Name
+                          </label>
+                          <input
+                            type="text"
+                            id="update-name"
+                            class="col-sm-8 form-control"
+                            placeholder="Enter Name to Update"
+                          />
+                        </div>
+                        <div class="form-group row">
+                          <label
+                            for="update-post"
+                            class="col-sm-4 col-form-label"
+                          >
+                            Edit Post
+                          </label>
+                          <input
+                            type="text"
+                            id="update-post"
+                            class="col-sm-8 form-control"
+                            placeholder="Enter Post to Update"
+                          />
+                        </div>
+                        <div class="form-group row">
+                          <label
+                            for="update-link"
+                            class="col-sm-4 col-form-label"
+                          >
+                            Edit Insta Link
+                          </label>
+                          <input
+                            type="text"
+                            id="update-link"
+                            class="col-sm-8 form-control"
+                            placeholder="Enter Insta Link to Update"
+                          />
+                        </div>
+                        <div class="form-group row">
+                          <label
+                            for="update-image"
+                            class="col-sm-4 col-form-label"
+                          >
+                            Edit Image Link
+                          </label>
+                          <input
+                            type="text"
+                            id="update-image"
+                            class="col-sm-8 form-control"
+                            placeholder="Enter Image Link to Update"
+                          />
+                        </div>
+                        <div
+                          class="alert alert-success alert-dismissible fade show update-profile-successful"
+                          role="alert"
+                        >
+                          Profile Updated!
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="alert"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="form-group row">
+                          <p class="col-12 text-center">
+                            <small id="error-update-profile">
+                              Could not update profile
+                            </small>
+                          </p>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                          <button
+                            type="button"
+                            class="btn btn-success"
+                            id="update-profile"
+                          >
+                            <i
+                              class="fas fa-user-edit fa-lg text-white mr-1"
+                            ></i>
+                            Update Profile
+                          </button>
+                        </div>
+                      </form>
                     </div>
-                    <div class="form-group row">
-                      <label for="update-image" class="col-sm-4 col-form-label">
-                        Edit Image Link
-                      </label>
-                      <input
-                        type="text"
-                        id="update-image"
-                        class="col-sm-8 form-control"
-                        placeholder="Enter Image Link to Update"
-                      />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Of Edit Existing Profile -->
+      </div>
+      <div
+        class="tab-pane fade"
+        id="delete-profiles-tab"
+        role="tabpanel"
+        aria-labelledby="delete-profiles-tab"
+      >
+        <!-- Delete Profiles -->
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+              <div class="row mb-5 justify-content-center">
+                <div class="col-sm-10 delete-profiles-tab card-common">
+                  <h2 class="text-center mb-4 pt-4 text-danger">
+                    Delete Existing Profiles
+                  </h2>
+                  <h5 class="text-center text-muted mb-3">
+                    (<span class="text-warning"><b>CAUTION!</b></span> This
+                    action will delete the selected profile details from the
+                    Database)
+                  </h5>
+                  <p class="text-center text-secondary">
+                    (This action is irreversible and will result in erasing the
+                    chosen profile details)
+                  </p>
+                  <div class="row justify-content-center">
+                    <button
+                      type="button"
+                      class="btn btn-warning text-white mb-4"
+                      id="show-existing-profiles-to-delete"
+                    >
+                      <i class="fas fa-user-circle fa-lg mr-1"></i>
+                      Show Existing Profiles
+                    </button>
+                  </div>
+                  <div class="container no-delete-profiles">
+                    <div class="row justify-content-center mt-3">
+                      <p class="col-12 text-center text-muted mt-3 mb-4">
+                        Looks Like you haven't added any Profiles yet, please go
+                        up and add a profile
+                      </p>
+                    </div>
+                  </div>
+                  <div class="container delete-profiles">
+                    <div class="row justify-content-center mt-3">
+                      <h4 class="col-12 text-center mt-2">
+                        Select Any One Existing profile to
+                        <span class="text-danger">Delete</span>
+                      </h4>
+                      <ul
+                        class="list-group mt-2"
+                        id="display-profiles-to-delete"
+                      ></ul>
                     </div>
                     <div
-                      class="alert alert-success alert-dismissible fade show update-profile-successful"
+                      class="alert alert-warning alert-dismissible fade show delete-profiles-successful mt-3"
                       role="alert"
                     >
-                      Profile Updated!
+                      Selected Profiles Deleted!
                       <button
                         type="button"
                         class="close"
@@ -470,118 +627,34 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="form-group row">
+                    <div class="row">
                       <p class="col-12 text-center">
-                        <small id="error-update-profile">
-                          Could not update profile
+                        <small id="error-delete-profiles">
+                          Could not delete selected profiles
                         </small>
                       </p>
                     </div>
-                    <div class="form-group row justify-content-center">
+                    <div class="row justify-content-center">
                       <button
                         type="button"
-                        class="btn btn-success"
-                        id="update-profile"
+                        class="btn btn-danger mb-4"
+                        data-toggle="modal"
+                        data-target="#delete-profiles-modal"
                       >
-                        <i class="fas fa-user-edit fa-lg text-white mr-1"></i>
-                        Update Profile
+                        <i class="fas fa-user-minus fa-lg text-white mr-1"></i>
+                        Delete Selected Profiles
                       </button>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- End Of Delete Profiles -->
       </div>
     </div>
-    <!-- End Of Edit Existing Profile -->
-
-    <!-- Delete Profiles -->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-1 mt-1 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <h2 class="text-center mb-4 text-danger">
-                Delete Existing Profiles
-              </h2>
-              <h5 class="text-center text-muted mb-3">
-                (<span class="text-warning"><b>CAUTION!</b></span> This action
-                will delete the selected profile details from the Database)
-              </h5>
-              <p class="text-center text-secondary">
-                (This action is irreversible and will result in erasing the
-                chosen profile details)
-              </p>
-              <div class="row justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-warning text-white"
-                  id="show-existing-profiles-to-delete"
-                >
-                  <i class="fas fa-user-circle fa-lg text-white mr-1"></i>
-                  Show Existing Profiles
-                </button>
-              </div>
-              <div class="container no-delete-profiles">
-                <div class="row justify-content-center mt-3">
-                  <p class="col-12 text-center text-muted mt-3 mb-4">
-                    Looks Like you haven't added any Profiles yet, please go up
-                    and add a profile
-                  </p>
-                </div>
-              </div>
-              <div class="container delete-profiles">
-                <div class="row justify-content-center mt-3">
-                  <h4 class="col-12 text-center mt-2">
-                    Select Any One Existing profile to
-                    <span class="text-danger">Delete</span>
-                  </h4>
-                  <ul
-                    class="list-group mt-2"
-                    id="display-profiles-to-delete"
-                  ></ul>
-                </div>
-                <div
-                  class="alert alert-warning alert-dismissible fade show delete-profiles-successful mt-3"
-                  role="alert"
-                >
-                  Selected Profiles Deleted!
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="alert"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="row">
-                  <p class="col-12 text-center">
-                    <small id="error-delete-profiles">
-                      Could not delete selected profiles
-                    </small>
-                  </p>
-                </div>
-                <div class="row justify-content-center">
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    data-toggle="modal"
-                    data-target="#delete-profiles-modal"
-                  >
-                    <i class="fas fa-user-minus fa-lg text-white mr-1"></i>
-                    Delete Selected Profiles
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Delete Profiles -->
+    <!-- End Of Tab Content -->
 
     <!-- Delete Profiles Modal -->
     <div class="modal fade" id="delete-profiles-modal">

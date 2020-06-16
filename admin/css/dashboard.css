@@ -136,7 +136,18 @@ body {
 }
 /* End Of Add Profile */
 
+/* Update Delete Profile Tabs */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+}
+/* End Of Update Delete Profile Tabs */
+
 /* Edit Profiles */
+.edit-profiles-tab {
+  background: white;
+}
+
 .edit-profiles {
   display: none;
 }
@@ -164,6 +175,10 @@ body {
 /* End Of Edit Profiles */
 
 /* Delete Profiles */
+.delete-profiles-tab {
+  background: white;
+}
+
 .delete-profiles {
   display: none;
 }
