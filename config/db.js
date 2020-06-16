@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
-async function connect() {
-	try {
-    	await mongoose.connect("mongodb+srv://rohit007:rohit007@cluster0-4dwba.mongodb.net/data?retryWrites=true&w=majority", {
+let url = "mongodb+srv://rohit007:rohit007@cluster0-4dwba.mongodb.net/data?retryWrites=true&w=majority";
+
+async function connect(isLocal) {
+	try{
+        if(isLocal) url = "mongodb://localhost:27017/data";
+    	await mongoose.connect(url, {
       		useUnifiedTopology: true,
       		useNewUrlParser: true,
     	});

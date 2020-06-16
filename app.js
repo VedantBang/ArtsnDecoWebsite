@@ -1,7 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 
-require('./config/db')();
+let isLocal = false;
+if(process.argv[2] && process.argv[2] === "local") isLocal = true;
+
+require('./config/db')(isLocal);
 
 const userRouter = require('./routes/userRouter');
 const changeRouter = require('./routes/changeRouter');
