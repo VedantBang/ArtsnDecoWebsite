@@ -12,9 +12,10 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.static('admin'));
+app.use(express.static('public'));
 
 app.get('/', (req,res,next) => {
-	res.redirect('/login.html');
+	res.redirect('/index.html');
 });
 
 app.use((req, res, next) => {
