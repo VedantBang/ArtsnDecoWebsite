@@ -24,3 +24,8 @@ body {
   text-transform: uppercase;
 }
 
+@media (max-width: 468px) {
+  .overlay > h1 {
+    font-size: 28px;
+  }
+}
