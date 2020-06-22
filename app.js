@@ -10,6 +10,7 @@ const userRouter = require('./routes/userRouter');
 const changeRouter = require('./routes/changeRouter');
 const displayRouter = require('./routes/displayRouter');
 const profileRouter = require('./routes/profileRouter');
+const creativeRouter = require('./router/creativeRouter');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/display', displayRouter);
 app.use('/user', userRouter);
 app.use('/change', changeRouter);
 app.use('/profile', profileRouter);
+app.use('/creative', creativeRouter);
 
 app.use((req, res, next) => {
 	let err = new Error("Undefined route");
