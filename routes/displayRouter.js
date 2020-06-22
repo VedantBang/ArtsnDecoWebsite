@@ -22,7 +22,7 @@ router.get('/all', async (req,res,next) => {
 });
 
 
-router.post('/fest', upload.none(),async (req,res,next) => {
+router.post('/fest', upload.none(), async (req,res,next) => {
 	try{
 		let { fest, year, name } = req.body;
 
@@ -53,4 +53,27 @@ router.post('/fest', upload.none(),async (req,res,next) => {
 	} catch(err){ next(err); }
 });
 
+
+router.get('/:fest', async (req,res,next) => {
+	try{
+		let { fest } = req.params;
+		const list = ['waves','quark','spree','other'];
+
+		if(!list.includes(fest)){
+			let err = new Error('Invalid fest type');
+			err.status = 400;
+			next(err);
+			return;
+		}
+
+		let data = await Album.find({ fest });
+		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
+
+		function yearSort(a,b){return b.year - a.year;}
+		data.sort(yearSort);
+
+		res.status(200).json({ ok:1, data });
+		
+	} catch(err){ next(err); }
+});
 module.exports = router;
