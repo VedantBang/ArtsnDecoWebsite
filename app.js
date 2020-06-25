@@ -10,7 +10,7 @@ const userRouter = require('./routes/userRouter');
 const changeRouter = require('./routes/changeRouter');
 const displayRouter = require('./routes/displayRouter');
 const profileRouter = require('./routes/profileRouter');
-const creativeRouter = require('./router/creativeRouter');
+const creativeRouter = require('./routes/creativeRouter');
 
 const app = express();
 
