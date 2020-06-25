@@ -72,4 +72,4 @@ router.delete('/delete', upload.none(), async (req,res,next) => {
 	} catch(err){ next(err); }
 });
 
-modue.exports = router;
+module.exports = router;
