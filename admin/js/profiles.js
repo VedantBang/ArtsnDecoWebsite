@@ -1,17 +1,16 @@
 // Check if user is logged in or not
 fetch(`${url}/user/verifytoken`, {
-  method: "GET",
+  method: 'GET',
   headers: {
-    token: `${localStorage.getItem("token")}`,
+    token: `${localStorage.getItem('token')}`,
   },
-  mode: "cors",
 })
   .then((res) => {
     return res.json();
   })
   .then((res) => {
     if (!res.ok) {
-      window.location.href = "/login.html";
+      window.location.href = '/login.html';
     }
   })
   .catch((err) => {
@@ -19,24 +18,24 @@ fetch(`${url}/user/verifytoken`, {
   });
 
 // Sending new user profile details to backend
-document.getElementById("add-profile").addEventListener("click", () => {
-  const name = document.querySelector("#name").value;
-  const post = document.querySelector("#post").value;
-  const link = document.querySelector("#link").value;
-  const image = document.querySelector("#image").value;
+document.getElementById('add-profile').addEventListener('click', () => {
+  const name = document.querySelector('#name').value;
+  const post = document.querySelector('#post').value;
+  const link = document.querySelector('#link').value;
+  const image = document.querySelector('#image').value;
 
   const formData = new FormData();
 
-  formData.append("name", name);
-  formData.append("post", post);
-  formData.append("insta", link);
-  formData.append("image", image);
+  formData.append('name', name);
+  formData.append('post', post);
+  formData.append('insta', link);
+  formData.append('image', image);
 
   fetch(`${url}/profile/add`, {
-    method: "POST",
+    method: 'POST',
     body: formData,
     headers: {
-      token: `${localStorage.getItem("token")}`,
+      token: `${localStorage.getItem('token')}`,
     },
   })
     .then((res) => {
@@ -44,10 +43,10 @@ document.getElementById("add-profile").addEventListener("click", () => {
     })
     .then((res) => {
       if (res.ok) {
-        document.querySelector(".add-profile-successful").style.display =
-          "block";
+        document.querySelector('.add-profile-successful').style.display =
+          'block';
       } else {
-        document.querySelector("#error-add-profile").style.display = "block";
+        document.querySelector('#error-add-profile').style.display = 'block';
       }
     })
     .catch((err) => {
@@ -56,15 +55,15 @@ document.getElementById("add-profile").addEventListener("click", () => {
 });
 
 // Getting existing profiles from backend
-document.getElementById("show-existing-profiles").addEventListener(
-  "click",
+document.getElementById('show-existing-profiles').addEventListener(
+  'click',
   () => {
-    const displayProfiles = document.getElementById("display-profiles");
+    const displayProfiles = document.getElementById('display-profiles');
 
     fetch(`${url}/profile/min`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        token: `${localStorage.getItem("token")}`,
+        token: `${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -75,30 +74,29 @@ document.getElementById("show-existing-profiles").addEventListener(
           // Checking if Profile data is actually there
           if (res.data.length !== 0) {
             // Showing the existing profiles
-            document.querySelector(".edit-profiles").style.display = "block";
+            document.querySelector('.edit-profiles').style.display = 'block';
 
             // Adding list items in DOM
             for (let i = 0; i < res.data.length; i++) {
-              const li = document.createElement("li");
+              const li = document.createElement('li');
               const name = res.data[i].name;
-              li.classList.add("list-group-item");
-              li.classList.add("list-group-item-action");
-              li.classList.add("list-group-item-dark");
+              li.classList.add('list-group-item');
+              li.classList.add('list-group-item-dark');
               li.id = `${res.data[i]._id}`;
               li.textContent = `Profile Name: ${name}`;
               displayProfiles.appendChild(li);
             }
 
             // Selecting profile to update
-            let selectedProfile = "";
+            let selectedProfile = '';
             for (let i = 0; i < res.data.length; i++) {
               document.getElementById(`${res.data[i]._id}`).addEventListener(
-                "click",
+                'click',
                 () => {
                   // Toggling selected profile
                   document
                     .getElementById(`${res.data[i]._id}`)
-                    .classList.toggle("choose-profile");
+                    .classList.toggle('choose-profile');
                 },
                 { once: true }
               );
@@ -106,49 +104,49 @@ document.getElementById("show-existing-profiles").addEventListener(
 
             // Sending selected profile to update in database
             document
-              .getElementById("update-profile")
-              .addEventListener("click", () => {
+              .getElementById('update-profile')
+              .addEventListener('click', () => {
                 for (let i = 0; i < res.data.length; i++) {
                   if (
                     document
                       .getElementById(`${res.data[i]._id}`)
-                      .classList.contains("choose-profile")
+                      .classList.contains('choose-profile')
                   ) {
                     selectedProfile = `${res.data[i]._id}`;
                   }
                 }
-                const updatedName = document.querySelector("#update-name")
+                const updatedName = document.querySelector('#update-name')
                   .value;
-                const updatedPost = document.querySelector("#update-post")
+                const updatedPost = document.querySelector('#update-post')
                   .value;
-                const updatedLink = document.querySelector("#update-link")
+                const updatedLink = document.querySelector('#update-link')
                   .value;
-                const updatedImage = document.querySelector("#update-image")
+                const updatedImage = document.querySelector('#update-image')
                   .value;
 
                 const formData = new FormData();
 
-                formData.append("_id", selectedProfile);
+                formData.append('_id', selectedProfile);
 
                 // Adding only non-zero fields to formData
-                if (updatedName !== "") {
-                  formData.append("name", updatedName);
+                if (updatedName !== '') {
+                  formData.append('name', updatedName);
                 }
-                if (updatedPost !== "") {
-                  formData.append("post", updatedPost);
+                if (updatedPost !== '') {
+                  formData.append('post', updatedPost);
                 }
-                if (updatedLink !== "") {
-                  formData.append("insta", updatedLink);
+                if (updatedLink !== '') {
+                  formData.append('insta', updatedLink);
                 }
-                if (updatedImage !== "") {
-                  formData.append("image", updatedImage);
+                if (updatedImage !== '') {
+                  formData.append('image', updatedImage);
                 }
 
                 fetch(`${url}/profile/update`, {
-                  method: "PUT",
+                  method: 'PUT',
                   body: formData,
                   headers: {
-                    token: `${localStorage.getItem("token")}`,
+                    token: `${localStorage.getItem('token')}`,
                   },
                 })
                   .then((res) => {
@@ -157,12 +155,12 @@ document.getElementById("show-existing-profiles").addEventListener(
                   .then((res) => {
                     if (res.ok) {
                       document.querySelector(
-                        ".update-profile-successful"
-                      ).style.display = "block";
+                        '.update-profile-successful'
+                      ).style.display = 'block';
                     } else {
                       document.querySelector(
-                        "#error-update-profile"
-                      ).style.display = "block";
+                        '#error-update-profile'
+                      ).style.display = 'block';
                     }
                   })
                   .catch((err) => {
@@ -170,7 +168,7 @@ document.getElementById("show-existing-profiles").addEventListener(
                   });
               });
           } else {
-            document.querySelector(".no-profiles").style.display = "block";
+            document.querySelector('.no-profiles').style.display = 'block';
           }
         }
       })
@@ -182,17 +180,17 @@ document.getElementById("show-existing-profiles").addEventListener(
 );
 
 // Getting existing profiles from backend
-document.getElementById("show-existing-profiles-to-delete").addEventListener(
-  "click",
+document.getElementById('show-existing-profiles-to-delete').addEventListener(
+  'click',
   () => {
     const displayProfiles = document.getElementById(
-      "display-profiles-to-delete"
+      'display-profiles-to-delete'
     );
 
     fetch(`${url}/profile/min`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        token: `${localStorage.getItem("token")}`,
+        token: `${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -203,48 +201,48 @@ document.getElementById("show-existing-profiles-to-delete").addEventListener(
           // Checking if Profile data is actually there
           if (res.data.length !== 0) {
             // Showing the existing profiles
-            document.querySelector(".delete-profiles").style.display = "block";
+            document.querySelector('.delete-profiles').style.display = 'block';
 
             // Adding list items in DOM
             for (let i = 0; i < res.data.length; i++) {
-              const li = document.createElement("li");
+              const li = document.createElement('li');
               const name = res.data[i].name;
-              li.classList.add("list-group-item");
-              li.classList.add("list-group-item-action");
-              li.classList.add("list-group-item-dark");
+              li.classList.add('list-group-item');
+              li.classList.add('list-group-item-action');
+              li.classList.add('list-group-item-dark');
               li.id = `${res.data[i]._id}`;
               li.textContent = `Profile Name: ${name}`;
               displayProfiles.appendChild(li);
             }
 
             // Selecting profile to delete
-            let selectedProfile = "";
+            let selectedProfile = '';
             for (let i = 0; i < res.data.length; i++) {
               document
                 .getElementById(`${res.data[i]._id}`)
-                .addEventListener("click", () => {
+                .addEventListener('click', () => {
                   // Toggling selected profile
                   document
                     .getElementById(`${res.data[i]._id}`)
-                    .classList.toggle("choose-profile");
+                    .classList.toggle('choose-profile');
                 });
             }
 
             // Sending selected profiles to delete from database
             document
-              .getElementById("delete-selected-profiles")
-              .addEventListener("click", () => {
+              .getElementById('delete-selected-profiles')
+              .addEventListener('click', () => {
                 for (let i = 0; i < res.data.length; i++) {
                   // Adding selected images to formData
                   if (
                     document
                       .getElementById(`${res.data[i]._id}`)
-                      .classList.contains("choose-profile")
+                      .classList.contains('choose-profile')
                   ) {
                     document.getElementById(
                       `${res.data[i]._id}`
-                    ).style.display = "none";
-                    selectedProfile += `${res.data[i]._id}` + ",";
+                    ).style.display = 'none';
+                    selectedProfile += `${res.data[i]._id}` + ',';
                   }
                 }
 
@@ -252,13 +250,13 @@ document.getElementById("show-existing-profiles-to-delete").addEventListener(
 
                 const formData = new FormData();
 
-                formData.append("ids", newSelectedProfile);
+                formData.append('ids', newSelectedProfile);
 
                 fetch(`${url}/profile/delete`, {
-                  method: "DELETE",
+                  method: 'DELETE',
                   body: formData,
                   headers: {
-                    token: `${localStorage.getItem("token")}`,
+                    token: `${localStorage.getItem('token')}`,
                   },
                 })
                   .then((res) => {
@@ -267,12 +265,12 @@ document.getElementById("show-existing-profiles-to-delete").addEventListener(
                   .then((res) => {
                     if (res.ok) {
                       document.querySelector(
-                        ".delete-profiles-successful"
-                      ).style.display = "block";
+                        '.delete-profiles-successful'
+                      ).style.display = 'block';
                     } else {
                       document.querySelector(
-                        "#error-delete-profiles"
-                      ).style.display = "block";
+                        '#error-delete-profiles'
+                      ).style.display = 'block';
                     }
                   })
                   .catch((err) => {
@@ -280,12 +278,12 @@ document.getElementById("show-existing-profiles-to-delete").addEventListener(
                   });
               });
           } else {
-            document.querySelector(".no-delete-profiles").style.display =
-              "block";
+            document.querySelector('.no-delete-profiles').style.display =
+              'block';
           }
         } else {
-          document.querySelector("#error-delete-profiles").style.display =
-            "block";
+          document.querySelector('#error-delete-profiles').style.display =
+            'block';
         }
       })
       .catch((err) => {
@@ -296,17 +294,17 @@ document.getElementById("show-existing-profiles-to-delete").addEventListener(
 );
 
 // Settings form
-document.getElementById("settings-button").addEventListener("click", () => {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+document.getElementById('settings-button').addEventListener('click', () => {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   const formData = new FormData();
 
-  formData.append("username", username);
-  formData.append("password", password);
+  formData.append('username', username);
+  formData.append('password', password);
 
   fetch(`${url}/user/login`, {
-    method: "POST",
+    method: 'POST',
     body: formData,
   })
     .then((res) => {
@@ -314,21 +312,21 @@ document.getElementById("settings-button").addEventListener("click", () => {
     })
     .then((res) => {
       if (res.ok) {
-        window.location.href = "/settings.html";
-        document.querySelector("#error-message").style.display = "none";
+        window.location.href = '/settings.html';
+        document.querySelector('#error-message').style.display = 'none';
       } else {
-        document.querySelector("#error-message").style.display = "block";
+        document.querySelector('#error-message').style.display = 'block';
       }
     })
     .catch((err) => {
       console.log(err);
-      window.location.href = "/settings.html";
+      window.location.href = '/settings.html';
     });
 
-  document.querySelector("#settings-form").reset();
+  document.querySelector('#settings-form').reset();
 });
 
 // Logging out
-document.getElementById("logout").addEventListener("click", () => {
-  localStorage.removeItem("token");
+document.getElementById('logout').addEventListener('click', () => {
+  localStorage.removeItem('token');
 });

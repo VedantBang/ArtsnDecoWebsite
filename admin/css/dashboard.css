@@ -1,7 +1,7 @@
 /* Global styles */
 @font-face {
   font-family: Poppins;
-  src: url("../assets/fonts/Poppins-Regular.ttf");
+  src: url('../assets/fonts/Poppins-Regular.ttf');
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 .sidebar {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-    url("../assets/img/sidebar.png");
+    url('../assets/img/sidebar.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,35 +73,25 @@ body {
 /* End Of Cards */
 
 /* Upload Images */
-.upload-artwork {
-  display: none;
-}
-
+.upload-artwork,
 #upload-artwork {
   display: none;
 }
 /* End Of Upload Images */
 
 /* Update Images */
-.update-artwork {
-  display: none;
-}
-
+.update-artwork,
 #update-artwork {
   display: none;
 }
 /* End Of Update Images */
 
 /* Delete Images */
-.caution {
-  display: none;
-}
-
-.no-images {
-  display: none;
-}
-
-.display-existing-images {
+.caution,
+.no-images,
+.display-existing-images,
+.delete-option,
+.delete-successful {
   display: none;
 }
 
@@ -109,14 +99,6 @@ body {
   color: white;
   opacity: 0.4;
   transition: all 0.3s ease-out;
-}
-
-.delete-option {
-  display: none;
-}
-
-.delete-successful {
-  display: none;
 }
 /* End Of Delete Images */
 
@@ -126,11 +108,26 @@ body {
 }
 /* End Of Delete Fest */
 
-/* Add Profile */
-.add-profile-successful {
+/* Creativity */
+.upload-creativity,
+#error-creative-uploads,
+.no-delete-creative-works,
+.delete-creative-container,
+.delete-creative-work-successful,
+#error-delete-creative-work,
+#error-display-creative-works {
   display: none;
 }
 
+.choose-creative-artwork {
+  color: white;
+  opacity: 0.4;
+  transition: all 0.3s ease-out;
+}
+/* End Of Creativity */
+
+/* Add Profile */
+.add-profile-successful,
 #error-add-profile {
   display: none;
 }
@@ -148,7 +145,10 @@ body {
   background: white;
 }
 
-.edit-profiles {
+.edit-profiles,
+.update-profile-successful,
+#error-update-profile,
+.no-profiles {
   display: none;
 }
 
@@ -160,18 +160,6 @@ body {
   background: #fabc35;
   color: rgb(53, 53, 53);
 }
-
-.update-profile-successful {
-  display: none;
-}
-
-#error-update-profile {
-  display: none;
-}
-
-.no-profiles {
-  display: none;
-}
 /* End Of Edit Profiles */
 
 /* Delete Profiles */
@@ -179,18 +167,9 @@ body {
   background: white;
 }
 
-.delete-profiles {
-  display: none;
-}
-
-.delete-profiles-successful {
-  display: none;
-}
-
-#error-delete-profiles {
-  display: none;
-}
-
+.delete-profiles,
+.delete-profiles-successful,
+#error-delete-profiles,
 .no-delete-profiles {
   display: none;
 }
@@ -205,7 +184,9 @@ body {
 #error-delete-fest,
 #error-add-profile,
 #error-update-profile,
-#error-delete-profiles {
+#error-delete-profiles,
+#error-creative-uploads,
+#error-delete-creative-work {
   color: red;
 }
 /* End Of Error Messages */

@@ -1,17 +1,16 @@
 // Check if user is logged in or not
 fetch(`${url}/user/verifytoken`, {
-  method: "GET",
+  method: 'GET',
   headers: {
-    token: `${localStorage.getItem("token")}`,
+    token: `${localStorage.getItem('token')}`,
   },
-  mode: "cors",
 })
   .then((res) => {
     return res.json();
   })
   .then((res) => {
     if (!res.ok) {
-      window.location.href = "/login.html";
+      window.location.href = '/login.html';
     }
   })
   .catch((err) => {
@@ -19,17 +18,17 @@ fetch(`${url}/user/verifytoken`, {
   });
 
 // Settings form
-document.getElementById("settings-button").addEventListener("click", () => {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+document.getElementById('settings-button').addEventListener('click', () => {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   const formData = new FormData();
 
-  formData.append("username", username);
-  formData.append("password", password);
+  formData.append('username', username);
+  formData.append('password', password);
 
   fetch(`${url}/user/login`, {
-    method: "POST",
+    method: 'POST',
     body: formData,
   })
     .then((res) => {
@@ -37,21 +36,21 @@ document.getElementById("settings-button").addEventListener("click", () => {
     })
     .then((res) => {
       if (res.ok) {
-        window.location.href = "/settings.html";
-        document.querySelector("#error-message").style.display = "none";
+        window.location.href = '/settings.html';
+        document.querySelector('#error-message').style.display = 'none';
       } else {
-        document.querySelector("#error-message").style.display = "block";
+        document.querySelector('#error-message').style.display = 'block';
       }
     })
     .catch((err) => {
       console.log(err);
-      window.location.href = "/settings.html";
+      window.location.href = '/settings.html';
     });
 
-  document.querySelector("#settings-form").reset();
+  document.querySelector('#settings-form').reset();
 });
 
 // Logging out
-document.getElementById("logout").addEventListener("click", () => {
-  localStorage.removeItem("token");
+document.getElementById('logout').addEventListener('click', () => {
+  localStorage.removeItem('token');
 });
