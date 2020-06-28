@@ -1,0 +1,5 @@
+.git/
+.gitignore
+artsndeco.postman_collection.json
+mdata/
+node_modules/

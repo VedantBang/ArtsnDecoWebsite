@@ -1,10 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 
-let isLocal = false;
-if(process.argv[2] && process.argv[2] === "local") isLocal = true;
+let runType = "online";
+if(process.argv[2] && process.argv[2] === "local") runType = "local";
+else if(process.argv[2] && process.argv[2] === "docker") runType = "docker";
 
-require('./config/db')(isLocal);
+require('./config/db')(runType);
 
 const userRouter = require('./routes/userRouter');
 const changeRouter = require('./routes/changeRouter');
@@ -13,14 +14,6 @@ const profileRouter = require('./routes/profileRouter');
 const creativeRouter = require('./routes/creativeRouter');
 
 const app = express();
-
-app.use(morgan('dev'));
-app.use(express.static('admin'));
-app.use(express.static('public'));
-
-app.get('/', (req,res,next) => {
-	res.redirect('/index.html');
-});
 
 app.use((req, res, next) => {
 	res.set('Access-Control-Allow-Origin', '*');
@@ -34,6 +27,16 @@ app.use((req, res, next) => {
 	}
 	
 });
+
+app.use(morgan('dev'));
+app.use(express.static('admin'));
+app.use(express.static('public'));
+
+app.get('/', (req,res,next) => {
+	res.redirect('/index.html');
+});
+
+
 
 app.use('/display', displayRouter);
 app.use('/user', userRouter);
