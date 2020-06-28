@@ -15,20 +15,24 @@ const creativeRouter = require('./routes/creativeRouter');
 
 const app = express();
 
+app.use(morgan('dev'));
+
 app.use((req, res, next) => {
 	res.set('Access-Control-Allow-Origin', '*');
 	res.set('Access-Control-Allow-Headers', '*');
 	res.set('Access-Control-Allow-Methods', '*');
 	if(req.method === 'OPTIONS'){
 		res.status(200).end();
-	} else{
-		res.set('Content-Type', 'application/json');
-		next();
-	}
+		return;
+	} 
+	next();
+	// else{
+	// 	res.set('Content-Type', 'application/json');
+	// 	next();
+	// }
 	
 });
 
-app.use(morgan('dev'));
 app.use(express.static('admin'));
 app.use(express.static('public'));
 
@@ -36,7 +40,10 @@ app.get('/', (req,res,next) => {
 	res.redirect('/index.html');
 });
 
-
+app.use((req,res,next) => {
+	res.set('Content-Type', 'application/json');
+	next();
+});
 
 app.use('/display', displayRouter);
 app.use('/user', userRouter);
