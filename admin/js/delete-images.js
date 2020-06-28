@@ -1,17 +1,16 @@
 // Check if user is logged in or not
 fetch(`${url}/user/verifytoken`, {
-  method: "GET",
+  method: 'GET',
   headers: {
-    token: `${localStorage.getItem("token")}`,
+    token: `${localStorage.getItem('token')}`,
   },
-  mode: "cors",
 })
   .then((res) => {
     return res.json();
   })
   .then((res) => {
     if (!res.ok) {
-      window.location.href = "/login.html";
+      window.location.href = '/login.html';
     }
   })
   .catch((err) => {
@@ -20,41 +19,41 @@ fetch(`${url}/user/verifytoken`, {
 
 // Adding name field in case of "Others" option in upload form
 addNameField = () => {
-  const fest = document.querySelector("#fest").value;
+  const fest = document.querySelector('#fest').value;
 
-  if (fest === "other") {
-    document.querySelector(".label-name-of-event").style.display = "inline";
-    document.querySelector(".input-name-of-event").style.display = "inline";
+  if (fest === 'other') {
+    document.querySelector('.label-name-of-event').style.display = 'inline';
+    document.querySelector('.input-name-of-event').style.display = 'inline';
   } else {
-    document.querySelector(".label-name-of-event").style.display = "none";
-    document.querySelector(".input-name-of-event").style.display = "none";
+    document.querySelector('.label-name-of-event').style.display = 'none';
+    document.querySelector('.input-name-of-event').style.display = 'none';
   }
 };
 
-document.getElementById("fest").addEventListener("click", addNameField);
+document.getElementById('fest').addEventListener('click', addNameField);
 
 // Get existing photos from backend
-let selectedImages = "";
-document.querySelector("#error-delete-images").style.display = "none";
+let selectedImages = '';
+document.querySelector('#error-delete-images').style.display = 'none';
 
-document.getElementById("get-existing-photos").addEventListener(
-  "click",
+document.getElementById('get-existing-photos').addEventListener(
+  'click',
   () => {
-    const fest = document.querySelector("#fest").value;
-    const year = document.querySelector("#year").value;
-    const name = document.querySelector("#name").value;
+    const fest = document.querySelector('#fest').value;
+    const year = document.querySelector('#year').value;
+    const name = document.querySelector('#name').value;
 
     const formData = new FormData();
 
-    formData.append("fest", fest);
-    formData.append("year", year);
-    formData.append("name", name);
+    formData.append('fest', fest);
+    formData.append('year', year);
+    formData.append('name', name);
 
     fetch(`${url}/display/fest`, {
-      method: "POST",
+      method: 'POST',
       body: formData,
       headers: {
-        token: `${localStorage.getItem("token")}`,
+        token: `${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -64,7 +63,7 @@ document.getElementById("get-existing-photos").addEventListener(
         if (res.ok) {
           // Checking if images are null
           if (res.data.images.length === 0) {
-            document.querySelector(".no-images").style.display = "block";
+            document.querySelector('.no-images').style.display = 'block';
           } else {
             //  Adding Image cards to display
             for (let i = 0; i < res.data.images.length; i++) {
@@ -76,7 +75,7 @@ document.getElementById("get-existing-photos").addEventListener(
                                   class="card card-common display-card"
                                   id="${res.data.images[i].link}">
                                     <img 
-                                      src="https://artsndeco-backend.netlify.app/${res.data.images[i].link}" 
+                                      src="http://localhost:3000/${res.data.images[i].link}" 
                                       alt="${res.data.images[i].title}" 
                                       class="card-img-top"
                                     />
@@ -86,62 +85,62 @@ document.getElementById("get-existing-photos").addEventListener(
                                </div>`;
 
               // Appending cards to parent div
-              $(".display-images").append(displayImages);
+              $('.display-images').append(displayImages);
             }
 
             // Showing DOM elements on display of cards
-            document.querySelector(".caution").style.display = "block";
-            document.querySelector(".display-existing-images").style.display =
-              "block";
-            document.querySelector(".delete-option").style.display = "block";
+            document.querySelector('.caution').style.display = 'block';
+            document.querySelector('.display-existing-images').style.display =
+              'block';
+            document.querySelector('.delete-option').style.display = 'block';
 
             // Selecting cards to delete
             for (let i = 0; i < res.data.images.length; i++) {
               document
                 .getElementById(`${res.data.images[i].link}`)
-                .addEventListener("click", () => {
+                .addEventListener('click', () => {
                   // Toggling selected-card class
                   document
                     .getElementById(`${res.data.images[i].link}`)
-                    .classList.toggle("selected-card");
+                    .classList.toggle('selected-card');
                 });
             }
 
             // Sending selected images to backend to delete
             document
-              .getElementById("delete-images")
-              .addEventListener("click", () => {
+              .getElementById('delete-images')
+              .addEventListener('click', () => {
                 // Taking images selected and adding to selectedImages string
                 for (let i = 0; i < res.data.images.length; i++) {
                   if (
                     document
                       .getElementById(`${res.data.images[i].link}`)
-                      .classList.contains("selected-card")
+                      .classList.contains('selected-card')
                   ) {
                     document.getElementById(
                       `${res.data.images[i].link}`
-                    ).style.display = "none";
-                    selectedImages += `${res.data.images[i].link}` + ",";
+                    ).style.display = 'none';
+                    selectedImages += `${res.data.images[i].link}` + ',';
                   }
                 }
 
                 const newSelectedImages = selectedImages.slice(0, -1);
-                const fest = document.querySelector("#fest").value;
-                const year = document.querySelector("#year").value;
-                const name = document.querySelector("#name").value;
+                const fest = document.querySelector('#fest').value;
+                const year = document.querySelector('#year').value;
+                const name = document.querySelector('#name').value;
 
                 const formData = new FormData();
 
-                formData.append("remove", newSelectedImages);
-                formData.append("fest", fest);
-                formData.append("year", year);
-                formData.append("name", name);
+                formData.append('remove', newSelectedImages);
+                formData.append('fest', fest);
+                formData.append('year', year);
+                formData.append('name', name);
 
                 fetch(`${url}/change/removeImages`, {
-                  method: "PUT",
+                  method: 'PUT',
                   body: formData,
                   headers: {
-                    token: `${localStorage.getItem("token")}`,
+                    token: `${localStorage.getItem('token')}`,
                   },
                 })
                   .then((res) => {
@@ -150,15 +149,15 @@ document.getElementById("get-existing-photos").addEventListener(
                   .then((res) => {
                     if (res.ok) {
                       document.querySelector(
-                        ".delete-successful"
-                      ).style.display = "block";
+                        '.delete-successful'
+                      ).style.display = 'block';
                       document.querySelector(
-                        "#error-delete-images"
-                      ).style.display = "none";
+                        '#error-delete-images'
+                      ).style.display = 'none';
                     } else {
                       document.querySelector(
-                        "#error-delete-images"
-                      ).style.display = "block";
+                        '#error-delete-images'
+                      ).style.display = 'block';
                     }
                   })
                   .catch((err) => {
@@ -167,7 +166,7 @@ document.getElementById("get-existing-photos").addEventListener(
               });
           }
         } else {
-          document.getElementById("error-get-existing-photos").innerHTML =
+          document.getElementById('error-get-existing-photos').innerHTML =
             res.error;
         }
       })
@@ -179,17 +178,17 @@ document.getElementById("get-existing-photos").addEventListener(
 );
 
 // Settings form
-document.getElementById("settings-button").addEventListener("click", () => {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+document.getElementById('settings-button').addEventListener('click', () => {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   const formData = new FormData();
 
-  formData.append("username", username);
-  formData.append("password", password);
+  formData.append('username', username);
+  formData.append('password', password);
 
   fetch(`${url}/user/login`, {
-    method: "POST",
+    method: 'POST',
     body: formData,
   })
     .then((res) => {
@@ -197,21 +196,21 @@ document.getElementById("settings-button").addEventListener("click", () => {
     })
     .then((res) => {
       if (res.ok) {
-        window.location.href = "/settings.html";
-        document.querySelector("#error-message").style.display = "none";
+        window.location.href = '/settings.html';
+        document.querySelector('#error-message').style.display = 'none';
       } else {
-        document.querySelector("#error-message").style.display = "block";
+        document.querySelector('#error-message').style.display = 'block';
       }
     })
     .catch((err) => {
       console.log(err);
-      window.location.href = "/settings.html";
+      window.location.href = '/settings.html';
     });
 
-  document.querySelector("#settings-form").reset();
+  document.querySelector('#settings-form').reset();
 });
 
 // Logging out
-document.getElementById("logout").addEventListener("click", () => {
-  localStorage.removeItem("token");
+document.getElementById('logout').addEventListener('click', () => {
+  localStorage.removeItem('token');
 });

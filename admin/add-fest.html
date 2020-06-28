@@ -8,7 +8,7 @@
     />
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/img/logo.png" />
-    
+
     <!-- Fontawesome icons -->
     <script
       src="https://kit.fontawesome.com/74c1adc36b.js"
@@ -96,6 +96,15 @@
                       class="fas fa-skull-crossbones text-light fa-lg mr-3"
                     ></i>
                     Delete Fest
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="creativity.html"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
+                  >
+                    <i class="fas fa-pencil-ruler text-light fa-lg mr-3"></i>
+                    Creativity
                   </a>
                 </li>
                 <li class="nav-item">
@@ -275,7 +284,7 @@
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
           <div class="row pt-4 mt-5 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2">
+            <div class="col-sm-10 p-2 mb-5">
               <div class="card card-common">
                 <div class="card-header">
                   <h1 class="text-center">Add New Fest Artwork</h1>
@@ -405,8 +414,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <p class="text-center">
-              Add image file from your PC/Laptop
+            <p class="text-center text-muted">
+              Add image link from third party websites like imgur, imgbb
             </p>
             <form
               class="pl-5 pr-5"
@@ -427,15 +436,14 @@
               </div>
               <div class="form-group row">
                 <label for="upload-image" class="col-sm-4 col-form-label">
-                  Image File
+                  Image Link
                 </label>
-                <div class="col-sm-8 p-0 pt-sm-2 mb-2">
-                  <input
-                    type="file"
-                    id="upload-image"
-                    accept=".jpg, .jpeg, .png"
-                  />
-                </div>
+                <input
+                  type="text"
+                  id="upload-image"
+                  class="col-sm-8 form-control"
+                  placeholder="Enter Image Link"
+                />
               </div>
             </form>
           </div>

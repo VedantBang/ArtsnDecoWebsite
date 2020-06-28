@@ -124,7 +124,7 @@ router.put('/addImages', upload.none(), async (req,res,next) => {
 		}
 
 		let newImages = [];
-		for(let x = 0; x < photolinks.length; x++){
+		for(let x = 0; x < links.length; x++){
 			newImages.push({
 				title: titles[x],
 				link: links[x]
