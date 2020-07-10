@@ -1,9 +1,23 @@
 const mongoose = require("mongoose");
 let url = "mongodb+srv://rohit007:rohit007@cluster0-4dwba.mongodb.net/data?retryWrites=true&w=majority";
 
-async function connect(isLocal) {
+async function delay(time){
+	return new Promise((a,b) => setTimeout(a,time));
+}
+
+async function connect(runType) {
 	try{
-        if(isLocal) url = "mongodb://localhost:27017/data";
+		await delay(7000);
+        switch(runType){
+        	case "online":
+        		break;
+        	case "local":
+        		url = "mongodb://localhost:27017/data"
+        		break;
+        	case "docker":
+        		url = "mongodb://mongo:27017/data"
+        		break
+        }
     	await mongoose.connect(url, {
       		useUnifiedTopology: true,
       		useNewUrlParser: true,
