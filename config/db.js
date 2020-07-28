@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-let url = require('../utilities/env').MONGOURL;
 
 async function delay(time){
 	return new Promise((a,b) => setTimeout(a,time));
@@ -7,7 +6,7 @@ async function delay(time){
 
 async function connect(runType) {
 	try{
-		await delay(7000);
+        let url = require('../utilities/env').MONGOURL;
         switch(runType){
         	case "online":
         		break;
@@ -15,8 +14,9 @@ async function connect(runType) {
         		url = "mongodb://localhost:27017/data"
         		break;
         	case "docker":
+                await delay(7000);
         		url = "mongodb://mongo:27017/data"
-        		break
+        		break;
         }
     	await mongoose.connect(url, {
       		useUnifiedTopology: true,
