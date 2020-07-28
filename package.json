@@ -5,7 +5,8 @@
 	"scripts": {
 		"start": "node ./bin/www",
 		"local": "node ./bin/www local",
-		"docker": "node ./bin/www docker"
+		"docker": "node ./bin/www docker",
+		"backup": "remoteurl=$(cat .env | head -n 1 | sed 's/MONGOURL=//' | sed 's/\\(\\?.*\\)//') && mongodump --uri $remoteurl"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.0",

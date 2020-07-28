@@ -2,3 +2,4 @@ node_modules/
 mdata/
 .env
 .DS_Store
+dump/
