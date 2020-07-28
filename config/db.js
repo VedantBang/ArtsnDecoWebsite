@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-let url = "mongodb+srv://rohit007:rohit007@cluster0-4dwba.mongodb.net/data?retryWrites=true&w=majority";
+let url = require('../utilities/env').MONGOURL;
 
 async function delay(time){
 	return new Promise((a,b) => setTimeout(a,time));

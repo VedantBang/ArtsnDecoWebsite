@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { JWTKEY } = require('../utilities/env');
 const multer = require('multer');
 const upload = multer();
 const User = require('../models/user');
@@ -25,7 +26,7 @@ router.post('/login', upload.none(), async (req,res,next) => {
 			next(err); 
 			return;	
 		}
-		let token = jwt.sign({ username }, 'yeesss', { expiresIn: 24*60*60 });
+		let token = jwt.sign({ username }, JWTKEY, { expiresIn: 24*60*60 });
 		res.status(200).json({ ok: 1, token });
 
 	} catch(err){ next(err); }

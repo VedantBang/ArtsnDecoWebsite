@@ -1,5 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const { JWTKEY } = require('../utilities/env');
 const Creative = require('../models/creative');
 const multer = require('multer');
 const upload = multer();
@@ -17,7 +18,7 @@ router.use((req,res,next) => {
 	try{
 		let { token } = req.headers;
 
-		let decoded = jwt.verify(token, 'yeesss');
+		let decoded = jwt.verify(token, JWTKEY);
 
 		req.username = decoded.username;
 

@@ -4,6 +4,7 @@ const multer = require('multer');
 const upload = multer();
 const Profile = require('../models/profile');
 const jwt = require('jsonwebtoken');
+const { JWTKEY } = require('../utilities/env');
 const cut = require('../utilities/cut');
 
 
@@ -20,7 +21,7 @@ router.use((req,res,next)=>{
 	try{
 		let { token } = req.headers;
 
-		let decoded = jwt.verify(token, 'yeesss');
+		let decoded = jwt.verify(token, JWTKEY);
 
 		req.username = decoded.username;
 
