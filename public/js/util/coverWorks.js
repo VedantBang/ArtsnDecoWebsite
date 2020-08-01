@@ -10,7 +10,7 @@ const coverWorks = (fest) => {
 
       for (let i = 0; i < response.data.length; i++) {
         const cover = `<div class="col-md-4 card w-40">
-            <a href="index.html">
+            <a href="posts.html">
               <img
                 class="card-img-top"
                 src=${response.data[i].coverImage.link}
