@@ -52,6 +52,7 @@ document.getElementById("update-artwork").addEventListener("click", (e) => {
     .then((res) => {
       if (res.ok) {
         document.querySelector(".update-artwork").style.display = "block";
+        window.location.href = "update-images.html";
       } else {
         document.getElementById("error-updates").innerHTML = res.error;
       }
