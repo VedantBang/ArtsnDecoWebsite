@@ -41,7 +41,7 @@ document.getElementById('get-existing-photos').addEventListener(
                                   class="card card-common display-card"
                                   id="${res.data.images[i].link}">
                                     <img 
-                                      src="http://localhost:3000/${res.data.images[i].link}" 
+                                      src="${res.data.images[i].link}" 
                                       alt="${res.data.images[i].title}" 
                                       class="card-img-top"
                                     />

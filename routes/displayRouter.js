@@ -88,12 +88,12 @@ router.get('/:year', async (req,res,next) => {
 		let data = await Album.find({ year });
 
 		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
-		data = data.map(entry => {
-			return {
-				fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
-				coverImage: entry.images[0]
-			}
-		});
+		// data = data.map(entry => {
+		// 	return {
+		// 		fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
+		// 		coverImage: entry.images[0]
+		// 	}
+		// });
 
 		res.status(200).json({ ok:1, data });
 	} catch(err){ next(err); }

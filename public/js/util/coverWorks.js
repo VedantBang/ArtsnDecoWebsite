@@ -10,7 +10,12 @@ const coverWorks = (fest) => {
 
       for (let i = 0; i < response.data.length; i++) {
         const cover = `<div class="col-md-4 card w-40">
-            <a href="posts.html">
+            <a 
+              href="posts.html"
+              type="button" 
+              onclick="festByYear('${response.data[i].year}')"
+              class="safari-issue"
+            >
               <img
                 class="card-img-top"
                 src=${response.data[i].coverImage.link}
@@ -26,4 +31,8 @@ const coverWorks = (fest) => {
       console.log(err);
     }
   })();
+};
+
+const festByYear = (year) => {
+  localStorage.setItem("year", year);
 };

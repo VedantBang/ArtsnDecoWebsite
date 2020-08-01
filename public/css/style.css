@@ -25,6 +25,12 @@
   font-family: "SF-Pro-Display-Regular";
 }
 
+/* Safari Compatibility Issue */
+.safari-issue {
+  -webkit-appearance: none;
+}
+/* End Of Safari Compatibility Issue */
+
 /* Common Navbar Styles */
 #logo-img {
   width: 80px;
