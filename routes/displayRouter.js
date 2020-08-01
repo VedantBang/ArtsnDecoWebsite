@@ -5,23 +5,6 @@ const upload = multer();
 const cut = require('../utilities/cut');
 const router = express.Router();
 
-
-router.get('/all', async (req,res,next) => {
-	try{
-		let data = await Album.find({});
-		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
-		data = data.map(entry => {
-			return {
-				fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
-				coverImage: entry.images[0]
-			}
-		});
-		res.status(200).json({ ok:1, data });
-		
-	} catch(err){ next(err); }
-});
-
-
 router.post('/fest', upload.none(), async (req,res,next) => {
 	try{
 		let { fest, year, name } = req.body;
@@ -60,20 +43,59 @@ router.get('/:fest', async (req,res,next) => {
 		const list = ['waves','quark','spree','other'];
 
 		if(!list.includes(fest)){
-			let err = new Error('Invalid fest type');
-			err.status = 400;
-			next(err);
+			next();
 			return;
 		}
 
 		let data = await Album.find({ fest });
 		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
+		data = data.map(entry => {
+			return {
+				fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
+				coverImage: entry.images[0]
+			}
+		});
 
 		function yearSort(a,b){return b.year - a.year;}
 		data.sort(yearSort);
 
 		res.status(200).json({ ok:1, data });
 		
+	} catch(err){ next(err); }
+});
+
+
+router.get('/:year', async (req,res,next) => {
+	try{
+		let { year } = req.params;
+
+		if(!year){
+			let err = new Error('Atleast one of festType or year must be specified in url');
+			err.status = 400;
+			next(err);
+			return;
+		}
+
+		try{
+			year = parseInt(year);
+		} catch(err){
+			err = new Error('Year must be a valid integer');
+			err.status = 400;
+			next(err);
+			return;
+		}
+
+		let data = await Album.find({ year });
+
+		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
+		data = data.map(entry => {
+			return {
+				fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
+				coverImage: entry.images[0]
+			}
+		});
+
+		res.status(200).json({ ok:1, data });
 	} catch(err){ next(err); }
 });
 module.exports = router;
