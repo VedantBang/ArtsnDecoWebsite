@@ -1,22 +1,3 @@
-// Check if user can access settings or not
-fetch(`${url}/user/verifytoken`, {
-  method: 'GET',
-  headers: {
-    token: `${localStorage.getItem('token')}`,
-  },
-})
-  .then((res) => {
-    return res.json();
-  })
-  .then((res) => {
-    if (!res.ok) {
-      window.location.href = '/login.html';
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
 // Change Password
 document.getElementById('change-password').addEventListener('click', () => {
   const password = document.querySelector('#new-password').value;
@@ -53,9 +34,4 @@ document.getElementById('change-password').addEventListener('click', () => {
     document.querySelector('#error-message').style.display = 'block';
     document.querySelector('.change-password').style.display = 'none';
   }
-});
-
-// Logging out
-document.getElementById('logout').addEventListener('click', () => {
-  localStorage.removeItem('token');
 });
