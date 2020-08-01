@@ -1,0 +1,118 @@
+/* Importing Font Families */
+@font-face {
+  font-family: "Sofa Sans";
+  src: url("../assets/fonts/SofaSansHand-Bk.otf");
+}
+
+@font-face {
+  font-family: "LookingFlowers-ScriptPro";
+  src: url("../assets/fonts/Looking\ Flowers\ Script\ Pro.otf");
+}
+
+@font-face {
+  font-family: "Blackout Midnight";
+  src: url("../assets/fonts/Blackout\ Midnight.ttf");
+}
+/* End Of Importing Font Families */
+
+/* Navbar Specific Styling */
+.navbar {
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.161);
+  color: #2a375e;
+}
+
+.nav-link {
+  font-family: "Sofa Sans";
+}
+/* End Of Navbar Specific Styling */
+
+/* Our Works */
+.our-works {
+  font-family: "Sofa Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 72px;
+  color: #2a375e;
+  text-shadow: 2px 2px #a3a3a3;
+}
+
+.secondary-text {
+  font-family: "LookingFlowers-ScriptPro";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 46px;
+  color: #13b2d6;
+}
+/* End Of Our Works */
+
+/* Fests */
+.fest-name {
+  position: absolute;
+  font-family: "Sofa Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 49px;
+  color: #2a375e;
+}
+
+.fest-watermark {
+  font-family: "Blackout Midnight";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 280px;
+  line-height: 206px;
+  text-align: center;
+  color: rgba(232, 232, 232, 0.4);
+}
+
+.cards {
+  width: 88%;
+  margin: auto;
+  position: absolute;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+}
+
+.card-img-top {
+  border: none;
+  border-radius: 0;
+  height: 232px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card-text {
+  font-family: "Sofa Sans";
+  font-style: normal;
+  font-size: 18px;
+  color: #2a375e;
+  margin: 0.3rem;
+}
+
+.year {
+  position: absolute;
+  left: 16px;
+  bottom: 48px;
+  padding: 0 0.3rem;
+  background: #ffffff;
+}
+
+.theme {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 0 0.3rem;
+  background: #ffffff;
+}
+
+.more {
+  background: rgba(232, 232, 232, 0.6);
+  border-radius: 50%;
+  margin: 4px;  
+}
+/* End Of Fests */
