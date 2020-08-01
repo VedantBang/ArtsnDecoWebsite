@@ -1,62 +1,43 @@
-// Check if user is logged in or not
-fetch(`${url}/user/verifytoken`, {
-  method: 'GET',
-  headers: {
-    token: `${localStorage.getItem('token')}`,
-  },
-})
-  .then((res) => {
-    return res.json();
-  })
-  .then((res) => {
-    if (!res.ok) {
-      window.location.href = '/login.html';
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
 // Uploading name and image links to backend
 document
-  .getElementById('add-creative-artwork')
-  .addEventListener('click', (e) => {
+  .getElementById("add-creative-artwork")
+  .addEventListener("click", (e) => {
     e.preventDefault();
-    const name = document.querySelector('#name').value;
-    const image = document.querySelector('#upload-creative-image').value;
+    const name = document.querySelector("#name").value;
+    const image = document.querySelector("#upload-creative-image").value;
 
     const formData = new FormData();
 
-    formData.append('name', name);
-    formData.append('image', image);
+    formData.append("name", name);
+    formData.append("image", image);
 
     fetch(`${url}/creative/add`, {
-      method: 'POST',
+      method: "POST",
       body: formData,
       headers: {
-        token: `${localStorage.getItem('token')}`,
+        token: `${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
       .then((res) => {
         if (res.ok) {
-          document.querySelector('.upload-creativity').style.display = 'block';
+          document.querySelector(".upload-creativity").style.display = "block";
         } else {
-          document.querySelector('#error-creative-uploads').style.display =
-            'block';
+          document.querySelector("#error-creative-uploads").style.display =
+            "block";
         }
       })
       .catch((err) => console.log(err));
   });
 
 // Getting existing images form backend
-document.querySelector('#show-creative-artworks').addEventListener(
-  'click',
+document.querySelector("#show-creative-artworks").addEventListener(
+  "click",
   () => {
     fetch(`${url}/creative/all`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        token: `${localStorage.getItem('token')}`,
+        token: `${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -65,8 +46,8 @@ document.querySelector('#show-creative-artworks').addEventListener(
           // Checking if creativity data is actually there
           if (res.data.length !== 0) {
             // Showing the existing creative works
-            document.querySelector('.delete-creative-container').style.display =
-              'block';
+            document.querySelector(".delete-creative-container").style.display =
+              "block";
 
             console.log(res.data);
             // Adding list items in DOM
@@ -86,19 +67,19 @@ document.querySelector('#show-creative-artworks').addEventListener(
                                           </div>`;
 
               // Appending cards to parent div
-              $('.display-creative-works').append(displayCreativeWorks);
+              $(".display-creative-works").append(displayCreativeWorks);
             }
 
             // Selecting card to delete
-            let selectedCreativeWork = '';
+            let selectedCreativeWork = "";
             for (let i = 0; i < res.data.length; i++) {
               document.getElementById(`${res.data[i]._id}`).addEventListener(
-                'click',
+                "click",
                 () => {
                   // Toggling for selecting a card
                   document
                     .getElementById(`${res.data[i]._id}`)
-                    .classList.toggle('choose-creative-artwork');
+                    .classList.toggle("choose-creative-artwork");
                 },
                 { once: true }
               );
@@ -106,95 +87,57 @@ document.querySelector('#show-creative-artworks').addEventListener(
 
             // Sending selected creative work to delete from database
             document
-              .getElementById('delete-creative-artwork')
-              .addEventListener('click', () => {
+              .getElementById("delete-creative-artwork")
+              .addEventListener("click", () => {
                 for (let i = 0; i < res.data.length; i++) {
                   if (
                     document
                       .getElementById(`${res.data[i]._id}`)
-                      .classList.contains('choose-creative-artwork')
+                      .classList.contains("choose-creative-artwork")
                   ) {
                     document.getElementById(
                       `${res.data[i]._id}`
-                    ).style.display = 'none';
+                    ).style.display = "none";
                     selectedCreativeWork = `${res.data[i]._id}`;
                   }
                 }
 
                 const formData = new FormData();
 
-                formData.append('id', selectedCreativeWork);
+                formData.append("id", selectedCreativeWork);
 
                 fetch(`${url}/creative/delete`, {
-                  method: 'DELETE',
+                  method: "DELETE",
                   body: formData,
                   headers: {
-                    token: `${localStorage.getItem('token')}`,
+                    token: `${localStorage.getItem("token")}`,
                   },
                 })
                   .then((res) => res.json())
                   .then((res) => {
                     if (res.ok) {
                       document.querySelector(
-                        '.delete-creative-work-successful'
-                      ).style.display = 'block';
+                        ".delete-creative-work-successful"
+                      ).style.display = "block";
                     } else {
                       document.querySelector(
-                        '#error-delete-creative-work'
-                      ).style.display = 'block';
+                        "#error-delete-creative-work"
+                      ).style.display = "block";
                     }
                   })
                   .catch((err) => console.log(err));
               });
           } else {
-            document.querySelector('.no-delete-creative-works').style.display =
-              'block';
+            document.querySelector(".no-delete-creative-works").style.display =
+              "block";
           }
         } else {
           document.querySelector(
-            '#error-display-creative-works'
-          ).style.display = 'block';
+            "#error-display-creative-works"
+          ).style.display = "block";
         }
       })
       .catch((err) => console.log(err));
   },
   { once: true }
 );
-
-// Settings form
-document.getElementById('settings-button').addEventListener('click', () => {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  const formData = new FormData();
-
-  formData.append('username', username);
-  formData.append('password', password);
-
-  fetch(`${url}/user/login`, {
-    method: 'POST',
-    body: formData,
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((res) => {
-      if (res.ok) {
-        window.location.href = '/settings.html';
-        document.querySelector('#error-message').style.display = 'none';
-      } else {
-        document.querySelector('#error-message').style.display = 'block';
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      window.location.href = '/settings.html';
-    });
-
-  document.querySelector('#settings-form').reset();
-});
-
-// Logging out
-document.getElementById('logout').addEventListener('click', () => {
-  localStorage.removeItem('token');
-});

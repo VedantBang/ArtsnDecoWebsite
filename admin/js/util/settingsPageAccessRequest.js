@@ -1,5 +1,5 @@
-// Send login credentials to backend
-document.getElementById("login-button").addEventListener("click", () => {
+// Settings form
+document.getElementById("settings-button").addEventListener("click", () => {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
@@ -17,8 +17,7 @@ document.getElementById("login-button").addEventListener("click", () => {
     })
     .then((res) => {
       if (res.ok) {
-        localStorage.setItem("token", res.token);
-        window.location.href = "/dashboard.html";
+        window.location.href = "/settings.html";
         document.querySelector("#error-message").style.display = "none";
       } else {
         document.querySelector("#error-message").style.display = "block";
@@ -26,7 +25,8 @@ document.getElementById("login-button").addEventListener("click", () => {
     })
     .catch((err) => {
       console.log(err);
+      window.location.href = "/settings.html";
     });
 
-  document.querySelector("#login-form").reset();
+  document.querySelector("#settings-form").reset();
 });
