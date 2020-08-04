@@ -76,3 +76,8 @@ video {
     transform: rotate(90deg);
 }
 /* End Of Hero Section Video */
+
+.socials-sidebar {
+    position: sticky;
+    left: 0;
+}
