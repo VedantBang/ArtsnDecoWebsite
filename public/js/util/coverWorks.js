@@ -3,13 +3,13 @@ const coverWorks = (fest) => {
   (async () => {
     try {
       const response = await (
-        await fetch(`${url}/display/${fest}`, { method: "GET" })
+        await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
       console.log(response);
 
       for (let i = 0; i < response.data.length; i++) {
-        const cover = `<div class="col-md-4 card w-40 mb-4">
+        const cover = `<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-4 card w-40">
             <a 
               href="posts.html"
               type="button" 
@@ -34,5 +34,5 @@ const coverWorks = (fest) => {
 };
 
 const festByYear = (year) => {
-  localStorage.setItem("year", year);
+  localStorage.setItem('year', year);
 };

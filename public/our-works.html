@@ -64,14 +64,6 @@
     </nav>
     <!-- End of Navbar -->
 
-    <!-- Carousel -->
-    <div class="carousel slide" id="demo" data-ride="carousel">
-      <!-- Indicators -->
-      <ul class="carousel-indicators"></ul>
-      <!-- End Of Indicators -->
-    </div>
-    <!-- End Of Carousel -->
-
     <!-- Our Works -->
     <div class="container mt-2 pt-5 mb-4">
       <div class="row justify-content-center">
@@ -87,15 +79,32 @@
         <p class="fest-name text-center text-uppercase">Waves</p>
         <p class="fest-watermark text-center text-uppercase">Waves</p>
       </div>
-      <div class="row justify-content-center" id="waves"></div>
-      <div class="row justify-content-end mt-3">
-        <p class="mr-auto">1 ------ 5</p>
-        <button class="btn btn-light more">
+      <div class="row justify-content-center">
+        <div class="carousel slide" id="fest-carousel" data-ride="carousel">
+          <div
+            class="carousel-inner row mx-auto"
+            role="listbox"
+            id="waves"
+          ></div>
+        </div>
+      </div>
+      <div class="row justify-content-end mt-3" id="waves-carousel-controls">
+        <a
+          class="btn btn-light more"
+          href="#fest-carousel"
+          role="button"
+          data-slide="prev"
+        >
           <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="btn btn-light more">
+        </a>
+        <a
+          class="btn btn-light more"
+          href="#fest-carousel"
+          role="button"
+          data-slide="next"
+        >
           <i class="fas fa-chevron-right"></i>
-        </button>
+        </a>
       </div>
     </div>
     <!-- End Of Waves -->
