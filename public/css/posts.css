@@ -1,10 +1,18 @@
+/* Importing Font Families */
+@font-face {
+  font-family: 'Sofa Sans';
+  src: url('../assets/fonts/SofaSansHand-Bk.otf');
+}
+
+/* End Of Importing Font Families */
+
 body {
   overflow-x: hidden;
 }
 
 .bg-overlay {
   background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: -1;
 }
 
 .bg-image {
@@ -22,4 +30,14 @@ body {
 .img-fluid {
   width: 800px;
   height: 490px;
+}
+
+.card-text {
+  font-family: 'Sofa Sans';
+  font-size: 18px;
+  color: #2a375e;
+  background: #ffffff;
+  border-radius: 2px;
+  margin: 0.3rem;
+  padding: 0.1rem 0.4rem;
 }
