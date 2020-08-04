@@ -1,73 +1,78 @@
 /* Navbar Specific Styling */
 .navbar-nav .nav-item .nav-link {
-  color: #fff;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    font-family: 'Sofa-Sans-Regular-DP';
+    text-transform: uppercase;
+    color: #fff;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-  color: #fff;
-  text-decoration: line-through;
+    color: #fff;
+    text-decoration: line-through;
 }
 
 .active {
-  color: #fefefe !important;
+    color: #fefefe !important;
 }
 /* End Of Navbar Specific Styling */
 
 /* Hero Section Video */
 video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -100;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }
 
 .content {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
 }
 
 .hero-section {
-  text-align: center;
-  color: #fff;
-  margin-top: 92px;
-  overflow: hidden;
+    text-align: center;
+    color: #fff;
+    margin-top: 92px;
+    overflow: hidden;
 }
 
 .hero-head {
-  margin: 30px auto;
-  font-family: "Guttenbay";
-  font-size: 140px;
-  text-shadow: 2px 2px 10px #000;
-  text-transform: uppercase;
-  word-spacing: 30px;
-  transform: rotate(-8deg);
+    margin: 30px auto;
+    font-family: 'Guttenbay';
+    font-size: 140px;
+    text-shadow: 2px 2px 10px #000;
+    text-transform: uppercase;
+    word-spacing: 30px;
+    transform: rotate(-8deg);
 }
 
 .hero-subhead {
-  display: inline-block;
-  margin: 0 auto;
-  padding-left: 10px;
-  font-weight: 600;
-  font-size: 18px;
-  text-shadow: 2px 2px 4px #000;
-  letter-spacing: 12px;
-  text-transform: uppercase;
+    display: inline-block;
+    margin: 15px auto 0;
+    padding-left: 10px;
+    font-family: 'Sofa-Sans-Regular-DP';
+    font-weight: 600;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 12px;
+    text-transform: uppercase;
 }
 
 .scroll-text {
-  position: absolute;
-  bottom: 70px;
-  left: 25px;
-  color: #e0dcdc;
-  font-size: 11.25px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transform: rotate(90deg);
+    position: absolute;
+    bottom: 70px;
+    left: 25px;
+    color: #e0dcdc;
+    font-size: 11.25px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transform: rotate(90deg);
 }
 /* End Of Hero Section Video */
