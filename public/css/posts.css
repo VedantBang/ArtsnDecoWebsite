@@ -6,10 +6,13 @@
 
 /* End Of Importing Font Families */
 
+/* Global styles */
 body {
   overflow-x: hidden;
 }
+/* End Of Global Styles */
 
+/* Background Image */
 .bg-overlay {
   background: rgba(0, 0, 0, 0.8);
   z-index: -1;
@@ -26,9 +29,53 @@ body {
   width: 100vw;
   height: 100vh;
 }
+/* End Of Background Image */
+
+/* Carousel */
+/* Implementing https://codepen.io/MhSami/pen/zNBMbj code */
+.show-neighbors {
+  overflow: hidden;
+}
+
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background: rgba(0, 0, 0, 0.2);
+  width: 20%;
+  z-index: 11;
+}
+
+.carousel-inner {
+  width: (100% - 2 * 25%) * 3;
+  left: 3 * 25% - 100%;
+}
+
+.carousel-item-next:not(.carousel-item-left),
+.carousel-item-right.active {
+  -webkit-transform: translate3d(33%, 0, 0);
+  transform: translate3d(33%, 0, 0);
+}
+
+.carousel-item-prev:not(.carousel-item-right),
+.carousel-item-left.active {
+  -webkit-transform: translate3d(-33%, 0, 0);
+  transform: translate3d(-33%, 0, 0);
+}
+
+.item__third {
+  float: left;
+  position: relative;
+  width: 33.3333333333;
+}
+/* End Of Implementing https://codepen.io/MhSami/pen/zNBMbj code */
 
 .img-fluid {
-  width: 800px;
+  object-fit: cover;
+  width: 100%;
   height: 490px;
 }
 
@@ -41,3 +88,4 @@ body {
   margin: 0.3rem;
   padding: 0.1rem 0.4rem;
 }
+/* End Of Carousel */
