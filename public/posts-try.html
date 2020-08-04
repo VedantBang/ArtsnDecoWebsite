@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/img/logo.png" />
+
+    <title>AnD Website</title>
+  </head>
+
+  <body
+    style="
+      padding: 0px;
+      margin: 0px;
+      background-color: #fff;
+      font-family: arial, helvetica, sans-serif, verdana, 'Open Sans';
+    "
+  >
+    <!-- #region Jssor Slider Begin -->
+    <!-- Generator: Jssor Slider Composer -->
+    <!-- Source: https://www.jssor.com/demos/nearby-image-partial-visible-slider.slider/=edit -->
+    <script src="js/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
+    <script src="js/util/url.js"></script>
+    <script src="js/displayFestByYear-try.js"></script>
+    <script type="text/javascript">
+      window.jssor_1_slider_init = function () {
+        var jssor_1_options = {
+          $AutoPlay: 1,
+          $SlideWidth: 720,
+          $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$,
+          },
+          $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$,
+            $SpacingX: 16,
+            $SpacingY: 16,
+          },
+        };
+
+        var jssor_1_slider = new $JssorSlider$('jssor_1', jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 980;
+
+        function ScaleSlider() {
+          var containerElement = jssor_1_slider.$Elmt.parentNode;
+          var containerWidth = containerElement.clientWidth;
+
+          if (containerWidth) {
+            var expectedWidth = Math.min(
+              MAX_WIDTH || containerWidth,
+              containerWidth
+            );
+
+            jssor_1_slider.$ScaleWidth(expectedWidth);
+          } else {
+            window.setTimeout(ScaleSlider, 30);
+          }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, 'load', ScaleSlider);
+        $Jssor$.$AddEvent(window, 'resize', ScaleSlider);
+        $Jssor$.$AddEvent(window, 'orientationchange', ScaleSlider);
+        /*#endregion responsive code end*/
+      };
+    </script>
+    <style>
+      /*jssor slider loading skin spin css*/
+      .jssorl-009-spin img {
+        animation-name: jssorl-009-spin;
+        animation-duration: 1.6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      @keyframes jssorl-009-spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /*jssor slider bullet skin 051 css*/
+      .jssorb051 .i {
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .jssorb051 .i .b {
+        fill: #fff;
+        fill-opacity: 0.3;
+      }
+
+      .jssorb051 .i:hover .b {
+        fill-opacity: 0.7;
+      }
+
+      .jssorb051 .iav .b {
+        fill-opacity: 1;
+      }
+
+      .jssorb051 .i.idn {
+        opacity: 0.3;
+      }
+
+      /*jssor slider arrow skin 051 css*/
+      .jssora051 {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .jssora051 .a {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 360;
+        stroke-miterlimit: 10;
+      }
+
+      .jssora051:hover {
+        opacity: 0.8;
+      }
+
+      .jssora051.jssora051dn {
+        opacity: 0.5;
+      }
+
+      .jssora051.jssora051ds {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    </style>
+    <div
+      id="jssor_1"
+      style="
+        position: relative;
+        margin: 0 auto;
+        top: 0px;
+        left: 0px;
+        width: 980px;
+        height: 380px;
+        overflow: hidden;
+        visibility: hidden;
+      "
+    >
+      <div
+        class="carousel-inner"
+        data-u="slides"
+        style="
+          cursor: default;
+          position: relative;
+          top: 0px;
+          left: 0px;
+          width: 980px;
+          height: 380px;
+          overflow: hidden;
+        "
+      ></div>
+      <a
+        data-scale="0"
+        href="https://www.jssor.com"
+        style="display: none; position: absolute;"
+        >animation</a
+      >
+      <!-- Bullet Navigator -->
+      <div
+        data-u="navigator"
+        class="jssorb051"
+        style="position: absolute; bottom: 16px; right: 16px;"
+        data-autocenter="1"
+        data-scale="0.5"
+        data-scale-bottom="0.75"
+      >
+        <div data-u="prototype" class="i" style="width: 12px; height: 12px;">
+          <svg
+            viewbox="0 0 16000 16000"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+          >
+            <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+          </svg>
+        </div>
+      </div>
+      <!-- Arrow Navigator -->
+      <div
+        data-u="arrowleft"
+        class="jssora051 carousel-control-prev"
+        style="width: 65px; height: 65px; top: 0px; left: 35px;"
+        data-autocenter="2"
+        data-scale="0.75"
+        data-scale-left="0.75"
+      >
+        <svg
+          viewbox="0 0 16000 16000"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          "
+        >
+          <polyline
+            class="a"
+            points="11040,1920 4960,8000 11040,14080 "
+          ></polyline>
+        </svg>
+      </div>
+      <div
+        data-u="arrowright"
+        class="jssora051 carousel-control-next"
+        style="width: 65px; height: 65px; top: 0px; right: 35px;"
+        data-autocenter="2"
+        data-scale="0.75"
+        data-scale-right="0.75"
+      >
+        <svg
+          viewbox="0 0 16000 16000"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          "
+        >
+          <polyline
+            class="a"
+            points="4960,1920 11040,8000 4960,14080 "
+          ></polyline>
+        </svg>
+      </div>
+    </div>
+    <script type="text/javascript">
+      jssor_1_slider_init();
+    </script>
+    <!-- #endregion Jssor Slider End -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
