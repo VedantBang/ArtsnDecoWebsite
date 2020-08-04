@@ -1,91 +1,86 @@
 /* Importing Common Fonts For All Pages */
 @font-face {
-    font-family: 'Guttenbay';
-    src: url('../assets/fonts/Guttenbay.ttf');
+  font-family: 'Guttenbay';
+  src: url('../assets/fonts/Guttenbay.ttf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Regular';
-    src: url('../assets/fonts/SofaSansHand-Regular.otf');
+  font-family: 'Sofa-Sans-Regular';
+  src: url('../assets/fonts/SofaSansHand-Regular.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Regular-DP';
-    src: url('../assets/fonts/SofaSansHand-RegularDP.otf');
+  font-family: 'Sofa-Sans-Regular-DP';
+  src: url('../assets/fonts/SofaSansHand-RegularDP.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Bold';
-    src: url('../assets/fonts/SofaSansHand-Bold.otf');
+  font-family: 'Sofa-Sans-Bold';
+  src: url('../assets/fonts/SofaSansHand-Bold.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-3D-Hatched';
-    src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
+  font-family: 'Sofa-Sans-3D-Hatched';
+  src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
 }
 
 /* End Of Importing Common Fonts For All Pages */
 
 /* Global Styles */
 * {
-    font-family: 'Sofa-Sans-Regular-DP';
-    margin: 0;
-    padding: 0;
+  font-family: 'Sofa-Sans-Regular-DP';
+  margin: 0;
+  padding: 0;
 }
 
 /* Safari Compatibility Issue */
 .safari-issue {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 /* End Of Safari Compatibility Issue */
 
 /* Common Navbar Styles */
 #logo-img {
-    width: 80px;
+  width: 80px;
 }
 
 .navbar {
-    padding: 0 60px;
-}
-
-#navbarNav {
-    display: flex;
-    align-items: center;
+  padding: 0 60px;
 }
 
 .nav-item {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 20px;
 }
 /* End Of Common Navbar Styles */
 
 /* Social Media Handle */
 .social-media {
-    padding-bottom: 2px;
-    margin-right: 40px;
+  padding-bottom: 2px;
+  margin-right: 40px;
 }
 
 .fa-facebook-f,
 .fa-instagram,
 .fa-blogger-b {
-    color: #fff;
-    margin: 0 12px;
+  color: #fff;
+  margin: 0 12px;
 }
 
 .fa-facebook-f {
-    font-size: 120%;
+  font-size: 120%;
 }
 
 .fa-instagram {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .fa-instagram,
 .fa-blogger-b {
-    font-size: 175%;
-    padding-top: 7px;
+  font-size: 175%;
+  padding-top: 7px;
 }
 /* End Of Social Media Handle */
 

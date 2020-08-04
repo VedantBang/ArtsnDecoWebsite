@@ -5,40 +5,10 @@ const upload = multer();
 const cut = require('../utilities/cut');
 const router = express.Router();
 
-router.post('/fest', upload.none(), async (req,res,next) => {
-	try{
-		let { fest, year, name } = req.body;
-
-		if(!year || !fest) {
-      		let err = new Error("Invalid input");
-      		err.status = 400;
-      		next(err);
-      		return;
-    	}
-
-		year = parseInt(year);
-
-		if(fest !== 'other') name = '';
-		else {
-			if(!name){
-				let err = new Error('name must be specified when fest is set to other');
-    			err.status = 400;
-    			next(err);
-    			return;
-			}
-		}
-
-		let data = await Album.findOne({ fest, year, name });
-		data = cut(data, ['fest','year','name','theme','images']);
-
-		res.status(200).json({ ok:1, data });
-
-	} catch(err){ next(err); }
-});
-
-
 router.get('/:fest', async (req,res,next) => {
 	try{
+		let searchOptions = {};
+
 		let { fest } = req.params;
 		const list = ['waves','quark','spree','other'];
 
@@ -46,56 +16,29 @@ router.get('/:fest', async (req,res,next) => {
 			next();
 			return;
 		}
+		searchOptions.fest = fest
 
-		let data = await Album.find({ fest });
+		let { year } = req.query;
+		if(year){
+			searchOptions.year = parseInt(year);
+		}
+
+		let data = await Album.find(searchOptions);
 		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
-		data = data.map(entry => {
-			return {
-				fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
-				coverImage: entry.images[0]
-			}
-		});
-
-		function yearSort(a,b){return b.year - a.year;}
-		data.sort(yearSort);
-
+		if(!year){
+			data = data.map(entry => {
+				return {
+					fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
+					coverImage: entry.images[0]
+				}
+			});	
+			function yearSort(a,b){return b.year - a.year;}
+			data.sort(yearSort);
+		}
+			
 		res.status(200).json({ ok:1, data });
 		
 	} catch(err){ next(err); }
 });
 
-
-router.get('/:year', async (req,res,next) => {
-	try{
-		let { year } = req.params;
-
-		if(!year){
-			let err = new Error('Atleast one of festType or year must be specified in url');
-			err.status = 400;
-			next(err);
-			return;
-		}
-
-		try{
-			year = parseInt(year);
-		} catch(err){
-			err = new Error('Year must be a valid integer');
-			err.status = 400;
-			next(err);
-			return;
-		}
-
-		let data = await Album.find({ year });
-
-		data = data.map(entry => cut(entry, ['fest','year','name','theme','images']));
-		// data = data.map(entry => {
-		// 	return {
-		// 		fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
-		// 		coverImage: entry.images[0]
-		// 	}
-		// });
-
-		res.status(200).json({ ok:1, data });
-	} catch(err){ next(err); }
-});
 module.exports = router;
