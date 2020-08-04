@@ -1,1 +1,1 @@
-const url = "https://artsndeco.herokuapp.com";
+const url = "http://localhost:3000";

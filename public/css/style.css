@@ -23,6 +23,8 @@
 /* Global Styles */
 * {
   font-family: "SF-Pro-Display-Regular";
+  margin: 0;
+  padding: 0;
 }
 
 /* Safari Compatibility Issue */

@@ -9,7 +9,7 @@ const coverWorks = (fest) => {
       console.log(response);
 
       for (let i = 0; i < response.data.length; i++) {
-        const cover = `<div class="col-md-4 card w-40">
+        const cover = `<div class="col-md-4 card w-40 mb-4">
             <a 
               href="posts.html"
               type="button" 

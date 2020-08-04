@@ -13,3 +13,8 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.img-fluid {
+  width: 800px;
+  height: 490px;
+}
