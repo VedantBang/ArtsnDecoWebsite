@@ -22,7 +22,7 @@
             <div class="item__third">
               <img 
                 src=${images[i].link} 
-                class="img-fluid" 
+                class="img-fluid d-block w-100" 
                 alt=${images[i].title} 
               />
               <div class="carousel-caption">
@@ -39,25 +39,25 @@
       $('.carousel-item').first().addClass('active');
       $('.carousel-indicators > li').first().addClass('active');
       $('#fest-carousel').carousel();
+
+      // Implementing https://codepen.io/MhSami/pen/zNBMbj code
+      $('.carousel-item', '.show-neighbors')
+        .each(function () {
+          var next = $(this).next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+        })
+        .each(function () {
+          var prev = $(this).prev();
+          if (!prev.length) {
+            prev = $(this).siblings(':last');
+          }
+          prev.children(':nth-last-child(2)').clone().prependTo($(this));
+        });
     });
   } catch (err) {
     console.log(err);
   }
 })();
-
-// Implementing https://codepen.io/MhSami/pen/zNBMbj code
-$('.carousel-item', '.show-neighbors')
-  .each(function () {
-    let next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-  })
-  .each(function () {
-    let prev = $(this).prev();
-    if (!prev.length) {
-      prev = $(this).sibilings(':last');
-    }
-    prev.children(':nth-last-child(2)').clone().prependTo($(this));
-  });

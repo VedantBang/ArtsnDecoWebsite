@@ -37,45 +37,46 @@ body {
   overflow: hidden;
 }
 
-.carousel-indicators {
+.show-neighbors .carousel-indicators {
   margin-right: 25%;
   margin-left: 25%;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  background: rgba(0, 0, 0, 0.2);
-  width: 20%;
+.show-neighbors .carousel-control-prev,
+.show-neighbors .carousel-control-next {
+  background: rgba(0, 0, 0, 0.6);
+  width: 25%;
   z-index: 11;
+  /* .carousel-caption has z-index 10 */
 }
 
-.carousel-inner {
-  width: (100% - 2 * 25%) * 3;
-  left: 3 * 25% - 100%;
+.show-neighbors .carousel-inner {
+  width: 150%;
+  left: -25%;
 }
 
-.carousel-item-next:not(.carousel-item-left),
-.carousel-item-right.active {
+.show-neighbors .carousel-item-next:not(.carousel-item-left),
+.show-neighbors .carousel-item-right.active {
   -webkit-transform: translate3d(33%, 0, 0);
   transform: translate3d(33%, 0, 0);
 }
 
-.carousel-item-prev:not(.carousel-item-right),
-.carousel-item-left.active {
+.show-neighbors .carousel-item-prev:not(.carousel-item-right),
+.show-neighbors .carousel-item-left.active {
   -webkit-transform: translate3d(-33%, 0, 0);
   transform: translate3d(-33%, 0, 0);
 }
 
-.item__third {
+.show-neighbors .item__third {
   float: left;
   position: relative;
-  width: 33.3333333333;
+  /* captions can now be added */
+  width: 33.33333333%;
 }
 /* End Of Implementing https://codepen.io/MhSami/pen/zNBMbj code */
 
 .img-fluid {
-  object-fit: cover;
-  width: 100%;
+  width: 800px;
   height: 490px;
 }
 

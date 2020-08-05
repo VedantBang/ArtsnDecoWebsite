@@ -9,7 +9,7 @@ const coverWorks = (fest) => {
       for (let i = 0; i < response.data.length; i++) {
         const cover = `<div class="col-12 col-sm-6 col-md-4 card w-40 mb-4">
             <a 
-              href="posts-try.html"
+              href="posts.html"
               type="button" 
               onclick="festByYear('${response.data[i].year}', '${fest}')"
               class="safari-issue"
