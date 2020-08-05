@@ -1,22 +1,3 @@
-/* Navbar Specific Styling */
-.navbar-nav .nav-item .nav-link {
-    font-size: 16px;
-    letter-spacing: 1.2px;
-    font-family: 'Sofa-Sans-Regular-DP';
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
-    text-decoration: line-through;
-}
-
-.active {
-    color: #fefefe !important;
-}
-/* End Of Navbar Specific Styling */
-
 /* Hero Section Video */
 video {
     object-fit: cover;
@@ -59,25 +40,20 @@ video {
     font-family: 'Sofa-Sans-Regular-DP';
     font-weight: 600;
     font-size: 22px;
-    text-shadow: 2px 2px 4px #000;
+    /* text-shadow: 2px 2px 4px #000; */
     letter-spacing: 12px;
     text-transform: uppercase;
 }
 
 .scroll-text {
     position: absolute;
-    bottom: 70px;
-    left: 25px;
+    bottom: 2%;
+    left: 48%;
     color: #e0dcdc;
-    font-size: 11.25px;
+    font-size: 12px;
     font-weight: 400;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
 }
 /* End Of Hero Section Video */
-
-.socials-sidebar {
-    position: sticky;
-    left: 0;
-}
