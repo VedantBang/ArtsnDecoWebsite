@@ -91,10 +91,20 @@
     color: rgba(232, 232, 232, 0.4);
 }
 
+/* Multiple Carousel */
+/* End Of Multiple Carousel */
+
 .card {
+<<<<<<< HEAD
     border: none;
     border-radius: 0;
     transition: 0.2s all ease-in-out;
+=======
+  border: none;
+  border-radius: 0;
+  transition: 0.2s all ease-in-out;
+  display: inline-block;
+>>>>>>> 57cdade440378a7473e3a6c5743097d430eba837
 }
 
 .card:hover {
@@ -102,11 +112,19 @@
 }
 
 .card-img-top {
+<<<<<<< HEAD
     border: none;
     border-radius: 0;
     height: 232px;
     background: rgba(0, 0, 0, 0.4);
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
+=======
+  border: none;
+  border-radius: 0;
+  height: 232px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.4);
+>>>>>>> 57cdade440378a7473e3a6c5743097d430eba837
 }
 
 .card-text {
