@@ -1,110 +1,132 @@
 /* Importing Font Families */
 @font-face {
-  font-family: 'Sofa Sans';
-  src: url('../assets/fonts/SofaSansHand-Bk.otf');
+    font-family: 'Sofa-Sans-Bold';
+    src: url('../assets/fonts/SofaSansHand-Bold.otf');
 }
 
 @font-face {
-  font-family: 'LookingFlowers-ScriptPro';
-  src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
+    font-family: 'LookingFlowers-ScriptPro';
+    src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
 }
 
 @font-face {
-  font-family: 'Blackout Midnight';
-  src: url('../assets/fonts/Blackout\ Midnight.ttf');
+    font-family: 'Blackout Midnight';
+    src: url('../assets/fonts/Blackout\ Midnight.ttf');
+}
+
+@font-face {
+    font-family: 'Sofa-Sans-3D-Hatched';
+    src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
 }
 /* End Of Importing Font Families */
 
 /* Navbar Specific Styling */
 .navbar {
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.161);
-  color: #2a375e;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.161);
 }
 
-.nav-link {
-  font-family: 'Sofa Sans';
+.navbar-nav .nav-item .nav-link {
+    color: #2a375e;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #13b2d6;
+    text-decoration: underline;
+}
+
+.active {
+    color: #13b2d6 !important;
+    text-decoration: underline;
 }
 /* End Of Navbar Specific Styling */
 
+/* Socials Sidebar */
+
+.socials-f,
+.socials-b,
+.socials-i {
+    color: #2a375e;
+}
+
 /* Our Works */
 .our-works {
-  font-family: 'Sofa Sans';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 56px;
-  line-height: 72px;
-  color: #2a375e;
-  text-shadow: 2px 2px #a3a3a3;
+    margin-bottom: 0;
+    font-family: 'Sofa-Sans-3D-Hatched';
+    font-style: normal;
+    font-size: 56px;
+    line-height: 72px;
+    color: #2a375e;
 }
 
 .secondary-text {
-  font-family: 'LookingFlowers-ScriptPro';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  line-height: 46px;
-  color: #13b2d6;
+    margin-bottom: 0;
+    font-family: 'LookingFlowers-ScriptPro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 46px;
+    color: #13b2d6;
 }
 /* End Of Our Works */
 
 /* Fests */
 .fest-name {
-  font-family: 'Sofa Sans';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38px;
-  line-height: 49px;
-  color: #2a375e;
+    font-family: 'Sofa-Sans-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 49px;
+    color: #2a375e;
 }
 
 .fest-watermark {
-  position: absolute;
-  z-index: -1;
-  font-family: 'Blackout Midnight';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 280px;
-  line-height: 206px;
-  text-align: center;
-  color: rgba(232, 232, 232, 0.4);
+    position: absolute;
+    z-index: -1;
+    font-family: 'Blackout Midnight';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 280px;
+    line-height: 206px;
+    text-align: center;
+    color: rgba(232, 232, 232, 0.4);
 }
 
 .card {
-  border: none;
-  border-radius: 0;
-  transition: 0.2s all ease-in-out;
+    border: none;
+    border-radius: 0;
+    transition: 0.2s all ease-in-out;
 }
 
 .card:hover {
-  transform: translate(0px, -3px);
+    transform: translate(0px, -3px);
 }
 
 .card-img-top {
-  border: none;
-  border-radius: 0;
-  height: 232px;
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0;
+    height: 232px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card-text {
-  font-family: 'Sofa Sans';
-  font-style: normal;
-  font-size: 18px;
-  color: #2a375e;
-  margin: 0.3rem;
-  position: absolute;
-  left: 24px;
-  padding: 0 0.3rem;
-  background: #ffffff;
-  border-radius: 2px;
+    font-family: 'Sofa-Sans-Bold';
+    font-style: normal;
+    font-size: 18px;
+    color: #2a375e;
+    margin: 0.3rem;
+    position: absolute;
+    left: 24px;
+    padding: 0 0.3rem;
+    background: #ffffff;
+    border-radius: 2px;
 }
 
 .year {
-  bottom: 48px;
+    bottom: 48px;
 }
 
 .theme {
-  bottom: 16px;
+    bottom: 16px;
 }
 /* End Of Fests */
