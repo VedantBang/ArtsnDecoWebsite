@@ -1,7 +1,16 @@
-coverWorks('waves')
+coverWorks('waves');
 coverWorks('quark');
 coverWorks('spree');
 coverWorks('other');
+
+$('.post-wrapper').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  nextArrow: $('.next'),
+  prevArrow: $('.prev'),
+});
 
 // $('#fest-carousel').on('slide.bs.carousel', function (e) {
 //   coverWorks('waves');

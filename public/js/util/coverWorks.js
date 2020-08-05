@@ -7,7 +7,7 @@ const coverWorks = (fest) => {
       ).json();
 
       for (let i = 0; i < response.data.length; i++) {
-        $(`<div class="col-12 col-sm-6 col-md-4 card w-40 mb-4">
+        const cover = `<div class="col-12 col-sm-6 col-md-4 card w-40 mb-4">
             <a 
               href="posts.html"
               type="button" 
@@ -22,10 +22,9 @@ const coverWorks = (fest) => {
               <div class="card-text year">${response.data[i].year}</div>
               <div class="card-text theme text-uppercase">${response.data[i].theme}</div>
             </a>
-          </div>`).appendTo(`#${fest}`);
-        // $(`#${fest}`).append(cover);
+          </div>`;
+        $(`#${fest}`).append(cover);
       }
-      $('.carousel-item').first().addClass('active');
     } catch (err) {
       console.log(err);
     }
