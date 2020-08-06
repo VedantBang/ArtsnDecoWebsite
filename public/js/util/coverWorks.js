@@ -32,6 +32,7 @@ const coverWorks = (fest) => {
           prev: `.${fest}-prev`,
           next: `.${fest}-next`,
         },
+        rewind: true,
       });
 
       // $(`.${fest}-slider`).slick({

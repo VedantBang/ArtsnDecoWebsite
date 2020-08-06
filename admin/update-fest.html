@@ -6,6 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <!-- Title -->
+    <title>AnD Admin Panel</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/img/logo.png" />
 
@@ -22,7 +25,8 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <title>AnD Admin Panel</title>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/dashboard.css" />
   </head>
 
@@ -69,33 +73,20 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    href="update-images.html"
+                    href="edit-fest.html"
                     class="nav-link text-white p-3 mb-2 sidebar-link"
                   >
                     <i class="far fa-images text-light fa-lg mr-3"></i>
-                    Update Images
+                    Edit Fest
                   </a>
                 </li>
                 <li class="nav-item">
                   <a
-                    href="delete-images.html"
+                    href="update-fest.html"
                     class="nav-link text-white p-3 mb-2 sidebar-link current"
                   >
-                    <i
-                      class="fas fa-exclamation-triangle text-light fa-lg mr-3"
-                    ></i>
-                    Delete Images
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="delete-fest.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                  >
-                    <i
-                      class="fas fa-skull-crossbones text-light fa-lg mr-3"
-                    ></i>
-                    Delete Fest
+                    <i class="far fa-images text-light fa-lg mr-3"></i>
+                    Update Fest
                   </a>
                 </li>
                 <li class="nav-item">
@@ -126,9 +117,7 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-danger text-uppercase mb-0">
-                    Delete Artwork
-                  </h4>
+                  <h4 class="text-light text-uppercase mb-0">Update Fest</h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -137,7 +126,7 @@
                         <button
                           type="button"
                           id="admin-dropdown"
-                          class="nav-link btn btn-dark text-white dropdown-toggle"
+                          class="nav-link btn btn-dark text-white"
                           data-toggle="dropdown"
                         >
                           <i class="fas fa-user text-light fa-lg"></i>
@@ -192,7 +181,7 @@
           <div class="modal-body">
             Press Logout to leave
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-success" data-dismiss="modal">
               Stay here
             </button>
@@ -279,208 +268,92 @@
     </div>
     <!-- End Of Settings Modal -->
 
-    <!-- View Fest Images-->
+    <!-- Main Content -->
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
           <div class="row pt-4 mt-5 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <div class="card card-common">
-                <div class="card-header">
-                  <h1 class="text-center">Show Fest Artwork</h1>
-                </div>
-                <div class="card-body p-5">
-                  <form id="fest-form" enctype="multipart/form-data">
-                    <div class="form-group row">
-                      <label for="fest" class="col-sm-3 col-form-label">
-                        Select Fest
-                      </label>
-                      <select class="col-sm-9 form-control" id="fest" required>
-                        <option disabled value="default">Select Fest</option>
-                        <option value="waves">Waves</option>
-                        <option value="quark">Quark</option>
-                        <option value="spree">Spree</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="name"
-                        class="col-sm-3 col-form-label label-name-of-event"
-                      >
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        class="col-sm-9 form-control input-name-of-event"
-                        placeholder="Enter the name of event"
-                        required
-                      />
-                    </div>
-                    <div class="form-group row">
-                      <label for="year" class="col-sm-3 col-form-label">
-                        Year
-                      </label>
-                      <input
-                        type="number"
-                        id="year"
-                        min="2005"
-                        max="2099"
-                        step="1"
-                        value="2020"
-                        class="col-sm-9 form-control"
-                        required
-                      />
-                    </div>
-                    <div class="form-group row">
-                      <p class="col-12 text-center">
-                        <small id="error-get-existing-photos"></small>
-                      </p>
-                    </div>
-                    <div class="form-group row justify-content-center">
-                      <button
-                        type="button"
-                        name="get-existing-photos"
-                        id="get-existing-photos"
-                        class="btn btn-info mt-4"
-                      >
-                        <i class="fas fa-images fa-lg text-white mr-2"></i>
-                        View Existing Photos
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of View Fest Images -->
-
-    <!-- Display Existing Photos -->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-3 mt-3 mb-2 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <p class="text-center text-muted caution">
-                (CAUTION! Deleting any image removes it from the database)
-              </p>
-              <h2 class="text-center display-existing-images">
-                All the existing images in the Database
-              </h2>
-              <p class="text-center text-muted no-images">
-                This fest does not contain any images... You can add new images
-                for this fest in the "Update Images" link, or choose a new fest
-                to add from the "New Fest" link
-              </p>
-              <div class="container">
-                <div class="row display-images mt-5"></div>
-              </div>
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div
-                      class="alert alert-success alert-dismissible fade show delete-successful"
-                      role="alert"
-                    >
-                      Images Deleted Successfully!
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <p class="col-12 text-center">
-                      <small id="error-delete-images"
-                        >Could not delete images</small
-                      >
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Display Existing Photos -->
-
-    <!-- Delete Photos -->
-    <div class="container-fluid delete-option">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-1 mt-1 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <div class="row justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-danger m-2"
-                  data-toggle="modal"
-                  data-target="#delete-images-modal"
-                >
-                  Delete Selected Images
-                </button>
+            <div class="col-sm-10 p-2 mb-5">
+              <div class="row align-items-center mb-3">
+                <h1 class="pr-5">Update This Fest</h1>
                 <a
-                  type="button"
-                  href="delete-images.html"
-                  class="btn btn-success m-2"
+                  class="btn btn-sm text-secondary"
+                  id="go-back"
+                  href="edit-fest.html"
                 >
-                  Cancel
+                  <i class="fas fa-arrow-left"></i> GO BACK
                 </a>
               </div>
+              <form action="#" id="update-fest-form">
+                <div class="form-group row">
+                  <label for="fest" class="col-sm-3 col-form-label">
+                    Select Fest
+                  </label>
+                  <select class="col-sm-9 form-control" id="fest" required>
+                    <option selected disabled>Select Fest</option>
+                    <option value="waves">Waves</option>
+                    <option value="quark">Quark</option>
+                    <option value="spree">Spree</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group row">
+                  <label
+                    for="name"
+                    class="col-sm-3 col-form-label label-name-of-event"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="col-sm-9 form-control input-name-of-event"
+                    placeholder="Enter the name of event"
+                    required
+                  />
+                </div>
+                <div class="form-group row">
+                  <label for="year" class="col-sm-3 col-form-label">
+                    Year
+                  </label>
+                  <input
+                    type="number"
+                    id="year"
+                    min="2005"
+                    max="2099"
+                    step="1"
+                    value="2020"
+                    class="col-sm-9 form-control"
+                    required
+                  />
+                </div>
+                <div class="form-group row theme">
+                  <label
+                    for="theme"
+                    class="col-sm-3 col-form-label mt-3 label-theme-of-event"
+                  >
+                    Theme
+                  </label>
+                  <input
+                    type="text"
+                    id="theme"
+                    class="col-sm-9 form-control mt-sm-3 input-theme-of-event"
+                    placeholder="Enter the theme of the fest"
+                    required
+                  />
+                </div>
+                <div class="form-group row">
+                  <label for="images" class="col-sm-3 col-form-label">
+                    Images Added
+                  </label>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Of Delete Photos -->
-
-    <!-- Confirm Delete Photos Modal -->
-    <div class="modal fade" id="delete-images-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Delete Selected Images?</h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center">
-              Are you sure you want to delete these images?
-              <br />
-              <small class="text-muted">
-                (Warning! This action is irreversible. Please make sure you have
-                selected the correct photos to delete)
-              </small>
-            </p>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <a
-              type="button"
-              id="delete-images"
-              class="btn btn-danger"
-              data-dismiss="modal"
-              href="delete-images.html"
-            >
-              Delete Images
-            </a>
-            <button type="button" class="btn btn-success" data-dismiss="modal">
-              Go Back
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Confirm Delete Photos Modal -->
+    <!-- End Of Main Content -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -489,8 +362,10 @@
           <div class="row">
             <div class="col-lg-6 text-center">
               <ul class="list-inline">
-                <li class="list-inline-item">
-                  <a href="#" class="text-dark">AnD ADMIN PANEL</a>
+                <li class="list-inline-item mr-2">
+                  <a href="index.html" target="_blank" class="text-dark">
+                    AnD ADMIN PANEL
+                  </a>
                 </li>
               </ul>
             </div>
@@ -528,6 +403,5 @@
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/toggle.js"></script>
-    <script src="./js/delete-images.js"></script>
   </body>
 </html>

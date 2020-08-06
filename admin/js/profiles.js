@@ -262,8 +262,6 @@ document.getElementById('show-existing-profiles-to-delete').addEventListener(
             document.querySelector('.no-delete-profiles').style.display =
               'block';
           }
-
-          window.location.href = 'profiles.html';
         } else {
           document.querySelector('#error-delete-profiles').style.display =
             'block';

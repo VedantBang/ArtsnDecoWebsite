@@ -6,6 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <!-- Title -->
+    <title>AnD Admin Panel</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/img/logo.png" />
 
@@ -22,7 +25,8 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <title>AnD Admin Panel</title>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/dashboard.css" />
   </head>
 
@@ -69,33 +73,11 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    href="update-images.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                  >
-                    <i class="far fa-images text-light fa-lg mr-3"></i>
-                    Update Images
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="delete-images.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                  >
-                    <i
-                      class="fas fa-exclamation-triangle text-light fa-lg mr-3"
-                    ></i>
-                    Delete Images
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="delete-fest.html"
+                    href="edit-fest.html"
                     class="nav-link text-white p-3 mb-2 sidebar-link current"
                   >
-                    <i
-                      class="fas fa-skull-crossbones text-light fa-lg mr-3"
-                    ></i>
-                    Delete Fest
+                    <i class="far fa-images text-light fa-lg mr-3"></i>
+                    Edit Fest
                   </a>
                 </li>
                 <li class="nav-item">
@@ -126,9 +108,7 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-danger text-uppercase mb-0">
-                    Delete All Fest Artwork
-                  </h4>
+                  <h4 class="text-light text-uppercase mb-0">Edit Fests</h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -137,7 +117,7 @@
                         <button
                           type="button"
                           id="admin-dropdown"
-                          class="nav-link btn btn-dark text-white dropdown-toggle"
+                          class="nav-link btn btn-dark text-white"
                           data-toggle="dropdown"
                         >
                           <i class="fas fa-user text-light fa-lg"></i>
@@ -192,7 +172,7 @@
           <div class="modal-body">
             Press Logout to leave
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-success" data-dismiss="modal">
               Stay here
             </button>
@@ -279,162 +259,66 @@
     </div>
     <!-- End Of Settings Modal -->
 
-    <!-- Warning Section -->
-    <div class="container-fluid">
-      <div class="row-justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-4 mt-5 justify-content-center">
-            <div class="col-sm-10 p-2">
-              <h5 class="text-center text-muted mb-3">
-                (<span class="text-warning"><b>CAUTION!</b></span> This action
-                will delete the entire fest details from the Database)
-              </h5>
-              <p class="text-center text-secondary">
-                (This action is irreversible and will result in erasing all the
-                fest details. In case you accidently do delete the complete
-                fest, you will have to add all the details back in the "New
-                Fest" link)
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Warning Section -->
-
-    <!-- Delete Fest Card -->
+    <!-- Main Content -->
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-4 mt-3 mb-5 justify-content-center">
+          <div class="row pt-4 mt-5 mb-5 justify-content-center">
             <div class="col-sm-10 p-2 mb-5">
-              <div class="card card-common">
-                <div class="card-header">
-                  <h1 class="text-center">Delete Complete Fest</h1>
-                </div>
-                <div class="card-body p-5">
-                  <form id="delete-fest-form" enctype="multipart/form-data">
-                    <div class="form-group row">
-                      <label for="fest" class="col-sm-3 col-form-label">
-                        Select Fest
-                      </label>
-                      <select class="col-sm-9 form-control" id="fest" required>
-                        <option disabled value="default">Select Fest</option>
-                        <option value="waves">Waves</option>
-                        <option value="quark">Quark</option>
-                        <option value="spree">Spree</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="name"
-                        class="col-sm-3 col-form-label label-name-of-event"
-                      >
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        class="col-sm-9 form-control input-name-of-event"
-                        placeholder="Enter the name of event"
-                        required
-                      />
-                    </div>
-                    <div class="form-group row">
-                      <label for="year" class="col-sm-3 col-form-label">
-                        Year
-                      </label>
-                      <input
-                        type="number"
-                        id="year"
-                        min="2005"
-                        max="2099"
-                        step="1"
-                        value="2020"
-                        class="col-sm-9 form-control"
-                        required
-                      />
-                    </div>
-                    <div
-                      class="alert alert-warning alert-dismissible fade show delete-fest-successful"
-                      role="alert"
-                    >
-                      All the Images Deleted from the Database!
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="form-group row">
-                      <p class="col-12 text-center">
-                        <small id="error-delete-fest"></small>
-                      </p>
-                    </div>
-                    <div class="form-group row justify-content-center">
-                      <button
-                        type="button"
-                        class="btn btn-danger mt-4"
-                        name="delete"
-                        id="delete"
-                        data-toggle="modal"
-                        data-target="#delete-fest-modal"
-                      >
-                        Delete Fest
-                      </button>
-                    </div>
-                  </form>
-                </div>
+              <div class="row align-items-center">
+                <h1 class="pr-5">Fests in the Database</h1>
+                <button
+                  class="btn btn-sm text-danger"
+                  id="delete-courses"
+                  data-toggle="modal"
+                  data-target=".delete-courses-modal"
+                >
+                  <i class="fas fa-trash-alt"></i> DELETE
+                </button>
+              </div>
+              <div class="row mt-2">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">#</th>
+                      <th scope="col">Fest</th>
+                      <th scope="col">Year</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="fests">
+                    <tr id="no-fests">
+                      <td colspan="4" class="text-center">
+                        No fests added yet!
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="checkbox" id="1" />
+                      </td>
+                      <td>1</td>
+                      <td>Waves</td>
+                      <td>2018</td>
+                      <td>
+                        <a
+                          type="button"
+                          href="update-fest.html"
+                          class="btn btn-sm btn-success safari-issue"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Of Delete Fest Card -->
-
-    <!-- Delete Fest Modal -->
-    <div class="modal fade" id="delete-fest-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">
-              Delete Fest Artworks?
-            </h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center">
-              Are you sure you want to delete all fest artworks?
-              <br />
-              <small class="text-muted">
-                (Please double check before clearing everything away)
-              </small>
-            </p>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button
-              type="button"
-              class="btn btn-danger"
-              id="delete-fest-details"
-              data-dismiss="modal"
-            >
-              Go Ahead
-            </button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">
-              Nope, I've Changed My mind
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Delete Fest Modal -->
+    <!-- End Of Main Content -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -444,7 +328,9 @@
             <div class="col-lg-6 text-center">
               <ul class="list-inline">
                 <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">AnD ADMIN PANEL</a>
+                  <a href="index.html" target="_blank" class="text-dark">
+                    AnD ADMIN PANEL
+                  </a>
                 </li>
               </ul>
             </div>
@@ -481,7 +367,5 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
-    <script src="./js/util/toggle.js"></script>
-    <script src="./js/delete-fest.js"></script>
   </body>
 </html>

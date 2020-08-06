@@ -6,6 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <!-- Title -->
+    <title>AnD Admin Panel</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/img/logo.png" />
 
@@ -22,7 +25,8 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <title>AnD Admin Panel</title>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/dashboard.css" />
   </head>
 
@@ -69,33 +73,11 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    href="update-images.html"
+                    href="edit-fest.html"
                     class="nav-link text-white p-3 mb-2 sidebar-link"
                   >
                     <i class="far fa-images text-light fa-lg mr-3"></i>
-                    Update Images
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="delete-images.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                  >
-                    <i
-                      class="fas fa-exclamation-triangle text-light fa-lg mr-3"
-                    ></i>
-                    Delete Images
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="delete-fest.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                  >
-                    <i
-                      class="fas fa-skull-crossbones text-light fa-lg mr-3"
-                    ></i>
-                    Delete Fest
+                    Edit Fest
                   </a>
                 </li>
                 <li class="nav-item">
@@ -126,7 +108,7 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-light text-uppercase mb-0">Edit Profiles</h4>
+                  <h4 class="text-light text-uppercase mb-0">Profiles</h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -135,7 +117,7 @@
                         <button
                           type="button"
                           id="admin-dropdown"
-                          class="nav-link btn btn-dark text-white dropdown-toggle"
+                          class="nav-link btn btn-dark text-white"
                           data-toggle="dropdown"
                         >
                           <i class="fas fa-user text-light fa-lg"></i>
@@ -382,27 +364,27 @@
                 <li class="nav-item">
                   <a
                     href="#edit-profiles-tab"
-                    class="nav-link active card-common mr-1"
+                    class="nav-link active mr-1"
                     id="update-profiles-tab"
                     data-toggle="tab"
                     role="tab"
                     aria-controls="edit-profiles"
                     aria-selected="true"
                   >
-                    Edit Existing Profiles
+                    Edit Profiles
                   </a>
                 </li>
                 <li class="nav-item">
                   <a
                     href="#delete-profiles-tab"
-                    class="nav-link card-common ml-1"
+                    class="nav-link ml-1"
                     id="remove-profiles-tab"
                     data-toggle="tab"
                     role="tab"
                     aria-controls="delete-profiles"
                     aria-selected="false"
                   >
-                    Delete Existing Profiles
+                    Delete Profiles
                   </a>
                 </li>
               </ul>
@@ -426,9 +408,9 @@
           <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
               <div class="row mb-5 justify-content-center">
-                <div class="col-sm-10 edit-profiles-tab card-common mb-5">
+                <div class="col-sm-10 edit-profiles-tab mb-5">
                   <h2 class="text-center mb-4 pt-4">
-                    Edit Existing Profiles
+                    Edit Profiles
                   </h2>
                   <div class="row justify-content-center">
                     <button
@@ -580,9 +562,9 @@
           <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
               <div class="row mb-5 justify-content-center">
-                <div class="col-sm-10 delete-profiles-tab card-common mb-5">
+                <div class="col-sm-10 delete-profiles-tab mb-5">
                   <h2 class="text-center mb-4 pt-4 text-danger">
-                    Delete Existing Profiles
+                    Delete Profiles
                   </h2>
                   <h5 class="text-center text-muted mb-3">
                     (<span class="text-warning"><b>CAUTION!</b></span> This
@@ -707,7 +689,9 @@
             <div class="col-lg-6 text-center">
               <ul class="list-inline">
                 <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">AnD ADMIN PANEL</a>
+                  <a href="index.html" target="_blank" class="text-dark">
+                    AnD ADMIN PANEL
+                  </a>
                 </li>
               </ul>
             </div>
