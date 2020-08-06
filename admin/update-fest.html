@@ -273,7 +273,7 @@
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
           <div class="row pt-4 mt-5 mb-5 justify-content-center">
-            <div class="col-sm-10 p-2 mb-5">
+            <div class="col-11 col-sm-10 p-2 mb-5">
               <div class="row align-items-center mb-3">
                 <h1 class="pr-5">Update This Fest</h1>
                 <a
@@ -284,12 +284,12 @@
                   <i class="fas fa-arrow-left"></i> GO BACK
                 </a>
               </div>
-              <form action="#" id="update-fest-form">
+              <form action="#" id="update-fest-form" class="pr-sm-5 pl-sm-5">
                 <div class="form-group row">
-                  <label for="fest" class="col-sm-3 col-form-label">
+                  <label for="fest" class="col-12 col-form-label">
                     Select Fest
                   </label>
-                  <select class="col-sm-9 form-control" id="fest" required>
+                  <select class="col-12 form-control" id="fest" required>
                     <option selected disabled>Select Fest</option>
                     <option value="waves">Waves</option>
                     <option value="quark">Quark</option>
@@ -300,20 +300,20 @@
                 <div class="form-group row">
                   <label
                     for="name"
-                    class="col-sm-3 col-form-label label-name-of-event"
+                    class="col-12 col-form-label label-name-of-event"
                   >
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    class="col-sm-9 form-control input-name-of-event"
+                    class="col-12 form-control input-name-of-event"
                     placeholder="Enter the name of event"
                     required
                   />
                 </div>
                 <div class="form-group row">
-                  <label for="year" class="col-sm-3 col-form-label">
+                  <label for="year" class="col-12 col-form-label">
                     Year
                   </label>
                   <input
@@ -323,29 +323,55 @@
                     max="2099"
                     step="1"
                     value="2020"
-                    class="col-sm-9 form-control"
+                    class="col-12 form-control"
                     required
                   />
                 </div>
                 <div class="form-group row theme">
                   <label
                     for="theme"
-                    class="col-sm-3 col-form-label mt-3 label-theme-of-event"
+                    class="col-12 col-form-control label-theme-of-event"
                   >
                     Theme
                   </label>
                   <input
                     type="text"
                     id="theme"
-                    class="col-sm-9 form-control mt-sm-3 input-theme-of-event"
+                    class="col-12 form-control input-theme-of-event"
                     placeholder="Enter the theme of the fest"
                     required
                   />
                 </div>
                 <div class="form-group row">
-                  <label for="images" class="col-sm-3 col-form-label">
+                  <label for="images" class="col-12 col-form-label">
                     Images Added
+                    <button
+                      class="ml-2 btn btn-sm text-danger"
+                      data-target="#delete-images-modal"
+                      data-toggle="modal"
+                    >
+                      <i class="fas fa-trash-alt"></i> DELETE
+                    </button>
+                    <button
+                      class="ml-2 btn btn-sm text-success"
+                      data-target="#add-image-modal"
+                      data-toggle="modal"
+                    >
+                      <i class="fas fa-plus"></i> ADD NEW
+                    </button>
                   </label>
+                  <div class="col-12">
+                    <table
+                      class="table table-responsive-sm table-sm table-hover"
+                    >
+                      <tbody class="images"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="form-group row justify-content-center">
+                  <button type="submit" class="btn btn-success" id="update-fest">
+                    Update
+                  </button>
                 </div>
               </form>
             </div>
@@ -354,6 +380,103 @@
       </div>
     </div>
     <!-- End Of Main Content -->
+
+    <!-- Add New Images Modal -->
+    <div class="modal fade" id="add-image-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">
+              Add Image
+            </h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center text-muted">
+              Add image link from third party websites like imgur, imgbb
+            </p>
+            <form class="pl-5 pr-5">
+              <div class="form-group row">
+                <label for="image-title" class="col-sm-4 col-form-label">
+                  Image Title
+                </label>
+                <input
+                  type="text"
+                  name="image-title"
+                  id="image-title"
+                  class="col-sm-8 form-control"
+                  placeholder="Enter Title"
+                  required
+                />
+              </div>
+              <div class="form-group row">
+                <label for="image-link" class="col-sm-4 col-form-label">
+                  Image Link
+                </label>
+                <input
+                  type="text"
+                  name="image-link"
+                  id="image-link"
+                  class="col-sm-8 form-control"
+                  placeholder="Enter Image Link"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-info"
+              id="add-image"
+              data-dismiss="modal"
+            >
+              <i class="fas fa-image fa-lg mr-2"></i>
+              Add Image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Add New Images Modal -->
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="delete-images-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Are You Sure?</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">
+              Are you sure you want to
+              <span class="text-danger">DELETE</span> the selected image(s)?
+            </p>
+            <p class="text-center text-muted">
+              <small>(This action is irreverible)</small>
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Nope
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="delete-selected-images"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Delete Confirmation Modal -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -403,5 +526,6 @@
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/toggle.js"></script>
+    <script src="./js/update-fest.js"></script>
   </body>
 </html>

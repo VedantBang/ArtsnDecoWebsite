@@ -108,7 +108,9 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-light text-uppercase mb-0">Edit Fests</h4>
+                  <h4 class="text-light text-uppercase mb-0">
+                    Edit Fests
+                  </h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -271,10 +273,54 @@
                   class="btn btn-sm text-danger"
                   id="delete-courses"
                   data-toggle="modal"
-                  data-target=".delete-courses-modal"
+                  data-target="#delete-fests-modal"
                 >
                   <i class="fas fa-trash-alt"></i> DELETE
                 </button>
+              </div>
+              <div class="row">
+                <form action="#">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="fest"
+                      id="waves"
+                      value="waves"
+                    />
+                    <label class="form-check-label" for="waves">Waves</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="fest"
+                      id="quark"
+                      value="quark"
+                    />
+                    <label class="form-check-label" for="quark">Quark</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="fest"
+                      id="spree"
+                      value="spree"
+                    />
+                    <label class="form-check-label" for="spree">Spree</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="fest"
+                      id="other"
+                      value="other"
+                    />
+                    <label class="form-check-label" for="other">Other</label>
+                  </div>
+                </form>
               </div>
               <div class="row mt-2">
                 <table class="table table-hover">
@@ -282,7 +328,7 @@
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">#</th>
-                      <th scope="col">Fest</th>
+                      <th scope="col">Theme/Name</th>
                       <th scope="col">Year</th>
                       <th scope="col"></th>
                     </tr>
@@ -293,23 +339,7 @@
                         No fests added yet!
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <input type="checkbox" name="checkbox" id="1" />
-                      </td>
-                      <td>1</td>
-                      <td>Waves</td>
-                      <td>2018</td>
-                      <td>
-                        <a
-                          type="button"
-                          href="update-fest.html"
-                          class="btn btn-sm btn-success safari-issue"
-                        >
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>
@@ -319,6 +349,38 @@
       </div>
     </div>
     <!-- End Of Main Content -->
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="delete-fests-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Are You Sure?</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">
+              Are you sure you want to
+              <span class="text-danger">DELETE</span> the selected fest(s)?
+            </p>
+            <p class="text-center text-muted">
+              <small>(This action is irreverible)</small>
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Nope
+            </button>
+            <button type="button" class="btn btn-danger" id="delete-selected-fests">
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Delete Confirmation Modal -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -336,8 +398,8 @@
             </div>
             <div class="col-lg-6 text-center">
               <p>
-                2020, Made with <i class="fas fa-heart text-danger"></i> by
-                Rohit and Vedant
+                2020, Made with
+                <i class="fas fa-heart text-danger"></i> by Rohit and Vedant
               </p>
             </div>
           </div>
@@ -367,5 +429,8 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
+    <script src="./js/util/festRequest.js"></script>
+    <script src="./js/util/displayFestList.js"></script>
+    <script src="./js/edit-fest.js"></script>
   </body>
 </html>
