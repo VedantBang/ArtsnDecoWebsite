@@ -3,6 +3,15 @@ coverWorks('quark');
 coverWorks('spree');
 coverWorks('other');
 
+new Glider(document.querySelector('.glider'), {
+  slidesToShow: 3.5,
+  draggable: true,
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next',
+  },
+});
+
 // $('#fest-carousel').on('slide.bs.carousel', function (e) {
 //   coverWorks('waves');
 //   let $e = $(e.relatedTarget);

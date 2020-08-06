@@ -23,8 +23,16 @@ const coverWorks = (fest) => {
               <div class="card-text theme text-uppercase">${response.data[i].theme}</div>
             </a>
           </div>`;
-        $(`.${fest}-slider`).append(cover);
+        $(`.${fest}-carousel`).append(cover);
       }
+
+      new Glider(document.querySelector(`.${fest}-carousel`), {
+        slidesToShow: 4,
+        arrows: {
+          prev: `.${fest}-prev`,
+          next: `.${fest}-next`,
+        },
+      });
 
       // $(`.${fest}-slider`).slick({
       //   infinite: true,

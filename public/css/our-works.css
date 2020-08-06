@@ -69,6 +69,12 @@
 }
 /* End Of Our Works */
 
+/* Glider Carousel */
+.container-fluid {
+  width: 84%;
+}
+/* End Of Glider Carousel */
+
 /* Fests */
 .fest-name {
   font-family: 'Sofa-Sans-Bold';
@@ -89,11 +95,6 @@
   line-height: 206px;
   text-align: center;
   color: rgba(232, 232, 232, 0.4);
-}
-
-/* Slick Carousel */
-.waves-slider {
-  overflow-x: hidden;
 }
 
 .card {
@@ -135,6 +136,5 @@
 .theme {
   bottom: 16px;
 }
-/* End Of Slick Carousel */
 
 /* End Of Fests */
