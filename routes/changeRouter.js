@@ -84,7 +84,29 @@ router.post('/new', upload.none(), async (req,res,next) => {
 });
 
 
+router.delete('/deletefest', upload.none(), async (req,res,next) => {
+	try {
+		let { list } = req.body;
 
+		if (!list) {
+			let err = new Error('List must be present in body');
+			res.status = 400;
+			next(err);
+			return;
+		}
+
+		list = list.split(',');
+
+		let { deletedCount } = await Album.deleteMany({ _id: { $in: list } });
+		if(deletedCount !== 1) {
+			let err = new Error('Could not delete fest');
+			next(err);
+			return;
+		}
+
+		res.status(200).json({ ok: 1 });
+	} catch (err) { next(err); }
+})
 
 // router.put('/addImages', upload.none(), async (req,res,next) => {
 // 	try{

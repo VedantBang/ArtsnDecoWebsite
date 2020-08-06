@@ -18,10 +18,23 @@ document
         .map((checkbox) => checkbox.value)
         .join();
 
+      console.log(list);
+
       const formData = new FormData();
 
       formData.append('list', list);
-      // TODO: Request to backend
+
+      for (let list of formData.entries()) {
+        console.log(list[0] + ', ' + list[1]);
+      }
+      const response = await (
+        await fetch(`${url}/change/deletefest`, {
+          method: 'DELETE',
+          headers: { token: `${localStorage.getItem('token')}` },
+          body: formData,
+        })
+      ).json();
+      console.log(response);
     } catch (err) {
       console.log(err);
     }

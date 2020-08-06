@@ -279,7 +279,7 @@
                 </button>
               </div>
               <div class="row">
-                <form action="#">
+                <form enctype="multipart/form-data">
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -339,7 +339,6 @@
                         No fests added yet!
                       </td>
                     </tr>
-                    
                   </tbody>
                 </table>
               </div>
@@ -373,7 +372,11 @@
             <button type="button" class="btn btn-success" data-dismiss="modal">
               Nope
             </button>
-            <button type="button" class="btn btn-danger" id="delete-selected-fests">
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="delete-selected-fests"
+            >
               Yes
             </button>
           </div>
