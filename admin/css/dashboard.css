@@ -94,6 +94,12 @@ body {
 #add-new-creative-works {
   visibility: hidden;
 }
+.update-creativity-alert {
+  display: inline;
+  padding: 0.3rem;
+  margin: 0;
+  visibility: hidden;
+}
 /* End Of Creativity */
 
 /* Add Profile */
