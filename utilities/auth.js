@@ -1,4 +1,4 @@
-const jwt = require('jwt');
+const jwt = require('jsonwebtoken');
 const { JWTKEY } = require('./env');
 
 module.exports = (req,res,next) => {

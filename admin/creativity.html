@@ -262,9 +262,9 @@
     <!-- Creativity Section Explanation -->
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-xl-10 xol-lg-9 col-md-8 ml-auto">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
           <div class="row pt-4 mt-5 justify-content-center">
-            <div class="col-11 col-sm-9 p-2">
+            <div class="col-11 p-2">
               <p class="text-center text-muted">
                 This section is meant for putting up some of the major and out
                 of the box artworks that have been made in fests, like some
@@ -282,16 +282,17 @@
     <!-- Add Creative Artworks -->
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-xl-10 xol-lg-9 col-md-8 ml-auto">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
           <div class="row justify-content-center">
             <div class="col-11 col-sm-9 p-2">
               <div class="row justify-content-center">
                 <button
-                  class="btn btn-info"
+                  class="btn btn-outline-success"
                   type="button"
                   id="add-creative-artworks"
                 >
-                  Add Creative Artworks
+                  <i class="fas fa-plus"></i>
+                  ADD NEW
                 </button>
                 <button
                   class="ml-3 btn btn-outline-danger delete-button"
@@ -328,102 +329,42 @@
     </div>
     <!-- End Of Add Creative Artworks -->
 
-    <!-- Delete Creative Works -->
+    <!-- Deleting And Updating Creativity -->
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-xl-10 xol-lg-9 col-md-8 ml-auto">
-          <div class="row pt-4 mt-5 justify-content-center">
-            <div class="col-12 p-2 mb-5">
-              <h4 class="text-center text-muted pb-2">
-                Existing Creative Works
-              </h4>
-              <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+          <div class="row pb-5 mb-5 justify-content-center">
+            <div class="col-11 col-sm-9 p-2">
+              <div class="row align-items-center">
+                <h1 class="pr-5">Edit Creativity</h1>
                 <button
-                  type="button"
-                  class="btn btn-dark mb-3"
-                  id="show-creative-artworks"
+                  class="btn btn-sm btn-outline-danger"
+                  data-toggle="modal"
+                  data-target="#delete-creative-works-modal"
                 >
-                  Show Artworks
+                  <i class="fas fa-trash alt"></i> DELETE
                 </button>
               </div>
               <div class="row justify-content-center">
-                <p
-                  class="col-sm-10 text-center text-muted mt-3 mb-4 pb-5"
-                  id="error-display-creative-works"
-                >
-                  Some error occured. Refresh your page and try again
-                </p>
-              </div>
-              <div class="container no-delete-creative-works">
-                <div class="row justify-content-center mt-3">
-                  <p class="col-sm-10 text-center text-muted mt-3 mb-4 pb-5">
-                    Looks Like you haven't added any Creative Works yet, please
-                    go up and add some Creative works to actually delete them
-                  </p>
-                </div>
-              </div>
-              <div class="container-fluid delete-creative-container">
-                <div class="row justify-content-center">
-                  <p class="text-center text-muted">
-                    Select artwork which you would like to
-                    <span class="text-danger">delete</span> from the database
-                  </p>
-                  <p class="text-center text-muted">
-                    <span class="text-warning">Warning!</span>
-                    <small class="text-muted">
-                      (This action is irreversible and will result in the
-                      selected image being deleted from the database)
-                    </small>
-                  </p>
-                  <div class="col-12">
-                    <p class="text-center text-muted">
-                      Select only one item to delete at a time
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="row justify-content-center display-creative-works mb-5"
-                ></div>
-                <div class="row justify-content-center">
-                  <div
-                    class="alert alert-danger alert-dismissible fade show delete-creative-work-successful"
-                    role="alert"
-                  >
-                    Image Deleted Successfully!
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="col-12">
-                    <p class="text-center" id="error-delete-creative-work">
-                      <small>
-                        Oops! Looks like the image did not get deleted. Refresh
-                        Browser page and try again
-                      </small>
-                    </p>
-                  </div>
-                </div>
-                <div class="row justify-content-center pb-5">
-                  <button
-                    class="btn btn-danger"
-                    data-toggle="modal"
-                    data-target="#delete-creative-works-modal"
-                  >
-                    Delete Image
-                  </button>
-                </div>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Link</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="creativity"></tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Of Delete Creative Works -->
+    <!-- End Of Deleting And Updating Creativity -->
 
     <!-- Delete Creative Works Modal -->
     <div class="modal fade" id="delete-creative-works-modal">

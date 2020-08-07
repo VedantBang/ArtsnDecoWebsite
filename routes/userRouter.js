@@ -6,6 +6,9 @@ const multer = require('multer');
 const upload = multer();
 const User = require('../models/user');
 const router = express.Router();
+const auth = require('../utilities/auth');
+
+router.use(auth);
 
 router.post('/login', upload.none(), async (req,res,next) => {
 	try{

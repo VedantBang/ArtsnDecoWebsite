@@ -1,9 +1,8 @@
 const express = require('express');
-const auth = require('auth');
+const auth = require('../utilities/auth');
 const Album = require('../models/album');
 const multer = require('multer');
 const upload = multer();
-const cut = require('../utilities/cut');
 const router = express.Router();
 
 router.use(auth);
