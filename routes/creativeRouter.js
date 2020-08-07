@@ -39,16 +39,15 @@ router.post('/add', upload.none(), async (req,res,next) => {
 		titles = titles.split(',');
 		links = links.split(',');
 		
-		let images = [];
-		for (let i = 0; i < titles.length; i++) {
-		images.push({
-			title: titles[i],
-			link: links[i],
-		});
+		let saves = [];
+		for(let x = 0; x < titles.length; x++){
+			saves.push((new Creative({
+				title: titles[x],
+				link: links[x],
+			})).save());
 		}
 
-		let entry = new Creative({ images });
-		await entry.save();
+		await Promise.all(saves);
 
 		res.status(200).json({ ok:1 });
 	} catch(err){ next(err); }
