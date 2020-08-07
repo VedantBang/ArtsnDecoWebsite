@@ -3,6 +3,15 @@ const quark = document.querySelector('#quark').value;
 const spree = document.querySelector('#spree').value;
 const other = document.querySelector('#other').value;
 
+// Initial message
+const tr = document.createElement('tr');
+const td = document.createElement('td');
+td.setAttribute('colspan', 5);
+td.classList.add('text-center');
+td.innerText = 'Please select a course to edit';
+tr.appendChild(td);
+document.querySelector('#fests').appendChild(tr);
+
 festRequest(waves);
 festRequest(quark);
 festRequest(spree);

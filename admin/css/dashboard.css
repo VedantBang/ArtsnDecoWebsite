@@ -77,12 +77,6 @@ body {
 }
 /* End Of Upload Images */
 
-/* Edit Fest */
-#no-fests {
-  display: none;
-}
-/* End Of Edit Fest */
-
 /* Update Images */
 .update-artwork,
 #update-artwork {
