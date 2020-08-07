@@ -38,22 +38,21 @@ router.post('/add', upload.none(), async (req,res,next) => {
 
 router.delete('/delete', upload.none(), async (req,res,next) => {
 	try{
-		let { id } = req.body;
-		if(!id){
-			let err = new Error('id must be present');
+		let { list } = req.body;
+		if(!list){
+			let err = new Error('List of ids must be present');
 			err.status = 400;
 			next(err);
 			return;
 		}
-
-		let out = await Creative.deleteOne({ _id:id });
-
-		if(out.deletedCount === 1){
-			res.status(200).json({ ok:1 });
-		} else {
-			let err = new Error('Could not delete');
+		list = list.split(',');
+		let { deletedCount } = await Creative.deleteMany({ _id: { $in: list } });
+		if(deletedCount !== list.length){
+			let err = new Error('Delete failed, system inconsistent');
 			next(err);
+			return;
 		}
+		res.status(200).json({ ok:1 });
 	} catch(err){ next(err); }
 });
 
