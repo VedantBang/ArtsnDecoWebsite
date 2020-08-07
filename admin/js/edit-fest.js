@@ -41,7 +41,10 @@ document
           body: formData,
         })
       ).json();
-      console.log(response);
+
+      if (response.ok) {
+        window.location.href = 'edit-fest.html';
+      }
     } catch (err) {
       console.log(err);
     }

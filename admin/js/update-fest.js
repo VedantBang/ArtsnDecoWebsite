@@ -83,8 +83,9 @@ document
   });
 
 // Send update fest request
-document.getElementById('update-fest').addEventListener('click', async () => {
+document.getElementById('update-fest').addEventListener('click', async (e) => {
   try {
+    e.preventDefault();
     const fest = document.querySelector('#fest').value;
     const name = document.querySelector('#name').value;
     const year = document.querySelector('#year').value;
@@ -104,7 +105,19 @@ document.getElementById('update-fest').addEventListener('click', async () => {
     formData.append('theme', theme);
     formData.append('titles', titles);
     formData.append('links', links);
-    // TODO: Request to backend
+    formData.append('_id', localStorage.getItem('festId'));
+
+    const response = await (
+      await fetch(`${url}/change/update`, {
+        method: 'PUT',
+        headers: { token: `${localStorage.getItem('token')}` },
+        body: formData,
+      })
+    ).json();
+    console.log(response);
+    if (response.ok) {
+      window.location.href = 'edit-fest.html';
+    }
   } catch (err) {
     console.log(err);
   }

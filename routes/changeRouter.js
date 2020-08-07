@@ -84,6 +84,37 @@ router.post('/new', upload.none(), async (req,res,next) => {
 });
 
 
+router.put('/update', upload.none(), async(req, res, next) => {
+	try {
+        let { fest, name, year, theme, titles, links, _id } = req.body;
+
+        year = parseInt(year);
+        titles = titles.split(',');
+        links = links.split(',');
+
+		if (fest !== 'other') name = '';
+		
+		let images = [];
+		for (let i = 0; i < titles.length; i++) {
+			images.push({
+				title: titles[i],
+				link: links[i],
+			})
+		}
+
+		const { nModified } = await Album.updateOne({ _id }, { fest, name, year, theme, images });
+		
+		if (nModified !== 1) {
+			let err = new Error('Could not update');
+			next(err);
+			return;
+		}
+
+		res.status(200).json({ ok: 1 });
+	} catch (err) { next(err); }
+})
+
+
 router.delete('/deletefest', upload.none(), async (req,res,next) => {
 	try {
 		let { list } = req.body;

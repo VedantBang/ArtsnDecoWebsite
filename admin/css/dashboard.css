@@ -79,6 +79,9 @@ body {
 
 /* Update Fest */
 .delete-warning-alert {
+  display: inline;
+  padding: 0.3rem;
+  margin: 0;
   visibility: hidden;
 }
 /* End Of Update Fest */

@@ -117,7 +117,9 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-light text-uppercase mb-0">Update Fest</h4>
+                  <h4 class="text-light text-uppercase mb-0">
+                    Update Fest
+                  </h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -285,7 +287,12 @@
                   <i class="fas fa-arrow-left"></i> GO BACK
                 </a>
               </div>
-              <form action="#" id="update-fest-form" class="pr-sm-5 pl-sm-5">
+              <form
+                action="#"
+                id="update-fest-form"
+                class="pr-sm-5 pl-sm-5"
+                enctype="multipart/form-data"
+              >
                 <div class="form-group row">
                   <label for="fest" class="col-12 col-form-label">
                     Select Fest
@@ -343,27 +350,25 @@
                 <div class="form-group row align-items-center">
                   <label for="images" class="col-form-label">
                     Images Added
-                  </label>
-                  <button class="ml-2 btn btn-sm text-success" id="add-image">
-                    <i class="fas fa-plus"></i> ADD NEW
-                  </button>
-                  <button
-                    class="ml-2 btn btn-sm text-danger"
-                    id="delete-selected-images"
-                  >
-                    <i class="fas fa-trash-alt"></i> DELETE
-                  </button>
-                  <div
-                    class="alert alert-light delete-warning-alert"
-                    role="alert"
-                  >
-                    <small>
-                      <span class="text-warning">
+                    <button class="ml-5 btn btn-outline-success" id="add-image">
+                      <i class="fas fa-plus"></i> ADD NEW
+                    </button>
+                    <button
+                      class="ml-2 btn btn-outline-danger"
+                      id="delete-selected-images"
+                    >
+                      <i class="fas fa-trash-alt"></i> DELETE
+                    </button>
+                    <div
+                      class="ml-2 alert alert-danger delete-warning-alert"
+                      role="alert"
+                    >
+                      <small>
                         <strong>CAUTION!</strong>
-                      </span>
-                      This action is irreversible!
-                    </small>
-                  </div>
+                        This action is irreversible!
+                      </small>
+                    </div>
+                  </label>
 
                   <div class="col-12">
                     <table
@@ -406,8 +411,8 @@
             </div>
             <div class="col-lg-6 text-center">
               <p>
-                2020, Made with <i class="fas fa-heart text-danger"></i> by
-                Rohit and Vedant
+                2020, Made with
+                <i class="fas fa-heart text-danger"></i> by Rohit and Vedant
               </p>
             </div>
           </div>
