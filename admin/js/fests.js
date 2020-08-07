@@ -43,7 +43,7 @@ document
       ).json();
 
       if (response.ok) {
-        window.location.href = 'edit-fest.html';
+        window.location.href = 'fests.html';
       }
     } catch (err) {
       console.log(err);

@@ -73,11 +73,11 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    href="edit-fest.html"
+                    href="fests.html"
                     class="nav-link text-white p-3 mb-2 sidebar-link current"
                   >
                     <i class="far fa-images text-light fa-lg mr-3"></i>
-                    Edit Fest
+                    Fests
                   </a>
                 </li>
                 <li class="nav-item">
@@ -268,9 +268,111 @@
           <div class="row pt-4 mt-5 mb-5 justify-content-center">
             <div class="col-11 col-sm-9 p-2 mb-5">
               <div class="row align-items-center">
+                <h1>Add New Fest</h1>
+                <form
+                  action="#"
+                  class="col-12 pr-5 pl-5 pb-5"
+                  enctype="multipart/form-data"
+                >
+                  <div class="form-group row">
+                    <label for="fest" class="col-12 col-form-label">
+                      Select Fest
+                    </label>
+                    <select class="col-12 form-control" id="fest">
+                      <option disabled value="default">Select Fest</option>
+                      <option value="waves">Waves</option>
+                      <option value="quark">Quark</option>
+                      <option value="spree">Spree</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group row name">
+                    <label
+                      for="name"
+                      class="col-12 col-form-label label-name-of-event"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="col-12 form-control input-name-of-event"
+                      placeholder="Enter the name of event"
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <label for="year" class="col-12 col-form-label">
+                      Year
+                    </label>
+                    <input
+                      type="number"
+                      id="year"
+                      min="2005"
+                      max="2099"
+                      step="1"
+                      value="2020"
+                      class="col-12 form-control"
+                    />
+                  </div>
+                  <div class="form-group row theme">
+                    <label
+                      for="theme"
+                      class="col-12 col-form-label label-theme-of-event"
+                    >
+                      Theme
+                    </label>
+                    <input
+                      type="text"
+                      id="theme"
+                      class="col-12 form-control input-theme-of-event"
+                      placeholder="Enter the theme of the fest"
+                    />
+                  </div>
+                  <div class="form-group row pt-2">
+                    <button class="btn btn-primary" id="add-artwork">
+                      Add Artwork
+                    </button>
+                    <button
+                      class="ml-3 btn btn-outline-danger delete-button"
+                      id="delete-selected-images"
+                    >
+                      <i class="fas fa-trash alt"></i> DELETE
+                    </button>
+                    <div
+                      class="ml-2 alert alert-danger delete-warning-alert"
+                      role="alert"
+                    >
+                      <small>
+                        <strong>CAUTION!</strong>
+                        This action is irreversible!
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-group row justify-content-center">
+                    <table
+                      class="table table-sm table-hover table-responsive-sm"
+                    >
+                      <tbody class="images"></tbody>
+                    </table>
+                  </div>
+                  <div class="form-group row justify-content-center">
+                    <div class="col-12 alert alert-success alert-dismissible fade show add-new-fest-alert" role="alert">
+                      New Fest Added!
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <button class="btn btn-success" id="add-new-fest">
+                      Add and Save  
+                    </button>
+                    
+                  </div>
+                </form>
+              </div>
+              <div class="row align-items-center">
                 <h1 class="pr-5">Edit Fests</h1>
                 <button
-                  class="btn btn-sm text-danger"
+                  class="btn btn-sm btn-outline-danger"
                   id="delete-courses"
                   data-toggle="modal"
                   data-target="#delete-fests-modal"
@@ -334,8 +436,7 @@
                       <th scope="col"></th>
                     </tr>
                   </thead>
-                  <tbody id="fests">
-                  </tbody>
+                  <tbody id="fests"></tbody>
                 </table>
               </div>
             </div>
@@ -372,6 +473,7 @@
               type="button"
               class="btn btn-danger"
               id="delete-selected-fests"
+              data-dismiss="modal"
             >
               Yes
             </button>
@@ -430,6 +532,9 @@
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/festRequest.js"></script>
     <script src="./js/util/displayFestList.js"></script>
-    <script src="./js/edit-fest.js"></script>
+    <script src="./js/util/displayTableRows.js"></script>
+    <script src="./js/util/deleteSelected.js"></script>
+    <script src="./js/fests.js"></script>
+    <script src="./js/add-fest.js"></script>
   </body>
 </html>

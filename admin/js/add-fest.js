@@ -1,66 +1,53 @@
-// Adding title and image name to Selected Images list and reseting add artwork form
-const displayImages = document.getElementById('display-images');
-document.getElementById('add-artwork').addEventListener('click', () => {
-  const li = document.createElement('li');
-  const title = document.querySelector('#title').value;
-  const imageLink = document.querySelector('#upload-image').value;
-  li.classList.add('list-group-item');
-  li.textContent = `Title: ${title}, Image Link: ${imageLink}`;
-  displayImages.appendChild(li);
+// Add new input field on clicking add artwork button
+document.getElementById('add-artwork').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('.delete-button').style.display = 'inline';
+  displayTableRows();
 
-  document.querySelector('#add-artwork-form').reset();
-  document.querySelector('#upload-artwork').style.display = 'block';
-  document.querySelector('.images-row').style.display = 'block';
+  // Toggling Delete message warning on mouse hover and deleting images from DOM
+  deleteSelected();
+
+  // Showing save button to DOM
+  document.querySelector('#add-new-fest').style.visibility = 'visible';
 });
 
-// Uploading title and images to backend
-document.getElementById('upload-artwork').addEventListener('click', (e) => {
-  e.preventDefault();
-  const fest = document.querySelector('#fest').value;
-  const year = document.querySelector('#year').value;
-  const name = document.querySelector('#name').value;
-  const theme = document.querySelector('#theme').value;
+// Uploading new fest details to backend
+document.getElementById('add-new-fest').addEventListener('click', async (e) => {
+  try {
+    e.preventDefault();
+    const fest = document.querySelector('#fest').value;
+    const name = document.querySelector('#name').value;
+    const year = document.querySelector('#year').value;
+    const theme = document.querySelector('#theme').value;
+    const titles = [...document.querySelectorAll('.title')]
+      .map((title) => title.value)
+      .join();
+    const links = [...document.querySelectorAll('.link')]
+      .map((link) => link.value)
+      .join();
 
-  let li = document.getElementsByClassName('list-group-item');
-  let title = '',
-    link = '';
-  for (let i = 0; i < li.length; i++) {
-    title += li[i].innerHTML.split(',')[0].split(': ')[1] + ',';
-    link += li[i].innerHTML.split(',')[1].split(': ')[1] + ',';
+    const formData = new FormData();
+
+    formData.append('fest', fest);
+    formData.append('name', name);
+    formData.append('year', year);
+    formData.append('theme', theme);
+    formData.append('titles', titles);
+    formData.append('links', links);
+
+    const response = await (
+      await fetch(`${url}/change/new`, {
+        method: 'POST',
+        headers: { token: `${localStorage.getItem('token')}` },
+        body: formData,
+      })
+    ).json();
+    console.log(response);
+    if (response.ok) {
+      document.querySelector('.add-new-fest-alert').style.display = 'block';
+      window.location.href = 'fests.html';
+    }
+  } catch (err) {
+    console.log(err);
   }
-  const newTitle = title.slice(0, -1);
-  const newLink = link.slice(0, -1);
-  console.log(newTitle);
-  console.log(newLink);
-
-  const formData = new FormData();
-
-  formData.append('fest', fest);
-  formData.append('year', year);
-  formData.append('name', name);
-  formData.append('theme', theme);
-  formData.append('titles', newTitle);
-  formData.append('links', newLink);
-
-  fetch(`${url}/change/new`, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      token: `${localStorage.getItem('token')}`,
-    },
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((res) => {
-      if (res.ok) {
-        document.querySelector('.upload-artwork').style.display = 'block';
-        window.location.href = 'add-fest.html';
-      } else {
-        document.getElementById('error-uploads').innerHTML = res.error;
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 });

@@ -69,13 +69,17 @@ body {
 }
 /* End Of Cards */
 
-/* Upload Images */
-.upload-artwork,
-#upload-artwork,
-.images-row {
+/* Add New Fest */
+.delete-button {
   display: none;
 }
-/* End Of Upload Images */
+#add-new-fest {
+  visibility: hidden;
+}
+.add-new-fest-alert {
+  display: none;
+}
+/* End Of Add New Fest */
 
 /* Update Fest */
 .delete-warning-alert {

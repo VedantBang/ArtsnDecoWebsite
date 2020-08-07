@@ -55,32 +55,8 @@ document.getElementById('add-image').addEventListener('click', (e) => {
   displayTableRows();
 });
 
-// Toggling Delete message warning on mouse hover
-document
-  .getElementById('delete-selected-images')
-  .addEventListener('mouseenter', () => {
-    document.querySelector('.delete-warning-alert').style.visibility =
-      'visible';
-  });
-document
-  .getElementById('delete-selected-images')
-  .addEventListener('mouseleave', () => {
-    document.querySelector('.delete-warning-alert').style.visibility = 'hidden';
-  });
-
-// Deleting selected images from DOM
-document
-  .getElementById('delete-selected-images')
-  .addEventListener('click', (e) => {
-    e.preventDefault();
-    [...document.querySelectorAll('input[type="checkbox"]')].filter(
-      (checkbox) => {
-        if (checkbox.checked) {
-          checkbox.parentNode.parentNode.remove();
-        }
-      }
-    );
-  });
+// Toggling Delete message warning on mouse hover and deleting images from DOM
+deleteSelected();
 
 // Send update fest request
 document.getElementById('update-fest').addEventListener('click', async (e) => {
@@ -116,7 +92,7 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
     ).json();
     console.log(response);
     if (response.ok) {
-      window.location.href = 'edit-fest.html';
+      window.location.href = 'fests.html';
     }
   } catch (err) {
     console.log(err);
