@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { JWTKEY } = require('../utilities/env');
@@ -7,8 +8,6 @@ const upload = multer();
 const User = require('../models/user');
 const router = express.Router();
 const auth = require('../utilities/auth');
-
-router.use(auth);
 
 router.post('/login', upload.none(), async (req,res,next) => {
 	try{
@@ -64,6 +63,14 @@ router.put('/updatepass', upload.none(), async (req,res,next)=>{
 			let err = new Error('Could not update password');
 			next(err);
 		}
+	} catch(err){ next(err); }
+});
+
+router.get('/storage', async (req,res,next) => {
+	try{
+		let output = await mongoose.connection.db.command({ "dbStats":1 });
+		console.log(output);
+		res.status(200).json({ output });
 	} catch(err){ next(err); }
 });
 
