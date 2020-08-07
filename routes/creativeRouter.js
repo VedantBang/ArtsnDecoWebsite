@@ -34,20 +34,23 @@ router.use((req,res,next) => {
 
 router.post('/add', upload.none(), async (req,res,next) => {
 	try{
-		let { name, image } = req.body;
+		let { titles, links } = req.body;
 
-		if(!name || !image){
-			let err = new Error('name and image must be present.');
-			err.status = 400;
-			next(err);
-			return;
+		titles = titles.split(',');
+		links = links.split(',');
+		
+		let images = [];
+		for (let i = 0; i < titles.length; i++) {
+		images.push({
+			title: titles[i],
+			link: links[i],
+		});
 		}
 
-		let entry = new Creative({ name, image });
+		let entry = new Creative({ images });
 		await entry.save();
 
 		res.status(200).json({ ok:1 });
-
 	} catch(err){ next(err); }
 });
 

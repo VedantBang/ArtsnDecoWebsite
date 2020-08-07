@@ -284,40 +284,42 @@
       <div class="row justify-content-center">
         <div class="col-xl-10 xol-lg-9 col-md-8 ml-auto">
           <div class="row justify-content-center">
-            <div class="col-sm-10 p-2">
+            <div class="col-11 col-sm-9 p-2">
               <div class="row justify-content-center">
                 <button
                   class="btn btn-info"
                   type="button"
-                  data-toggle="modal"
-                  data-target="#add-creative-artworks-modal"
+                  id="add-creative-artworks"
                 >
                   Add Creative Artworks
                 </button>
-              </div>
-              <div class="col-12 p-2">
+                <button
+                  class="ml-3 btn btn-outline-danger delete-button"
+                  id="delete-selected-images"
+                >
+                  <i class="fas fa-trash alt"></i> DELETE
+                </button>
                 <div
-                  class="alert alert-success alert-dismissible fade show upload-creativity"
+                  class="ml-2 alert alert-danger delete-warning-alert"
                   role="alert"
                 >
-                  Creative Work uploaded!
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="alert"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                  <small>
+                    <strong>CAUTION!</strong>
+                    This action is irreversible!
+                  </small>
                 </div>
-                <div class="row justify-content-center">
-                  <p class="col-12 text-center">
-                    <small id="error-creative-uploads">
-                      Oops! There was some error in uploading. Refresh the page
-                      and try again
-                    </small>
-                  </p>
+              </div>
+              <div class="row-justify-content-center mt-4">
+                <div class="form-group row justify-content-center">
+                  <table class="table table-sm table-hover table-responsive-sm">
+                    <tbody class="images"></tbody>
+                  </table>
                 </div>
+              </div>
+              <div class="row justify-content-center">
+                <button class="btn btn-success" id="add-new-creative-works">
+                  Add and Save
+                </button>
               </div>
             </div>
           </div>
@@ -325,70 +327,6 @@
       </div>
     </div>
     <!-- End Of Add Creative Artworks -->
-
-    <!-- Creative Artworks Modal -->
-    <div class="modal fade" id="add-creative-artworks-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Add something Creative...</h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center text-muted">
-              Add image link from third party websites like imgur, imgbb
-            </p>
-            <form
-              class="pl-5 pr-5"
-              id="add-creative-artwork-form"
-              enctype="multipart/form-data"
-            >
-              <div class="form-group row">
-                <label for="name" class="col-sm-4 col-form-label">
-                  Image Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  class="col-sm-8 form-control"
-                  placeholder="Enter Title"
-                  required
-                />
-              </div>
-              <div class="form-group row">
-                <label
-                  for="upload-creative-image"
-                  class="col-sm-4 col-form-label"
-                >
-                  Image Link
-                </label>
-                <input
-                  type="text"
-                  id="upload-creative-image"
-                  class="col-sm-8 form-control"
-                  placeholder="Enter Image Link"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button
-              type="submit"
-              href="#"
-              class="btn btn-success"
-              id="add-creative-artwork"
-              data-dismiss="modal"
-            >
-              <i class="fas fa-paint-brush fa-lg mr-2"></i>
-              Add Creativity
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Creative Artworks Modal -->
 
     <!-- Delete Creative Works -->
     <div class="container-fluid">
@@ -567,6 +505,8 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
+    <script src="./js/util/deleteSelected.js"></script>
+    <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/creativity.js"></script>
   </body>
 </html>

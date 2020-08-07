@@ -91,20 +91,8 @@ body {
 /* End Of Update Fest */
 
 /* Creativity */
-.upload-creativity,
-#error-creative-uploads,
-.no-delete-creative-works,
-.delete-creative-container,
-.delete-creative-work-successful,
-#error-delete-creative-work,
-#error-display-creative-works {
-  display: none;
-}
-
-.choose-creative-artwork {
-  color: white;
-  opacity: 0.4;
-  transition: all 0.3s ease-out;
+#add-new-creative-works {
+  visibility: hidden;
 }
 /* End Of Creativity */
 
