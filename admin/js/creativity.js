@@ -55,8 +55,9 @@ document
       await fetch(`${url}/creative/all`, { method: 'GET' })
     ).json();
 
-    for (let i = 0; i < response.data.length; i++) {
-      const row = `<tr>
+    if (response.data.length) {
+      for (let i = 0; i < response.data.length; i++) {
+        const row = `<tr>
                       <td>
                         <input type="checkbox" value=${response.data[i]._id} />
                       </td>
@@ -65,7 +66,8 @@ document
                         <input
                           type="text"
                           value=${response.data[i].title}
-                          class="form-control form-control-sm title"
+                          class="form-control form-control-sm"
+                          id="title-${response.data[i]._id}"
                           placeholder="Enter Title"
                         />
                       </td>
@@ -73,25 +75,70 @@ document
                         <input
                           type="text"
                           value=${response.data[i].link}
-                          class="form-control form-control-sm link"
+                          class="form-control form-control-sm"
+                          id="link-${response.data[i]._id}"
                           placeholder="Enter Image Link"
                         />
                       </td>
                       <td>
                         <button
                           class="btn btn-success btn-sm"
-                          id=${response.data[i]._id}
+                          onclick="updateCreativity('${response.data[i]._id}')"
                         >
                           Save
                       </button>
                       </td>
                     </tr>`;
-      $('#creativity').append(row);
+        $('#creativity').append(row);
+      }
+    } else {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.setAttribute('colspan', 5);
+      td.classList.add('text-center');
+      td.innerText = 'No creativity added yet!';
+      tr.appendChild(td);
+      document.querySelector('#creativity').appendChild(tr);
     }
   } catch (err) {
     console.log(err);
   }
 })();
+
+// Sending update request to backend
+const updateCreativity = async (creativeId) => {
+  try {
+    const title = document.querySelector(`#title-${creativeId}`).value;
+    const link = document.querySelector(`#link-${creativeId}`).value;
+
+    const formData = new FormData();
+
+    formData.append('_id', creativeId);
+    formData.append('title', title);
+    formData.append('link', link);
+
+    const response = await (
+      await fetch(`${url}/creative/update`, {
+        method: 'PUT',
+        headers: { token: `${localStorage.getItem('token')}` },
+        body: formData,
+      })
+    ).json();
+    console.log(response);
+    if (response.ok) {
+      document.querySelector('.update-creativity-alert').style.visibility =
+        'visible';
+      setTimeout(
+        () =>
+          (document.querySelector('.update-creativity-alert').style.visibility =
+            'hidden'),
+        1000
+      );
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 // Sending delete request to backend
 document
@@ -114,7 +161,10 @@ document
           body: formData,
         })
       ).json();
-      console.log(response);
+
+      if (response.ok) {
+        window.location.href = 'creativity.html';
+      }
     } catch (err) {
       console.log(err);
     }
