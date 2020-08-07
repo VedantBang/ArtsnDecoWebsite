@@ -45,25 +45,8 @@ router.get('/verifytoken', (req,res,next)=>{
 	}
 });
 
-router.use((req,res,next)=>{
-	try{
-		let { token } = req.headers;
+router.use(auth);
 
-		let decoded = jwt.verify(token, 'yeesss');
-
-		req.username = decoded.username;
-
-		next();
-	} catch(err){
-		let e = new Error('Invalid access');
-		e.status = 403;
-		next(e); 
-		return;	
-	}
-});
-
-
-// Update password
 router.put('/updatepass', upload.none(), async (req,res,next)=>{
 	try{
 		let { password } = req.body;

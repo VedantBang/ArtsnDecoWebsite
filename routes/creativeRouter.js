@@ -1,10 +1,9 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
-const { JWTKEY } = require('../utilities/env');
 const Creative = require('../models/creative');
 const multer = require('multer');
 const upload = multer();
 const router = express.Router();
+const auth = require('../utilities/auth');
 
 router.get('/all', async (req,res,next) => {
 	try{
@@ -13,24 +12,7 @@ router.get('/all', async (req,res,next) => {
 	} catch(err){ next(err); }
 });
 
-
-router.use((req,res,next) => {
-	try{
-		let { token } = req.headers;
-
-		let decoded = jwt.verify(token, JWTKEY);
-
-		req.username = decoded.username;
-
-		next();
-	} catch(err){
-		let e = new Error('Invalid access');
-		e.status = 403;
-		next(e); 
-		return;	
-	}
-});
-
+router.use(auth);
 
 router.post('/add', upload.none(), async (req,res,next) => {
 	try{

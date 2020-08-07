@@ -3,8 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer();
 const Profile = require('../models/profile');
-const jwt = require('jsonwebtoken');
-const { JWTKEY } = require('../utilities/env');
+const auth = require('../utilities/auth');
 const cut = require('../utilities/cut');
 
 
@@ -16,24 +15,7 @@ router.get('/all', async (req,res,next) => {
 	} catch(err){ next(err); }
 });
 
-
-router.use((req,res,next)=>{
-	try{
-		let { token } = req.headers;
-
-		let decoded = jwt.verify(token, JWTKEY);
-
-		req.username = decoded.username;
-
-		next();
-	} catch(err){
-		let e = new Error('Invalid access');
-		e.status = 403;
-		next(e); 
-		return;	
-	}
-});
-
+router.use(auth);
 
 router.get('/min', async (req,res,next) => {
 	try{
