@@ -17,36 +17,32 @@
     });
 
     // Setting name field
-    document.querySelector('#name').value = response.data.name;
+    if (response.data.name) {
+      document.querySelector('.label-name-of-event').style.display = 'inline';
+      document.querySelector('.input-name-of-event').style.display = 'inline';
+      document.querySelector('#name').value = response.data.name;
+      document.querySelector('.label-theme-of-event').style.display = 'none';
+      document.querySelector('.input-theme-of-event').style.display = 'none';
+    }
 
     // Setting Year
     document.querySelector('#year').value = response.data.year;
 
     // Setting Theme
-    document.querySelector('#theme').value = response.data.theme;
+    if (response.data.theme) {
+      document.querySelector('.label-theme-of-event').style.display = 'inline';
+      document.querySelector('.input-theme-of-event').style.display = 'inline';
+      document.querySelector('#theme').value = response.data.theme;
+      document.querySelector('.label-name-of-event').style.display = 'none';
+      document.querySelector('.input-name-of-event').style.display = 'none';
+    }
 
     // setting images added table
     for (let i = 0; i < response.data.images.length; i++) {
-      const row = `<tr>
-                  <td>
-                    <input type="checkbox" id="delete" value=${response.data.images[i]._id}/>
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value=${response.data.images[i].title}
-                      class="form-control form-control-sm title"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value=${response.data.images[i].link}
-                      class="form-control form-control-sm link"
-                    />
-                  </td>
-                </tr>`;
-      $('.images').append(row);
+      displayTableRows(
+        response.data.images[i].title,
+        response.data.images[i].link
+      );
     }
   } catch (err) {
     console.log(err);
@@ -54,47 +50,36 @@
 })();
 
 // Adding new image to table
-document.getElementById('add-image').addEventListener('click', () => {
-  const title = document.querySelector('#image-title').value;
-  const link = document.querySelector('#image-link').value;
-
-  const row = `<tr>
-                  <td>
-                    <input type="checkbox" id="delete" />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value=${title}
-                      class="form-control form-control-sm title"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      value=${link}
-                      class="form-control form-control-sm link"
-                    />
-                  </td>
-                </tr>`;
-  $('.images').append(row);
+document.getElementById('add-image').addEventListener('click', (e) => {
+  e.preventDefault();
+  displayTableRows();
 });
 
-// Delete selected images
+// Toggling Delete message warning on mouse hover
 document
   .getElementById('delete-selected-images')
-  .addEventListener('click', async () => {
-    try {
-      let list = Array.from(document.querySelectorAll('input[type="checkbox"]'))
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value)
-        .join();
+  .addEventListener('mouseenter', () => {
+    document.querySelector('.delete-warning-alert').style.visibility =
+      'visible';
+  });
+document
+  .getElementById('delete-selected-images')
+  .addEventListener('mouseleave', () => {
+    document.querySelector('.delete-warning-alert').style.visibility = 'hidden';
+  });
 
-      console.log(list);
-      // const formData = new
-    } catch (err) {
-      console.log(err);
-    }
+// Deleting selected images from DOM
+document
+  .getElementById('delete-selected-images')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    [...document.querySelectorAll('input[type="checkbox"]')].filter(
+      (checkbox) => {
+        if (checkbox.checked) {
+          checkbox.parentNode.parentNode.remove();
+        }
+      }
+    );
   });
 
 // Send update fest request
@@ -124,3 +109,8 @@ document.getElementById('update-fest').addEventListener('click', async () => {
     console.log(err);
   }
 });
+
+// Deleting data from localstorage on clicking go-back
+const deleteFestId = () => {
+  localStorage.removeItem('festId');
+};

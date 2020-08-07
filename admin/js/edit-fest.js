@@ -8,7 +8,7 @@ const tr = document.createElement('tr');
 const td = document.createElement('td');
 td.setAttribute('colspan', 5);
 td.classList.add('text-center');
-td.innerText = 'Please select a course to edit';
+td.innerText = 'Please select a Fest to edit';
 tr.appendChild(td);
 document.querySelector('#fests').appendChild(tr);
 
@@ -26,8 +26,6 @@ document
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.value)
         .join();
-
-      console.log(list);
 
       const formData = new FormData();
 

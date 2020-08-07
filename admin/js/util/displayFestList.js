@@ -1,7 +1,8 @@
 const displayFestList = (data) => {
   if (data.length) {
     for (let i = 0; i < data.length; i++) {
-      const row = `<tr>
+      if (data[i].theme) {
+        const row = `<tr>
                       <td>
                         <input type="checkbox" name="checkbox" value=${
                           data[i]._id
@@ -21,7 +22,30 @@ const displayFestList = (data) => {
                         </a>
                       </td>
                     </tr>`;
-      $('#fests').append(row);
+        $('#fests').append(row);
+      } else if (data[i].name) {
+        const row = `<tr>
+                      <td>
+                        <input type="checkbox" name="checkbox" value=${
+                          data[i]._id
+                        } />
+                      </td>
+                      <td>${i + 1}</td>
+                      <td>${data[i].name}</td>
+                      <td>${data[i].year}</td>
+                      <td>
+                        <a
+                          type="button"
+                          href="update-fest.html"
+                          class="btn btn-sm btn-success safari-issue"
+                          onclick="update('${data[i]._id}')"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>`;
+        $('#fests').append(row);
+      }
     }
   } else {
     const tr = document.createElement('tr');

@@ -77,34 +77,11 @@ body {
 }
 /* End Of Upload Images */
 
-/* Update Images */
-.update-artwork,
-#update-artwork {
-  display: none;
+/* Update Fest */
+.delete-warning-alert {
+  visibility: hidden;
 }
-/* End Of Update Images */
-
-/* Delete Images */
-.caution,
-.no-images,
-.display-existing-images,
-.delete-option,
-.delete-successful {
-  display: none;
-}
-
-.selected-card {
-  color: white;
-  opacity: 0.4;
-  transition: all 0.3s ease-out;
-}
-/* End Of Delete Images */
-
-/* Delete Fest */
-.delete-fest-successful {
-  display: none;
-}
-/* End Of Delete Fest */
+/* End Of Update Fest */
 
 /* Creativity */
 .upload-creativity,
@@ -175,11 +152,7 @@ body {
 
 /* Error Messages */
 #error-uploads,
-#error-updates,
-#error-get-existing-photos,
 #error-message,
-#error-delete-images,
-#error-delete-fest,
 #error-add-profile,
 #error-update-profile,
 #error-delete-profiles,

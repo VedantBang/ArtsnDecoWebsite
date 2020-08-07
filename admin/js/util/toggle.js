@@ -2,17 +2,22 @@
 document.getElementById('fest').addEventListener('click', () => {
   const fest = document.querySelector('#fest').value;
   const theme = document.querySelector('.theme');
+  const name = document.querySelector('.name');
 
   if (fest === 'other') {
-    document.querySelector('.label-name-of-event').style.display = 'inline';
-    document.querySelector('.input-name-of-event').style.display = 'inline';
+    if (name) {
+      document.querySelector('.label-name-of-event').style.display = 'inline';
+      document.querySelector('.input-name-of-event').style.display = 'inline';
+    }
     if (theme) {
       document.querySelector('.label-theme-of-event').style.display = 'none';
       document.querySelector('.input-theme-of-event').style.display = 'none';
     }
   } else {
-    document.querySelector('.label-name-of-event').style.display = 'none';
-    document.querySelector('.input-name-of-event').style.display = 'none';
+    if (name) {
+      document.querySelector('.label-name-of-event').style.display = 'none';
+      document.querySelector('.input-name-of-event').style.display = 'none';
+    }
     if (theme) {
       document.querySelector('.label-theme-of-event').style.display = 'inline';
       document.querySelector('.input-theme-of-event').style.display = 'inline';

@@ -280,6 +280,7 @@
                   class="btn btn-sm text-secondary"
                   id="go-back"
                   href="edit-fest.html"
+                  onclick="deleteFestId()"
                 >
                   <i class="fas fa-arrow-left"></i> GO BACK
                 </a>
@@ -289,7 +290,7 @@
                   <label for="fest" class="col-12 col-form-label">
                     Select Fest
                   </label>
-                  <select class="col-12 form-control" id="fest" required>
+                  <select class="col-12 form-control" id="fest">
                     <option selected disabled>Select Fest</option>
                     <option value="waves">Waves</option>
                     <option value="quark">Quark</option>
@@ -297,7 +298,7 @@
                     <option value="other">Other</option>
                   </select>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row name">
                   <label
                     for="name"
                     class="col-12 col-form-label label-name-of-event"
@@ -323,7 +324,6 @@
                     step="1"
                     value="2020"
                     class="col-12 form-control"
-                    required
                   />
                 </div>
                 <div class="form-group row theme">
@@ -338,27 +338,33 @@
                     id="theme"
                     class="col-12 form-control input-theme-of-event"
                     placeholder="Enter the theme of the fest"
-                    required
                   />
                 </div>
-                <div class="form-group row">
-                  <label for="images" class="col-12 col-form-label">
+                <div class="form-group row align-items-center">
+                  <label for="images" class="col-form-label">
                     Images Added
-                    <button
-                      class="ml-2 btn btn-sm text-danger"
-                      data-target="#delete-images-modal"
-                      data-toggle="modal"
-                    >
-                      <i class="fas fa-trash-alt"></i> DELETE
-                    </button>
-                    <button
-                      class="ml-2 btn btn-sm text-success"
-                      data-target="#add-image-modal"
-                      data-toggle="modal"
-                    >
-                      <i class="fas fa-plus"></i> ADD NEW
-                    </button>
                   </label>
+                  <button class="ml-2 btn btn-sm text-success" id="add-image">
+                    <i class="fas fa-plus"></i> ADD NEW
+                  </button>
+                  <button
+                    class="ml-2 btn btn-sm text-danger"
+                    id="delete-selected-images"
+                  >
+                    <i class="fas fa-trash-alt"></i> DELETE
+                  </button>
+                  <div
+                    class="alert alert-light delete-warning-alert"
+                    role="alert"
+                  >
+                    <small>
+                      <span class="text-warning">
+                        <strong>CAUTION!</strong>
+                      </span>
+                      This action is irreversible!
+                    </small>
+                  </div>
+
                   <div class="col-12">
                     <table
                       class="table table-responsive-sm table-sm table-hover"
@@ -368,8 +374,12 @@
                   </div>
                 </div>
                 <div class="form-group row justify-content-center">
-                  <button type="submit" class="btn btn-success" id="update-fest">
-                    Update
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                    id="update-fest"
+                  >
+                    Save Changes
                   </button>
                 </div>
               </form>
@@ -379,103 +389,6 @@
       </div>
     </div>
     <!-- End Of Main Content -->
-
-    <!-- Add New Images Modal -->
-    <div class="modal fade" id="add-image-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">
-              Add Image
-            </h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center text-muted">
-              Add image link from third party websites like imgur, imgbb
-            </p>
-            <form class="pl-5 pr-5">
-              <div class="form-group row">
-                <label for="image-title" class="col-sm-4 col-form-label">
-                  Image Title
-                </label>
-                <input
-                  type="text"
-                  name="image-title"
-                  id="image-title"
-                  class="col-sm-8 form-control"
-                  placeholder="Enter Title"
-                  required
-                />
-              </div>
-              <div class="form-group row">
-                <label for="image-link" class="col-sm-4 col-form-label">
-                  Image Link
-                </label>
-                <input
-                  type="text"
-                  name="image-link"
-                  id="image-link"
-                  class="col-sm-8 form-control"
-                  placeholder="Enter Image Link"
-                  required
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-info"
-              id="add-image"
-              data-dismiss="modal"
-            >
-              <i class="fas fa-image fa-lg mr-2"></i>
-              Add Image
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Add New Images Modal -->
-
-    <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="delete-images-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Are You Sure?</h4>
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center">
-              Are you sure you want to
-              <span class="text-danger">DELETE</span> the selected image(s)?
-            </p>
-            <p class="text-center text-muted">
-              <small>(This action is irreverible)</small>
-            </p>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-success" data-dismiss="modal">
-              Nope
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              id="delete-selected-images"
-            >
-              Yes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Delete Confirmation Modal -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -525,6 +438,7 @@
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/toggle.js"></script>
+    <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/update-fest.js"></script>
   </body>
 </html>
