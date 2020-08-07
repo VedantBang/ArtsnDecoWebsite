@@ -10,33 +10,25 @@ const cut = require('../utilities/cut');
 router.get('/all', async (req,res,next) => {
 	try{
 		let data = await Profile.find({});
-		data = data.map(entry => cut(entry,['name','post','insta','image']));
+		data = data.map(entry => cut(entry,['name','post','insta']));
 		res.status(200).json({ ok:1, data });
 	} catch(err){ next(err); }
 });
 
 router.use(auth);
 
-router.get('/min', async (req,res,next) => {
-	try{
-		let data = await Profile.find({});
-		data = data.map(entry => cut(entry,['_id','name']));
-		res.status(200).json({ ok:1, data });
-	} catch(err){ next(err); }
-});
-
 router.post('/add', upload.none(), async (req,res,next) => {
 	try{
-		let { name, post, insta, image } = req.body;
+		let { name, post, insta } = req.body;
 
-		if(!name || !image){
-			let err = new Error('name and image are required fields');
+		if(!name){
+			let err = new Error('name is required field');
 			err.status = 400;
 			next(err);
 			return;
 		}
 
-		let newProfile = new Profile({ name, post, insta, image });
+		let newProfile = new Profile({ name, post, insta });
 		await newProfile.save();
 
 		res.status(200).json({ ok:1 });
@@ -46,7 +38,7 @@ router.post('/add', upload.none(), async (req,res,next) => {
 
 router.put('/update', upload.none(), async (req,res,next) => {
 	try{
-		let { name, post, insta, image, _id } = req.body;
+		let { _id } = req.body;
 		
 		if(!_id){
 			let err = new Error('_id must be specified');
@@ -54,15 +46,8 @@ router.put('/update', upload.none(), async (req,res,next) => {
 			next(err);
 			return;
 		}
-
-		let updates = {};
-
-		if(name) updates.name = name;
-		if(post) updates.post = post;
-		if(insta) updates.insta = insta;
-		if(image) updates.image = image;
-
-		let out = await Profile.updateOne({ _id }, updates);
+		delete req.body._id;
+		let out = await Profile.updateOne({ _id }, req.body);
 
 		if(out.nModified === 1){
 			res.status(200).json({ ok:1 });
@@ -76,13 +61,20 @@ router.put('/update', upload.none(), async (req,res,next) => {
 
 router.delete('/delete', upload.none(), async (req,res,next) => {
 	try{
-		let { ids } = req.body;
-		ids = ids.split(',');
-		let out = await Profile.deleteMany({ _id: {$in: ids} });
-		if(out.deletedCount){
+		let { list } = req.body;
+		if(!list){
+			let err = new Error('list of ids must be specified');
+			err.status = 400;
+			next(err);
+			return;
+		}
+		list = list.split(',');
+
+		let { deletedCount } = await Profile.deleteMany({ _id: {$in: list} });
+		if( deletedCount === list.length ){
 			res.status(200).json({ ok:1 });
 		} else {
-			let err = new Error('Could not delete');
+			let err = new Error('Delete failed, system inconsistent');
 			next(err);
 		}
 	} catch(err){ next(err); }
