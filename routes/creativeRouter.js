@@ -35,6 +35,25 @@ router.post('/add', upload.none(), async (req,res,next) => {
 	} catch(err){ next(err); }
 });
 
+router.put('/update', upload.none(), async (req,res,next) => {
+	try{
+		let { _id } = req.body;
+		if(!_id){
+			let err = new Error('_id must be present');
+			err.status = 400;
+			next(err);
+			return;
+		}
+		delete req.body._id;
+		let { nModified } = await Creative.updateOne({ _id }, req.body);
+		if(nModified !== 1){
+			let err = new Error('Update failed');
+			next(err);
+			return;
+		}
+		res.status(200).json({ ok:1 });
+	} catch(err){ next(err); }
+});
 
 router.delete('/delete', upload.none(), async (req,res,next) => {
 	try{
