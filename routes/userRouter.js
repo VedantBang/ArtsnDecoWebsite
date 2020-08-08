@@ -83,7 +83,7 @@ router.get('/storage', async (req,res,next) => {
 
 router.get('/images', async (req,res,next) => {
 	try{
-		let { total } = await Album.aggregate([
+		let [{ total }] = await Album.aggregate([
 			{$group:{
 				_id:null,
 				total:{$sum: {$size: '$images'}}
