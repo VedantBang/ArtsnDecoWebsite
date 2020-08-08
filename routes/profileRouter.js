@@ -10,7 +10,7 @@ const cut = require('../utilities/cut');
 router.get('/all', async (req,res,next) => {
 	try{
 		let data = await Profile.find({});
-		data = data.map(entry => cut(entry,['name','post','insta']));
+		data = data.map(entry => cut(entry,['name','post','insta', '_id']));
 		res.status(200).json({ ok:1, data });
 	} catch(err){ next(err); }
 });
