@@ -6,8 +6,16 @@ const { JWTKEY } = require('../utilities/env');
 const multer = require('multer');
 const upload = multer();
 const User = require('../models/user');
+const Album = require('../models/album');
 const router = express.Router();
 const auth = require('../utilities/auth');
+
+router.get('/visit', async (req,res,next) => {
+	try{
+		await User.update({}, { $inc: { visits:1 }});
+		res.status(200).json({ ok:1 });
+	} catch(err){ next(err); }
+});
 
 router.post('/login', upload.none(), async (req,res,next) => {
 	try{
@@ -71,6 +79,18 @@ router.get('/storage', async (req,res,next) => {
 		let output = await mongoose.connection.db.command({ "dbStats":1 });
 		console.log(output);
 		res.status(200).json({ output });
+	} catch(err){ next(err); }
+});
+
+router.get('/images', async (req,res,next) => {
+	try{
+		let { total } = await Album.aggregate([
+			{$group:{
+				_id:null,
+				total:{$sum: {$size: '$images'}}
+			}}
+		]);
+
 	} catch(err){ next(err); }
 });
 
