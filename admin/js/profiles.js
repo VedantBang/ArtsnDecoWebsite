@@ -109,8 +109,6 @@ document
         })
       ).json();
 
-      console.log(response);
-
       if (response.ok) {
         window.location.href = 'profiles.html';
       }

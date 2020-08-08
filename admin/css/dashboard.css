@@ -102,15 +102,6 @@ body {
 }
 /* End Of Creativity */
 
-/* Profiles */
-.update-profile-alert {
-  display: inline;
-  padding: 0.3rem;
-  margin: 0;
-  visibility: hidden;
-}
-/* End Of Profiles */
-
 /* Optional field values in upload and update form */
 .label-name-of-event,
 .input-name-of-event {

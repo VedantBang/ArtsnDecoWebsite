@@ -8,8 +8,42 @@
       })
     ).json();
 
-    console.log(response);
+    document.querySelector('#name').value = response.data.name;
+    document.querySelector('#post').value = response.data.post;
+    document.querySelector('#insta-link').value = response.data.insta;
   } catch (err) {
     console.log(err);
   }
 })();
+
+// Sending updated profile data to backend
+document
+  .getElementById('update-profile')
+  .addEventListener('click', async () => {
+    try {
+      const name = document.querySelector('#name').value;
+      const post = document.querySelector('#post').value;
+      const insta = document.querySelector('#insta-link').value;
+
+      const formData = new FormData();
+
+      formData.append('name', name);
+      formData.append('post', post);
+      formData.append('insta', insta);
+      formData.append('_id', localStorage.getItem('profileId'));
+
+      const response = await (
+        await fetch(`${url}/profile/update`, {
+          method: 'PUT',
+          headers: { token: `${localStorage.getItem('token')}` },
+          body: formData,
+        })
+      ).json();
+
+      if (response.ok) {
+        window.location.href = 'profiles.html';
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
