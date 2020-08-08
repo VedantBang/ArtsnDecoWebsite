@@ -10,6 +10,12 @@ body {
 }
 /* End Of Global styles */
 
+/* Safari Issue */
+.safari-issue {
+  -webkit-appearance: none;
+}
+/* End Of Safari Issue */
+
 /* Navbar */
 .sidebar {
   height: 100vh;
