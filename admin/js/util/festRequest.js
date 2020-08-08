@@ -1,6 +1,6 @@
 const festRequest = (fest) => {
-  document.getElementById(`${fest}`).addEventListener('click', async () => {
-    try {
+  document.getElementById(`${fest}`).addEventListener('click', async (e) => {
+    try { 
       $('#fests').empty();
 
       const loading = document.createElement('i');

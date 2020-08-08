@@ -36,6 +36,31 @@ router.post('/add', upload.none(), async (req,res,next) => {
 });
 
 
+router.get('/id/:_id', async (req, res, next) => {
+	try {
+		let { _id } = req.params;
+
+		if (!_id) {
+			let err = new Error("Id must be present");
+			err.status = 400;
+			next(err);
+			return;
+		}
+
+		let data = await Profile.findOne({ _id });
+		if (!data) {
+			let err = new Error("Invalid id");
+			err.status = 404;
+			next(err);
+			return;
+		}
+
+		res.status(200).json({ ok: 1, data });
+
+	} catch (err) { next(err); }
+});
+
+
 router.put('/update', upload.none(), async (req,res,next) => {
 	try{
 		let { _id } = req.body;

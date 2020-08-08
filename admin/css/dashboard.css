@@ -102,66 +102,14 @@ body {
 }
 /* End Of Creativity */
 
-/* Add Profile */
-.add-profile-successful,
-#error-add-profile {
-  display: none;
+/* Profiles */
+.update-profile-alert {
+  display: inline;
+  padding: 0.3rem;
+  margin: 0;
+  visibility: hidden;
 }
-/* End Of Add Profile */
-
-/* Update Delete Profile Tabs */
-.nav-tabs {
-  display: flex;
-  justify-content: center;
-}
-/* End Of Update Delete Profile Tabs */
-
-/* Edit Profiles */
-.edit-profiles-tab {
-  background: white;
-}
-
-.edit-profiles,
-.update-profile-successful,
-#error-update-profile,
-.no-profiles {
-  display: none;
-}
-
-.list-group-item-dark {
-  background: #eee;
-}
-
-.choose-profile {
-  background: #fabc35;
-  color: rgb(53, 53, 53);
-}
-/* End Of Edit Profiles */
-
-/* Delete Profiles */
-.delete-profiles-tab {
-  background: white;
-}
-
-.delete-profiles,
-.delete-profiles-successful,
-#error-delete-profiles,
-.no-delete-profiles {
-  display: none;
-}
-/* End Of Delete Profiles */
-
-/* Error Messages */
-#error-uploads,
-#error-message,
-#error-add-profile,
-#error-update-profile,
-#error-delete-profiles,
-#error-creative-uploads,
-#error-delete-creative-work {
-  color: red;
-}
-/* End Of Error Messages */
+/* End Of Profiles */
 
 /* Optional field values in upload and update form */
 .label-name-of-event,
