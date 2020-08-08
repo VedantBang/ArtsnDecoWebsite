@@ -92,6 +92,7 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
         body: formData,
       })
     ).json();
+    
     $('.update-loading').empty();
 
     if (response.ok) {

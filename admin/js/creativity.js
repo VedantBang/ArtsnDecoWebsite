@@ -74,7 +74,7 @@ document
                       <td>
                         <input
                           type="text"
-                          value=${response.data[i].title}
+                          value="${response.data[i].title}"
                           class="form-control form-control-sm"
                           id="title-${response.data[i]._id}"
                           placeholder="Enter Title"
@@ -83,7 +83,7 @@ document
                       <td>
                         <input
                           type="text"
-                          value=${response.data[i].link}
+                          value="${response.data[i].link}"
                           class="form-control form-control-sm"
                           id="link-${response.data[i]._id}"
                           placeholder="Enter Image Link"

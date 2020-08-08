@@ -19,8 +19,9 @@
 // Sending updated profile data to backend
 document
   .getElementById('update-profile')
-  .addEventListener('click', async () => {
+  .addEventListener('click', async (e) => {
     try {
+      e.preventDefault();
       const name = document.querySelector('#name').value;
       const post = document.querySelector('#post').value;
       const insta = document.querySelector('#insta-link').value;
