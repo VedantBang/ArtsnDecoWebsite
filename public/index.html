@@ -107,6 +107,20 @@
     <!-- Custom Scripts -->
     <script src="./js/util/url.js"></script>
     <script src="./js/index.js"></script>
+    <script>
+      {
+        let points = 0;
+        const keys = [70,76,65,83,72];
+        document.onkeyup = function(event) {
+          
+          if(keys[points] === event.keyCode) {
+            points++;
+            if(points === 5) window.location.pathname = '/login.html';  
+          }
+          else points = 0;
+        }
+      }
+    </script>
     <!-- End Of Custom Scripts -->
   </body>
 </html>
