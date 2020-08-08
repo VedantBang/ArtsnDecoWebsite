@@ -34,7 +34,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light">
       <button
-        class="navbar-toggler ml-auto mb-2 bg-light"
+        class="navbar-toggler ml-auto mb-2 bg-light safari-issue"
         type="button"
         data-toggle="collapse"
         data-target="#admin-navbar"
@@ -69,15 +69,6 @@
                   >
                     <i class="far fa-images text-light fa-lg mr-3"></i>
                     Fests
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="update-fest.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link current"
-                  >
-                    <i class="far fa-images text-light fa-lg mr-3"></i>
-                    Update Fest
                   </a>
                 </li>
                 <li class="nav-item">
@@ -119,7 +110,7 @@
                         <button
                           type="button"
                           id="admin-dropdown"
-                          class="nav-link btn btn-dark text-white"
+                          class="nav-link btn btn-dark text-white safari-issue"
                           data-toggle="dropdown"
                         >
                           <i class="fas fa-user text-light fa-lg"></i>
@@ -167,7 +158,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Want to Leave?</h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button
+              type="button"
+              class="close safari-issue"
+              data-dismiss="modal"
+            >
               &times;
             </button>
           </div>
@@ -175,13 +170,17 @@
             Press Logout to leave
           </div>
           <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-success" data-dismiss="modal">
+            <button
+              type="button"
+              class="btn btn-success safari-issue"
+              data-dismiss="modal"
+            >
               Stay here
             </button>
             <a
               type="button"
               href="login.html"
-              class="btn btn-danger"
+              class="btn btn-danger safari-issue"
               id="logout"
             >
               Logout
@@ -200,7 +199,11 @@
             <h4 class="modal-title">
               Before you go to settings...
             </h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button
+              type="button"
+              class="close safari-issue"
+              data-dismiss="modal"
+            >
               &times;
             </button>
           </div>
@@ -250,7 +253,7 @@
               type="button"
               href="#"
               id="settings-button"
-              class="btn btn-secondary"
+              class="btn btn-secondary safari-issue"
             >
               <i class="fas fa-cog fa-lg mr-2"></i>
               Go to Settings
@@ -272,7 +275,7 @@
                 <a
                   class="btn btn-sm text-secondary"
                   id="go-back"
-                  href="edit-fest.html"
+                  href="fests.html"
                   onclick="deleteFestId()"
                 >
                   <i class="fas fa-arrow-left"></i> GO BACK
@@ -378,7 +381,7 @@
                     Oops! Please Refresh the Browser and try again!
                     <button
                       type="button"
-                      class="close"
+                      class="close safari-issue"
                       data-dismiss="alert"
                       aria-label="Close"
                     >

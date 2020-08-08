@@ -91,7 +91,8 @@ document
                       </td>
                       <td>
                         <button
-                          class="btn btn-success btn-sm"
+                          type="button"
+                          class="btn btn-success btn-sm safari-issue"
                           onclick="updateCreativity('${response.data[i]._id}')"
                         >
                           Save

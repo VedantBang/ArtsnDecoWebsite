@@ -1,7 +1,7 @@
-const waves = document.querySelector('#waves').value;
-const quark = document.querySelector('#quark').value;
-const spree = document.querySelector('#spree').value;
-const other = document.querySelector('#other').value;
+const waves = document.querySelector('#waves').id;
+const quark = document.querySelector('#quark').id;
+const spree = document.querySelector('#spree').id;
+const other = document.querySelector('#other').id;
 
 // Initial message
 const tr = document.createElement('tr');

@@ -67,7 +67,7 @@ document
                       <td>
                         <a
                           type="button"
-                          class="btn btn-sm btn-success"
+                          class="btn btn-sm btn-success safari-issue"
                           href="update-profile.html"
                           onclick="updateProfile('${response.data[i]._id}')"
                         >
