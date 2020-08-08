@@ -10,6 +10,8 @@ document.getElementById('change-password').addEventListener('click', () => {
 
     formData.append('password', password);
 
+    spinner('.loading');
+
     fetch(`${url}/user/updatepass`, {
       method: 'PUT',
       body: formData,
@@ -21,6 +23,8 @@ document.getElementById('change-password').addEventListener('click', () => {
         return res.json();
       })
       .then((res) => {
+        $('.loading').empty();
+
         if (res.ok) {
           document.querySelector('.change-password').style.display = 'block';
         } else {

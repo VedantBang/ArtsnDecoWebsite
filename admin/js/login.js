@@ -8,6 +8,8 @@ document.getElementById('login-button').addEventListener('click', () => {
   formData.append('username', username);
   formData.append('password', password);
 
+  spinner('.loading');
+
   fetch(`${url}/user/login`, {
     method: 'POST',
     body: formData,
@@ -16,6 +18,8 @@ document.getElementById('login-button').addEventListener('click', () => {
       return res.json();
     })
     .then((res) => {
+      $('.loading').empty();
+
       if (res.ok) {
         localStorage.setItem('token', res.token);
         window.location.href = '/dashboard.html';

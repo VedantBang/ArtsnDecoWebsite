@@ -1,5 +1,7 @@
 const getResponse = async (type) => {
   try {
+    spinner('.loading');
+
     const response = await (
       await fetch(`${url}/user/${type}`, {
         method: 'GET',
@@ -7,7 +9,14 @@ const getResponse = async (type) => {
       })
     ).json();
 
-    return response;
+    $('.loading').empty();
+
+    if (response.ok) {
+      return response;
+    } else {
+      document.querySelector('.dashboard-cards-error-alert').style.display =
+        'block';
+    }
   } catch (err) {
     console.log(err);
   }

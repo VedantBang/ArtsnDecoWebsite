@@ -279,11 +279,11 @@
     </div>
     <!-- End Of Creativity Section Explanation-->
 
-    <!-- Add Creative Artworks -->
+    <!-- Main Content -->
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row justify-content-center">
+          <div class="row pb-5 mb-5 justify-content-center">
             <div class="col-11 col-sm-9 p-2">
               <div class="row justify-content-center">
                 <button
@@ -317,33 +317,52 @@
                   </table>
                 </div>
               </div>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center mb-3 added-creativity"></div>
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show add-creativity-error-alert"
+                  role="alert"
+                >
+                  Make sure You have Actually Added Data before Saving!
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <button class="btn btn-success" id="add-new-creative-works">
                   Add and Save
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Add Creative Artworks -->
-
-    <!-- Deleting And Updating Creativity -->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pb-5 mb-5 justify-content-center">
-            <div class="col-11 col-sm-9 p-2">
               <div class="row align-items-center">
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show creativity-delete-error-alert"
+                  role="alert"
+                >
+                  Oops! Please Refresh the Browser and try again!
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <h1 class="pr-5">Edit Creativity</h1>
+                <div class="mr-3 delete-loading"></div>
                 <button
                   class="btn btn-sm btn-outline-danger"
+                  id="delete-creativity-button"
                   data-toggle="modal"
                   data-target="#delete-creative-works-modal"
                 >
                   <i class="fas fa-trash alt"></i> DELETE
                 </button>
+                <div class="loading ml-5"></div>
               </div>
               <div class="row justify-content-center">
                 <table class="table table-hover">
@@ -365,13 +384,27 @@
                   </thead>
                   <tbody id="creativity"></tbody>
                 </table>
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show creativity-update-error-alert"
+                  role="alert"
+                >
+                  Make Sure you have Actually Edited before Saving!
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Of Deleting And Updating Creativity -->
+    <!-- Main Content -->
 
     <!-- Delete Creative Works Modal -->
     <div class="modal fade" id="delete-creative-works-modal">
@@ -455,6 +488,7 @@
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/deleteSelected.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
+    <script src="./js/util/spinner.js"></script>
     <script src="./js/creativity.js"></script>
   </body>
 </html>

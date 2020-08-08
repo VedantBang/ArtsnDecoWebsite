@@ -83,6 +83,8 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
     formData.append('links', links);
     formData.append('_id', localStorage.getItem('festId'));
 
+    spinner('.update-loading');
+
     const response = await (
       await fetch(`${url}/change/update`, {
         method: 'PUT',
@@ -90,9 +92,13 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
         body: formData,
       })
     ).json();
-    console.log(response);
+    $('.update-loading').empty();
+
     if (response.ok) {
       window.location.href = 'fests.html';
+    } else {
+      document.querySelector('.update-fest-error-alert').style.display =
+        'block';
     }
   } catch (err) {
     console.log(err);

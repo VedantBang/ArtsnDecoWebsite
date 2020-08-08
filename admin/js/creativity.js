@@ -32,6 +32,8 @@ document
       formData.append('titles', titles);
       formData.append('links', links);
 
+      spinner('.added-creativity');
+
       const response = await (
         await fetch(`${url}/creative/add`, {
           method: 'POST',
@@ -40,8 +42,13 @@ document
         })
       ).json();
 
+      $('.added-creativity').empty();
+
       if (response.ok) {
         window.location.href = 'creativity.html';
+      } else {
+        document.querySelector('.add-creativity-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);
@@ -56,6 +63,8 @@ document
     ).json();
 
     if (response.data.length) {
+      document.querySelector('#delete-creativity-button').style.display =
+        'inline';
       for (let i = 0; i < response.data.length; i++) {
         const row = `<tr>
                       <td>
@@ -117,6 +126,8 @@ const updateCreativity = async (creativeId) => {
     formData.append('title', title);
     formData.append('link', link);
 
+    spinner('.loading');
+
     const response = await (
       await fetch(`${url}/creative/update`, {
         method: 'PUT',
@@ -124,7 +135,9 @@ const updateCreativity = async (creativeId) => {
         body: formData,
       })
     ).json();
-    console.log(response);
+
+    $('.loading').empty();
+
     if (response.ok) {
       document.querySelector('.update-creativity-alert').style.visibility =
         'visible';
@@ -134,6 +147,9 @@ const updateCreativity = async (creativeId) => {
             'hidden'),
         1000
       );
+    } else {
+      document.querySelector('.creativity-update-error-alert').style.display =
+        'block';
     }
   } catch (err) {
     console.log(err);
@@ -154,6 +170,8 @@ document
 
       formData.append('list', list);
 
+      spinner('.delete-loading');
+
       const response = await (
         await fetch(`${url}/creative/delete`, {
           method: 'DELETE',
@@ -162,8 +180,13 @@ document
         })
       ).json();
 
+      $('.delete-loading').empty();
+
       if (response.ok) {
         window.location.href = 'creativity.html';
+      } else {
+        document.querySelector('.creativity-delete-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);

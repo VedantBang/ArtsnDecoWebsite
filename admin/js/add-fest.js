@@ -35,6 +35,8 @@ document.getElementById('add-new-fest').addEventListener('click', async (e) => {
     formData.append('titles', titles);
     formData.append('links', links);
 
+    spinner('.added-fest');
+
     const response = await (
       await fetch(`${url}/change/new`, {
         method: 'POST',
@@ -42,10 +44,15 @@ document.getElementById('add-new-fest').addEventListener('click', async (e) => {
         body: formData,
       })
     ).json();
-    console.log(response);
+
+    $('.added-fest').empty();
+
     if (response.ok) {
       document.querySelector('.add-new-fest-alert').style.display = 'block';
       window.location.href = 'fests.html';
+    } else {
+      document.querySelector('.add-new-fest-error-alert').style.display =
+        'block';
     }
   } catch (err) {
     console.log(err);

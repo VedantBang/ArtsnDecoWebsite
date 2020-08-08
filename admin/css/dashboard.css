@@ -69,6 +69,12 @@ body {
 }
 /* End Of Cards */
 
+/* Dashboard */
+.dashboard-cards-error-alert {
+  display: none;
+}
+/* End Of Dashboard */
+
 /* Add New Fest */
 .delete-button {
   display: none;
@@ -79,7 +85,19 @@ body {
 .add-new-fest-alert {
   display: none;
 }
+.add-new-fest-error-alert {
+  display: none;
+}
 /* End Of Add New Fest */
+
+/* Delete Fests */
+.fests-delete-error-alert {
+  display: none;
+}
+#delete-fest-button {
+  display: none;
+}
+/* End Of Delete Fests */
 
 /* Update Fest */
 .delete-warning-alert {
@@ -87,6 +105,9 @@ body {
   padding: 0.3rem;
   margin: 0;
   visibility: hidden;
+}
+.update-fest-error-alert {
+  display: none;
 }
 /* End Of Update Fest */
 
@@ -100,7 +121,34 @@ body {
   margin: 0;
   visibility: hidden;
 }
+.add-creativity-error-alert {
+  display: none;
+}
+#delete-creativity-button {
+  display: none;
+}
+.creativity-delete-error-alert {
+  display: none;
+}
+.creativity-update-error-alert {
+  display: none;
+}
 /* End Of Creativity */
+
+/* Profiles */
+.add-profile-error-alert {
+  display: none;
+}
+#delete-profiles-button {
+  display: none;
+}
+.profiles-delete-error-alert {
+  display: none;
+}
+.update-profile-error-alert {
+  display: none;
+}
+/* End Of Profiles */
 
 /* Optional field values in upload and update form */
 .label-name-of-event,

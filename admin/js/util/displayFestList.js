@@ -1,5 +1,6 @@
 const displayFestList = (data) => {
   if (data.length) {
+    document.querySelector('#delete-fest-button').style.display = 'inline';
     for (let i = 0; i < data.length; i++) {
       if (data[i].theme) {
         const row = `<tr>
@@ -55,6 +56,7 @@ const displayFestList = (data) => {
     td.innerText = 'No fest added yet!';
     tr.appendChild(td);
     document.querySelector('#fests').appendChild(tr);
+    document.querySelector('#delete-fest-button').style.display = 'none';
   }
 };
 

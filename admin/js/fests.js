@@ -31,9 +31,8 @@ document
 
       formData.append('list', list);
 
-      for (let list of formData.entries()) {
-        console.log(list[0] + ', ' + list[1]);
-      }
+      spinner('.delete-loading');
+
       const response = await (
         await fetch(`${url}/change/deletefest`, {
           method: 'DELETE',
@@ -42,8 +41,13 @@ document
         })
       ).json();
 
+      $('.delete-loading').empty();
+
       if (response.ok) {
         window.location.href = 'fests.html';
+      } else {
+        document.querySelector('.fests-delete-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);

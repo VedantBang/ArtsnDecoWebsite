@@ -298,6 +298,21 @@
                     />
                   </div>
                   <div class="form-group row justify-content-center">
+                    <div class="col-12 text-center mb-3 added-profile"></div>
+                    <div
+                      class="mt-2 col-12 alert alert-danger alert-dismissible fade show add-profile-error-alert"
+                      role="alert"
+                    >
+                      Make sure You have Actually Added Data before Saving!
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
                     <button class="btn btn-success" id="add-new-profile">
                       Add Profile
                     </button>
@@ -305,10 +320,25 @@
                 </form>
               </div>
               <div class="row align-items-center">
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show profiles-delete-error-alert"
+                  role="alert"
+                >
+                  Oops! Please Refresh the Browser and try again!
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <h1 class="pr-5">Edit Profiles</h1>
+                <div class="mr-3 delete-loading"></div>
                 <button
                   class="btn btn-sm btn-outline-danger"
-                  id="delete-profiles"
+                  id="delete-profiles-button"
                   data-toggle="modal"
                   data-target="#delete-profiles-modal"
                 >
@@ -418,6 +448,7 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
+    <script src="./js/util/spinner.js"></script>
     <script src="./js/profiles.js"></script>
   </body>
 </html>

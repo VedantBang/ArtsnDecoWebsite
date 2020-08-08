@@ -361,6 +361,21 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
+                    <div class="added-fest col-12 text-center mb-2"></div>
+                    <div
+                      class="col-12 alert alert-danger alert-dismissible fade show add-new-fest-error-alert"
+                      role="alert"
+                    >
+                      Make sure You have Actually Added Data before Saving!
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
                     <button class="btn btn-success" id="add-new-fest">
                       Add and Save
                     </button>
@@ -368,14 +383,31 @@
                 </form>
               </div>
               <div class="row align-items-center">
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show fests-delete-error-alert"
+                  role="alert"
+                >
+                  Oops! Please Refresh the Browser and try again!
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <h1 class="pr-5">Edit Fests</h1>
+                <div class="mr-3 delete-loading"></div>
                 <button
                   class="btn btn-sm btn-outline-danger"
+                  id="delete-fest-button"
                   data-toggle="modal"
                   data-target="#delete-fests-modal"
                 >
                   <i class="fas fa-trash alt"></i> DELETE
                 </button>
+                <div class="loading ml-5"></div>
               </div>
               <div class="row mt-3 mb-3">
                 <form enctype="multipart/form-data">
@@ -420,10 +452,9 @@
                     <label class="form-check-label" for="other">Other</label>
                   </div>
                 </form>
-                <div class="loading ml-5"></div>
               </div>
               <div class="row mt-2">
-                <table class="table table-hover">
+                <table class="table table-hover justify-content-center">
                   <thead>
                     <tr>
                       <th scope="col"></th>
@@ -433,7 +464,7 @@
                       <th scope="col"></th>
                     </tr>
                   </thead>
-                  <tbody id="fests"></tbody>
+                  <tbody id="fests" class="justify-content-center"></tbody>
                 </table>
               </div>
             </div>
@@ -531,6 +562,7 @@
     <script src="./js/util/displayFestList.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/util/deleteSelected.js"></script>
+    <script src="./js/util/spinner.js"></script>
     <script src="./js/fests.js"></script>
     <script src="./js/add-fest.js"></script>
   </body>

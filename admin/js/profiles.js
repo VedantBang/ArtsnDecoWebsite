@@ -14,6 +14,8 @@ document
       formData.append('post', post);
       formData.append('insta', insta);
 
+      spinner('.added-profile');
+
       const response = await (
         await fetch(`${url}/profile/add`, {
           method: 'POST',
@@ -22,8 +24,13 @@ document
         })
       ).json();
 
+      $('.added-profile').empty();
+
       if (response.ok) {
         window.location.href = 'profiles.html';
+      } else {
+        document.querySelector('.add-profile-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);
@@ -38,6 +45,8 @@ document
     ).json();
 
     if (response.data.length) {
+      document.querySelector('#delete-profiles-button').style.display =
+        'inline';
       for (let i = 0; i < response.data.length; i++) {
         const row = `<tr>
                       <td>
@@ -101,6 +110,8 @@ document
 
       formData.append('list', list);
 
+      spinner('.delete-loading');
+
       const response = await (
         await fetch(`${url}/profile/delete`, {
           method: 'DELETE',
@@ -109,8 +120,13 @@ document
         })
       ).json();
 
+      $('.delete-loading').empty();
+
       if (response.ok) {
         window.location.href = 'profiles.html';
+      } else {
+        document.querySelector('.profiles-delete-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);

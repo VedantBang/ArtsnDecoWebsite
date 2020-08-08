@@ -32,6 +32,8 @@ document
       formData.append('insta', insta);
       formData.append('_id', localStorage.getItem('profileId'));
 
+      spinner('.updated-profile');
+
       const response = await (
         await fetch(`${url}/profile/update`, {
           method: 'PUT',
@@ -40,8 +42,13 @@ document
         })
       ).json();
 
+      $('.updated-profile').empty();
+
       if (response.ok) {
         window.location.href = 'profiles.html';
+      } else {
+        document.querySelector('.update-profile-error-alert').style.display =
+          'block';
       }
     } catch (err) {
       console.log(err);
