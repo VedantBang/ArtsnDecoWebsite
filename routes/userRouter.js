@@ -90,7 +90,14 @@ router.get('/images', async (req,res,next) => {
 				total:{$sum: {$size: '$images'}}
 			}}
 		]);
+		res.status(200).json({ ok:1, total });
+	} catch(err){ next(err); }
+});
 
+router.get('/totalvisits', async (req,res,next) => {
+	try{
+		let { visits } = await User.findOne({}, { visits:1, _id:0 });
+		res.status(200).json({ ok:1, visits });
 	} catch(err){ next(err); }
 });
 
