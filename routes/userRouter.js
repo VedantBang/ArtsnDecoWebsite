@@ -76,9 +76,8 @@ router.put('/updatepass', upload.none(), async (req,res,next)=>{
 
 router.get('/storage', async (req,res,next) => {
 	try{
-		let output = await mongoose.connection.db.command({ "dbStats":1 });
-		console.log(output);
-		res.status(200).json({ output });
+		let { dataSize } = await mongoose.connection.db.command({ "dbStats":1 });
+		res.status(200).json({ bytes:dataSize });
 	} catch(err){ next(err); }
 });
 
