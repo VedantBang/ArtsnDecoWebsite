@@ -71,7 +71,7 @@ document
                         <button 
                           type="button"
                           class="btn btn-sm btn-danger safari-issue"
-                          onlick="deleteProfile('${response.data[i]._id}')"
+                          onclick="deleteProfile('${response.data[i]._id}')"
                           data-toggle="modal"
                           data-target="#delete-profiles-modal"
                         >
