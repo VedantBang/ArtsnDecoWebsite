@@ -140,9 +140,6 @@ body {
 .add-profile-error-alert {
   display: none;
 }
-#delete-profiles-button {
-  display: none;
-}
 .profiles-delete-error-alert {
   display: none;
 }

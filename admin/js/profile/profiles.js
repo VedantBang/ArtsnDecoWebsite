@@ -45,13 +45,8 @@ document
     ).json();
 
     if (response.data.length) {
-      document.querySelector('#delete-profiles-button').style.display =
-        'inline';
       for (let i = 0; i < response.data.length; i++) {
         const row = `<tr>
-                      <td>
-                        <input type="checkbox" value=${response.data[i]._id} />
-                      </td>
                       <td>${i + 1}</td>
                       <td>
                         ${response.data[i].name}
@@ -71,8 +66,16 @@ document
                           href="update-profile.html"
                           onclick="updateProfile('${response.data[i]._id}')"
                         >
-                          Edit
+                          <i class="fas fa-edit"></i>
                         </a>
+                        <button 
+                          type="button"
+                          class="btn btn-sm btn-danger safari-issue"
+                          onlick="deleteProfile('${response.data[i]._id}')"
+                          data-toggle="modal"
+                          data-target="#delete-profiles-modal"
+                        >
+                          <i class="fas fa-trash alt"></i>
                       </td>
                     </tr>`;
         $('#profile').append(row);
@@ -91,7 +94,12 @@ document
   }
 })();
 
-// Setting profile id to local storage
+// Setting profile id to local storage for deleting
+const deleteProfile = (profileId) => {
+  localStorage.setItem('profileId', profileId);
+};
+
+// Setting profile id to local storage for updating
 const updateProfile = (profileId) => {
   localStorage.setItem('profileId', profileId);
 };
@@ -101,14 +109,9 @@ document
   .getElementById('delete-selected-profiles')
   .addEventListener('click', async () => {
     try {
-      let list = Array.from(document.querySelectorAll('input[type="checkbox"]'))
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value)
-        .join();
-
       const formData = new FormData();
 
-      formData.append('list', list);
+      formData.append('list', localStorage.getItem('profileId'));
 
       spinner('.delete-loading');
 
@@ -124,6 +127,7 @@ document
 
       if (response.ok) {
         window.location.href = 'profiles.html';
+        localStorage.removeItem('profileId');
       } else {
         document.querySelector('.profiles-delete-error-alert').style.display =
           'block';

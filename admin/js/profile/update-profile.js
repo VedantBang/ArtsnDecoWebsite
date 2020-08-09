@@ -56,3 +56,8 @@ document
       console.log(err);
     }
   });
+
+// Deleting profile id from local storage
+const deleteProfileId = () => {
+  localStorage.removeItem('profileId');
+};
