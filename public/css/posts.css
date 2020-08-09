@@ -1,92 +1,120 @@
 /* Importing Font Families */
 @font-face {
-  font-family: 'Sofa Sans';
-  src: url('../assets/fonts/SofaSansHand-Bk.otf');
+    font-family: 'Sofa Sans';
+    src: url('../assets/fonts/SofaSansHand-Bk.otf');
+}
+
+@font-face {
+    font-family: 'Blackout-2AM';
+    src: url('../assets/fonts/Blackout\ 2\ AM.ttf');
 }
 
 /* End Of Importing Font Families */
 
 /* Global styles */
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 /* End Of Global Styles */
 
 /* Background Image */
 .bg-overlay {
-  background: rgba(0, 0, 0, 0.8);
-  z-index: -1;
+    background-color: #000;
+    z-index: -1;
 }
 
 .bg-image {
-  position: absolute;
-  top: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
-  width: 100vw;
-  height: 100vh;
+    position: absolute;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    width: 100vw;
+    height: 100vh;
 }
 /* End Of Background Image */
 
 /* Carousel */
 /* Implementing https://codepen.io/MhSami/pen/zNBMbj code */
 .show-neighbors {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .show-neighbors .carousel-indicators {
-  margin-right: 25%;
-  margin-left: 25%;
+    margin-right: 25%;
+    margin-left: 25%;
 }
 
 .show-neighbors .carousel-control-prev,
 .show-neighbors .carousel-control-next {
-  background: rgba(0, 0, 0, 0.6);
-  width: 25%;
-  z-index: 11;
-  /* .carousel-caption has z-index 10 */
+    background: rgba(0, 0, 0, 0.6);
+    width: 25%;
+    z-index: 11;
+    /* .carousel-caption has z-index 10 */
 }
 
 .show-neighbors .carousel-inner {
-  width: 150%;
-  left: -25%;
+    width: 150%;
+    left: -25%;
 }
 
 .show-neighbors .carousel-item-next:not(.carousel-item-left),
 .show-neighbors .carousel-item-right.active {
-  -webkit-transform: translate3d(33%, 0, 0);
-  transform: translate3d(33%, 0, 0);
+    -webkit-transform: translate3d(33%, 0, 0);
+    transform: translate3d(33%, 0, 0);
 }
 
 .show-neighbors .carousel-item-prev:not(.carousel-item-right),
 .show-neighbors .carousel-item-left.active {
-  -webkit-transform: translate3d(-33%, 0, 0);
-  transform: translate3d(-33%, 0, 0);
+    -webkit-transform: translate3d(-33%, 0, 0);
+    transform: translate3d(-33%, 0, 0);
 }
 
 .show-neighbors .item__third {
-  float: left;
-  position: relative;
-  /* captions can now be added */
-  width: 33.33333333%;
+    float: left;
+    position: relative;
+    /* captions can now be added */
+    width: 33.33333333%;
 }
 /* End Of Implementing https://codepen.io/MhSami/pen/zNBMbj code */
 
 .img-fluid {
-  width: 800px;
-  height: 490px;
+    width: 800px;
+    height: 533px;
 }
 
 .card-text {
-  font-family: 'Sofa Sans';
-  font-size: 18px;
-  color: #2a375e;
-  background: #ffffff;
-  border-radius: 2px;
-  margin: 0.3rem;
-  padding: 0.1rem 0.4rem;
+    font-family: 'Sofa Sans';
+    font-size: 18px;
+    color: #2a375e;
+    background: #ffffff;
+    border-radius: 2px;
+    margin: 0.3rem;
+    padding: 0.1rem 0.4rem;
 }
+
+/* Carousel Buttons Styles */
+.fa-chevron-left {
+    margin: 6px 5px 0 4px;
+    font-size: 130%;
+    color: #2a375e;
+}
+
+.fa-chevron-right {
+    margin: 6px 4px 0 5px;
+    font-size: 130%;
+    color: #2a375e;
+}
+/* End of Carousel Buttons Styles */
+
 /* End Of Carousel */
+
+.egtext {
+    margin: 20px 0 0 400px;
+    color: #fff;
+    font-family: 'Blackout-2AM';
+    font-size: 30px;
+    z-index: 500;
+}
