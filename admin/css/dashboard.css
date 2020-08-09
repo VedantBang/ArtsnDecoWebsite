@@ -128,9 +128,6 @@ body {
 .add-creativity-error-alert {
   display: none;
 }
-#delete-creativity-button {
-  display: none;
-}
 .creativity-delete-error-alert {
   display: none;
 }

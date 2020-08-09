@@ -59,13 +59,8 @@ document
     ).json();
 
     if (response.data.length) {
-      document.querySelector('#delete-creativity-button').style.display =
-        'inline';
       for (let i = 0; i < response.data.length; i++) {
         const row = `<tr>
-                      <td>
-                        <input type="checkbox" value=${response.data[i]._id} />
-                      </td>
                       <td>${i + 1}</td>
                       <td>
                         <input
@@ -91,8 +86,17 @@ document
                           class="btn btn-success btn-sm safari-issue"
                           onclick="updateCreativity('${response.data[i]._id}')"
                         >
-                          Save
-                      </button>
+                          <i class="fas fa-save"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-danger safari-issue"
+                          onclick="deleteCreativity('${response.data[i]._id}')"
+                          data-toggle="modal"
+                          data-target="#delete-creative-works-modal"
+                        >
+                          <i class="fas fa-trash alt"></i>
+                        </button>
                       </td>
                     </tr>`;
         $('#creativity').append(row);
@@ -110,6 +114,11 @@ document
     console.log(err);
   }
 })();
+
+// Setting creative id to local storage
+const deleteCreativity = (creativeId) => {
+  localStorage.setItem('creativeId', creativeId);
+};
 
 // Sending update request to backend
 const updateCreativity = async (creativeId) => {
@@ -158,14 +167,9 @@ document
   .getElementById('delete-creative-artwork')
   .addEventListener('click', async () => {
     try {
-      let list = Array.from(document.querySelectorAll('input[type="checkbox"]'))
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value)
-        .join();
-
       const formData = new FormData();
 
-      formData.append('list', list);
+      formData.append('list', localStorage.getItem('creativeId'));
 
       spinner('.delete-loading');
 

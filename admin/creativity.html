@@ -324,8 +324,10 @@
               </div>
               <div class="row-justify-content-center mt-4">
                 <div class="form-group row justify-content-center">
-                  <table class="table table-sm table-hover table-responsive-sm">
-                    <tbody class="images"></tbody>
+                  <table
+                    class="table table-responsive-sm table-sm table-borderless justify-content-center"
+                  >
+                    <tbody class="images justify-content-center"></tbody>
                   </table>
                 </div>
               </div>
@@ -366,25 +368,18 @@
                 </div>
                 <h1 class="pr-5">Edit Creativity</h1>
                 <div class="mr-3 delete-loading"></div>
-                <button
-                  class="btn btn-sm btn-outline-danger"
-                  id="delete-creativity-button"
-                  data-toggle="modal"
-                  data-target="#delete-creative-works-modal"
-                >
-                  <i class="fas fa-trash alt"></i> DELETE
-                </button>
                 <div class="loading ml-5"></div>
               </div>
               <div class="row justify-content-center">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>#</th>
-                      <th>Title</th>
-                      <th>Link</th>
-                      <td>
+                <table
+                  class="table table-responsive-sm table-borderless justify-content-center"
+                >
+                  <thead class="justify-content-center">
+                    <tr class="justify-content-center">
+                      <th scope="col">#</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Link</th>
+                      <td scope="col">
                         <div
                           class="alert alert-success update-creativity-alert text-success ml-3"
                           role="alert"
@@ -392,6 +387,7 @@
                           <i class="fas fa-check"></i> Saved!
                         </div>
                       </td>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody id="creativity"></tbody>
@@ -400,7 +396,7 @@
                   class="mt-2 col-12 alert alert-danger alert-dismissible fade show creativity-update-error-alert"
                   role="alert"
                 >
-                  Make Sure you have Actually Edited before Saving!
+                  Make sure you have edited something before saving!
                   <button
                     type="button"
                     class="close safari-issue"
@@ -502,7 +498,6 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
-    <script src="./js/util/deleteSelected.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/util/spinner.js"></script>
     <script src="./js/creativity/creativity.js"></script>
