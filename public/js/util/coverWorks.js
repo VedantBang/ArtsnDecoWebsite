@@ -25,23 +25,23 @@ const coverWorks = (fest) => {
           </div>`;
         $(`.${fest}-carousel`).append(cover);
       }
-      
-      // new Glider(document.querySelector(`.${fest}-carousel`), {
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1,
-      //   arrows: {
-      //     prev: document.querySelector(`.${fest}-prev`),
-      //     next: document.querySelector(`.${fest}-next`),
-      //   },
-      // });
 
-      // $(`.${fest}-slider`).slick({
-      //   infinite: true,
+      new Glider(document.querySelector(`.${fest}-carousel`), {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: {
+          prev: document.querySelector(`.${fest}-prev`),
+          next: document.querySelector(`.${fest}-next`),
+        },
+        itemWidth: 400,
+      });
+
+      // $(`.${fest}-carousel`).slick({
       //   speed: 300,
       //   slidesToShow: 3,
-      //   slidesToScroll: 3,
-      //   prevArrow: $('.prev'),
-      //   nextArrow: $('.next'),
+      //   slidesToScroll: 1,
+      //   prevArrow: $(`.${fest}-prev`),
+      //   nextArrow: $(`.${fest}-next`),
       // });
     } catch (err) {
       console.log(err);
