@@ -88,15 +88,14 @@ router.delete('/delete', upload.none(), async (req,res,next) => {
 	try{
 		let { list } = req.body;
 		if(!list){
-			let err = new Error('list of ids must be specified');
+			let err = new Error('id(list) must be present');
 			err.status = 400;
 			next(err);
 			return;
 		}
-		list = list.split(',');
 
-		let { deletedCount } = await Profile.deleteMany({ _id: {$in: list} });
-		if( deletedCount === list.length ){
+		let { deletedCount } = await Profile.deleteMany({ _id: list });
+		if( deletedCount === 1 ){
 			res.status(200).json({ ok:1 });
 		} else {
 			let err = new Error('Delete failed, system inconsistent');
