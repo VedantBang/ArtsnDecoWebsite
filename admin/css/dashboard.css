@@ -8,6 +8,13 @@ body {
   font-family: Poppins, sans-serif;
   background: #eee;
 }
+
+.delete-warning-alert {
+  display: inline;
+  padding: 0.3rem;
+  margin: 0;
+  visibility: hidden;
+}
 /* End Of Global styles */
 
 /* Safari Issue */
@@ -103,15 +110,15 @@ body {
 #delete-fest-button {
   display: none;
 }
-/* End Of Delete Fests */
-
-/* Update Fest */
-.delete-warning-alert {
+.delete-fest-warning-alert {
   display: inline;
   padding: 0.3rem;
   margin: 0;
   visibility: hidden;
 }
+/* End Of Delete Fests */
+
+/* Update Fest */
 .update-fest-error-alert {
   display: none;
 }

@@ -41,7 +41,8 @@
     for (let i = 0; i < response.data.images.length; i++) {
       displayTableRows(
         response.data.images[i].title,
-        response.data.images[i].link
+        response.data.images[i].link,
+        response.data.images[i]._id
       );
     }
   } catch (err) {
@@ -54,9 +55,6 @@ document.getElementById('add-image').addEventListener('click', (e) => {
   e.preventDefault();
   displayTableRows();
 });
-
-// Toggling Delete message warning on mouse hover and deleting images from DOM
-deleteSelected();
 
 // Send update fest request
 document.getElementById('update-fest').addEventListener('click', async (e) => {
@@ -92,7 +90,7 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
         body: formData,
       })
     ).json();
-    
+
     $('.update-loading').empty();
 
     if (response.ok) {

@@ -335,12 +335,7 @@
                     <button class="btn btn-primary" id="add-artwork">
                       Add Artwork
                     </button>
-                    <button
-                      class="ml-3 btn btn-outline-danger delete-button"
-                      id="delete-selected-images"
-                    >
-                      <i class="fas fa-trash alt"></i> DELETE
-                    </button>
+
                     <div
                       class="ml-2 alert alert-danger delete-warning-alert"
                       role="alert"
@@ -353,9 +348,9 @@
                   </div>
                   <div class="form-group row justify-content-center">
                     <table
-                      class="table table-sm table-hover table-responsive-sm"
+                      class="table table-responsive-sm table-sm table-borderless justify-content-center"
                     >
-                      <tbody class="images"></tbody>
+                      <tbody class="images justify-content-center"></tbody>
                     </table>
                   </div>
                   <div class="form-group row justify-content-center">
@@ -411,14 +406,6 @@
                 </div>
                 <h1 class="pr-5">Edit Fests</h1>
                 <div class="mr-3 delete-loading"></div>
-                <button
-                  class="btn btn-sm btn-outline-danger"
-                  id="delete-fest-button"
-                  data-toggle="modal"
-                  data-target="#delete-fests-modal"
-                >
-                  <i class="fas fa-trash alt"></i> DELETE
-                </button>
                 <div class="loading ml-5"></div>
               </div>
               <div class="row mt-3 mb-3">
@@ -447,13 +434,23 @@
                     id="other"
                     value="Other"
                   />
+                  <div
+                    class="ml-2 alert alert-danger delete-fest-warning-alert"
+                    role="alert"
+                  >
+                    <small>
+                      <strong>CAUTION!</strong>
+                      This action is irreversible!
+                    </small>
+                  </div>
                 </form>
               </div>
-              <div class="row mt-2">
-                <table class="table table-hover justify-content-center">
-                  <thead>
+              <div class="row mt-2 justify-content-center">
+                <table
+                  class="table table-responsive-sm table-borderless justify-content-center"
+                >
+                  <thead class="justify-content-center">
                     <tr>
-                      <th scope="col"></th>
                       <th scope="col">#</th>
                       <th scope="col">Theme/Name</th>
                       <th scope="col">Year</th>
@@ -469,51 +466,6 @@
       </div>
     </div>
     <!-- End Of Main Content -->
-
-    <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="delete-fests-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Are You Sure?</h4>
-            <button
-              type="button"
-              class="close safari-issue"
-              data-dismiss="modal"
-            >
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center">
-              Are you sure you want to
-              <span class="text-danger">DELETE</span> the selected fest(s)?
-            </p>
-            <p class="text-center text-muted">
-              <small>(This action is irreverible)</small>
-            </p>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button
-              type="button"
-              class="btn btn-success safari-issue"
-              data-dismiss="modal"
-            >
-              Nope
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger safari-issue"
-              id="delete-selected-fests"
-              data-dismiss="modal"
-            >
-              Yes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End of Delete Confirmation Modal -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -565,8 +517,8 @@
     <script src="./js/util/festRequest.js"></script>
     <script src="./js/util/displayFestList.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
-    <script src="./js/util/deleteSelected.js"></script>
     <script src="./js/util/spinner.js"></script>
+    <script src="./js/util/deleteRequest.js"></script>
     <script src="./js/fests.js"></script>
     <script src="./js/add-fest.js"></script>
   </body>

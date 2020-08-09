@@ -1,11 +1,7 @@
 // Add new input field on clicking add artwork button
 document.getElementById('add-artwork').addEventListener('click', (e) => {
   e.preventDefault();
-  document.querySelector('.delete-button').style.display = 'inline';
   displayTableRows();
-
-  // Toggling Delete message warning on mouse hover and deleting images from DOM
-  deleteSelected();
 
   // Showing save button to DOM
   document.querySelector('#add-new-fest').style.visibility = 'visible';

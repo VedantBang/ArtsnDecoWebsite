@@ -344,14 +344,11 @@
                 <div class="form-group row align-items-center">
                   <label for="images" class="col-form-label">
                     Images Added
-                    <button class="ml-5 btn btn-outline-success" id="add-image">
-                      <i class="fas fa-plus"></i> ADD NEW
-                    </button>
                     <button
-                      class="ml-2 btn btn-outline-danger"
-                      id="delete-selected-images"
+                      class="ml-3 btn btn-sm btn-outline-success"
+                      id="add-image"
                     >
-                      <i class="fas fa-trash-alt"></i> DELETE
+                      <i class="fas fa-plus"></i> ADD NEW
                     </button>
                     <div
                       class="ml-2 alert alert-danger delete-warning-alert"
@@ -366,9 +363,9 @@
 
                   <div class="col-12">
                     <table
-                      class="table table-responsive-sm table-sm table-hover"
+                      class="table table-responsive-sm table-sm table-borderless justify-content-center"
                     >
-                      <tbody class="images"></tbody>
+                      <tbody class="images justify-content-center"></tbody>
                     </table>
                   </div>
                 </div>
@@ -453,7 +450,6 @@
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/toggle.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
-    <script src="./js/util/deleteSelected.js"></script>
     <script src="./js/util/spinner.js"></script>
     <script src="./js/update-fest.js"></script>
   </body>

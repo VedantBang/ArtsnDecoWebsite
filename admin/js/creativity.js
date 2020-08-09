@@ -3,11 +3,7 @@ document
   .getElementById('add-creative-artworks')
   .addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('.delete-button').style.display = 'inline';
     displayTableRows();
-
-    // Toggling Delete message warning on mouse hover and deleting images from DOM
-    deleteSelected();
 
     // Showing save button to DOM
     document.querySelector('#add-new-creative-works').style.visibility =
