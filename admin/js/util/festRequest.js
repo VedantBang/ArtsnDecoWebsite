@@ -11,11 +11,7 @@ const festRequest = (fest) => {
 
       $('.loading').empty();
 
-      displayFestList(
-        response.data,
-        'change/deletefest',
-        'delete-selected-fests'
-      );
+      displayFestList(response.data);
     } catch (err) {
       console.log(err);
     }

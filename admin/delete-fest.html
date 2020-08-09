@@ -100,7 +100,7 @@
               <div class="row align-items-center">
                 <div class="col-md-9">
                   <h4 class="text-light text-uppercase mb-0">
-                    Update Fest
+                    Delete Fest
                   </h4>
                 </div>
                 <div class="col-md-3">
@@ -271,7 +271,7 @@
           <div class="row pt-4 mt-5 mb-5 justify-content-center">
             <div class="col-11 col-sm-10 p-2 mb-5">
               <div class="row align-items-center mb-3">
-                <h1 class="pr-5">Update This Fest</h1>
+                <h1 class="pr-5">Delete This Fest</h1>
                 <a
                   class="btn btn-sm text-secondary"
                   id="go-back"
@@ -281,119 +281,39 @@
                   <i class="fas fa-arrow-left"></i> GO BACK
                 </a>
               </div>
-              <form
-                action="#"
-                id="update-fest-form"
-                class="pr-sm-5 pl-sm-5"
-                enctype="multipart/form-data"
-              >
-                <div class="form-group row">
-                  <label for="fest" class="col-12 col-form-label">
-                    Select Fest
-                  </label>
-                  <select class="col-12 form-control" id="fest">
-                    <option selected disabled>Select Fest</option>
-                    <option value="waves">Waves</option>
-                    <option value="quark">Quark</option>
-                    <option value="spree">Spree</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div class="form-group row name">
-                  <label
-                    for="name"
-                    class="col-12 col-form-label label-name-of-event"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    class="col-12 form-control input-name-of-event"
-                    placeholder="Enter the name of event"
-                  />
-                </div>
-                <div class="form-group row">
-                  <label for="year" class="col-12 col-form-label">
-                    Year
-                  </label>
-                  <input
-                    type="number"
-                    id="year"
-                    min="2005"
-                    max="2099"
-                    step="1"
-                    value="2020"
-                    class="col-12 form-control"
-                  />
-                </div>
-                <div class="form-group row theme">
-                  <label
-                    for="theme"
-                    class="col-12 col-form-control label-theme-of-event"
-                  >
-                    Theme
-                  </label>
-                  <input
-                    type="text"
-                    id="theme"
-                    class="col-12 form-control input-theme-of-event"
-                    placeholder="Enter the theme of the fest"
-                  />
-                </div>
-                <div class="form-group row align-items-center">
-                  <label for="images" class="col-form-label">
-                    Images Added
-                    <button
-                      class="ml-3 btn btn-sm btn-outline-success"
-                      id="add-image"
-                    >
-                      <i class="fas fa-plus"></i> ADD NEW
-                    </button>
-                    <div
-                      class="ml-2 alert alert-danger delete-warning-alert"
-                      role="alert"
-                    >
-                      <small>
-                        <strong>CAUTION!</strong>
-                        This action is irreversible!
-                      </small>
-                    </div>
-                  </label>
-
-                  <div class="col-12">
-                    <table
-                      class="table table-responsive-sm table-sm table-borderless justify-content-center"
-                    >
-                      <tbody class="images justify-content-center"></tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="form-group row justify-content-center">
-                  <div class="col-12 text-center mb-3 update-loading"></div>
+              <div class="row">
+                <div class="col-12 loading text-center"></div>
+                <h4 id="fest" class="col-12"></h4>
+                <h4 id="name" class="col-12"></h4>
+                <h4 id="year" class="col-12"></h4>
+                <h4 id="theme" class="col-12"></h4>
+                <div class="col-12">
+                  <h4 class="text-center">Fest Images</h4>
                   <div
-                    class="mt-2 col-12 alert alert-danger alert-dismissible fade show update-fest-error-alert"
-                    role="alert"
-                  >
-                    Oops! Please Refresh the Browser and try again!
-                    <button
-                      type="button"
-                      class="close safari-issue"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
+                    class="row mt-4 justify-content-center"
+                    id="fest-images"
+                  ></div>
+                </div>
+              </div>
+              <div class="row mt-5 justify-content-center">
+                <div
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show fest-delete-error-alert"
+                  role="alert"
+                >
+                  Oops! Please Refresh the Browser and try again!
                   <button
-                    type="submit"
-                    class="btn btn-success"
-                    id="update-fest"
+                    type="button"
+                    class="close safari-issue"
+                    data-dismiss="alert"
+                    aria-label="Close"
                   >
-                    Save Changes
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-              </form>
+                <button class="btn btn-danger" id="delete-fest">
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -417,8 +337,8 @@
             </div>
             <div class="col-lg-6 text-center">
               <p>
-                2020, Made with
-                <i class="fas fa-heart text-danger"></i> by Rohit and Vedant
+                2020, Made with <i class="fas fa-heart text-danger"></i> by
+                Rohit and Vedant
               </p>
             </div>
           </div>
@@ -448,9 +368,7 @@
     <script src="./js/util/verifyToken.js"></script>
     <script src="./js/util/settingsPageAccessRequest.js"></script>
     <script src="./js/util/logout.js"></script>
-    <script src="./js/util/toggle.js"></script>
-    <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/util/spinner.js"></script>
-    <script src="./js/fest/update-fest.js"></script>
+    <script src="./js/fest/delete-fest.js"></script>
   </body>
 </html>

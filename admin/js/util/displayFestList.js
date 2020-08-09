@@ -1,4 +1,4 @@
-const displayFestList = (data, requestPath, deleteButtonId) => {
+const displayFestList = (data) => {
   if (data.length) {
     for (let i = 0; i < data.length; i++) {
       if (data[i].theme) {
@@ -15,17 +15,14 @@ const displayFestList = (data, requestPath, deleteButtonId) => {
                         >
                           <i class="fas fa-edit"></i>
                         </a>
-                        <button 
+                        <a
+                          type="button"
                           class="btn btn-sm btn-danger safari-issue"
-                          onclick="deleteRequest(
-                            '${data[i]._id}',
-                            ${requestPath}, 
-                          )"
-                          onmouseenter="deleteFestWarning()"
-                          onmouseleave="removeDeleteFestWarning()"
+                          onclick="deleteFest('${data[i]._id}')"
+                          href="delete-fest.html"
                         >
                           <i class="fas fa-trash alt"></i>
-                        </button>
+                        </a>
                       </td>
                     </tr>`;
         $('#fests').append(row);
@@ -43,17 +40,14 @@ const displayFestList = (data, requestPath, deleteButtonId) => {
                         >
                           <i class="fas fa-edit"></i>
                         </a>
-                        <button 
+                        <a
+                          type="button"
                           class="btn btn-sm btn-danger safari-issue"
-                          onclick="deleteRequest(
-                            '${data[i]._id}',
-                            ${requestPath}, 
-                          )"
-                          onmouseenter="deleteFestWarning()"
-                          onmouseleave="removeDeleteFestWarning()"
+                          onclick="deleteFest('${data[i]._id}')"
+                          href="delete-fest.html"
                         >
                           <i class="fas fa-trash alt"></i>
-                        </button>
+                        </a>
                       </td>
                     </tr>`;
         $('#fests').append(row);
@@ -70,18 +64,12 @@ const displayFestList = (data, requestPath, deleteButtonId) => {
   }
 };
 
-// Warning message
-const deleteFestWarning = () => {
-  document.querySelector('.delete-fest-warning-alert').style.visibility =
-    'visible';
-};
-
-const removeDeleteFestWarning = () => {
-  document.querySelector('.delete-fest-warning-alert').style.visibility =
-    'hidden';
-};
-
-// Storing festId to local storage
+// Storing festId to local storage for update
 const update = (festId) => {
+  localStorage.setItem('festId', festId);
+};
+
+// Storing festId to local storage for delete
+const deleteFest = (festId) => {
   localStorage.setItem('festId', festId);
 };

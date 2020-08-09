@@ -103,20 +103,11 @@ body {
 }
 /* End Of Add New Fest */
 
-/* Delete Fests */
-.fests-delete-error-alert {
+/* Delete Fest */
+.fest-delete-error-alert {
   display: none;
 }
-#delete-fest-button {
-  display: none;
-}
-.delete-fest-warning-alert {
-  display: inline;
-  padding: 0.3rem;
-  margin: 0;
-  visibility: hidden;
-}
-/* End Of Delete Fests */
+/* End Of Delete Fest */
 
 /* Update Fest */
 .update-fest-error-alert {
