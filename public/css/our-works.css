@@ -45,11 +45,10 @@
 /* Background Image */
 #main-content {
   background: url('../assets/images/background.jpg') !important;
-  position: absolute;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
   background-repeat: repeat;
-  z-index: -1111111 !important;
+  z-index: -100 !important;
+  position: absolute;
 }
 /* End Of Background Image */
 
@@ -72,9 +71,6 @@
   color: #13b2d6;
 }
 /* End Of Our Works */
-
-/* Glider Carousel */
-/* End Of Glider Carousel */
 
 /* Fests */
 .fest-name {
