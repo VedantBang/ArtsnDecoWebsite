@@ -63,6 +63,8 @@ body {
   .sidebar {
     position: static;
     height: auto;
+    width: 100vw;
+    margin: 0;
   }
   .top-navbar {
     position: static;
