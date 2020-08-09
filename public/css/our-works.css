@@ -48,6 +48,17 @@
   color: #2a375e;
 }
 
+/* Background Image */
+#main-content {
+  background: url('../assets/images/background.jpg') !important;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  z-index: -1111111 !important;
+}
+/* End Of Background Image */
+
 /* Our Works */
 .our-works {
   margin-bottom: 0;
@@ -97,23 +108,17 @@
   color: rgba(232, 232, 232, 0.4);
 }
 
-.card {
-  border: none;
-  border-radius: 0;
-  transition: 0.2s all ease-in-out;
-  display: inline-block;
-}
-
-.card:hover {
-  transform: translate(0px, -3px);
-}
-
 .card-img-top {
   border: none;
   border-radius: 0;
   height: 232px;
   background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.2s all ease-in-out;
+  display: inline-block;
+}
+
+.card-img-top:hover {
+  transform: translate(0px, -3px);
 }
 
 .card-text {
