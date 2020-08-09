@@ -46,6 +46,7 @@ document
       $('.updated-profile').empty();
 
       if (response.ok) {
+        localStorage.removeItem('profileId');
         window.location.href = 'profiles.html';
       } else {
         document.querySelector('.update-profile-error-alert').style.display =

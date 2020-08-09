@@ -94,6 +94,7 @@ document.getElementById('update-fest').addEventListener('click', async (e) => {
     $('.update-loading').empty();
 
     if (response.ok) {
+      localStorage.removeItem('festId');
       window.location.href = 'fests.html';
     } else {
       document.querySelector('.update-fest-error-alert').style.display =

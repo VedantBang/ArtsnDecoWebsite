@@ -184,6 +184,7 @@ document
       $('.delete-loading').empty();
 
       if (response.ok) {
+        localStorage.removeItem('creativeId');
         window.location.href = 'creativity.html';
       } else {
         document.querySelector('.creativity-delete-error-alert').style.display =

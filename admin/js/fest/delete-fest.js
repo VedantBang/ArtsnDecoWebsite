@@ -71,6 +71,7 @@ document.getElementById('delete-fest').addEventListener('click', async () => {
     ).json();
 
     if (response.ok) {
+      localStorage.removeItem('festId');
       window.location.href = 'fests.html';
     } else {
       document.querySelector('.fest-delete-error-alert').style.display =
