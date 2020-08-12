@@ -26,15 +26,15 @@ const coverWorks = (fest) => {
         $(`.${fest}-carousel`).append(cover);
       }
 
-      new Glider(document.querySelector(`.${fest}-carousel`), {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: {
-          prev: document.querySelector(`.${fest}-prev`),
-          next: document.querySelector(`.${fest}-next`),
-        },
-        itemWidth: 400,
-      });
+      // new Glider(document.querySelector(`.${fest}-carousel`), {
+      //   slidesToShow: 4,
+      //   slidesToScroll: 1,
+      //   arrows: {
+      //     prev: document.querySelector(`.${fest}-prev`),
+      //     next: document.querySelector(`.${fest}-next`),
+      //   },
+      //   itemWidth: 400,
+      // });
 
       // $(`.${fest}-carousel`).slick({
       //   speed: 300,

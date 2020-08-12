@@ -45,10 +45,11 @@
 /* Background Image */
 #main-content {
   background: url('../assets/images/background.jpg') !important;
-  background-size: contain;
+  background-size: cover;
   background-repeat: repeat;
-  z-index: -100 !important;
+  background-position: center;
   position: absolute;
+  z-index: -1000 !important;
 }
 /* End Of Background Image */
 
