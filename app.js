@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const fs = require('fs');
 
 let runType = "online";
 if(process.argv[2] && process.argv[2] === "local") runType = "local";
@@ -38,6 +39,18 @@ app.use(express.static('public'));
 
 app.get('/', (req,res,next) => {
 	res.redirect('/index.html');
+});
+
+app.get('/favicon.ico', (req,res,next) => {
+
+	const icon = fs.createReadStream('./admin/assets/img/logo.png');
+	function finish(){ icon.destroy(); }
+	res.status(200);
+	icon.pipe(res);
+	icon.on('end', () => {
+		res.end();
+		finish();
+	});
 });
 
 app.use((req,res,next) => {
