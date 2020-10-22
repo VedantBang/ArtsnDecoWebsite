@@ -1,12 +1,12 @@
 /* Importing Font Families */
 @font-face {
-  font-family: 'LookingFlowers-ScriptPro';
-  src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
+  font-family: "LookingFlowers-ScriptPro";
+  src: url("../assets/fonts/Looking\ Flowers\ Script\ Pro.otf");
   padding-bottom: 0 !important;
 }
 @font-face {
-  font-family: 'Sofa-Sans-3D-Hatched';
-  src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
+  font-family: "Sofa-Sans-3D-Hatched";
+  src: url("../assets/fonts/SofaSansHand-Bk3DHatched.otf");
   padding-bottom: 0 !important;
 }
 /* End Of Importing Font Families */
@@ -28,7 +28,7 @@
 /* Our Works */
 .our-works {
   margin-bottom: 0;
-  font-family: 'Sofa-Sans-3D-Hatched';
+  font-family: "Sofa-Sans-3D-Hatched";
   padding-bottom: 0 !important;
   font-style: normal;
   font-size: 56px;
@@ -37,7 +37,7 @@
 }
 .secondary-text {
   margin-bottom: 0;
-  font-family: 'LookingFlowers-ScriptPro';
+  font-family: "LookingFlowers-ScriptPro";
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -123,15 +123,26 @@
 .fest {
   color: #2a375e;
   text-decoration: none;
+  font-size: 40px;
 }
 
 .img-fluid-first {
   width: 100%;
   height: auto;
+  transition: transform 0.2s;
 }
 
 .img-fluid {
   height: 233px;
+  transition: transform 0.2s;
+}
+
+.img-fluid-first:hover {
+  transform: scale(1.05);
+}
+
+.img-fluid:hover {
+  transform: scale(1.1);
 }
 
 .cover-text {
@@ -140,25 +151,27 @@
   text-decoration: none;
   position: absolute;
   left: 36px;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
+  /* padding: 0.2rem 0.6rem; */
+  padding-top: 0.4em;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
   bottom: 8px;
 }
 
 .year {
   bottom: 72px;
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .theme {
   bottom: 36px;
-  font-size: 16px;
+  font-size: 18px;
 }
 /* End Of Fest Tab Display */
 
 /* Background Image */
 #main-content {
-  background: url('../assets/images/background.jpg') !important;
+  background: url("../assets/images/background.jpg") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
