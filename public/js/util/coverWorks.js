@@ -6,43 +6,53 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
+      console.log(response.data);
+
       for (let i = 0; i < response.data.length; i++) {
-        const cover = `<div class="col-12 col-md-4 mb-4">
-            <a 
-              href="posts.html"
-              type="button" 
-              onclick="festByYear('${response.data[i].year}', '${fest}')"
-              class="safari-issue"
-            >
-              <img
-                class="card-img-top"
-                src=${response.data[i].coverImage.link}
-                alt=${response.data[i].coverImage.title}
-              />
-              <div class="card-text year">${response.data[i].year}</div>
-              <div class="card-text theme text-uppercase">${response.data[i].theme}</div>
-            </a>
-          </div>`;
-        $(`.${fest}-carousel`).append(cover);
+        const cover = `<div class="${
+          i === 0 ? 'col-12 col-md-8 mb-4' : 'col-12 col-md-4 mb-4'
+        }">
+  <a
+    href="posts.html"
+    type="button"
+    onclick="festByYear('${response.data[i].year}', '${fest}')"
+    class="safari-issue"
+  >
+    <img
+      src="${response.data[i].coverImage.link}"
+      alt="${response.data[i].coverImage.title}"
+      class="${i === 0 ? 'img-fluid-first' : 'img-fluid'}"
+    />
+    <span class="cover-text year">${response.data[i].year}</span>
+    <br />
+    <span class="cover-text theme">${response.data[i].theme}</span>
+  </a>
+</div>`;
+        $(`.${fest}-gallery`).append(cover);
       }
 
-      // new Glider(document.querySelector(`.${fest}-carousel`), {
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1,
-      //   arrows: {
-      //     prev: document.querySelector(`.${fest}-prev`),
-      //     next: document.querySelector(`.${fest}-next`),
-      //   },
-      //   itemWidth: 400,
-      // });
-
-      // $(`.${fest}-carousel`).slick({
-      //   speed: 300,
-      //   slidesToShow: 3,
-      //   slidesToScroll: 1,
-      //   prevArrow: $(`.${fest}-prev`),
-      //   nextArrow: $(`.${fest}-next`),
-      // });
+      // for (let i = 0; i < response.data.length; i++) {
+      //   const cover = `<div class="${
+      //     i === 0 ? 'col-12 col-md-8 m-4' : 'col-12 col-md-4 m-4'
+      //   }>
+      //       <a
+      //         href="posts.html"
+      //         type="button"
+      //         onclick="festByYear('${response.data[i].year}', '${fest}')"
+      //         class="safari-issue"
+      //       >
+      //         <img
+      //           class=""
+      //           src=${response.data[i].coverImage.link}
+      //           alt=${response.data[i].coverImage.title}
+      //         />
+      //         <div class="card-text year">${response.data[i].year}</div>
+      //         <div class="card-text theme text-uppercase">${
+      //           response.data[i].theme
+      //         }</div>
+      //       </a>
+      //     </div>`;
+      //   $(`.${fest}-carousel`).append(cover);
     } catch (err) {
       console.log(err);
     }

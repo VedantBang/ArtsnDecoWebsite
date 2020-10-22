@@ -1,62 +1,35 @@
 /* Importing Font Families */
 @font-face {
-  font-family: 'Sofa-Sans-Bold';
-  src: url('../assets/fonts/SofaSansHand-Bold.otf');
-}
-@font-face {
   font-family: 'LookingFlowers-ScriptPro';
   src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
-}
-@font-face {
-  font-family: 'Blackout Midnight';
-  src: url('../assets/fonts/Blackout\ Midnight.ttf');
+  padding-bottom: 0 !important;
 }
 @font-face {
   font-family: 'Sofa-Sans-3D-Hatched';
   src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
+  padding-bottom: 0 !important;
 }
 /* End Of Importing Font Families */
 
 /* Navbar Specific Styling */
-.navbar {
-  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.161);
-}
 .navbar-nav .nav-item .nav-link {
   color: #2a375e;
 }
 .navbar-nav .nav-item .nav-link:hover {
   color: #13b2d6;
-  text-decoration: underline;
+  text-decoration: none;
 }
-.active {
-  color: #13b2d6 !important;
-  text-decoration: underline;
+.active-link {
+  color: #2a375e !important;
+  border-bottom: 4px solid #13b2d6;
 }
 /* End Of Navbar Specific Styling */
-
-/* Socials Sidebar */
-.socials-f,
-.socials-b,
-.socials-i {
-  color: #2a375e;
-}
-/* End Of Socials Sidebar */
-
-/* Background Image */
-#main-content {
-  background: url('../assets/images/background.jpg') !important;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-  position: absolute;
-  z-index: -1000 !important;
-}
-/* End Of Background Image */
 
 /* Our Works */
 .our-works {
   margin-bottom: 0;
   font-family: 'Sofa-Sans-3D-Hatched';
+  padding-bottom: 0 !important;
   font-style: normal;
   font-size: 56px;
   line-height: 72px;
@@ -73,50 +46,114 @@
 }
 /* End Of Our Works */
 
-/* Fests */
+/* Socials Sidebar */
+.socials-f,
+.socials-b,
+.socials-i {
+  color: #2a375e;
+}
+/* End Of Socials Sidebar */
+
+/* Navigation Panel Tabs */
+#waves-tab {
+  background: #fcfcfc;
+  box-shadow: -1px 5px 10px rgba(31, 31, 31, 0.161);
+  border-radius: 15px 0px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quark-tab {
+  background: #fcfcfc;
+  box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#spree-tab {
+  background: #fcfcfc;
+  box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#specials-tab {
+  background: #fcfcfc;
+  box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.16);
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#waves-tab:hover,
+#quark-tab:hover,
+#spree-tab:hover,
+#specials-tab:hover {
+  border-radius: 3px;
+  transform: scale(1.04);
+  transition: all 0.2s ease-in-out;
+  border-bottom: 5px solid #13b2d6;
+  z-index: 10000;
+}
+
 .fest-name {
-  font-family: 'Sofa-Sans-Bold';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38px;
-  line-height: 49px;
   color: #2a375e;
+  font-size: 16px !important;
 }
-.fest-watermark {
-  position: absolute;
-  z-index: -1;
-  font-family: 'Blackout Midnight';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 280px;
-  line-height: 206px;
-  text-align: center;
-  color: rgba(232, 232, 232, 0.4);
-}
-.card-img-top {
-  border: none;
-  border-radius: 0;
-  height: 232px;
-  background: rgba(0, 0, 0, 0.4);
-  transition: 0.2s all ease-in-out;
-  display: inline-block;
-}
-.card-text {
-  font-family: 'Sofa-Sans-Bold';
-  font-style: normal;
-  font-size: 18px;
+/* End Of Navigation Panel Tabs */
+
+/* Fest Tab Display */
+.fest {
   color: #2a375e;
-  margin: 0.3rem;
-  position: absolute;
-  left: 24px;
-  padding: 0 0.3rem;
+  text-decoration: none;
+}
+
+.img-fluid-first {
+  width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  height: 233px;
+}
+
+.cover-text {
   background: #ffffff;
-  border-radius: 2px;
+  color: #2a375e;
+  text-decoration: none;
+  position: absolute;
+  left: 36px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  bottom: 8px;
 }
+
 .year {
-  bottom: 48px;
+  bottom: 72px;
+  font-size: 26px;
 }
+
 .theme {
-  bottom: 16px;
+  bottom: 36px;
+  font-size: 16px;
 }
-/* End Of Fests */
+/* End Of Fest Tab Display */
+
+/* Background Image */
+#main-content {
+  background: url('../assets/images/background.jpg') !important;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  position: absolute;
+  z-index: -1000 !important;
+}
+/* End Of Background Image */

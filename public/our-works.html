@@ -17,19 +17,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Slick Slider CSS CDN -->
-    <!-- <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    /> -->
-
-    <!-- Glider Carousel CSS CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
-    />
-
     <!-- Font Awesome CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 
@@ -65,7 +52,7 @@
             <a class="nav-link" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="our-works.html">Our Work</a>
+            <a class="nav-link active-link" href="our-works.html">Our Works</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Team</a>
@@ -75,104 +62,100 @@
     </nav>
     <!-- End of Navbar -->
 
-    <!-- Main content -->
-    <div id="main-content" class="container-fluid">
-      <!-- Our Works -->
-      <div class="container mt-2 pt-5 mb-4">
-        <div class="row justify-content-center">
-          <p class="col-12 our-works text-uppercase text-center">Our Works</p>
-          <p class="col-12 text-center secondary-text">Check out the marvels</p>
-        </div>
+    <!-- Our Works -->
+    <div class="container mt-2 pt-5 mb-5">
+      <div class="row justify-content-center">
+        <p class="col-12 our-works text-uppercase text-center">Our Works</p>
+        <p class="col-12 text-center secondary-text">Check out the marvels</p>
       </div>
-      <!-- End Of Our Works -->
-
-      <!-- Socials Sidebar -->
-      <div class="socials-sidebar">
-        <span class="socials-text">Follow Us</span>
-        <span><img src="/assets/images/social-line.svg" alt="" /></span>
-        <span><i class="fab fa-instagram socials-i"></i></span>
-        <span><i class="fab fa-blogger-b socials-b"></i></span>
-        <span><i class="fab fa-facebook-f socials-f"></i></span>
-      </div>
-      <!-- End of Socials Sidebar -->
-
-      <!-- Waves -->
-      <div class="container fluid mb-5 mt-5 pt-5 pb-5">
-        <div class="row justify-content-center">
-          <p class="fest-name text-center text-uppercase">Waves</p>
-          <p class="fest-watermark text-center text-uppercase">Waves</p>
-        </div>
-        <div class="row justify-content-center waves-carousel"></div>
-        <div class="row justify-content-end mt-3">
-          <p class="mr-auto">1 / 5</p>
-          <button class="btn btn-light more waves-prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="btn btn-light more waves-next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <!-- End Of Waves -->
-
-      <!-- Quark -->
-      <div class="container fluid mb-5 mt-5 pt-5 pb-5">
-        <div class="row justify-content-center">
-          <p class="fest-name text-center text-uppercase">Quark</p>
-          <p class="fest-watermark text-center text-uppercase">Quark</p>
-        </div>
-        <div class="row justify-content-center quark-carousel"></div>
-        <div class="row justify-content-end mt-3">
-          <p class="mr-auto">1 / 5</p>
-          <button class="btn btn-light more quark-prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="btn btn-light more quark-next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <!-- End Of Quark -->
-
-      <!-- Spree -->
-      <div class="container fluid mb-5 mt-5 pb-5 pt-5">
-        <div class="row justify-content-center">
-          <p class="fest-name text-center text-uppercase">Spree</p>
-          <p class="fest-watermark text-center text-uppercase">Spree</p>
-        </div>
-        <div class="row justify-content-center spree-carousel"></div>
-        <div class="row justify-content-end mt-3">
-          <p class="mr-auto">1 / 5</p>
-          <button class="btn btn-light more spree-prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="btn btn-light more spree-next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <!-- End Of Spree -->
-
-      <!-- Special Events -->
-      <div class="container fluid mb-5 mt-5 pb-5 pt-5">
-        <div class="row justify-content-center">
-          <p class="fest-name text-center text-uppercase">Special Events</p>
-          <p class="fest-watermark text-center text-uppercase">Specials</p>
-        </div>
-        <div class="row justify-content-center other-carousel"></div>
-        <div class="row justify-content-end mt-3">
-          <p class="mr-auto">1 / 5</p>
-          <button class="btn btn-light more other-prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="btn btn-light more other-next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <!-- End Of Special Events -->
     </div>
-    <!-- End Of Main content -->
+    <!-- End Of Our Works -->
+
+    <!-- Socials Sidebar -->
+    <div class="socials-sidebar">
+      <span class="socials-text">Follow Us</span>
+      <span><img src="/assets/images/social-line.svg" alt="" /></span>
+      <span><i class="fab fa-instagram socials-i"></i></span>
+      <span><i class="fab fa-blogger-b socials-b"></i></span>
+      <span><i class="fab fa-facebook-f socials-f"></i></span>
+    </div>
+    <!-- End of Socials Sidebar -->
+
+    <!-- Fest Navigation Panel -->
+    <div class="container">
+      <nav>
+        <div class="nav justify-content-center pt-4" id="nav-tab">
+          <a
+            class="nav-item nav-link col-6 col-md-3"
+            id="waves-tab"
+            data-toggle="tab"
+            href="#waves"
+          >
+            <img src="./assets/images/waves.png" alt="waves-logo" />
+            <div class="col text-center fest-name">Waves</div>
+          </a>
+          <a
+            class="nav-item nav-link col-6 col-md-3"
+            id="quark-tab"
+            data-toggle="tab"
+            href="#quark"
+          >
+            <img src="./assets/images/quark.png" alt="quark-logo" />
+            <div class="col text-center fest-name">Quark</div>
+          </a>
+          <a
+            class="nav-item nav-link col-6 col-md-3"
+            id="spree-tab"
+            data-toggle="tab"
+            href="#spree"
+          >
+            <img src="./assets/images/spree.png" alt="spree-logo" />
+            <div class="col text-center fest-name">Spree</div>
+          </a>
+          <a
+            class="nav-item nav-link col-6 col-md-3"
+            id="specials-tab"
+            data-toggle="tab"
+            href="#specials"
+          >
+            <img src="./assets/images/specials.png" alt="specials-logo" />
+            <div class="col text-center fest-name">Specials</div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <!-- End Of Fest Navigation Panel -->
+
+    <!-- Fest Navigation -->
+    <div id="main-content" class="container-fluid pb-5">
+      <div class="tab-content">
+        <div class="tab-pane fade show active container" id="waves">
+          <div class="row mt-5 p-md-5">
+            <h2 class="col-12 fest">Waves</h2>
+            <div class="container row waves-gallery"></div>
+          </div>
+        </div>
+        <div class="tab-pane fade container" id="quark">
+          <div class="row mt-5 p-md-5">
+            <h2 class="col-12 fest">Quark</h2>
+            <div class="container row quark-gallery"></div>
+          </div>
+        </div>
+        <div class="tab-pane fade container" id="spree">
+          <div class="row mt-5 p-md-5">
+            <h2 class="col-12 fest">Spree</h2>
+            <div class="container row spree-gallery"></div>
+          </div>
+        </div>
+        <div class="tab-pane fade container" id="specials">
+          <div class="row mt-5 p-md-5">
+            <h2 class="col-12 fest">Specials</h2>
+            <div class="container row specials-gallery"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Fest Navigation -->
 
     <!-- Bootstrap, jOqery and Popper JS scripts -->
     <script
@@ -191,21 +174,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
-
-    <!-- Glide Carousel -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> -->
-    <!-- End Of Glide Carousel -->
-
-    <!-- Glider Carousel -->
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-    <!-- End Of Glider Carousel -->
-
-    <!-- Slick Carousel -->
-    <!-- <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script> -->
-    <!-- End Of Slick Carousel -->
 
     <!-- Custom scripts -->
     <script src="./js/util/url.js"></script>
