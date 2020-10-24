@@ -52,9 +52,23 @@
 .socials-i {
   color: #2a375e;
 }
+
+@media screen and (max-width: 1030px) {
+  .socials-sidebar {
+    display: none;
+  }
+}
 /* End Of Socials Sidebar */
 
 /* Navigation Panel Tabs */
+#fest-nav {
+  background: url("../assets/images/background.jpg") !important;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center bottom;
+  position: relative;
+}
+
 #waves-tab {
   background: #fcfcfc;
   box-shadow: -1px 5px 10px rgba(31, 31, 31, 0.161);
@@ -133,6 +147,7 @@
 }
 
 .img-fluid {
+  width: 100%;
   height: 233px;
   transition: transform 0.2s;
 }
@@ -142,7 +157,7 @@
 }
 
 .img-fluid:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .cover-text {
@@ -166,15 +181,20 @@
   font-size: 18px;
   padding-top: 0.5rem;
 }
+
+a:hover {
+  text-decoration: none;
+}
+
 /* End Of Fest Tab Display */
 
 /* Background Image */
-#main-content {
+#main-content-bg {
   background: url("../assets/images/background.jpg") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  position: absolute;
-  z-index: -1000 !important;
+  position: relative;
+  /* z-index: -1000; */
 }
 /* End Of Background Image */

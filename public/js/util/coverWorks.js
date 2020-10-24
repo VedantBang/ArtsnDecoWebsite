@@ -10,7 +10,7 @@ const coverWorks = (fest) => {
 
       for (let i = 0; i < response.data.length; i++) {
         const cover = `<div class="${
-          i === 0 ? 'col-12 col-md-8 mb-4' : 'col-12 col-md-4 mb-4'
+          i === 0 ? 'col-12 col-md-8' : 'col-12 col-md-4'
         }">
   <a
     href="posts.html"
