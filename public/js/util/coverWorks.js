@@ -6,8 +6,6 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
-      console.log(response.data);
-
       for (let i = 0; i < response.data.length; i++) {
         const cover = `<div class="${
           i === 0 ? 'col-12 col-md-8' : 'col-12 col-md-4'
