@@ -1,16 +1,3 @@
-/* Importing Font Families */
-@font-face {
-  font-family: "LookingFlowers-ScriptPro";
-  src: url("../assets/fonts/Looking\ Flowers\ Script\ Pro.otf");
-  padding-bottom: 0 !important;
-}
-@font-face {
-  font-family: "Sofa-Sans-3D-Hatched";
-  src: url("../assets/fonts/SofaSansHand-Bk3DHatched.otf");
-  padding-bottom: 0 !important;
-}
-/* End Of Importing Font Families */
-
 /* Navbar Specific Styling */
 .navbar-nav .nav-item .nav-link {
   color: #2a375e;

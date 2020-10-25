@@ -24,6 +24,11 @@
   src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
 }
 
+@font-face {
+  font-family: 'LookingFlowers-ScriptPro';
+  src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
+}
+
 /* End Of Importing Common Fonts For All Pages */
 
 /* Global Styles */
