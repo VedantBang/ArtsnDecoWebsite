@@ -1,43 +1,57 @@
+// Declaring  section heights in an array
+const heights = [
+  document.querySelector('.hero-section').offsetHeight,
+  document.querySelector('#about-us').offsetHeight,
+  document.querySelector('#jumbotron-bg').offsetHeight,
+  document.querySelector('#creativity').offsetHeight,
+  document.querySelector('#team').offsetHeight,
+  document.querySelector('.footer').offsetHeight,
+];
+
+// Boolean array
+const done = [false, false, false, false, false, false];
+
+// Page Visit to backend
 fetch(`${url}/user/visit`);
 
-// Getting profile data
-(async () => {
-  try {
-    const response = await (
-      await fetch(`${url}/profile/all`, {
-        method: 'GET',
-      })
-    ).json();
-
-    for (let i = 0; i < response.data.length; i++) {
-      const post = `<div class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
-              <div class="card team px-5">
-                <div class="card-body">
-                  <img
-                    src="./assets/images/icons8-arduino-uno-board-100.png"
-                    alt="${response.data[i].name}"
-                    class="avatar-img mx-auto d-block"
-                  />
-                  <div class="card-text">
-                    <p class="name text-center">${response.data[i].name}</p>
-                    <p class="post text-center text-uppercase">
-                      ${response.data[i].post}
-                    </p>
-                    <div class="social-media-links text-center">
-                      <a href="${response.data[i].insta}" class="no-deco" target="_blank"
-                        ><i class="fab fa-instagram socials-i"></i
-                      ></a>
-                      <a href="#" class="no-deco" target="_blank"
-                        ><i class="fab fa-facebook socials-i"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-      $('#profiles').append(post);
-    }
-  } catch (err) {
-    console.log(err);
+// Changing webpage on scroll (lazy loading implementation)
+window.onscroll = () => {
+  // Change socials sidebar
+  if (window.pageYOffset > 100) {
+    document.querySelector('.socials-f').style.color = '#2a375e';
+    document.querySelector('.socials-b').style.color = '#2a375e';
+    document.querySelector('.socials-i').style.color = '#2a375e';
+    document.querySelector('.socials-text').style.color = '#2a375e';
+  } else {
+    document.querySelector('.socials-f').style.color = '#fff';
+    document.querySelector('.socials-b').style.color = '#fff';
+    document.querySelector('.socials-i').style.color = '#fff';
+    document.querySelector('.socials-text').style.color = '#fff';
   }
-})();
+  // Hide socials sidebar
+  if (
+    window.pageYOffset >
+    heights[0] + heights[1] + heights[2] + heights[3] + heights[4] + heights[5]
+  ) {
+    document.querySelector('.socials-sidebar').style.visibility = 'hidden';
+  } else {
+    document.querySelector('.socials-sidebar').style.visibility = 'visible';
+  }
+  // Getting creative works data on appropriate scrolling
+  if (
+    window.pageYOffset > heights[0] + heights[1] + heights[2] + heights[3] &&
+    !done[3]
+  ) {
+    displayCreativeWorks();
+    done[3] = true;
+  }
+  // Getting profile data on appropriate scrolling
+  if (
+    window.pageYOffset >
+      heights[0] + heights[1] + heights[2] + heights[3] + heights[4] &&
+    !done[4]
+  ) {
+    displayProfiles();
+    done[4] = true;
+  }
+};
