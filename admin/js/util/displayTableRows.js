@@ -60,21 +60,9 @@ const displayTableRows = (title, link) => {
   }
 };
 
-const displayStatTableRows = (stat) => {
-  if (stat) {
-    const row = `<tr>
-                  <td>
-                    <input
-                      type="text"
-                      value="${stat}"
-                      class="form-control form-control-sm stats"
-                      placeholder="Enter Title"
-                    />
-                  </td>
-                </tr>`;
-    $('.stats').append(row);
-  } else {
-    const row = `<tr>
+const displayStatTableRows = () => {
+  const row = `<tr>
+                  <td></td>
                   <td>
                     <input
                       type="text"
@@ -82,9 +70,19 @@ const displayStatTableRows = (stat) => {
                       placeholder="Enter Stat. (for eg. 28L of paint used in Waves18')"
                     />
                   </td>
+                  <td>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-danger safari-issue"
+                      onclick="deleteFromDom(this)"
+                      onmouseenter="deleteStatWarning()"
+                      onmouseleave="removeDeleteStatWarning()"
+                    >
+                      <i class="fas fa-trash alt"></i>
+                    </button>
+                  </td>
                 </tr>`;
-    $('.stats').append(row);
-  }
+  $('#stats').append(row);
 };
 
 // Warning message
@@ -94,6 +92,16 @@ const deleteWarning = () => {
 
 const removeDeleteWarning = () => {
   document.querySelector('.delete-warning-alert').style.visibility = 'hidden';
+};
+
+const deleteStatWarning = () => {
+  document.querySelector('.delete-stat-warning-alert').style.visibility =
+    'visible';
+};
+
+const removeDeleteStatWarning = () => {
+  document.querySelector('.delete-stat-warning-alert').style.visibility =
+    'hidden';
 };
 
 // Deleting row from DOM

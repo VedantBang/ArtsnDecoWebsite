@@ -343,9 +343,9 @@
             <div class="row mt-5 mb-5 justify-content-center">
               <div class="col-11 col-sm-9 p-2 mb-5">
                 <div class="row align-items-center">
-                  <h1 class="mr-3">Add Stats</h1>
+                  <h1 class="pr-5">Stats</h1>
                   <button
-                    class="btn btn-outline-success safari-issue"
+                    class="btn btn-outline-success safari-issue mx-2"
                     type="button"
                     id="add-stats"
                   >
@@ -353,68 +353,12 @@
                     ADD NEW
                   </button>
                   <button
-                    class="ml-3 btn btn-outline-danger delete-button"
-                    id="delete-selected-stats"
+                    class="btn btn-primary safari-issue mx-2"
+                    type="button"
+                    id="save-stats"
                   >
-                    <i class="fas fa-trash alt"></i> DELETE
+                    SAVE
                   </button>
-                  <div
-                    class="ml-2 alert alert-danger delete-warning-alert"
-                    role="alert"
-                  >
-                    <small>
-                      <strong>CAUTION!</strong>
-                      This action is irreversible!
-                    </small>
-                  </div>
-                </div>
-                <div class="row-justify-content-center mt-4">
-                  <div class="form-group row justify-content-center">
-                    <table
-                      class="table table-responsive-sm table-sm table-borderless justify-content-center"
-                    >
-                      <tbody class="stats justify-content-center"></tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="row justify-content-center mb-4">
-                  <div class="col-12 text-center mb-3 added-stats"></div>
-                  <div
-                    class="mt-2 col-12 alert alert-danger alert-dismissible fade show add-stats-error-alert"
-                    role="alert"
-                  >
-                    Make sure You have Actually Added Data before Saving!
-                    <button
-                      type="button"
-                      class="close safari-issue"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <button class="btn btn-success" id="add-new-stats">
-                    Add and Save
-                  </button>
-                </div>
-                <div class="row align-items-center">
-                  <div
-                    class="mt-2 col-12 alert alert-danger alert-dismissible fade show stats-delete-error-alert"
-                    role="alert"
-                  >
-                    Oops! Please Refresh the Browser and try again!
-                    <button
-                      type="button"
-                      class="close safari-issue"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <h1 class="pr-5">Edit Stats</h1>
-                  <div class="mr-3 delete-loading"></div>
-                  <div class="loading ml-5"></div>
                 </div>
                 <div class="row justify-content-center">
                   <table
@@ -424,15 +368,13 @@
                       <tr class="justify-content-center">
                         <th scope="col">#</th>
                         <th scope="col">Stat</th>
-                        <td scope="col">
+                        <th scope="col">
                           <div
-                            class="alert alert-success update-stats-alert text-success ml-3"
-                            role="alert"
+                            class="alert alert-danger delete-stat-warning-alert"
                           >
-                            <i class="fas fa-check"></i> Saved!
+                            Sure?!
                           </div>
-                        </td>
-                        <th scope="col"></th>
+                        </th>
                       </tr>
                     </thead>
                     <tbody id="stats"></tbody>

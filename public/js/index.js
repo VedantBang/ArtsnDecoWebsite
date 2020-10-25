@@ -37,18 +37,28 @@ window.onscroll = () => {
   } else {
     document.querySelector('.socials-sidebar').style.visibility = 'visible';
   }
-  // Getting creative works data on appropriate scrolling
+  // Getting stats on appropriate scrolling
+  if (window.pageYOffset > heights[0] + heights[1] + heights[2] && !done[2]) {
+    displayStats();
+    done[2] = true;
+  }
   if (
     window.pageYOffset > heights[0] + heights[1] + heights[2] + heights[3] &&
     !done[3]
   ) {
+    // Getting creative works data on appropriate scrolling
     displayCreativeWorks();
     done[3] = true;
   }
   // Getting profile data on appropriate scrolling
   if (
     window.pageYOffset >
-      heights[0] + heights[1] + heights[2] + heights[3] + heights[4] &&
+      heights[0] +
+        heights[1] +
+        heights[2] +
+        heights[3] +
+        heights[4] +
+        heights[5] &&
     !done[4]
   ) {
     displayProfiles();

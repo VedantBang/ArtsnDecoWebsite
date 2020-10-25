@@ -91,20 +91,12 @@ body {
 /* End Of Dashboard */
 
 /* Stats */
-#add-new-stats {
-  visibility: hidden;
-}
-.update-stats-alert {
+.delete-stat-warning-alert {
   display: inline;
   padding: 0.3rem;
+  font-size: 14px;
   margin: 0;
   visibility: hidden;
-}
-.add-stats-error-alert {
-  display: none;
-}
-.stats-delete-error-alert {
-  display: none;
 }
 .stats-update-error-alert {
   display: none;
