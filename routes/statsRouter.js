@@ -4,7 +4,6 @@ const multer = require('multer');
 const upload = multer();
 const Stats = require('../models/stats');
 const auth = require('../utilities/auth');
-const cut = require('../utilities/cut');
 
 router.get('/all', async (req,res,next) => {
 	try{
@@ -15,22 +14,25 @@ router.get('/all', async (req,res,next) => {
 			next(err);
 			return;
 		}
-		res.status(200).json({ ok:1, data: lines });
+		res.status(200).json({ ok:1, lines });
 	} catch(err){ next(err); }
 });
 
 router.use(auth);
 
-router.put('/update', async (req,res,next) => {
+router.put('/update', upload.none(), async (req,res,next) => {
 	try{
-		let { data } = req.body;
-		if(!data || !Array.isArray(data)){
+		let { lines } = req.body;
+
+		lines = lines.split(',');
+
+		if(!lines || !Array.isArray(lines)){
 			let err = new Error('Data must be an array');
 			err.status = 400;
 			next(err);
 			return;
 		}
-		let { nModified } = await Stats.updateOne({}, { data });
+		let { nModified } = await Stats.updateOne({}, { lines });
 		
 		if(nModified === 1){
 			res.status(200).json({ ok:1 });
@@ -38,7 +40,7 @@ router.put('/update', async (req,res,next) => {
 			let err = new Error('Could not update');
 			next(err);
 		}
-	} catch(err){ next(err); }
+	} catch(err){ next(err); console.log(err); }
 });
 
 module.exports = router;

@@ -60,6 +60,33 @@ const displayTableRows = (title, link) => {
   }
 };
 
+const displayStatTableRows = (stat) => {
+  if (stat) {
+    const row = `<tr>
+                  <td>
+                    <input
+                      type="text"
+                      value="${stat}"
+                      class="form-control form-control-sm stats"
+                      placeholder="Enter Title"
+                    />
+                  </td>
+                </tr>`;
+    $('.stats').append(row);
+  } else {
+    const row = `<tr>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control form-control-sm stat"
+                      placeholder="Enter Stat. (for eg. 28L of paint used in Waves18')"
+                    />
+                  </td>
+                </tr>`;
+    $('.stats').append(row);
+  }
+};
+
 // Warning message
 const deleteWarning = () => {
   document.querySelector('.delete-warning-alert').style.visibility = 'visible';
@@ -73,4 +100,3 @@ const removeDeleteWarning = () => {
 function deleteFromDom(r) {
   r.parentNode.parentNode.remove();
 }
-
