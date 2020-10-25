@@ -10,7 +10,7 @@ const cut = require('../utilities/cut');
 router.get('/all', async (req,res,next) => {
 	try{
 		let data = await Profile.find({});
-		data = data.map(entry => cut(entry,['name','post','insta', '_id']));
+		data = data.map(entry => cut(entry,['name','post','insta', 'facebook', 'image', '_id']));
 		res.status(200).json({ ok:1, data });
 	} catch(err){ next(err); }
 });
@@ -19,7 +19,7 @@ router.use(auth);
 
 router.post('/add', upload.none(), async (req,res,next) => {
 	try{
-		let { name, post, insta } = req.body;
+		let { name, post, insta, facebook, image } = req.body;
 
 		if(!name){
 			let err = new Error('name is required field');
@@ -28,7 +28,7 @@ router.post('/add', upload.none(), async (req,res,next) => {
 			return;
 		}
 
-		let newProfile = new Profile({ name, post, insta });
+		let newProfile = new Profile({ name, post, insta, facebook, image });
 		await newProfile.save();
 
 		res.status(200).json({ ok:1 });

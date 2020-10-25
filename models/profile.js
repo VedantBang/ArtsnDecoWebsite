@@ -3,5 +3,7 @@ const profileSchema = new mongoose.Schema({
 	name: { type: String, required: true },
 	post: String,
 	insta: String,
+	facebook: String,
+	image: String
 });
 module.exports = mongoose.model('Profile', profileSchema);
