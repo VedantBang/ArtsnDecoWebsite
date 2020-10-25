@@ -61,10 +61,6 @@
 
     $('#fest-carousel').on('slide.bs.carousel', function (e) {
       if (item < images.length) {
-        // if (item === 0) {
-        //   item++;
-        //   document.querySelector('.bg-image').src = images[item].link;
-        // }
         document.querySelector('.bg-image').src = images[item++].link;
       } else {
         item = 0;

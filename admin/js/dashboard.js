@@ -38,8 +38,7 @@ document.getElementById('add-stats').addEventListener('click', (e) => {
                         <input
                           type="text"
                           value="${response.lines[i]}"
-                          class="form-control form-control-sm"
-                          id="${i}"
+                          class="form-control form-control-sm stat"
                           placeholder="Enter Title"
                         />
                       </td>

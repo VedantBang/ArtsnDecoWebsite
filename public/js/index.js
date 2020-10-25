@@ -17,7 +17,7 @@ fetch(`${url}/user/visit`);
 // Changing webpage on scroll (lazy loading implementation)
 window.onscroll = () => {
   // Change socials sidebar
-  if (window.pageYOffset > 100) {
+  if (window.pageYOffset > 300) {
     document.querySelector('.socials-f').style.color = '#2a375e';
     document.querySelector('.socials-b').style.color = '#2a375e';
     document.querySelector('.socials-i').style.color = '#2a375e';
@@ -38,14 +38,11 @@ window.onscroll = () => {
     document.querySelector('.socials-sidebar').style.visibility = 'visible';
   }
   // Getting stats on appropriate scrolling
-  if (window.pageYOffset > heights[0] + heights[1] + heights[2] && !done[2]) {
+  if (window.pageYOffset > heights[0] + heights[1] && !done[2]) {
     displayStats();
     done[2] = true;
   }
-  if (
-    window.pageYOffset > heights[0] + heights[1] + heights[2] + heights[3] &&
-    !done[3]
-  ) {
+  if (window.pageYOffset > heights[0] + heights[1] + heights[2] && !done[3]) {
     // Getting creative works data on appropriate scrolling
     displayCreativeWorks();
     done[3] = true;
@@ -53,12 +50,7 @@ window.onscroll = () => {
   // Getting profile data on appropriate scrolling
   if (
     window.pageYOffset >
-      heights[0] +
-        heights[1] +
-        heights[2] +
-        heights[3] +
-        heights[4] +
-        heights[5] &&
+      heights[0] + heights[1] + heights[2] + heights[3] + heights[4] &&
     !done[4]
   ) {
     displayProfiles();
