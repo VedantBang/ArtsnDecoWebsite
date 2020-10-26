@@ -38,7 +38,7 @@ window.onscroll = () => {
     document.querySelector('.socials-sidebar').style.visibility = 'visible';
   }
   // Getting stats on appropriate scrolling
-  if (window.pageYOffset > heights[0] + heights[1] && !done[2]) {
+  if (window.pageYOffset > heights[0] + heights[1] / 2 && !done[2]) {
     displayStats();
     done[2] = true;
   }
