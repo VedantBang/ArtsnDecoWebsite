@@ -38,11 +38,14 @@ window.onscroll = () => {
     document.querySelector('.socials-sidebar').style.visibility = 'visible';
   }
   // Getting stats on appropriate scrolling
-  if (window.pageYOffset > heights[0] + heights[1] / 2 && !done[2]) {
+  if (window.pageYOffset > heights[0] + heights[1] / 4 && !done[2]) {
     displayStats();
     done[2] = true;
   }
-  if (window.pageYOffset > heights[0] + heights[1] + heights[2] && !done[3]) {
+  if (
+    window.pageYOffset > heights[0] + heights[1] + heights[2] / 4 &&
+    !done[3]
+  ) {
     // Getting creative works data on appropriate scrolling
     displayCreativeWorks();
     done[3] = true;
@@ -50,7 +53,7 @@ window.onscroll = () => {
   // Getting profile data on appropriate scrolling
   if (
     window.pageYOffset >
-      heights[0] + heights[1] + heights[2] + heights[3] + heights[4] &&
+      heights[0] + heights[1] + heights[2] + heights[3] + heights[4] / 4 &&
     !done[4]
   ) {
     displayProfiles();

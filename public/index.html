@@ -30,7 +30,14 @@
 
   <body>
     <!-- Hero Section BG Video -->
-    <video playsinline autoplay muted loop id="myVideo">
+    <video
+      playsinline
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      class="d-none d-lg-block"
+    >
       <source src="./assets/videos/pakka_final.mp4" type="video/mp4" />
     </video>
     <!-- End of Hero Section BG Video -->
@@ -72,7 +79,7 @@
     <!-- End of Navbar -->
 
     <!-- Hero Section -->
-    <div class="container-fluid">
+    <div class="container-fluid d-none d-lg-block">
       <div class="row justify-content-center hero-section">
         <div class="hero-subhead">Department of</div>
         <div class="hero-head text-uppercase">Arts n Decoration</div>
@@ -85,7 +92,7 @@
     <!-- End of Hero Section -->
 
     <!-- Socials Sidebar -->
-    <div class="socials-sidebar">
+    <div class="socials-sidebar d-none d-lg-block">
       <span class="socials-text">Follow Us</span>
       <span><img src="/assets/images/social-line.svg" alt="" /></span>
       <span><i class="fab fa-instagram socials-i"></i></span>
