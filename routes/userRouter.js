@@ -12,8 +12,8 @@ const auth = require('../utilities/auth');
 
 router.get('/visit', async (req,res,next) => {
 	try{
+		res.status(200).end();
 		await User.update({}, { $inc: { visits:1 }});
-		res.status(200).json({ ok:1 });
 	} catch(err){ next(err); }
 });
 
