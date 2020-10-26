@@ -11,7 +11,7 @@ const displayProfiles = async () => {
               <div class="card team px-5 mt-5">
                 <div class="card-body">
                   <img
-                    src="./assets/images/icons8-arduino-uno-board-100.png"
+                    src="${response.data[i].image}"
                     alt="${response.data[i].name}"
                     class="avatar-img mx-auto d-block"
                   />
@@ -24,7 +24,7 @@ const displayProfiles = async () => {
                       <a href="${response.data[i].insta}" class="no-deco" target="_blank"
                         ><i class="fab fa-instagram socials-i"></i
                       ></a>
-                      <a href="#" class="no-deco" target="_blank"
+                      <a href="${response.data[i].facebook}" class="no-deco" target="_blank"
                         ><i class="fab fa-facebook socials-i"></i
                       ></a>
                     </div>

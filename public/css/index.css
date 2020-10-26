@@ -133,6 +133,7 @@ video {
   filter: none;
   border-radius: 5px;
   background: #f9f9f9;
+  margin: auto;
 }
 
 .avatar-img {

@@ -11,6 +11,8 @@
     document.querySelector('#name').value = response.data.name;
     document.querySelector('#post').value = response.data.post;
     document.querySelector('#insta-link').value = response.data.insta;
+    document.querySelector('#facebook-link').value = response.data.facebbok;
+    document.querySelector('#image-link').value = response.data.image;
   } catch (err) {
     console.log(err);
   }
@@ -25,12 +27,16 @@ document
       const name = document.querySelector('#name').value;
       const post = document.querySelector('#post').value;
       const insta = document.querySelector('#insta-link').value;
+      const facebook = document.querySelector('#facebook-link').value;
+      const image = document.querySelector('#image-link').value;
 
       const formData = new FormData();
 
       formData.append('name', name);
       formData.append('post', post);
       formData.append('insta', insta);
+      formData.append('facebook', facebook);
+      formData.append('image', image);
       formData.append('_id', localStorage.getItem('profileId'));
 
       spinner('.updated-profile');

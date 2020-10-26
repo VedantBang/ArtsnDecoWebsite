@@ -7,12 +7,16 @@ document
       const name = document.querySelector('#name').value;
       const post = document.querySelector('#post').value;
       const insta = document.querySelector('#insta-link').value;
+      const facebook = document.querySelector('#facebook-link').value;
+      const image = document.querySelector('#image-link').value;
 
       const formData = new FormData();
 
       formData.append('name', name);
       formData.append('post', post);
       formData.append('insta', insta);
+      formData.append('facebook', facebook);
+      formData.append('image', image);
 
       spinner('.added-profile');
 
@@ -53,11 +57,6 @@ document
                       </td>
                       <td>
                         ${response.data[i].post}
-                      </td>
-                      <td>
-                        <a href=${response.data[i].insta} target="_blank">
-                          Insta Link
-                        </a>
                       </td>
                       <td>
                         <a
