@@ -23,6 +23,13 @@
       rel="stylesheet"
     />
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/index.css" />
@@ -176,6 +183,11 @@
     </div>
     <!-- End Of Jumbotron -->
 
+    <!-- Swiper implementation -->
+    <!-- Swiper -->
+
+    <!-- End Of Swiper implementation -->
+
     <!-- Creativity -->
     <div class="container" id="creativity">
       <div class="row p-md-5 mt-5">
@@ -191,7 +203,18 @@
           />
           <div class="row mt-4 justify-content-center">
             <div class="col-12">
-              <div class="row justify-content-center mt-4 carousel"></div>
+              <div class="row justify-content-center mt-4">
+                <!-- Using Swiper -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper"></div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <!-- End Of Swiper -->
+              </div>
             </div>
           </div>
         </div>
@@ -266,7 +289,7 @@
 
     <!-- End Of Footer -->
 
-    <!-- Bootstrap, jOqery and Popper JS scripts -->
+    <!-- Bootstrap, jQuery and Popper JS scripts -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -283,6 +306,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Custom Scripts -->
     <script src="./js/util/url.js"></script>
