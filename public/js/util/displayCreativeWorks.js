@@ -3,16 +3,38 @@ const displayCreativeWorks = async () => {
     let swiper = new Swiper('.swiper-container', {
       slidesPerView: 3,
       spaceBetween: 30,
-      slidesPerGroup: 3,
       loop: true,
       loopFillGroupWithBlank: true,
+      lazy: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
+      },
+      hashNavigation: {
+        watchState: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
       },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        40: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
       },
     });
 
@@ -23,8 +45,11 @@ const displayCreativeWorks = async () => {
     console.log(response);
 
     for (let i = 0; i < response.data.length; i++) {
-      swiper.appendSlide(`<div class="swiper-slide">
-            <img src="${response.data[i].link}" alt="${response.data[i].title}" class="card-img-top" />
+      swiper.appendSlide(`<div class="swiper-slide" data-hash="${response.data[i].title}">
+          <div class="card">
+            <img src="${response.data[i].link}" alt="${response.data[i].title}" class="img-fluid swiper-lazy" />
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
         </div>`);
     }
   } catch (err) {

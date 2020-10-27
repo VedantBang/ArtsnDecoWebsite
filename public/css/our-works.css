@@ -15,7 +15,7 @@
 /* Our Works */
 .our-works {
   margin-bottom: 0;
-  font-family: "Sofa-Sans-3D-Hatched";
+  font-family: 'Sofa-Sans-3D-Hatched';
   padding-bottom: 0 !important;
   font-style: normal;
   font-size: 56px;
@@ -24,7 +24,7 @@
 }
 .secondary-text {
   margin-bottom: 0;
-  font-family: "LookingFlowers-ScriptPro";
+  font-family: 'LookingFlowers-ScriptPro';
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -49,7 +49,7 @@
 
 /* Navigation Panel Tabs */
 #fest-nav {
-  background: url("../assets/images/background.jpg") !important;
+  background: url('../assets/images/background.jpg') !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center bottom;
@@ -192,7 +192,7 @@ a:hover {
 
 /* Background Image */
 #main-content-bg {
-  background: url("../assets/images/background.jpg") !important;
+  background: url('../assets/images/background.jpg') !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
