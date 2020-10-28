@@ -1,1 +1,1 @@
-const url = 'https://arts-test-project.herokuapp.com';
+const url = 'https://artsndeco.cf';
