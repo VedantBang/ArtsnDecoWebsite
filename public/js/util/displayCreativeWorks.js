@@ -39,8 +39,6 @@ const displayCreativeWorks = async () => {
       await fetch(`${url}/creative/all`, { method: 'GET' })
     ).json();
 
-    console.log(response);
-
     for (let i = 0; i < response.data.length; i++) {
       swiper.appendSlide(`<div class="swiper-slide" data-hash="${response.data[i].title}">
           <div class="card">
