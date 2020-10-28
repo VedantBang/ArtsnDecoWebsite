@@ -1,1 +1,1 @@
-const url = '/';
+const url = 'https://artsndeco.cf';
