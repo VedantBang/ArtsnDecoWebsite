@@ -11,9 +11,6 @@ const displayCreativeWorks = async () => {
         clickable: true,
         dynamicBullets: true,
       },
-      hashNavigation: {
-        watchState: true,
-      },
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
