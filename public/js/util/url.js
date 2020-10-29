@@ -1,1 +1,1 @@
-const url = 'https://artsndeco.cf';
+const url = 'http://localhost:3000';

@@ -6,10 +6,70 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
-      for (let i = 0; i < response.data.length; i++) {
-        const cover = `<div class="${
-          i === 0 ? 'col-12 col-md-8' : 'col-12 col-md-4'
-        }">
+      const mainCover = `<div class="col-12 col-md-8">
+  <a
+    href="posts.html"
+    type="button"
+    onclick="festByYear('${response.data[0].year}', '${fest}')"
+    class="safari-issue"
+  >
+    <img
+      src="${response.data[0].coverImage.link}"
+      alt="${response.data[0].coverImage.title}"
+      class="img-fluid-first"
+    />
+    <span class="cover-text year">${response.data[0].year}</span>
+    <br />
+    <span class="cover-text theme">${response.data[0].theme}</span>
+  </a>
+</div>`;
+
+      const sideCover = `<div class="col-12 col-md-4 vertical-col">
+          <div class="row">
+          <div class="col-12">
+  <a
+    href="posts.html"
+    type="button"
+    onclick="festByYear('${response.data[1].year}', '${fest}')"
+    class="safari-issue"
+  >
+    <img
+      src="${response.data[1].coverImage.link}"
+      alt="${response.data[1].coverImage.title}"
+      class="img-fluid"
+    />
+    <span class="cover-text year">${response.data[1].year}</span>
+    <br />
+    <span class="cover-text theme">${response.data[1].theme}</span>
+  </a>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-12">
+  <a
+    href="posts.html"
+    type="button"
+    onclick="festByYear('${response.data[2].year}', '${fest}')"
+    class="safari-issue"
+  >
+    <img
+      src="${response.data[2].coverImage.link}"
+      alt="${response.data[2].coverImage.title}"
+      class="img-fluid"
+    />
+    <span class="cover-text year">${response.data[2].year}</span>
+    <br />
+    <span class="cover-text theme">${response.data[2].theme}</span>
+  </a>
+  </div>
+  </div>
+</div>`;
+
+      $(`.${fest}-gallery`).append(mainCover);
+      $(`.${fest}-gallery`).append(sideCover);
+
+      for (let i = 3; i < response.data.length; i++) {
+        const cover = `<div class="col-12 col-md-4">
   <a
     href="posts.html"
     type="button"
@@ -19,38 +79,16 @@ const coverWorks = (fest) => {
     <img
       src="${response.data[i].coverImage.link}"
       alt="${response.data[i].coverImage.title}"
-      class="${i === 0 ? 'img-fluid-first' : 'img-fluid'}"
+      class="img-fluid-first"
     />
     <span class="cover-text year">${response.data[i].year}</span>
     <br />
     <span class="cover-text theme">${response.data[i].theme}</span>
   </a>
 </div>`;
+
         $(`.${fest}-gallery`).append(cover);
       }
-
-      // for (let i = 0; i < response.data.length; i++) {
-      //   const cover = `<div class="${
-      //     i === 0 ? 'col-12 col-md-8 m-4' : 'col-12 col-md-4 m-4'
-      //   }>
-      //       <a
-      //         href="posts.html"
-      //         type="button"
-      //         onclick="festByYear('${response.data[i].year}', '${fest}')"
-      //         class="safari-issue"
-      //       >
-      //         <img
-      //           class=""
-      //           src=${response.data[i].coverImage.link}
-      //           alt=${response.data[i].coverImage.title}
-      //         />
-      //         <div class="card-text year">${response.data[i].year}</div>
-      //         <div class="card-text theme text-uppercase">${
-      //           response.data[i].theme
-      //         }</div>
-      //       </a>
-      //     </div>`;
-      //   $(`.${fest}-carousel`).append(cover);
     } catch (err) {
       console.log(err);
     }
