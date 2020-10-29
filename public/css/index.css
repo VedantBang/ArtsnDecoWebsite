@@ -1,6 +1,6 @@
 /* Hero Section Video */
 video {
-  object-fit: inherit;
+  object-fit: fill;
   width: 100%;
   height: auto;
   position: absolute;
@@ -62,6 +62,15 @@ video {
 .wiggly-line {
   width: 150px;
 }
+
+.vertical-line {
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  border-left: 2px solid #13b2d6;
+  height: 110px;
+}
 /* End of Common Styles */
 
 /* About Us Section */
@@ -100,7 +109,7 @@ video {
   padding: 6rem;
 }
 
-.fests-managed {
+.stat {
   font-size: 50px;
   color: #2a375e;
   display: block;
@@ -192,8 +201,139 @@ video {
   margin-top: 6rem;
 }
 
-.contact {
+.contact,
+.contact-name,
+.nunito {
   font-family: 'Nunito';
   font-size: 18px;
 }
 /* End Of Footer */
+
+/* Media Queries */
+@media screen and (max-width: 1072px) {
+  video {
+    height: 100vh;
+  }
+  .hero-head {
+    font-size: 108px;
+    padding-bottom: 0 !important;
+  }
+  .hero-subhead {
+    font-size: 16px;
+    padding-bottom: 0 !important;
+  }
+  .scroll-text {
+    display: none;
+  }
+  #about-us {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  .card-body: {
+    padding: 1rem;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+  .name {
+    font-size: 18px;
+  }
+  .post {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .hero-head {
+    font-size: 96px;
+    padding-bottom: 0 !important;
+  }
+  #about-us {
+    padding: 0;
+  }
+  #creativity {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .hero-head {
+    font-size: 84px;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #creativity {
+    padding-top: 3rem;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .post {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 587px) {
+  body {
+    overflow-x: hidden;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .post {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .heading {
+    font-size: 34px;
+  }
+  .heading-top {
+    font-size: 20px;
+  }
+  .stat {
+    font-size: 36px;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-name,
+  .nunito {
+    font-size: 14px;
+  }
+  .no-deco {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .heading {
+    font-size: 30px;
+  }
+  .heading-top {
+    font-size: 18px;
+  }
+  .stat {
+    font-size: 32px;
+  }
+  .contact {
+    text-align: center;
+  }
+  .contact > span {
+    font-size: 10px;
+  }
+  .no-deco {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .socials-i, .socials-f {
+    margin-right: 10px;
+  }
+}
+
+/* End Of Media Queries */
