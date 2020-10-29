@@ -56,17 +56,17 @@
         });
     });
 
-    let item = 0;
-    document.querySelector('.bg-image').src = images[item].link;
+    // let item = 0;
+    // document.querySelector('.bg-image').src = images[item].link;
 
-    $('#fest-carousel').on('slide.bs.carousel', function (e) {
-      if (item < images.length) {
-        document.querySelector('.bg-image').src = images[item++].link;
-      } else {
-        item = 0;
-        document.querySelector('.bg-image').src = images[item].link;
-      }
-    });
+    // $('#fest-carousel').on('slide.bs.carousel', function (e) {
+    //   if (item < images.length) {
+    //     document.querySelector('.bg-image').src = images[item++].link;
+    //   } else {
+    //     item = 0;
+    //     document.querySelector('.bg-image').src = images[item].link;
+    //   }
+    // });
   } catch (err) {
     console.log(err);
   }

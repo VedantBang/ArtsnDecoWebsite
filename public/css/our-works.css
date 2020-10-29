@@ -107,7 +107,6 @@
 #spree-tab:hover,
 #specials-tab:hover {
   border-radius: 3px;
-  transform: translateY(-1px);
   box-shadow: 2px 10px 15px rgba(31, 31, 31, 0.16);
   transition: all 0.2s ease-in-out;
   border-bottom: 5px solid #13b2d6;
@@ -200,3 +199,10 @@ a:hover {
   /* z-index: -1000; */
 }
 /* End Of Background Image */
+
+/* Cover Images */
+.side-cover {
+  display: flex;
+  flex-direction: column;
+}
+/* End Of Cover Images */

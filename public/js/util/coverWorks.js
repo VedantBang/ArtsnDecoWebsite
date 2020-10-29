@@ -6,6 +6,7 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
+      // Latest cover image
       const mainCover = `<div class="col-12 col-md-8">
   <a
     href="posts.html"
@@ -24,9 +25,8 @@ const coverWorks = (fest) => {
   </a>
 </div>`;
 
-      const sideCover = `<div class="col-12 col-md-4 vertical-col">
-          <div class="row">
-          <div class="col-12">
+      const sideCover = `<div class="col-12 col-md-4 side-cover">
+          <div class="side-card"> 
   <a
     href="posts.html"
     type="button"
@@ -43,9 +43,7 @@ const coverWorks = (fest) => {
     <span class="cover-text theme">${response.data[1].theme}</span>
   </a>
   </div>
-  </div>
-  <div class="row">
-  <div class="col-12">
+  <div class="side-card">
   <a
     href="posts.html"
     type="button"
@@ -60,8 +58,7 @@ const coverWorks = (fest) => {
     <span class="cover-text year">${response.data[2].year}</span>
     <br />
     <span class="cover-text theme">${response.data[2].theme}</span>
-  </a>
-  </div>
+  </a>  
   </div>
 </div>`;
 
@@ -79,7 +76,7 @@ const coverWorks = (fest) => {
     <img
       src="${response.data[i].coverImage.link}"
       alt="${response.data[i].coverImage.title}"
-      class="img-fluid-first"
+      class="img-fluid"
     />
     <span class="cover-text year">${response.data[i].year}</span>
     <br />
