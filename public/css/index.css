@@ -288,6 +288,10 @@ video {
 }
 
 @media screen and (max-width: 468px) {
+  .container {
+    width: 98%;
+    overflow-x: hidden;
+  }
   .heading {
     font-size: 34px;
   }
@@ -296,6 +300,9 @@ video {
   }
   .stat {
     font-size: 36px;
+  }
+  .footer {
+    padding: 40px;
   }
   .contact {
     display: flex;
