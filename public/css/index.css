@@ -229,7 +229,7 @@ video {
     padding-top: 0 !important;
     margin-top: 0 !important;
   }
-  .card-body: {
+  .card-body {
     padding: 1rem;
   }
   .card-title {
@@ -331,7 +331,8 @@ video {
     justify-content: space-evenly;
     align-items: center;
   }
-  .socials-i, .socials-f {
+  .socials-i,
+  .socials-f {
     margin-right: 10px;
   }
 }
