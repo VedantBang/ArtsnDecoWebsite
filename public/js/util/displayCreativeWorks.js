@@ -40,7 +40,7 @@ const displayCreativeWorks = async () => {
     ).json();
 
     for (let i = 0; i < response.data.length; i++) {
-      swiper.appendSlide(`<div class="swiper-slide" data-hash="${response.data[i].title}">
+      swiper.appendSlide(`<div class="swiper-slide">
           <div class="card">
             <img src="${response.data[i].link}" alt="${response.data[i].title}" class="img-fluid swiper-lazy" />
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>

@@ -18,23 +18,83 @@ body {
 /* End Of Global Styles */
 
 /* Background Image */
-.bg-overlay {
-  background-color: #000;
-  z-index: -1;
-}
-
 .bg-image {
-  position: absolute;
-  top: 0;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
   width: 100vw;
-  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem 0rem;
 }
 /* End Of Background Image */
+
+/* Close Button */
+.close {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  top: 30;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(182, 182, 182, 0.5) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End Of Close Button */
+
+/* Swiper */
+.swiper-container {
+  width: 100%;
+  height: 80%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #000;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 60%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 100px;
+  height: 100px;
+  padding: 3rem;
+  transform: scale(0.3);
+  color: #000;
+  background: #fff;
+  font-weight: 900;
+  border-radius: 50%;
+  margin: auto 10%;
+  bottom: 50%;
+}
+
+.img-fluid {
+  width: max-content;
+  padding: 0;
+  height: auto;
+}
+
+.text-white {
+  color: #fff;
+  font-family: 'Blackout-2AM';
+  font-size: 20px;
+}
+/* End Of Swiper */
 
 /* Carousel */
 /* Implementing https://codepen.io/MhSami/pen/zNBMbj code */

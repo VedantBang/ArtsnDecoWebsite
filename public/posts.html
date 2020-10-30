@@ -17,6 +17,13 @@
     <!-- Font Awesome CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/posts.css" />
@@ -24,29 +31,46 @@
 
   <body>
     <!-- Background Image -->
-    <div class="bg-overlay d-none d-lg-block">
-      <img alt="bg" class="bg-image" />
-    </div>
+    <!-- <div class="bg-overlay d-none d-md-block">
+        <div class="bg-image"></div>
+      </div> -->
     <!-- End Of Background Image -->
 
-    <div class="mt-5">
+    <div class="bg-image">
+      <a href="our-works.html  " class="close"
+        ><i class="fas fa-times text-light"></i
+      ></a>
       <div class="row justify-content-center">
+        <!-- Using Swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination-white"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <p class="mt-3 col-6 text-white text-center fest"></p>
+        <p class="mt-3 col-6 text-white text-center title"></p>
+
+        <!-- End Of Using Swiper -->
+
         <!-- Carousel Wrapper -->
-        <div
+        <!-- <div
           id="fest-carousel"
           class="carousel slide show-neighbors d-none d-lg-block"
           data-ride="carousel"
-        >
-          <!-- Indicators -->
-          <ol class="carousel-indicators"></ol>
-          <!-- End Of Indicators -->
+        > -->
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators"></ol> -->
+        <!-- End Of Indicators -->
 
-          <!-- Slides -->
-          <div class="carousel-inner"></div>
-          <!-- End Of Slides -->
+        <!-- Slides -->
+        <!-- <div class="carousel-inner"></div> -->
+        <!-- End Of Slides -->
 
-          <!--Controls-->
-          <a
+        <!--Controls-->
+        <!-- <a
             class="carousel-control-prev"
             href="#fest-carousel"
             role="button"
@@ -67,14 +91,14 @@
               <span class="fas fa-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </button>
-          </a>
-          <!-- End Of Controls-->
-        </div>
-        <!-- End Of Carousel Wrapper-->
-        <span class="egtext">Hello</span>
+          </a> -->
+        <!-- End Of Controls-->
+        <!-- </div> -->
+        <!-- End Of Carousel Wrapper -->
+        <!-- <span class="egtext">Hello</span> -->
 
         <!-- Showing artwork on smaller screens -->
-        <div class="d-lg-none container">
+        <div class="d-md-none container">
           <div class="row justify-content-center">Rohit is the best!</div>
         </div>
         <!-- End Of Showing artwork on smaller screens -->
@@ -98,6 +122,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Custom scripts -->
     <script src="./js/util/url.js"></script>
