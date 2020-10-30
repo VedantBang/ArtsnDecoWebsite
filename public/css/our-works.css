@@ -15,7 +15,7 @@
 /* Our Works */
 .our-works {
   margin-bottom: 0;
-  font-family: 'Sofa-Sans-3D-Hatched';
+  font-family: "Sofa-Sans-3D-Hatched";
   padding-bottom: 0 !important;
   font-style: normal;
   font-size: 56px;
@@ -24,7 +24,7 @@
 }
 .secondary-text {
   margin-bottom: 0;
-  font-family: 'LookingFlowers-ScriptPro';
+  font-family: "LookingFlowers-ScriptPro";
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -49,7 +49,7 @@
 
 /* Navigation Panel Tabs */
 #fest-nav {
-  background: url('../assets/images/background.jpg') !important;
+  background: url("../assets/images/background.jpg") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center bottom;
@@ -129,22 +129,12 @@
 
 .img-fluid-first {
   width: 100%;
-  height: auto;
-  transition: transform 0.2s;
+  height: 100%;
 }
 
 .img-fluid {
   width: 100%;
-  height: 233px;
-  transition: transform 0.2s;
-}
-
-.img-fluid-first:hover {
-  transform: scale(1.05);
-}
-
-.img-fluid:hover {
-  transform: scale(1.05);
+  height: 100%;
 }
 
 .cover-text {
@@ -191,7 +181,7 @@ a:hover {
 
 /* Background Image */
 #main-content-bg {
-  background: url('../assets/images/background.jpg') !important;
+  background: url("../assets/images/background.jpg") !important;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -204,5 +194,20 @@ a:hover {
 .side-cover {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 /* End Of Cover Images */
+#waves {
+  width: 90%;
+}
+
+#main-cover {
+  padding-right: 20px;
+  height: 471.938px;
+}
+
+.side-card {
+  width: 334.722px;
+  height: 224.861px;
+  margin-bottom: 21px;
+}

@@ -7,7 +7,7 @@ const coverWorks = (fest) => {
       ).json();
 
       // Latest cover image
-      const mainCover = `<div class="col-12 col-md-8">
+      const mainCover = `<div class="col-12 col-md-8" id="main-cover">
   <a
     href="posts.html"
     type="button"
