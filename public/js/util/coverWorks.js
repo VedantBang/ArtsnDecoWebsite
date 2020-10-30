@@ -66,7 +66,7 @@ const coverWorks = (fest) => {
       $(`.${fest}-gallery`).append(sideCover);
 
       for (let i = 3; i < response.data.length; i++) {
-        const cover = `<div class="col-12 col-md-4">
+        const cover = `<div class="col-12 col-md-4 bottom-card">
   <a
     href="posts.html"
     type="button"

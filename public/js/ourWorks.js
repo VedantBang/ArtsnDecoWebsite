@@ -1,13 +1,25 @@
 coverWorks('waves');
 
-document.getElementById('quark-tab').addEventListener('click', () => {
-  coverWorks('quark');
-});
+document.getElementById('quark-tab').addEventListener(
+  'click',
+  () => {
+    coverWorks('quark');
+  },
+  { once: true }
+);
 
-document.getElementById('spree-tab').addEventListener('click', () => {
-  coverWorks('spree');
-});
+document.getElementById('spree-tab').addEventListener(
+  'click',
+  () => {
+    coverWorks('spree');
+  },
+  { once: true }
+);
 
-document.getElementById('specials-tab').addEventListener('click', () => {
-  coverWorks('other');
-});
+document.getElementById('specials-tab').addEventListener(
+  'click',
+  () => {
+    coverWorks('other');
+  },
+  { once: true }
+);
