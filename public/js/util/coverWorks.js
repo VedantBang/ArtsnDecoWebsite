@@ -7,7 +7,7 @@ const coverWorks = (fest) => {
       ).json();
 
       // Latest cover image
-      const mainCover = `<div class="col-12 col-md-8" id="main-cover">
+      const mainCover = `<div class="grid-item1" id="main-cover">
   <a
     href="posts.html"
     type="button"
@@ -25,8 +25,7 @@ const coverWorks = (fest) => {
   </a>
 </div>`;
 
-      const sideCover = `<div class="col-12 col-md-4 side-cover">
-          <div class="side-card"> 
+      const sideCover = `<div class="side-card grid-item""> 
   <a
     href="posts.html"
     type="button"
@@ -43,7 +42,7 @@ const coverWorks = (fest) => {
     <span class="cover-text theme">${response.data[1].theme}</span>
   </a>
   </div>
-  <div class="side-card">
+  <div class="side-card grid-item"">
   <a
     href="posts.html"
     type="button"
@@ -59,14 +58,13 @@ const coverWorks = (fest) => {
     <br />
     <span class="cover-text theme">${response.data[2].theme}</span>
   </a>  
-  </div>
 </div>`;
 
       $(`.${fest}-gallery`).append(mainCover);
       $(`.${fest}-gallery`).append(sideCover);
 
       for (let i = 3; i < response.data.length; i++) {
-        const cover = `<div class="col-12 col-md-4 bottom-card">
+        const cover = `<div class="bottom-card grid-item"">
   <a
     href="posts.html"
     type="button"
