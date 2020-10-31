@@ -1,7 +1,7 @@
 (async () => {
   try {
     let swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1.5,
+      slidesPerView: 2,
       centeredSlides: true,
       loop: true,
       lazy: true,
@@ -35,6 +35,7 @@
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </div>`);
     }
+
     let item = 0;
     document.querySelector('.title').innerHTML = `${images[item].title}`;
     document.querySelector(

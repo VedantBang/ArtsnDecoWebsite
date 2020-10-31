@@ -39,10 +39,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 /* Safari Compatibility Issue */
 .safari-issue {
   -webkit-appearance: none;

@@ -32,10 +32,12 @@ body {
   z-index: 100;
   position: fixed;
   right: 0;
-  top: 30;
+  top: 0;
+  margin: 5rem 5rem 0rem 0rem;
   height: 40px;
   width: 40px;
-  background-color: rgba(182, 182, 182, 0.5) !important;
+  background-color: #000;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;

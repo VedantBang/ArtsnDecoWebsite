@@ -150,6 +150,10 @@ video {
   text-shadow: 2px 5px 10px #000;
   font-weight: 900;
 }
+
+.swiper-pagination-bullet-active {
+  background: #13b2d6;
+}
 /* End Of Creativity */
 
 /* Team */
@@ -264,6 +268,18 @@ video {
 }
 
 @media screen and (max-width: 768px) {
+  .navbar-nav .nav-item .nav-link {
+    margin: 0 20px;
+    font-size: 16px;
+    color: #2a375e;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #13b2d6;
+    text-decoration: underline;
+  }
   #creativity {
     padding-top: 3rem;
   }
@@ -276,9 +292,6 @@ video {
 }
 
 @media screen and (max-width: 587px) {
-  body {
-    overflow-x: hidden;
-  }
   .name {
     font-size: 14px;
   }
@@ -288,9 +301,18 @@ video {
 }
 
 @media screen and (max-width: 468px) {
-  .container {
-    width: 98%;
-    overflow-x: hidden;
+  #about-us > div {
+    width: 100%;
+    margin: 0px auto;
+    padding: 1rem !important;
+  }
+  #jumbotron-bg {
+    padding: 6rem 30px;
+  }
+  #creativity > div {
+    width: 100%;
+    margin: 0px auto;
+    padding: 1rem !important;
   }
   .heading {
     font-size: 34px;
