@@ -20,7 +20,7 @@ const displayProfiles = async () => {
                     <p class="post text-center text-uppercase">
                       ${response.data[i].post}
                     </p>
-                    <div class="social-media-links text-center">
+                    <div class="social-media-links justify-content-center text-center">
                       <a href="${response.data[i].insta}" class="no-deco" target="_blank"
                         ><i class="fab fa-instagram socials-i"></i
                       ></a>

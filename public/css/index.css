@@ -1,374 +1,375 @@
 /* Hero Section Video */
 video {
-    object-fit: fill;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
 }
 
 .hero-section {
-    height: 100vh;
-    color: #fff;
+  height: 100vh;
+  color: #fff;
 }
 
 .hero-head {
-    font-family: 'Guttenbay';
-    font-size: 140px;
-    text-shadow: 2px 2px 10px #000;
-    word-spacing: 30px;
-    transform: rotate(-8deg);
+  font-family: 'Guttenbay';
+  font-size: 140px;
+  text-shadow: 2px 2px 10px #000;
+  word-spacing: 30px;
+  transform: rotate(-8deg);
 }
 
 .hero-subhead {
-    font-family: 'Sofa-Sans-Regular-DP';
-    font-weight: 600;
-    font-size: 22px;
-    letter-spacing: 12px;
-    margin: 0;
+  font-family: 'Sofa-Sans-Regular-DP';
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 12px;
+  margin: 0;
 }
 
 .scroll-text {
-    position: absolute;
-    color: #e0dcdc;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    /* transform: rotate(90deg); */
+  position: absolute;
+  color: #e0dcdc;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  /* transform: rotate(90deg); */
 }
 /* End Of Hero Section Video */
 
 /* Common Styles */
 .heading-top {
-    font-family: 'LookingFlowers-ScriptPro';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    color: #13b2d6;
-    margin: 0;
-    /* transform: rotate(-17deg); */
+  font-family: 'LookingFlowers-ScriptPro';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  color: #13b2d6;
+  margin: 0;
+  /* transform: rotate(-17deg); */
 }
 
 .heading {
-    font-family: 'Sofa-Sans-Display-Black';
-    font-size: 60px;
-    margin: 0;
-    color: #2a375e;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-family: 'Sofa-Sans-Display-Black';
+  font-size: 60px;
+  margin: 0;
+  color: #2a375e;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .wiggly-line {
-    width: 150px;
+  width: 150px;
 }
 
 .vertical-line {
-    margin-top: 40px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    border-left: 2px solid #13b2d6;
-    height: 110px;
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  border-left: 2px solid #13b2d6;
+  height: 110px;
 }
 /* End of Common Styles */
 
 /* About Us Section */
 .card {
-    border: none;
-    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.161));
-    border-radius: 15px;
+  border: none;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.161));
+  border-radius: 15px;
 }
 
 .card-title {
-    font-size: 32px;
-    color: #2a375e;
-    border-bottom: 4px solid #13b2d6;
-    font-family: 'Sofa-Sans-Bold';
-    letter-spacing: 1px;
+  font-size: 32px;
+  color: #2a375e;
+  border-bottom: 4px solid #13b2d6;
+  font-family: 'Sofa-Sans-Bold';
+  letter-spacing: 1px;
 }
 
 .card-text {
-    font-family: 'Nunito';
-    color: #2a375e;
-    line-height: 150%;
-    margin-top: 2rem;
+  font-family: 'Nunito';
+  color: #2a375e;
+  line-height: 150%;
+  margin-top: 2rem;
 }
 
 .card:hover {
-    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.161));
-    transform: translateY(-2px);
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.161));
+  transform: translateY(-2px);
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 /* End Of About Us Section */
 
 /* Jumbotron */
 #jumbotron-bg {
-    background-image: url('../assets/images/background.jpg');
-    background-position: right;
-    background-size: cover;
-    padding: 6rem;
+  background-image: url('../assets/images/background.jpg');
+  background-position: right;
+  background-size: cover;
+  padding: 6rem;
 }
 
 .stat {
-    font-size: 64px;
-    color: #2a375e;
-    display: block;
-    font-family: 'Sofa-Sans-Display-Black';
+  font-size: 64px;
+  color: #2a375e;
+  display: block;
+  font-family: 'Sofa-Sans-Display-Black';
 }
 /* End Of Jumbotron */
 
 /* Creativity */
 .swiper-container {
-    width: 100%;
-    height: 400px;
+  width: 100%;
+  height: 400px;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .swiper-button-prev,
 .swiper-button-next,
 .swiper-pagination {
-    transform: scale(0.6);
-    color: #fff;
-    text-shadow: 2px 5px 10px #000;
-    font-weight: 900;
+  transform: scale(0.6);
+  color: #fff;
+  text-shadow: 2px 5px 10px #000;
+  font-weight: 900;
 }
 
 .swiper-pagination-bullet-active {
-    background: #13b2d6;
+  background: #13b2d6;
 }
 /* End Of Creativity */
 
 /* Team */
 .enlarged {
-    font-size: 64px;
+  font-size: 64px;
 }
 
 .team {
-    filter: none;
-    border-radius: 5px;
-    background: #f9f9f9;
-    margin: auto;
+  filter: none;
+  border-radius: 5px;
+  background: #f9f9f9;
+  margin: auto;
 }
 
 .avatar-img {
-    height: 130px;
-    width: 130px;
-    border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
 }
 
 .name {
-    font-family: 'Nunito';
-    font-weight: 800;
-    font-size: 22px;
-    margin: 0;
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-size: 22px;
+  margin: 0;
 }
 
 .post {
-    font-family: 'Nunito';
-    font-size: 14px;
-    color: #13b2d6;
+  font-family: 'Nunito';
+  font-size: 14px;
+  color: #13b2d6;
 }
 
 .no-deco {
-    text-decoration: none;
-    color: #2a375e;
+  text-decoration: none;
+  color: #2a375e;
 }
 
 .no-deco:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 /* End Of Team */
 
 /* Footer */
 .footer {
-    background-image: url('../assets/images/background.jpg');
-    background-size: cover;
-    padding: 6rem;
-    margin-top: 6rem;
+  background-image: url('../assets/images/background.jpg');
+  background-size: cover;
+  padding: 6rem;
+  margin-top: 6rem;
 }
 
 .contact,
 .contact-name,
 .nunito {
-    font-family: 'Nunito';
-    font-size: 18px;
+  font-family: 'Nunito';
+  font-size: 18px;
 }
 /* End Of Footer */
 
 /* Media Queries */
-@media screen and (max-width: 1072px) {
-    video {
-        height: 100vh;
-    }
-    .hero-head {
-        font-size: 108px;
-        padding-bottom: 0 !important;
-    }
-    .hero-subhead {
-        font-size: 16px;
-        padding-bottom: 0 !important;
-    }
-    .scroll-text {
-        display: none;
-    }
-    #about-us {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-    }
-    .card-body {
-        padding: 1rem;
-    }
-    .card-title {
-        font-size: 24px;
-    }
-    .name {
-        font-size: 18px;
-    }
-    .post {
-        font-size: 14px;
-    }
+@media screen and (min-width: 280px) {
+  .heading-top {
+    font-size: 18px;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .card-title {
+    font-size: 22px;
+  }
+  #jumbotron-bg {
+    padding: 6rem 1rem;
+  }
+  .stat {
+    font-size: 24px;
+  }
+  .wiggly-line {
+    transform: scale(0.7);
+  }
+  #creativity {
+    padding: 2rem 1rem 0rem 1rem;
+  }
+  .footer {
+    padding: 6rem 1rem;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nunito {
+    font-size: 14px;
+  }
+  .social-media-links {
+    display: flex !important;
+  }
 }
 
-@media screen and (max-width: 990px) {
-    .hero-head {
-        font-size: 96px;
-        padding-bottom: 0 !important;
-    }
-    #about-us {
-        padding: 0;
-    }
-    #creativity {
-        padding: 0;
-    }
+@media screen and (min-width: 320px) {
+  .heading {
+    font-size: 30px;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+  .stat {
+    font-size: 26px;
+  }
 }
 
-@media screen and (max-width: 860px) {
-    .hero-head {
-        font-size: 84px;
-        padding-bottom: 0 !important;
-    }
+@media screen and (min-width: 360px) {
+  .heading {
+    font-size: 36px;
+  }
+  .card-title {
+    font-size: 30px;
+  }
+  .stat {
+    font-size: 30px;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .navbar-nav .nav-item .nav-link {
-        margin: 0 20px;
-        font-size: 16px;
-        color: #2a375e;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-    .navbar-nav .nav-item .nav-link:hover {
-        color: #13b2d6;
-        text-decoration: underline;
-    }
-    #creativity {
-        padding-top: 3rem;
-    }
-    .name {
-        font-size: 14px;
-    }
-    .post {
-        font-size: 12px;
-    }
+@media screen and (min-width: 540px) {
+  .heading-top {
+    font-size: 20px;
+  }
+  .heading {
+    font-size: 46px;
+  }
+  .card-title {
+    font-size: 34px;
+  }
+  .card-text {
+    font-size: 20px;
+  }
+  .stat {
+    font-size: 36px;
+  }
+  #creativity {
+    padding: 2rem 2rem 0rem 2rem;
+  }
+  .team {
+    width: 1000px !important;
+  }
+  .nunito {
+    font-size: 18px;
+  }
 }
 
-@media screen and (max-width: 587px) {
-    .name {
-        font-size: 14px;
-    }
-    .post {
-        font-size: 12px;
-    }
+@media screen and (min-width: 768px) {
+  video {
+    height: 100vh;
+  }
+  .scroll-text {
+    display: none;
+  }
+  .heading-top {
+    font-size: 22px;
+  }
+  .heading {
+    font-size: 50px;
+  }
+  .card-title {
+    font-size: 26px;
+  }
+  .card-text {
+    font-size: 16px;
+  }
+  .stat {
+    font-size: 42px;
+  }
+  #creativity {
+    padding: 3rem 0rem 0rem 0rem;
+  }
 }
 
-@media screen and (max-width: 468px) {
-    #about-us > div {
-        width: 100%;
-        margin: 0px auto;
-        padding: 1rem !important;
-    }
-    #jumbotron-bg {
-        padding: 6rem 30px;
-    }
-    #creativity > div {
-        width: 100%;
-        margin: 0px auto;
-        padding: 1rem !important;
-    }
-    .heading {
-        font-size: 34px;
-    }
-    .heading-top {
-        font-size: 20px;
-    }
-    .stat {
-        font-size: 36px;
-    }
-    .footer {
-        padding: 40px;
-    }
-    .contact {
-        display: flex;
-        flex-direction: column;
-    }
-    .contact-name,
-    .nunito {
-        font-size: 14px;
-    }
-    .no-deco {
-        transform: scale(0.8);
-    }
+@media screen and (min-width: 1024px) {
+  .hero-section {
+    width: 100%;
+    height: 100vh;
+  }
+  .hero-head {
+    text-align: center;
+    font-size: 144px;
+    margin: 0rem 1rem;
+  }
+  .heading-top {
+    font-size: 26px;
+  }
+  .heading {
+    font-size: 54px;
+  }
+  .stat {
+    font-size: 48px;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  .card-title {
+    font-size: 24px;
+  }
 }
 
-@media screen and (max-width: 375px) {
-    .heading {
-        font-size: 30px;
-    }
-    .heading-top {
-        font-size: 18px;
-    }
-    .stat {
-        font-size: 32px;
-    }
-    .contact {
-        text-align: center;
-    }
-    .contact > span {
-        font-size: 10px;
-    }
-    .no-deco {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    .socials-i,
-    .socials-f {
-        margin-right: 10px;
-    }
+@media screen and (min-width: 1296px) {
+   .hero-section {
+    width: 100%;
+    height: 100vh;
+    margin: 0px auto;
+  }
+  .hero-head {
+    font-size: 158px;
+  }
 }
-
 /* End Of Media Queries */
