@@ -690,4 +690,19 @@ a:hover {
         grid-column-end: 2;
     }
 }
+
+@media screen and (max-width: 468px) {
+    #waves-tab {
+        border-radius: 15px 0px 0px 0px;
+    }
+    #quark-tab {
+        border-radius: 0px 15px 0px 0px;
+    }
+    #spree-tab {
+        border-radius: 0px 0px 0px 15px;
+    }
+    #specials-tab {
+        border-radius: 0px 0px 15px 0px;
+    }
+}
 /*Media queries for grid*/
