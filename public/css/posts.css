@@ -21,29 +21,18 @@ body {
 .bg-image {
   background-position: center;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   height: auto;
   background-color: rgba(0, 0, 0, 1);
-  padding: 3rem 0rem;
 }
 /* End Of Background Image */
 
 /* Close Button */
-.close {
-  z-index: 100;
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin: 5rem 5rem 0rem 0rem;
-  height: 40px;
-  width: 40px;
-  background-color: #000;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* .close {
+  background: rgba(182, 182, 182, 0.5);
+  color: #fff;
+} */
 /* End Of Close Button */
 
 /* Swiper */
@@ -90,7 +79,6 @@ body {
 
 .img-fluid {
   width: 100%;
-  padding: 0;
   height: auto;
 }
 
@@ -98,6 +86,13 @@ body {
   color: #fff;
   font-family: 'Blackout-2AM';
   font-size: 20px;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 0rem 0rem 2rem;
 }
 
 .fest-year {
@@ -117,23 +112,84 @@ body {
 
 /* Media Queries */
 @media screen and (min-width: 280px) {
-  .img-fluid {
-    width: 90vw;
+  body {
+    overflow-x: hidden;
+  }
+  #posts {
+    width: 100vw;
+    margin: 0px auto;
+  }
+  .close {
+    transform: scale(0.8);
+    margin: 3rem 3rem 0rem 0rem;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: 50% 2%;
+  }
+  .number {
+    font-size: 14px;
+    padding: 1rem 0rem 0rem 1rem;
   }
   .fest-year {
-    position: absolute;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
+    font-size: 12px;
+    padding: 0rem 0rem 1rem 1rem;
   }
   .post {
-    position: absolute;
-    bottom: 0;
-    left: 1;
-    padding: 0;
-    margin: 0;
     font-size: 12px;
+    padding: 0rem 1rem 1rem 0rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin: auto 2%;
+  }
+  .number {
+    font-size: 14px;
+    padding: 2rem 0rem 0rem 2rem;
+  }
+  .fest-year {
+    font-size: 14px;
+    padding: 0rem 0rem 2rem 2rem;
+  }
+  .post {
+    font-size: 14px;
+    padding: 0rem 2rem 2rem 0rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .close {
+    transform: scale(1);
+  }
+  #posts {
+    margin: auto auto;
+  }
+  .number {
+    font-size: 16px;
+  }
+  .fest-year {
+    font-size: 16px;
+  }
+  .post {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #posts {
+    margin: auto auto;
+  }
+  .number {
+    font-size: 20px;
+  }
+  .fest-year {
+    font-size: 20px;
+  }
+  .post {
+    font-size: 20px;
   }
 }
 /* End Of Media Queries */

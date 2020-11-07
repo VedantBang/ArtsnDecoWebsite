@@ -4,10 +4,12 @@
       slidesPerView: 2,
       centeredSlides: true,
       loop: true,
-      spaceBetween: 10,
+      zoom: true,
+      spaceBetween: 0,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -46,9 +48,18 @@
 
     for (let i = 0; i < images.length; i++) {
       swiper.appendSlide(`<div class="swiper-slide" id="${i}">
-          <img src="${images[i].link}" alt="${images[i].title}" class="img-fluid" />
-          <div class="text-white fest-year">${response.data[0].fest} ${response.data[0].year}</div>
+      <div class="swiper-zoom-container">
+          <img src="${images[i].link}" alt="${
+        images[i].title
+      }" class="img-fluid" />
+          <div class="text-white number">${
+            i < 10 ? `0${i + 1}` : `${i + 1}`
+          }</div>
+          <div class="text-white fest-year">${response.data[0].fest} ${
+        response.data[0].year
+      }</div>
           <div class="text-white post">${images[i].title}</div>
+      </div>
       </div>`);
     }
   } catch (err) {
