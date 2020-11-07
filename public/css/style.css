@@ -99,6 +99,7 @@
 .socials-text {
     letter-spacing: 1.2px;
     font-size: 15px;
+    color: white;
     margin-right: 7px;
 }
 
@@ -107,6 +108,7 @@
     margin: 0;
     margin-left: 12px;
     font-size: 115%;
+    color: white;
 }
 
 .socials-b {
@@ -114,6 +116,7 @@
     margin: 0;
     margin-left: 12px;
     font-size: 118%;
+    color: white;
 }
 
 .socials-i {
@@ -121,6 +124,7 @@
     margin: 0;
     margin-left: 12px;
     font-size: 125%;
+    color: white;
 }
 /* End Of Socials Sidebar */
 

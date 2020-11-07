@@ -50,41 +50,70 @@
     <!-- End Of Hero Section BG Video -->
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img
-          id="logo-img"
-          src="./assets/images/Original Logo-min.png"
-          alt="AnD_logo"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-us">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="our-works.html">Our Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team">Team</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navbar-desktop">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="logo-img"
+            src="./assets/images/Original Logo-min.png"
+            alt="AnD_logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-works.html">Our Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <!-- End of Navbar -->
 
     <!-- Hero Section for Mobiles -->
     <div class="hero-image d-md-none">
       <div class="overlay">
+        <nav class="navbar navbar-mobile w-100 p-0">
+          <div class="d-flex flex-row w-100 align-items-center">
+            <a class="navbar-brand" href="index.html">
+              <img
+                id="logo-img"
+                src="./assets/images/Original Logo-min.png"
+                alt="AnD_logo"
+              />
+            </a>
+            <ul class="navbar-nav d-flex flex-row ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about-us" style="font-size: 10px"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="our-works.html" style="font-size: 10px"
+                  >Our Works</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team" style="font-size: 10px">Team</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div class="side-text">Department of</div>
         <h1 class="text-center main-text">Arts n Decoration</h1>
         <div class="side-text">BITS Pilani K K Birla Goa Campus</div>
@@ -113,9 +142,15 @@
     <div class="socials-sidebar d-none d-sm-block">
       <span class="socials-text">Follow Us</span>
       <span><img src="/assets/images/social-line.svg" alt="" /></span>
-      <span><i class="fab fa-instagram socials-i"></i></span>
-      <span><i class="fab fa-blogger-b socials-b"></i></span>
-      <span><i class="fab fa-facebook-f socials-f"></i></span>
+      <a href="https://www.instagram.com/artsndeco/" target="blank"
+        ><span><i class="fab fa-instagram socials-i"></i></span
+      ></a>
+      <a href="http://artsndeco.blogspot.com/" target="blank"
+        ><span><i class="fab fa-blogger-b socials-b"></i></span
+      ></a>
+      <a href="https://www.facebook.com/artsndecobitsg/" target="blank">
+        <span><i class="fab fa-facebook-f socials-f"></i></span
+      ></a>
     </div>
     <!-- End Of Socials Sidebar -->
 
@@ -267,11 +302,15 @@
             <div class="mt-lg-5 mt-3 text-center align-items-end">
               <p class="contact">
                 <b class="contact-name">Aditya: </b>
-                <span class="nunito">+91-789-846-6420</span>
+                <a href="tel:+91-789-846-6420" class="no-deco">
+                  <span class="nunito">+91-789-846-6420</span>
+                </a>
               </p>
               <p class="contact">
                 <b class="contact-name">Siddhartha: </b>
-                <span class="nunito">+91-637-000-2121</span>
+                <a href="tel:+91-637-000-2121" class="no-deco">
+                  <span class="nunito">+91-637-000-2121</span>
+                </a>
               </p>
             </div>
           </div>
@@ -285,14 +324,22 @@
             />
             <div class="mt-lg-5 mt-3">
               <p class="contact text-center">
-                <a href="#" class="no-deco text-center">
-                  <i class="fab fa-instagram socials-i m-0"></i>
+                <a
+                  href="https://www.instagram.com/artsndeco/"
+                  class="no-deco text-center"
+                  target="blank"
+                >
+                  <i class="fab fa-instagram m-0"></i>
                   <span class="nunito">@artsndeco</span>
                 </a>
               </p>
               <p class="contact text-center">
-                <a href="#" class="no-deco text-center">
-                  <i class="fab fa-facebook socials-f m-0"></i>
+                <a
+                  href="https://www.facebook.com/artsndecobitsg/"
+                  class="no-deco text-center"
+                  target="blank"
+                >
+                  <i class="fab fa-facebook m-0"></i>
                   <span class="nunito">@artsndecobitsg</span>
                 </a>
               </p>

@@ -22,10 +22,10 @@ const displayProfiles = async () => {
                     </p>
                     <div class="social-media-links justify-content-center text-center">
                       <a href="${response.data[i].insta}" class="no-deco" target="_blank"
-                        ><i class="fab fa-instagram socials-i"></i
+                        ><i class="fab fa-instagram m-1"></i
                       ></a>
                       <a href="${response.data[i].facebook}" class="no-deco" target="_blank"
-                        ><i class="fab fa-facebook socials-i"></i
+                        ><i class="fab fa-facebook m-1"></i
                       ></a>
                     </div>
                   </div>
