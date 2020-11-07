@@ -76,17 +76,22 @@ video {
   font-family: 'Guttenbay';
   font-size: 96px;
 }
-
-.cta {
+/* 
+#cta {
   border-radius: 3em;
   font-size: 1em;
   font-family: 'Nunito';
   color: #fff;
   background: linear-gradient(45deg, #13b2d6, #2a375e);
-  box-shadow: 0px 0px 100px #d1d1d1;
+  box-shadow: 0px 0px 100px #f1f1f1;
   font-size: 12px;
   padding: 0.4rem 1rem;
+  cursor: pointer !important;
 }
+
+#cta:hover {
+  cursor: pointer;
+} */
 /* End of Hero Section for Mobile Screens */
 
 /* Common Styles */
@@ -268,6 +273,9 @@ video {
 
 /* Media Queries */
 @media screen and (min-width: 280px) {
+  .nav-link {
+    color: #2a375e !important;
+  }
   .heading-top {
     font-size: 18px;
   }
@@ -357,6 +365,9 @@ video {
 }
 
 @media screen and (min-width: 768px) {
+  .nav-link {
+    color: #fff !important;
+  }
   video {
     height: 100vh;
   }
