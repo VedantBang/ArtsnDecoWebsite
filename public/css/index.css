@@ -58,12 +58,13 @@ video {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  z-index: 1000;
 }
 
 .side-text {
@@ -76,22 +77,24 @@ video {
   font-family: 'Guttenbay';
   font-size: 96px;
 }
-/* 
+
 #cta {
-  border-radius: 3em;
+  border-radius: 3px;
+  border: 0.5px solid #fff;
   font-size: 1em;
   font-family: 'Nunito';
   color: #fff;
-  background: linear-gradient(45deg, #13b2d6, #2a375e);
+  background: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 100px #f1f1f1;
   font-size: 12px;
   padding: 0.4rem 1rem;
   cursor: pointer !important;
+  text-decoration: none;
 }
 
 #cta:hover {
   cursor: pointer;
-} */
+}
 /* End of Hero Section for Mobile Screens */
 
 /* Common Styles */
@@ -170,7 +173,21 @@ video {
   font-size: 64px;
   color: #2a375e;
   display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 4s steps(40, end);
   font-family: 'Sofa-Sans-Display-Black';
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 /* End Of Jumbotron */
 
