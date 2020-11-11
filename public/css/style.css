@@ -1,130 +1,130 @@
 /* Importing Common Fonts For All Pages */
 @font-face {
-    font-family: 'Guttenbay';
-    src: url('../assets/fonts/Guttenbay.ttf');
+  font-family: 'Guttenbay';
+  src: url('../assets/fonts/Guttenbay.ttf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Regular';
-    src: url('../assets/fonts/SofaSansHand-Regular.otf');
+  font-family: 'Sofa-Sans-Regular';
+  src: url('../assets/fonts/SofaSansHand-Regular.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Regular-DP';
-    src: url('../assets/fonts/SofaSansHand-RegularDP.otf');
+  font-family: 'Sofa-Sans-Regular-DP';
+  src: url('../assets/fonts/SofaSansHand-RegularDP.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Bold';
-    src: url('../assets/fonts/SofaSansHand-Bold.otf');
+  font-family: 'Sofa-Sans-Bold';
+  src: url('../assets/fonts/SofaSansHand-Bold.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Black';
-    src: url('../assets/fonts/SofaSansHand-Bk.otf');
+  font-family: 'Sofa-Sans-Black';
+  src: url('../assets/fonts/SofaSansHand-Bk.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-Display-Black';
-    src: url('../assets/fonts/SofaSansHand-BkDP.otf');
+  font-family: 'Sofa-Sans-Display-Black';
+  src: url('../assets/fonts/SofaSansHand-BkDP.otf');
 }
 
 @font-face {
-    font-family: 'Sofa-Sans-3D-Hatched';
-    src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
+  font-family: 'Sofa-Sans-3D-Hatched';
+  src: url('../assets/fonts/SofaSansHand-Bk3DHatched.otf');
 }
 
 @font-face {
-    font-family: 'LookingFlowers-ScriptPro';
-    src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
+  font-family: 'LookingFlowers-ScriptPro';
+  src: url('../assets/fonts/Looking\ Flowers\ Script\ Pro.otf');
 }
 
 /* End Of Importing Common Fonts For All Pages */
 
 /* Global Styles */
 * {
-    font-family: 'Sofa-Sans-Regular-DP';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Sofa-Sans-Regular-DP';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Safari Compatibility Issue */
 .safari-issue {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 /* End Of Safari Compatibility Issue */
 
 /* Common Navbar Styles */
 #logo-img {
-    width: 80px;
+  width: 80px;
 }
 
 .navbar {
-    padding: 0 60px;
+  padding: 0 60px;
 }
 
 .navbar-nav .nav-item .nav-link {
-    margin: 0 20px;
-    font-size: 16px;
-    color: #fff;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    font-weight: 600;
+  margin: 0 20px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
-    text-decoration: underline;
+  color: #fff;
+  text-decoration: underline;
 }
 
 .active {
-    color: #fefefe !important;
+  color: #fefefe !important;
 }
 /* End Of Common Navbar Styles */
 
 /* Socials Sidebar */
 .socials-sidebar {
-    -webkit-transform: rotate(-90deg) translateX(-50%);
-    transform: rotate(-90deg) translateX(-50%);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    position: fixed;
-    left: 30px;
-    top: 50%;
-    font-family: 'Sofa-Sans-Regular';
-    z-index: 1000;
+  -webkit-transform: rotate(-90deg) translateX(-50%);
+  transform: rotate(-90deg) translateX(-50%);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  font-family: 'Sofa-Sans-Regular';
+  z-index: 1000;
 }
 
 .socials-text {
-    letter-spacing: 1.2px;
-    font-size: 15px;
-    color: white;
-    margin-right: 7px;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  color: white;
+  margin-right: 7px;
 }
 
 .socials-f {
-    padding: 0;
-    margin: 0;
-    margin-left: 12px;
-    font-size: 115%;
-    color: white;
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
+  font-size: 115%;
+  color: white;
 }
 
 .socials-b {
-    padding: 0;
-    margin: 0;
-    margin-left: 12px;
-    font-size: 118%;
-    color: white;
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
+  font-size: 118%;
+  color: white;
 }
 
 .socials-i {
-    padding: 0;
-    margin: 0;
-    margin-left: 12px;
-    font-size: 125%;
-    color: white;
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
+  font-size: 125%;
+  color: white;
 }
 /* End Of Socials Sidebar */
 

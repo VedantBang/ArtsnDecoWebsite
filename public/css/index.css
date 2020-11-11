@@ -176,7 +176,7 @@ video {
   overflow: hidden;
   white-space: nowrap;
   margin: 0 auto;
-  animation: typing 4s steps(40, end);
+  animation: typing 4.5s steps(40, end);
   font-family: 'Sofa-Sans-Display-Black';
 }
 
