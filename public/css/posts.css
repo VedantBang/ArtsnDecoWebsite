@@ -39,6 +39,7 @@ body {
 .swiper-container {
   width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 .swiper-slide {
@@ -78,8 +79,8 @@ body {
 }
 
 .img-fluid {
-  width: 100%;
-  height: auto;
+  max-height: 500px;
+  width: auto;
 }
 
 .text-white {
@@ -125,7 +126,7 @@ body {
   }
   .swiper-button-prev,
   .swiper-button-next {
-    margin: 50% 2%;
+    display: none;
   }
   .number {
     font-size: 14px;
@@ -142,10 +143,6 @@ body {
 }
 
 @media screen and (min-width: 540px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    margin: auto 2%;
-  }
   .number {
     font-size: 14px;
     padding: 2rem 0rem 0rem 2rem;
@@ -161,6 +158,11 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+    padding: 1.8rem;
+  }
   .close {
     transform: scale(1);
   }
