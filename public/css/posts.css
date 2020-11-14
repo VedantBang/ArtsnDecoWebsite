@@ -93,21 +93,21 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 2rem 0rem 0rem 2rem;
+  margin: 0rem 0rem 0rem 2rem;
 }
 
 .fest-year {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 0rem 0rem 2rem 2rem;
+  margin: 0rem 0rem 2rem 2rem;
 }
 
 .post {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 0rem 2rem 2rem 0rem;
+  margin: 0rem 2rem 2rem 0rem;
 }
 /* End Of Swiper */
 
@@ -126,42 +126,41 @@ body {
   }
   .swiper-button-prev,
   .swiper-button-next {
-    display: none;
+    visibility: collapse;
   }
   .number {
     font-size: 14px;
-    padding: 1rem 0rem 0rem 1rem;
+    margin: 1rem 0rem 0rem 1rem;
   }
   .fest-year {
     font-size: 12px;
-    padding: 0rem 0rem 1rem 1rem;
+    margin: 0rem 0rem 1rem 1rem;
   }
   .post {
     font-size: 12px;
-    padding: 0rem 1rem 1rem 0rem;
+    margin: 0rem 1rem 1rem 0rem;
   }
 }
 
 @media screen and (min-width: 540px) {
   .number {
     font-size: 14px;
-    padding: 2rem 0rem 0rem 2rem;
+    margin: 2rem 0rem 0rem 2rem;
   }
   .fest-year {
     font-size: 14px;
-    padding: 0rem 0rem 2rem 2rem;
+    margin: 3rem 0rem 0rem 2rem;
   }
   .post {
     font-size: 14px;
-    padding: 0rem 2rem 2rem 0rem;
+    margin: 3rem 2rem 0rem 0rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .swiper-button-prev,
   .swiper-button-next {
-    display: block;
-    padding: 1.8rem;
+    visibility: visible;
   }
   .close {
     transform: scale(1);

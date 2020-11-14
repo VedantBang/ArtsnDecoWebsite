@@ -62,13 +62,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #13b2d6;
   border-radius: 100px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #2a375e;
 }
 
 /* Safari Compatibility Issue */
@@ -112,6 +112,8 @@
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
   left: 30px;
   top: 50%;
   font-family: 'Sofa-Sans-Regular';
@@ -123,6 +125,13 @@
   font-size: 15px;
   color: white;
   margin-right: 7px;
+}
+
+.social-line {
+  width: 80px;
+  height: 1.5px;
+  margin: 7px 4px;
+  background: white;
 }
 
 .socials-f {

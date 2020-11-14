@@ -41,6 +41,10 @@
   color: #2a375e;
 }
 
+.social-line {
+  background: #2a375e;
+}
+
 @media screen and (max-width: 1030px) {
   .socials-sidebar {
     display: none;

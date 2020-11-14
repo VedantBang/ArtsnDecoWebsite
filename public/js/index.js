@@ -22,11 +22,13 @@ const lazyLoading = () => {
       document.querySelector('.socials-f').style.color = '#2a375e';
       document.querySelector('.socials-b').style.color = '#2a375e';
       document.querySelector('.socials-i').style.color = '#2a375e';
+      document.querySelector('.social-line').style.background = '#2a375e';
       document.querySelector('.socials-text').style.color = '#2a375e';
     } else {
       document.querySelector('.socials-f').style.color = '#fff';
       document.querySelector('.socials-b').style.color = '#fff';
       document.querySelector('.socials-i').style.color = '#fff';
+      document.querySelector('.social-line').style.background = '#fff';
       document.querySelector('.socials-text').style.color = '#fff';
     }
     // Hide socials sidebar
