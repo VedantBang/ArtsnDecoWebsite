@@ -94,3 +94,13 @@ const festByYear = (year, fest) => {
   localStorage.setItem('year', year);
   localStorage.setItem('fest', fest);
 };
+
+const activeTab = () => {
+  const fest = localStorage.getItem('fest').toString();
+  console.group(`#${fest}`);
+  document.querySelector(`#waves`).classList.remove('active', 'show');
+  document.querySelector(`#${fest}`).classList.add('active', 'show');
+  coverWorks(fest);
+};
+
+activeTab();
