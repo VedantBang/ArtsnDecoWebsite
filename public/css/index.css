@@ -155,15 +155,9 @@ video {
 }
 
 .card:hover {
-<<<<<<< HEAD
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.161));
     transform: translateY(-2px);
     transition: all 0.4s ease-in-out;
-=======
-  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.161));
-  transform: translateY(-2px);
-  transition: all 0.4s ease-in-out;
->>>>>>> f52eef2980b4bfad7a1b2136999d9ab33161e3b9
 }
 /* End Of About Us Section */
 
@@ -296,7 +290,6 @@ video {
 
 /* Media Queries */
 @media screen and (min-width: 280px) {
-<<<<<<< HEAD
     .navbar-desktop {
         display: none;
     }
@@ -344,55 +337,6 @@ video {
     .social-media-links {
         display: flex !important;
     }
-=======
-  .navbar-desktop {
-    display: none;
-  }
-  .heading-top {
-    font-size: 18px;
-  }
-  .heading {
-    font-size: 26px;
-  }
-  .card-title {
-    font-size: 22px;
-  }
-  #jumbotron-bg {
-    padding: 6rem 1rem;
-  }
-  .stats {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: scroll;
-  }
-  .stat {
-    font-size: 24px;
-    animation: typing 2.5s steps(40, end);
-  }
-  .wiggly-line {
-    transform: scale(0.7);
-  }
-  #creativity {
-    padding: 2rem 1rem 0rem 1rem;
-  }
-  .footer {
-    padding: 6rem 1rem;
-  }
-  .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .nunito {
-    font-size: 14px;
-  }
-  .social-media-links {
-    display: flex !important;
-  }
->>>>>>> f52eef2980b4bfad7a1b2136999d9ab33161e3b9
 }
 
 @media screen and (min-width: 320px) {
@@ -447,7 +391,6 @@ video {
 }
 
 @media screen and (min-width: 768px) {
-<<<<<<< HEAD
     .navbar-desktop {
         display: block;
     }
@@ -486,46 +429,6 @@ video {
     #creativity {
         padding: 3rem 0rem 0rem 0rem;
     }
-=======
-  .navbar-desktop {
-    display: block;
-  }
-  video {
-    min-height: max-content !important;
-    height: 100vh;
-  }
-  .hero-head {
-    text-align: center;
-    font-size: 108px;
-    margin: 0rem 1rem;
-    padding: 0;
-  }
-  .scroll-text {
-    display: none;
-  }
-  .heading-top {
-    font-size: 22px;
-  }
-  .heading {
-    font-size: 50px;
-  }
-  .card-title {
-    font-size: 26px;
-  }
-  .card-text {
-    font-size: 16px;
-  }
-  .stats {
-    overflow-x: hidden;
-    animation: typing 10.5s steps(40, end);
-  }
-  .stat {
-    font-size: 42px;
-  }
-  #creativity {
-    padding: 3rem 0rem 0rem 0rem;
-  }
->>>>>>> f52eef2980b4bfad7a1b2136999d9ab33161e3b9
 }
 
 @media screen and (min-width: 1024px) {
