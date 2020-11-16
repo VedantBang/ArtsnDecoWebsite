@@ -23,7 +23,7 @@ document.getElementById('add-stats').addEventListener('click', (e) => {
   displayStatTableRows();
 });
 
-// Adding All creative works to table from backend
+// Adding All stats to table from backend
 (async () => {
   try {
     const response = await (
@@ -46,7 +46,7 @@ document.getElementById('add-stats').addEventListener('click', (e) => {
                         <button
                           type="button"
                           class="btn btn-sm btn-danger safari-issue"
-                          onclick="deleteFromDom(this)"
+                          onclick="deleteStatFromDom(this)"
                           onmouseenter="deleteStatWarning()"
                           onmouseleave="removeDeleteStatWarning()"
                         >

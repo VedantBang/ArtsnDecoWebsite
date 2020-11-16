@@ -74,7 +74,7 @@ const displayStatTableRows = () => {
                     <button
                       type="button"
                       class="btn btn-sm btn-danger safari-issue"
-                      onclick="deleteFromDom(this)"
+                      onclick="deleteStatFromDom(this)"
                       onmouseenter="deleteStatWarning()"
                       onmouseleave="removeDeleteStatWarning()"
                     >
@@ -106,5 +106,11 @@ const removeDeleteStatWarning = () => {
 
 // Deleting row from DOM
 function deleteFromDom(r) {
+  removeDeleteWarning();
+  r.parentNode.parentNode.remove();
+}
+
+function deleteStatFromDom(r) {
+  removeDeleteStatWarning();
   r.parentNode.parentNode.remove();
 }

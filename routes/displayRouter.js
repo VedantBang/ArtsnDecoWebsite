@@ -52,6 +52,7 @@ router.get('/:fest', async (req,res,next) => {
 		if(!year){
 			data = data.map(entry => {
 				return {
+					id: entry._id,
 					fest: entry.fest, year: entry.year, name: entry.name, theme: entry.theme,
 					coverImage: entry.images[0], _id: entry._id
 				}

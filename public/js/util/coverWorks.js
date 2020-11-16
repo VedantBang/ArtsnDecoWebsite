@@ -6,6 +6,8 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
+      console.log(response);
+
       // Latest cover image
       const mainCover = `<div class="grid-item1" id="main-cover">
   <a
@@ -21,7 +23,9 @@ const coverWorks = (fest) => {
     />
     <span class="cover-text year">${response.data[0].year}</span>
     <br />
-    <span class="cover-text theme">${response.data[0].theme}</span>
+    <span class="cover-text theme">${
+      response.data[0].theme ? response.data[0].theme : response.data[0].name
+    }</span>
   </a>
 </div>`;
 
@@ -39,7 +43,9 @@ const coverWorks = (fest) => {
     />
     <span class="cover-text year">${response.data[1].year}</span>
     <br />
-    <span class="cover-text theme">${response.data[1].theme}</span>
+    <span class="cover-text theme">${
+      response.data[1].theme ? response.data[1].theme : response.data[1].name
+    }</span>
   </a>
   </div>
   <div class="side-card grid-item"">
@@ -56,7 +62,9 @@ const coverWorks = (fest) => {
     />
     <span class="cover-text year">${response.data[2].year}</span>
     <br />
-    <span class="cover-text theme">${response.data[2].theme}</span>
+    <span class="cover-text theme">${
+      response.data[2].theme ? response.data[2].theme : response.data[2].name
+    }</span>
   </a>  
 </div>`;
 
@@ -78,7 +86,9 @@ const coverWorks = (fest) => {
     />
     <span class="cover-text year">${response.data[i].year}</span>
     <br />
-    <span class="cover-text theme">${response.data[i].theme}</span>
+    <span class="cover-text theme">${
+      response.data[i].theme ? response.data[i].theme : response.data[i].name
+    }</span>
   </a>
 </div>`;
 
@@ -94,3 +104,15 @@ const festByYear = (year, fest) => {
   localStorage.setItem('year', year);
   localStorage.setItem('fest', fest);
 };
+
+const activeTab = () => {
+  const fest = localStorage.getItem('fest');
+  if (fest) {
+    document.querySelector(`#waves`).classList.remove('active', 'show');
+    document.querySelector(`#${fest}`).classList.add('active', 'show');
+    document.getElementById(`${fest}-tab`).click();
+    coverWorks(fest);
+  }
+};
+
+activeTab();

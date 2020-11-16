@@ -158,7 +158,6 @@ video {
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.161));
     transform: translateY(-2px);
     transition: all 0.4s ease-in-out;
-    cursor: pointer;
 }
 /* End Of About Us Section */
 
@@ -306,8 +305,17 @@ video {
     #jumbotron-bg {
         padding: 6rem 1rem;
     }
+    .stats {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow-x: scroll;
+    }
     .stat {
         font-size: 24px;
+        animation: typing 2.5s steps(40, end);
     }
     .wiggly-line {
         transform: scale(0.7);
@@ -410,6 +418,10 @@ video {
     }
     .card-text {
         font-size: 16px;
+    }
+    .stats {
+        overflow-x: hidden;
+        animation: typing 10.5s steps(40, end);
     }
     .stat {
         font-size: 42px;
