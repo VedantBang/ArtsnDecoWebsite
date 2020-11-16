@@ -86,7 +86,7 @@
   align-items: center;
 }
 
-#specials-tab {
+#other-tab {
   background: #fcfcfc;
   box-shadow: 2px 5px 10px rgba(31, 31, 31, 0.16);
   border-radius: 0px 15px 15px 0px;
@@ -99,7 +99,7 @@
 #waves-tab:hover,
 #quark-tab:hover,
 #spree-tab:hover,
-#specials-tab:hover {
+#other-tab:hover {
   border-radius: 3px;
   transition: all 0.4s ease-in-out;
   box-shadow: inset 0 -5px 0 #13b2d6; /* border-bottom: 2px solid #13b2d6; */
@@ -178,7 +178,7 @@ a:hover {
 #waves,
 #quark,
 #spree,
-#specials {
+#other {
   width: 90%;
 }
 
@@ -702,7 +702,7 @@ a:hover {
   #spree-tab {
     border-radius: 0px 0px 0px 15px;
   }
-  #specials-tab {
+  #other-tab {
     border-radius: 0px 0px 15px 0px;
   }
 }

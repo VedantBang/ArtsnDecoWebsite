@@ -1,9 +1,19 @@
-coverWorks('waves');
+document.getElementById('waves-tab').addEventListener(
+  'click',
+  () => {
+    document.querySelector('.waves-gallery').childElementCount
+      ? null
+      : coverWorks('waves');
+  },
+  { once: true }
+);
 
 document.getElementById('quark-tab').addEventListener(
   'click',
   () => {
-    coverWorks('quark');
+    document.querySelector('.quark-gallery').childElementCount
+      ? null
+      : coverWorks('quark');
   },
   { once: true }
 );
@@ -11,15 +21,19 @@ document.getElementById('quark-tab').addEventListener(
 document.getElementById('spree-tab').addEventListener(
   'click',
   () => {
-    coverWorks('spree');
+    document.querySelector('.spree-gallery').childElementCount
+      ? null
+      : coverWorks('spree');
   },
   { once: true }
 );
 
-document.getElementById('specials-tab').addEventListener(
+document.getElementById('other-tab').addEventListener(
   'click',
   () => {
-    coverWorks('other');
+    document.querySelector('.other-gallery').childElementCount
+      ? null
+      : coverWorks('other');
   },
   { once: true }
 );

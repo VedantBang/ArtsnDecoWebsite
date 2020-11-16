@@ -6,14 +6,14 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
-      console.log(response);
-
       // Latest cover image
       const mainCover = `<div class="grid-item1" id="main-cover">
   <a
     href="posts.html"
     type="button"
-    onclick="festByYear('${response.data[0].year}', '${fest}')"
+    onclick="festByYear('${response.data[0].year}', '${fest}', '${
+        response.data[0].id
+      }')"
     class="safari-issue"
   >
     <img
@@ -33,7 +33,9 @@ const coverWorks = (fest) => {
   <a
     href="posts.html"
     type="button"
-    onclick="festByYear('${response.data[1].year}', '${fest}')"
+    onclick="festByYear('${response.data[1].year}', '${fest}', '${
+        response.data[1].id
+      }')"
     class="safari-issue"
   >
     <img
@@ -52,7 +54,9 @@ const coverWorks = (fest) => {
   <a
     href="posts.html"
     type="button"
-    onclick="festByYear('${response.data[2].year}', '${fest}')"
+    onclick="festByYear('${response.data[2].year}', '${fest}', '${
+        response.data[2].id
+      }')"
     class="safari-issue"
   >
     <img
@@ -76,7 +80,9 @@ const coverWorks = (fest) => {
   <a
     href="posts.html"
     type="button"
-    onclick="festByYear('${response.data[i].year}', '${fest}')"
+    onclick="festByYear('${response.data[i].year}', '${fest}', '${
+          response.data[i].id
+        }')"
     class="safari-issue"
   >
     <img
@@ -100,19 +106,32 @@ const coverWorks = (fest) => {
   })();
 };
 
-const festByYear = (year, fest) => {
+const festByYear = (year, fest, id) => {
   localStorage.setItem('year', year);
   localStorage.setItem('fest', fest);
+  localStorage.setItem('_id', id);
 };
 
-const activeTab = () => {
-  const fest = localStorage.getItem('fest');
-  if (fest) {
-    document.querySelector(`#waves`).classList.remove('active', 'show');
-    document.querySelector(`#${fest}`).classList.add('active', 'show');
-    document.getElementById(`${fest}-tab`).click();
-    coverWorks(fest);
+function eventFire(el, etype) {
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
   }
-};
+}
+
+function activeTab() {
+  const fest = localStorage.getItem('fest');
+
+  if (fest) {
+    eventFire(document.getElementById(`${fest}-tab`), 'click');
+    coverWorks(fest);
+  } else {
+    eventFire(document.getElementById('waves-tab'), 'click');
+    coverWorks('waves');
+  }
+}
 
 activeTab();
