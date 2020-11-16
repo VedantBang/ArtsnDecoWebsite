@@ -6,6 +6,10 @@ const coverWorks = (fest) => {
         await fetch(`${url}/display/${fest}`, { method: 'GET' })
       ).json();
 
+      if (fest === 'other') {
+        specialCoverWorks(response);
+      }
+
       // Latest cover image
       const mainCover = `<div class="grid-item1" id="main-cover">
   <a
@@ -104,6 +108,33 @@ const coverWorks = (fest) => {
       console.log(err);
     }
   })();
+};
+
+const specialCoverWorks = (response) => {
+  for (let i = 0; i < response.data.length; i++) {
+    const cover = `<div class="bottom-card grid-item"">
+  <a
+    href="posts.html"
+    type="button"
+    onclick="festByYear('${response.data[i].year}', '${fest}', '${
+      response.data[i].id
+    }')"
+    class="safari-issue"
+  >
+    <img
+      src="${response.data[i].coverImage.link}"
+      alt="${response.data[i].coverImage.title}"
+      class="img-fluid"
+    />
+    <span class="cover-text year">${response.data[i].year}</span>
+    <br />
+    <span class="cover-text theme">${
+      response.data[i].theme ? response.data[i].theme : response.data[i].name
+    }</span>
+  </a>
+</div>`;
+    $(`.${fest}-gallery`).append(cover);
+  }
 };
 
 const festByYear = (year, fest, id) => {

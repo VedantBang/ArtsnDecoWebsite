@@ -503,7 +503,6 @@ a:hover {
     grid-row-gap: 17.92px;
     grid-column-gap: 19px;
   }
-
   .grid-item {
     width: 278px;
     height: 171px;
@@ -512,7 +511,6 @@ a:hover {
     height: 363px;
     width: 580px;
   }
-
   #main-cover {
     grid-row-start: 1;
     grid-row-end: 3;
