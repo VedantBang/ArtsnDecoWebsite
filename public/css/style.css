@@ -71,6 +71,28 @@
     background: #2a375e;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #13b2d6;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2a375e;
+}
+
 /* Safari Compatibility Issue */
 .safari-issue {
     -webkit-appearance: none;
@@ -107,6 +129,7 @@
 
 /* Socials Sidebar */
 .socials-sidebar {
+<<<<<<< HEAD
     -webkit-transform: rotate(-90deg) translateX(-50%);
     transform: rotate(-90deg) translateX(-50%);
     -webkit-transform-origin: 0 0;
@@ -118,6 +141,19 @@
     top: 50%;
     font-family: 'Sofa-Sans-Regular';
     z-index: 1000;
+=======
+  -webkit-transform: rotate(-90deg) translateX(-50%);
+  transform: rotate(-90deg) translateX(-50%);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  left: 30px;
+  top: 50%;
+  font-family: 'Sofa-Sans-Regular';
+  z-index: 1000;
+>>>>>>> f52eef2980b4bfad7a1b2136999d9ab33161e3b9
 }
 
 .socials-text {
@@ -132,6 +168,13 @@
     height: 1.5px;
     margin: 7px 4px;
     background: white;
+}
+
+.social-line {
+  width: 80px;
+  height: 1.5px;
+  margin: 7px 4px;
+  background: white;
 }
 
 .socials-f {
