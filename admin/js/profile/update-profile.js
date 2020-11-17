@@ -8,15 +8,18 @@
       })
     ).json();
 
+    console.log(response);
+
     document.querySelector('#name').value = response.data.name;
     document.querySelector('#post').value = response.data.post;
     document.querySelector('#insta-link').value = response.data.insta;
     document.querySelector('#facebook-link').value = response.data.facebook;
     document.querySelector('#image-link').value = response.data.image;
-    document.querySelector('#visible').value = response.data.visible;
+    document.querySelector('#visible').checked = Boolean(response.data.visible);
     const visible = document.querySelector('#visible').checked;
     if (visible) {
       document.querySelector('#contact').value = response.data.contact;
+      document.querySelector('.contact-number').style.display = 'block';
     }
   } catch (err) {
     console.log(err);
