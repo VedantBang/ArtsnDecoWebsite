@@ -19,7 +19,7 @@ router.get('/contacts', async (req,res,next) => {
 	try{
 		let data = await Profile.find({ visible: true });
 		if(data.length === 0){
-			res.status(200).json({ ok:1, data: [] };
+			res.status(200).json({ ok:1, data: [] });
 			return;
 		}
 		data = data.map(entry => cut(entry, ['name','contact']));
@@ -37,12 +37,14 @@ router.post('/add', upload.none(), async (req,res,next) => {
 		if(typeof visible === 'string'){
 			visible = parseInt(visible);
 		}
-		if(visible !== 0 || visible !== 1){
+		if(visible !== 0 && visible !== 1){
 			let err = new Error('Invalid value of visibility parameter');
 			err.status = 400;
 			next(err);
 			return;
 		}
+
+		if(!visible) contact = "";
 
 		if(!name){
 			let err = new Error('name is required field');
@@ -98,12 +100,14 @@ router.put('/update', upload.none(), async (req,res,next) => {
 		if(typeof visible === 'string'){
 			visible = parseInt(visible);
 		}
-		if(visible !== 0 || visible !== 1){
+		if(visible !== 0 && visible !== 1){
 			let err = new Error('Invalid value of visibility parameter');
 			err.status = 400;
 			next(err);
 			return;
 		}
+
+		if(!visible) req.body.contact = "";
 
 		delete req.body._id;
 		let out = await Profile.updateOne({ _id }, req.body);
