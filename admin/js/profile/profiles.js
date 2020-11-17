@@ -1,3 +1,14 @@
+// Adding contact field on checked
+document.getElementById('visible').addEventListener('click', () => {
+  const visible = document.querySelector('#visible').checked;
+
+  if (visible) {
+    document.querySelector('.contact-number').style.display = 'block';
+  } else {
+    document.querySelector('.contact-number').style.display = 'none';
+  }
+});
+
 // Sending new profile data to backend
 document
   .getElementById('add-new-profile')
@@ -9,6 +20,9 @@ document
       const insta = document.querySelector('#insta-link').value;
       const facebook = document.querySelector('#facebook-link').value;
       const image = document.querySelector('#image-link').value;
+      let visible = document.querySelector('#visible').checked;
+      visible = visible ? 1 : 0;
+      const contact = document.querySelector('#contact').value;
 
       const formData = new FormData();
 
@@ -17,6 +31,8 @@ document
       formData.append('insta', insta);
       formData.append('facebook', facebook);
       formData.append('image', image);
+      formData.append('visible', visible);
+      formData.append('contact', contact);
 
       spinner('.added-profile');
 

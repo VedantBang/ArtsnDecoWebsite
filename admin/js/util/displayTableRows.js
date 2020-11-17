@@ -66,8 +66,22 @@ const displayStatTableRows = () => {
                   <td>
                     <input
                       type="text"
-                      class="form-control form-control-sm stat"
-                      placeholder="Enter Stat. (for eg. 28L of paint used in Waves18')"
+                      class="form-control form-control-sm icon"
+                      placeholder="Enter Icon"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control form-control-sm number"
+                      placeholder="Enter Number"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control form-control-sm text"
+                      placeholder="Enter Text"
                     />
                   </td>
                   <td>
@@ -82,7 +96,7 @@ const displayStatTableRows = () => {
                     </button>
                   </td>
                 </tr>`;
-  $('#stats').append(row);
+  $('.stats').append(row);
 };
 
 // Warning message

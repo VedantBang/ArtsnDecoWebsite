@@ -38,8 +38,8 @@ router.post('/add', upload.none(), async (req,res,next) => {
 		for(let x = 0; x < icons.length; x++){
 			saves.push((new Stats({
 				icon: icons[x],
-				numbers: number[x],
-				text: text[x]
+				number: numbers[x],
+				text: texts[x]
 			})).save());
 		}
 

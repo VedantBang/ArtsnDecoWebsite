@@ -71,7 +71,7 @@
                 <li class="nav-item">
                   <a
                     href="creativity.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link current"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
                   >
                     <i class="fas fa-pencil-ruler text-light fa-lg mr-3"></i>
                     Creativity
@@ -89,7 +89,7 @@
                 <li class="nav-item">
                   <a
                     href="stats.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
+                    class="nav-link text-white p-3 mb-2 sidebar-link current"
                   >
                     <i class="fas fa-chart-line text-light fa-lg mr-3"></i>
                     Stats
@@ -105,16 +105,7 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-9">
-                  <h4 class="text-light text-uppercase mb-0">
-                    <span class="text-primary">C</span
-                    ><span class="text-danger">r</span
-                    ><span class="text-success">e</span
-                    ><span class="text-warning">a</span
-                    ><span class="text-info">t</span
-                    ><span class="text-light">i</span
-                    ><span class="text-primary">v</span
-                    ><span class="text-danger">e</span> Works
-                  </h4>
+                  <h4 class="text-light text-uppercase mb-0">Stats</h4>
                 </div>
                 <div class="col-md-3">
                   <ul class="navbar-nav">
@@ -271,37 +262,18 @@
     </div>
     <!-- End Of Settings Modal -->
 
-    <!-- Creativity Section Explanation -->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pt-4 mt-5 justify-content-center">
-            <div class="col-11 p-2">
-              <p class="text-center text-muted">
-                This section is meant for putting up some of the major and out
-                of the box artworks that have been made in fests, like some
-                being wood pyrography, glass etching, etc. So you are required
-                to only give the links to these images in order for them to show
-                up in the creativity section of the main website.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Of Creativity Section Explanation-->
-
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row pb-5 mb-5 justify-content-center">
+          <div class="row pt-4 mt-5 mb-5 justify-content-center">
             <div class="col-11 col-sm-9 p-2">
-              <div class="row justify-content-center">
+              <div class="row align-items-center">
+                <h1 class="pr-5">Add New Stats</h1>
                 <button
                   class="btn btn-outline-success safari-issue"
                   type="button"
-                  id="add-creative-artworks"
+                  id="add-stats"
                 >
                   <i class="fas fa-plus"></i>
                   ADD NEW
@@ -321,14 +293,14 @@
                   <table
                     class="table table-responsive-sm table-sm table-borderless justify-content-center"
                   >
-                    <tbody class="images justify-content-center"></tbody>
+                    <tbody class="stats justify-content-center"></tbody>
                   </table>
                 </div>
               </div>
               <div class="row justify-content-center mb-4">
-                <div class="col-12 text-center mb-3 added-creativity"></div>
+                <div class="col-12 text-center mb-3 added-stats"></div>
                 <div
-                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show add-creativity-error-alert"
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show add-stats-error-alert"
                   role="alert"
                 >
                   Make sure You have Actually Added Data before Saving!
@@ -341,13 +313,13 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <button class="btn btn-success" id="add-new-creative-works">
+                <button class="btn btn-success" id="add-new-stats">
                   Add and Save
                 </button>
               </div>
               <div class="row align-items-center">
                 <div
-                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show creativity-delete-error-alert"
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show stats-delete-error-alert"
                   role="alert"
                 >
                   Oops! Please Refresh the Browser and try again!
@@ -360,7 +332,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <h1 class="pr-5">Edit Creativity</h1>
+                <h1 class="pr-5">Edit Stats</h1>
                 <div class="mr-3 delete-loading"></div>
                 <div class="loading ml-5"></div>
               </div>
@@ -371,11 +343,12 @@
                   <thead class="justify-content-center">
                     <tr class="justify-content-center">
                       <th scope="col">#</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Link</th>
+                      <th scope="col">Icon</th>
+                      <th scope="col">Number</th>
+                      <th scope="col">Text</th>
                       <td scope="col">
                         <div
-                          class="alert alert-success update-creativity-alert text-success ml-3"
+                          class="alert alert-success update-stats-alert text-success ml-3"
                           role="alert"
                         >
                           <i class="fas fa-check"></i> Saved!
@@ -384,10 +357,10 @@
                       <th scope="col"></th>
                     </tr>
                   </thead>
-                  <tbody id="creativity"></tbody>
+                  <tbody id="stats"></tbody>
                 </table>
                 <div
-                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show creativity-update-error-alert"
+                  class="mt-2 col-12 alert alert-danger alert-dismissible fade show stats-update-error-alert"
                   role="alert"
                 >
                   Make sure you have edited something before saving!
@@ -408,8 +381,8 @@
     </div>
     <!-- Main Content -->
 
-    <!-- Delete Creative Works Modal -->
-    <div class="modal fade" id="delete-creative-works-modal">
+    <!-- Delete stats Works Modal -->
+    <div class="modal fade" id="delete-stats-modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -431,7 +404,7 @@
           <div class="modal-footer justify-content-center">
             <button
               class="btn btn-danger"
-              id="delete-creative-artwork"
+              id="delete-stats"
               data-dismiss="modal"
             >
               Delete
@@ -443,7 +416,7 @@
         </div>
       </div>
     </div>
-    <!-- End Of Delete Creative Works Modal -->
+    <!-- End Of Delete Stats Modal -->
 
     <!-- Footer -->
     <div class="container-fluid">
@@ -494,6 +467,6 @@
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/util/spinner.js"></script>
-    <script src="./js/creativity/creativity.js"></script>
+    <script src="./js/stats/stats.js"></script>
   </body>
 </html>
