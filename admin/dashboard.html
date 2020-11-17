@@ -86,6 +86,15 @@
                     Profiles
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a
+                    href="stats.html"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
+                  >
+                    <i class="fas fa-chart-line text-light fa-lg mr-3"></i>
+                    Stats
+                  </a>
+                </li>
               </ul>
             </div>
             <!-- End Of Sidebar -->
@@ -335,73 +344,6 @@
     </div>
     <!-- End Of Spinner -->
 
-    <!-- Stats -->
-    <section>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-            <div class="row mt-5 mb-5 justify-content-center">
-              <div class="col-11 col-sm-9 p-2 mb-5">
-                <div class="row align-items-center">
-                  <h1 class="pr-5">Stats</h1>
-                  <button
-                    class="btn btn-outline-success safari-issue mx-2"
-                    type="button"
-                    id="add-stats"
-                  >
-                    <i class="fas fa-plus"></i>
-                    ADD NEW
-                  </button>
-                  <button
-                    class="btn btn-primary safari-issue mx-2"
-                    type="button"
-                    id="save-stats"
-                  >
-                    SAVE
-                  </button>
-                </div>
-                <div class="row justify-content-center">
-                  <table
-                    class="table table-responsive-sm table-borderless justify-content-center"
-                  >
-                    <thead class="justify-content-center">
-                      <tr class="justify-content-center">
-                        <th scope="col">#</th>
-                        <th scope="col">Stat</th>
-                        <th scope="col">
-                          <div
-                            class="alert alert-danger delete-stat-warning-alert"
-                          >
-                            Sure?!
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id="stats"></tbody>
-                  </table>
-                  <div
-                    class="mt-2 col-12 alert alert-danger alert-dismissible fade show stats-update-error-alert"
-                    role="alert"
-                  >
-                    Make sure you have edited something before saving!
-                    <button
-                      type="button"
-                      class="close safari-issue"
-                      data-dismiss="alert"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Of Stats -->
-
     <!-- Footer -->
     <div class="container-fluid">
       <div class="row border-top pt-3 footer">
@@ -451,7 +393,6 @@
     <script src="./js/util/logout.js"></script>
     <script src="./js/util/getResponse.js"></script>
     <script src="./js/util/spinner.js"></script>
-    <script src="./js/util/displayTableRows.js"></script>
     <script src="./js/dashboard.js"></script>
   </body>
 </html>

@@ -91,12 +91,20 @@ body {
 /* End Of Dashboard */
 
 /* Stats */
-.delete-stat-warning-alert {
+#add-new-stats {
+  visibility: hidden;
+}
+.update-stats-alert {
   display: inline;
   padding: 0.3rem;
-  font-size: 14px;
   margin: 0;
   visibility: hidden;
+}
+.add-stats-error-alert {
+  display: none;
+}
+.stats-delete-error-alert {
+  display: none;
 }
 .stats-update-error-alert {
   display: none;
@@ -159,6 +167,9 @@ body {
   display: none;
 }
 .update-profile-error-alert {
+  display: none;
+}
+.contact-number {
   display: none;
 }
 /* End Of Profiles */
