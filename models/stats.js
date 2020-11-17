@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const innerStatSchema = new mongoose.Schema({
+const statSchema = new mongoose.Schema({
 	icon: {
 		type: String, required: true
 	},
@@ -10,10 +10,6 @@ const innerStatSchema = new mongoose.Schema({
 	text: {
 		type: String, required: true
 	}
-});
-
-const statsSchema = new mongoose.Schema({
-	lines: [innerStatSchema]
 });
 
 module.exports = mongoose.model('Stat', statsSchema);
