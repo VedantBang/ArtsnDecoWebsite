@@ -11,7 +11,7 @@ const coverWorks = (fest) => {
             } else {
                 // Latest cover image
                 const mainCover = `<div class="grid-item1" id="main-cover">
-              <a
+                <a
                 href="posts.html"
                 type="button"
                 onclick="festByYear('${response.data[0].year}', '${fest}', '${
@@ -24,6 +24,7 @@ const coverWorks = (fest) => {
                   alt="${response.data[0].coverImage.title}"
                   class="img-fluid-first"
                 />
+                <div class="blackOverlay"></div>
                 <span class="cover-text year">${response.data[0].year}</span>
                 <br />
                 <span class="cover-text theme">${
@@ -31,10 +32,10 @@ const coverWorks = (fest) => {
                         ? response.data[0].theme
                         : response.data[0].name
                 }</span>
-              </a>
+                </a>
             </div>`;
 
-                const sideCover = `<div class="side-card grid-item""> 
+                const sideCover = `<div class="side-card grid-item"> 
               <a
                 href="posts.html"
                 type="button"
@@ -48,6 +49,7 @@ const coverWorks = (fest) => {
                   alt="${response.data[1].coverImage.title}"
                   class="img-fluid"
                 />
+                <div class="blackOverlay"></div>
                 <span class="cover-text year">${response.data[1].year}</span>
                 <br />
                 <span class="cover-text theme">${
@@ -57,7 +59,7 @@ const coverWorks = (fest) => {
                 }</span>
               </a>
               </div>
-              <div class="side-card grid-item"">
+              <div class="side-card grid-item">
               <a
                 href="posts.html"
                 type="button"
@@ -71,6 +73,7 @@ const coverWorks = (fest) => {
                   alt="${response.data[2].coverImage.title}"
                   class="img-fluid"
                 />
+                <div class="blackOverlay"></div>
                 <span class="cover-text year">${response.data[2].year}</span>
                 <br />
                 <span class="cover-text theme">${
@@ -85,7 +88,7 @@ const coverWorks = (fest) => {
                 $(`.${fest}-gallery`).append(sideCover);
 
                 for (let i = 3; i < response.data.length; i++) {
-                    const cover = `<div class="bottom-card grid-item"">
+                    const cover = `<div class="bottom-card grid-item">
               <a
                 href="posts.html"
                 type="button"
@@ -99,6 +102,7 @@ const coverWorks = (fest) => {
                   alt="${response.data[i].coverImage.title}"
                   class="img-fluid"
                 />
+                <div class="blackOverlay"></div>
                 <span class="cover-text year">${response.data[i].year}</span>
                 <br />
                 <span class="cover-text theme">${
