@@ -42,6 +42,7 @@ const displayCreativeWorks = async () => {
       swiper.appendSlide(`<div class="swiper-slide">
           <div>
             <img src="${response.data[i].link}" alt="${response.data[i].title}" class="img-fluid" />
+            <div class="creative-text">${response.data[i].title}</div>
           </div>
         </div>`);
     }

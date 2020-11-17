@@ -17,7 +17,7 @@ router.get('/all', async (req,res,next) => {
 
 router.get('/contacts', async (req,res,next) => {
 	try{
-		let data = await Profile.find({ visible: true });
+		let data = await Profile.find({ visible: 1 });
 		if(data.length === 0){
 			res.status(200).json({ ok:1, data: [] });
 			return;

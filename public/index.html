@@ -1,322 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arts 'n' Deco</title>
 
-  <title>Arts 'n' Deco</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 
-  <!-- Font Awesome CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
+  <body>
+    <!-- Hero Section BG Video -->
+    <video
+      playsinline
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      class="d-none d-md-block"
+    >
+      <source src="./assets/videos/pakka_final.mp4" type="video/mp4" />
+    </video>
+    <!-- End Of Hero Section BG Video -->
 
-<body>
-  <!-- Hero Section BG Video -->
-  <video playsinline autoplay muted loop id="myVideo" class="d-none d-md-block">
-    <source src="./assets/videos/pakka_final.mp4" type="video/mp4" />
-  </video>
-  <!-- End Of Hero Section BG Video -->
-
-  <!-- Navbar -->
-  <div class="navbar-desktop">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="./assets/images/Original Logo-min.png" alt="AnD_logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-us">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="our-works.html">Our Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team">Team</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <!-- End of Navbar -->
-
-  <!-- Hero Section BG for Mobiles -->
-  <div class="hero-image d-md-none"></div>
-  <!-- End Of Hero Section BG for Mobiles -->
-
-  <!-- Hero Section For Mobiles -->
-  <div class="overlay d-md-none">
-    <nav class="navbar navbar-mobile w-100">
-      <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="./assets/images/Original Logo-min.png" alt="AnD_logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavMobile">
-        <span class="fas fa-bars text-light ml-auto"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavMobile">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about-us">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="our-works.html">Our Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team">Team</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="side-text">Department of</div>
-    <h1 class="text-center main-text">Arts n Decoration</h1>
-    <div class="side-text">BITS Pilani K K Birla Goa Campus</div>
-    <a id="cta" href="#about-us">EXPLORE NOW!</a>
-    <i class="fas fa-angle-double-down"></i>
-  </div>
-  <!-- End Of Hero Section For Mobiles -->
-
-  <!-- Hero Section -->
-  <div class="container-fluid d-none d-md-block">
-    <div class="row justify-content-center hero-section">
-      <div class="hero-subhead-one">Department of</div>
-      <div class="hero-head text-uppercase text-center">
-        Arts n Decoration
-      </div>
-      <div class="hero-subhead-two">BITS Pilani K K Birla Goa Campus</div>
+    <!-- Navbar -->
+    <div class="navbar-desktop">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="logo-img"
+            src="./assets/images/Original Logo-min.png"
+            alt="AnD_logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-works.html">Our Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <div class="row justify-content-center">
-      <div class="scroll-text"><i class="fas fa-caret-down fa-3x"></i></div>
+    <!-- End of Navbar -->
+
+    <!-- Hero Section BG for Mobiles -->
+    <div class="hero-image d-md-none"></div>
+    <!-- End Of Hero Section BG for Mobiles -->
+
+    <!-- Hero Section For Mobiles -->
+    <div class="overlay d-md-none">
+      <nav class="navbar navbar-mobile w-100">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="logo-img"
+            src="./assets/images/Original Logo-min.png"
+            alt="AnD_logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavMobile"
+        >
+          <span class="fas fa-bars text-light ml-auto"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavMobile">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-works.html">Our Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="side-text">Department of</div>
+      <h1 class="text-center main-text">Arts n Decoration</h1>
+      <div class="side-text">BITS Pilani K K Birla Goa Campus</div>
+      <a id="cta" href="#about-us">EXPLORE NOW!</a>
+      <button data-toggle="modal" data-target="#bg-video" id="see-us-in-action">
+        See Us In Action <i class="fas fa-play-circle"></i>
+      </button>
+    </div>
+    <!-- End Of Hero Section For Mobiles -->
+
+    <!-- Bg Video Modal -->
+    <div class="modal fade" id="bg-video">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="p-0 m-0">
+          <div class="modal-body p-0 m-0">
+            <button
+              type="button"
+              id="closeVideo"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fas fa-times text-light"></i>
+            </button>
+            <video playsinline autoplay muted loop id="myMobileVideo">
+              <source src="./assets/videos/pakka_final.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Bg Video Modal -->
+
+    <!-- Hero Section -->
+    <div class="container-fluid d-none d-md-block">
+      <div class="row justify-content-center hero-section">
+        <div class="hero-subhead-one">Department of</div>
+        <div class="hero-head text-uppercase text-center">
+          Arts n Decoration
+        </div>
+        <div class="hero-subhead-two">BITS Pilani K K Birla Goa Campus</div>
+      </div>
+    </div>
+      <!-- End of Hero Section -->
+
+      <!-- Socials Sidebar -->
+      <div class="socials-sidebar d-none d-sm-block">
+        <div class="container">
+          <div class="row">
+            <div class="socials-text">Follow Us</div>
+            <div class="social-line"></div>
+            <a href="https://www.instagram.com/artsndeco/" target="blank"
+              ><span><i class="fab fa-instagram socials-i"></i></span
+            ></a>
+            <a href="http://artsndeco.blogspot.com/" target="blank"
+              ><span><i class="fab fa-blogger-b socials-b"></i></span
+            ></a>
+            <a href="https://www.facebook.com/artsndecobitsg/" target="blank">
+              <span><i class="fab fa-facebook-f socials-f"></i></span
+            ></a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- End of Hero Section -->
 
-    <!-- Socials Sidebar -->
-    <div class="socials-sidebar d-none d-sm-block">
-      <div class="container">
-        <div class="row">
-          <div class="socials-text">Follow Us</div>
-          <div class="social-line"></div>
-          <a href="https://www.instagram.com/artsndeco/" target="blank"><span><i
-                class="fab fa-instagram socials-i"></i></span></a>
-          <a href="http://artsndeco.blogspot.com/" target="blank"><span><i
-                class="fab fa-blogger-b socials-b"></i></span></a>
-          <a href="https://www.facebook.com/artsndecobitsg/" target="blank">
-            <span><i class="fab fa-facebook-f socials-f"></i></span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End of Hero Section -->
-
-  <!-- About Us -->
-  <div class="container" id="about-us">
-    <div class="row p-sm-5 mt-5">
-      <div class="col-12">
-        <p class="heading-top">Get to know us</p>
-      </div>
-      <div class="col-12">
-        <h3 class="heading">A Little About Us</h3>
-        <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line" />
-        <div class="row mt-4 justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-            <div class="card p-3 m-3">
-              <div class="card-body">
-                <div class="card-title pt-2">Who We Are</div>
-                <div class="card-text">
-                  We as a team take the responsibility of making the fest as
-                  lively as possible! From making 3-D structures to 3-D Street
-                  paintings, we have done it all.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-            <div class="card p-3 m-3">
-              <div class="card-body">
-                <div class="card-title pt-2">What We Do</div>
-                <div class="card-text">
-                  While to some art is passion, to some it is a stress buster,
-                  whatever your reason is, you are bound to have fun!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-            <div class="card p-3 m-3">
-              <div class="card-body">
-                <div class="card-title pt-2">How We Do It</div>
-                <div class="card-text">
-                  Well as they say it, Rome wasnt built in a day! We work
-                  together as a team to bring a well modelled structure at
-                  your doorstep.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Of About Us -->
-
-  <!-- Jumbotron -->
-  <div class="jumbotron jumbotron-fluid mt-5" id="jumbotron-bg">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 text-center">
-          <p class="heading-top">Fun numbers about us</p>
-        </div>
-        <div class="col-12 stats"></div>
+    <!-- About Us -->
+    <div class="container" id="about-us">
+      <div class="row p-sm-5 mt-5">
         <div class="col-12">
-          <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line mx-auto d-block" />
-          <div class="vertical-line"></div>
+          <p class="heading-top">Get to know us</p>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Of Jumbotron -->
-
-  <!-- Creativity -->
-  <div class="container" id="creativity">
-    <div class="row p-sm-5 mt-5 justify-content-center">
-      <div class="col-12">
-        <p class="heading-top">Check out yourself</p>
-      </div>
-      <div class="col-12">
-        <h3 class="heading">We are very creative</h3>
-        <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line" />
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="row justify-content-center">
-              <!-- Using Swiper -->
-              <div class="swiper-container">
-                <div class="swiper-wrapper"></div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+        <div class="col-12">
+          <h3 class="heading">A Little About Us</h3>
+          <img
+            src="./assets/images/wiggly-line.png"
+            alt="wiggly-line"
+            class="wiggly-line-sideways"
+          />
+          <div class="row mt-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+              <div class="card p-3 m-3">
+                <div class="card-body">
+                  <div class="card-title pt-2">Who We Are</div>
+                  <div class="card-text">
+                    We as a team take the responsibility of making the fest as
+                    lively as possible! From making 3-D structures to 3-D Street
+                    paintings, we have done it all.
+                  </div>
+                </div>
               </div>
-              <!-- End Of Using Swiper -->
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+              <div class="card p-3 m-3">
+                <div class="card-body">
+                  <div class="card-title pt-2">What We Do</div>
+                  <div class="card-text">
+                    While to some art is passion, to some it is a stress buster,
+                    whatever your reason is, you are bound to have fun!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+              <div class="card p-3 m-3">
+                <div class="card-body">
+                  <div class="card-title pt-2">How We Do It</div>
+                  <div class="card-text">
+                    Well as they say it, Rome wasnt built in a day! We work
+                    together as a team to bring a well modelled structure at
+                    your doorstep.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Of Creativity -->
+    <!-- End Of About Us -->
 
-  <!-- Team -->
-  <div class="container" id="team">
-    <div class="row p-sm-5 mt-5">
-      <div class="col-12">
-        <p class="heading-top text-center">Say hi to them!</p>
-      </div>
-      <div class="col-12">
-        <h3 class="heading enlarged text-center">Our Coordinators</h3>
-        <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line mx-auto d-block" />
-        <div class="row mt-5 justify-content-center" id="profiles"></div>
-      </div>
-    </div>
-  </div>
-  <!-- End Of Team -->
-
-  <!-- Vertical Line -->
-  <div class="vertical-line"></div>
-  <!-- End Of Vertical Line -->
-
-  <!-- Footer -->
-  <div class="footer">
-    <div class="container pt-5 mt-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-6 mt-4">
-          <p class="heading-top ml-sm-5 pl-sm-5">Drop a line</p>
-          <h3 class="heading text-center">Get In Touch</h3>
-          <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line mx-auto d-block" />
-          <div class="mt-lg-5 mt-3 text-center align-items-end">
-            <p class="contact">
-              <b class="contact-name">Aditya: </b>
-              <a href="tel:+91-789-846-6420" class="no-deco">
-                <span class="nunito"> +91-789-846-6420</span>
-              </a>
-            </p>
-            <p class="contact">
-              <b class="contact-name">Siddhartha: </b>
-              <a href="tel:+91-637-000-2121" class="no-deco">
-                <span class="nunito"> +91-637-000-2121</span>
-              </a>
-            </p>
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid mt-5" id="jumbotron-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <p class="heading-top">Fun numbers about us</p>
           </div>
-        </div>
-        <div class="col-12 col-md-6 mt-4">
-          <p class="heading-top ml-sm-5 pl-sm-5">Get Social</p>
-          <h3 class="heading text-center">Follow Us</h3>
-          <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line mx-auto d-block" />
-          <div class="mt-lg-5 mt-3">
-            <p class="contact">
-              <a href="https://www.instagram.com/artsndeco/" class="no-deco" target="blank">
-                <i class="fab fa-instagram m-0"></i>
-                <span class="nunito">@artsndeco</span>
-              </a>
-            </p>
-            <p class="contact">
-              <a href="https://www.facebook.com/artsndecobitsg/" class="no-deco" target="blank">
-                <i class="fab fa-facebook m-0"></i>
-                <span class="nunito">@artsndecobitsg</span>
-              </a>
-            </p>
+          <div class="col-12 stats"></div>
+          <div class="col-12">
+            <img
+              src="./assets/images/wiggly-line.png"
+              alt="wiggly-line"
+              class="wiggly-line mx-auto d-block"
+            />
+            <div class="vertical-line"></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <!-- End Of Jumbotron -->
 
-  <!-- End Of Footer -->
+    <!-- Creativity -->
+    <div class="container" id="creativity">
+      <div class="row p-sm-5 mt-5 justify-content-center">
+        <div class="col-12">
+          <p class="heading-top">Check out yourself</p>
+        </div>
+        <div class="col-12">
+          <h3 class="heading">We are very creative</h3>
+          <img
+            src="./assets/images/wiggly-line.png"
+            alt="wiggly-line"
+            class="wiggly-line-sideways"
+          />
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <!-- Using Swiper -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper"></div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <!-- End Of Using Swiper -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Creativity -->
 
-  <!-- Bootstrap, jQuery and Popper JS scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-  <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+    <!-- Team -->
+    <div class="container" id="team">
+      <div class="row p-sm-5 mt-5">
+        <div class="col-12">
+          <p class="heading-top text-center">Say hi to them!</p>
+        </div>
+        <div class="col-12">
+          <h3 class="heading enlarged text-center">Our Coordinators</h3>
+          <img
+            src="./assets/images/wiggly-line.png"
+            alt="wiggly-line"
+            class="wiggly-line mx-auto d-block"
+          />
+          <div class="row mt-5 justify-content-center" id="profiles"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Of Team -->
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Vertical Line -->
+    <div class="vertical-line"></div>
+    <!-- End Of Vertical Line -->
 
-  <!-- Custom Scripts -->
-  <script src="./js/util/url.js"></script>
-  <script src="./js/util/majik.js"></script>
-  <script src="./js/util/displayProfiles.js"></script>
-  <script src="./js/util/displayCreativeWorks.js"></script>
-  <script src="./js/util/displayStats.js"></script>
-  <script src="./js/index.js"></script>
-  <!-- End Of Custom Scripts -->
-</body>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container pt-5 mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6 mt-4">
+            <p class="heading-top ml-sm-5 pl-sm-5">Drop a line</p>
+            <h3 class="heading text-center">Get In Touch</h3>
+            <img
+              src="./assets/images/wiggly-line.png"
+              alt="wiggly-line"
+              class="wiggly-line mx-auto d-block"
+            />
+            <div
+              class="mt-lg-5 mt-3 text-center align-items-end contacts"
+            ></div>
+          </div>
+          <div class="col-12 col-md-6 mt-4">
+            <p class="heading-top ml-sm-5 pl-sm-5">Get Social</p>
+            <h3 class="heading text-center">Follow Us</h3>
+            <img
+              src="./assets/images/wiggly-line.png"
+              alt="wiggly-line"
+              class="wiggly-line mx-auto d-block"
+            />
+            <div class="mt-lg-5 mt-3">
+              <p class="contact">
+                <a
+                  href="https://www.instagram.com/artsndeco/"
+                  class="no-deco"
+                  target="blank"
+                >
+                  <i class="fab fa-instagram m-0"></i>
+                  <span class="nunito">@artsndeco</span>
+                </a>
+              </p>
+              <p class="contact">
+                <a
+                  href="https://www.facebook.com/artsndecobitsg/"
+                  class="no-deco"
+                  target="blank"
+                >
+                  <i class="fab fa-facebook m-0"></i>
+                  <span class="nunito">@artsndecobitsg</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- End Of Footer -->
+
+    <!-- Bootstrap, jQuery and Popper JS scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="./js/util/url.js"></script>
+    <script src="./js/util/majik.js"></script>
+    <script src="./js/util/displayProfiles.js"></script>
+    <script src="./js/util/displayCreativeWorks.js"></script>
+    <script src="./js/util/displayStats.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- End Of Custom Scripts -->
+  </body>
 </html>

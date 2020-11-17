@@ -67,3 +67,21 @@ const lazyLoading = () => {
 };
 
 lazyLoading();
+
+// Contact data on footer
+(async () => {
+  const response = await (
+    await fetch(`${url}/profile/contacts`, { method: 'GET' })
+  ).json();
+
+  for (let i = 0; i < response.data.length; i++) {
+    const contact = `<p class="contact">
+              <b class="contact-name">${response.data[i].name}: </b>
+              <a href="tel:${response.data[i].contact}" class="no-deco">
+                <span class="nunito"> ${response.data[i].contact}</span>
+              </a>
+            </p>`;
+
+    $('.contacts').append(contact);
+  }
+})();
