@@ -2,7 +2,6 @@
 const heights = [
   document.querySelector('.hero-section').offsetHeight,
   document.querySelector('#about-us').offsetHeight,
-  document.querySelector('#jumbotron-bg').offsetHeight,
   document.querySelector('#creativity').offsetHeight,
   document.querySelector('#team').offsetHeight,
   document.querySelector('.footer').offsetHeight,

@@ -4,10 +4,18 @@ const displayStats = async () => {
       await fetch(`${url}/stats/all`, { method: 'GET' })
     ).json();
 
-    for (let i = 0; i < response.lines.length; i++) {
-      const stat = `<div class="stat text-center">${response.lines[i]}</div>`;
-      $(`.stats`).append(stat);
-    }
+    for (let i = 0; i < response.data.length; i++) {
+      const stat = `<div class="col-md-3 col-sm-6 col-xs-6">
+      <div class="number">
+        <img src="${response.data[i].icon}" alt="stat icon" class="stats-icon">
+        <h3 class="white-text"><span class="counter">${response.data[i].number}</span></h3>
+        <span class="white-text">${response.data[i].text}</span>
+      </div>
+    </div>`;
+
+            $(`.stats-main-content`).append(stat);
+        }
+      }
 
     // console.log(response.lines);
 
@@ -48,7 +56,7 @@ const displayStats = async () => {
     // for (let i = 0; i < response.lines.length; i++) {
     //   statClosure(response.lines[i])();
     // }
-  } catch (err) {
+  catch (err) {
     console.log(err);
   }
 };
