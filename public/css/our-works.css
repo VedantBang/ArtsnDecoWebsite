@@ -4,7 +4,7 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-    font-family: 'Sofa-Sans-Regular-DP';
+    font-family: 'Sofa-Sans-Regular';
     margin: 0 20px;
     font-size: 17px;
     color: #2a375e;
@@ -168,11 +168,11 @@
 }
 
 .grid-item1:hover .blackOverlay {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .grid-item:hover .blackOverlay {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .other-cards {

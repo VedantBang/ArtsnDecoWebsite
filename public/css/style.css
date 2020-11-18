@@ -104,6 +104,13 @@
 }
 /* End Of Safari Compatibility Issue */
 
+/* Text Selection Bg Change */
+::selection {
+    color: #fff;
+    background: #13b2d6;
+}
+/* End Of Text Selection Bg Change */
+
 /* Common Navbar Styles */
 #logo-img {
     width: 80px;
