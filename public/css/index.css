@@ -137,7 +137,7 @@
     font-weight: normal;
     font-size: 36px;
     color: #13b2d6;
-    margin: 0;
+    margin: 0 0 5px 0;
     /* transform: rotate(-17deg); */
 }
 
@@ -151,7 +151,7 @@
 }
 
 .wiggly-line-sideways {
-    margin-left: -15px;
+    margin-left: -5px;
     width: 150px;
 }
 
@@ -569,7 +569,7 @@
         margin: 0rem 1rem;
     }
     .heading-top {
-        font-size: 26px;
+        font-size: 28px;
     }
     .heading {
         font-size: 54px;
