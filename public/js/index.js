@@ -2,13 +2,15 @@
 const heights = [
   document.querySelector('.hero-section').offsetHeight,
   document.querySelector('#about-us').offsetHeight,
+  document.querySelector('#our-works').offsetHeight,
+  document.querySelector('#stats').offsetHeight,
   document.querySelector('#creativity').offsetHeight,
   document.querySelector('#team').offsetHeight,
   document.querySelector('.footer').offsetHeight,
 ];
 
 // Boolean array
-const done = [false, false, false, false, false, false];
+const done = [false, false, false, false, false, false, false];
 
 // Page Visit to backend
 fetch(`${url}/user/visit`);
@@ -38,11 +40,24 @@ const lazyLoading = () => {
         heights[2] +
         heights[3] +
         heights[4] +
-        heights[5]
+        heights[5] +
+        2 * heights[6]
     ) {
       document.querySelector('.socials-sidebar').style.visibility = 'hidden';
     } else {
       document.querySelector('.socials-sidebar').style.visibility = 'visible';
+    }
+    // Change socials sidebar
+    if (
+      window.pageYOffset > heights[0] + heights[1] + heights[2] &&
+      window.pageYOffset <
+        heights[0] + heights[1] + heights[2] + heights[3] + heights[4] / 2
+    ) {
+      document.querySelector('.socials-f').style.color = '#fff';
+      document.querySelector('.socials-b').style.color = '#fff';
+      document.querySelector('.socials-i').style.color = '#fff';
+      document.querySelector('.social-line').style.background = '#fff';
+      document.querySelector('.socials-text').style.color = '#fff';
     }
     // Getting stats on appropriate scrolling
     if (window.pageYOffset > heights[0] && !done[2]) {
