@@ -32,21 +32,7 @@ const lazyLoading = () => {
       document.querySelector('.social-line').style.background = '#fff';
       document.querySelector('.socials-text').style.color = '#fff';
     }
-    // Hide socials sidebar
-    if (
-      window.pageYOffset >
-      heights[0] +
-        heights[1] +
-        heights[2] +
-        heights[3] +
-        heights[4] +
-        heights[5] +
-        3 * heights[6]
-    ) {
-      document.querySelector('.socials-sidebar').style.visibility = 'hidden';
-    } else {
-      document.querySelector('.socials-sidebar').style.visibility = 'visible';
-    }
+
     // Change socials sidebar
     if (
       window.pageYOffset >
@@ -82,6 +68,21 @@ const lazyLoading = () => {
     ) {
       displayProfiles();
       done[4] = true;
+    }
+    // Hide socials sidebar
+    if (
+      window.pageYOffset >
+      heights[0] +
+        heights[1] +
+        heights[2] +
+        heights[3] +
+        heights[4] +
+        heights[5] +
+        3 * heights[6]
+    ) {
+      document.querySelector('.socials-sidebar').style.visibility = 'hidden';
+    } else {
+      document.querySelector('.socials-sidebar').style.visibility = 'visible';
     }
   };
 };
