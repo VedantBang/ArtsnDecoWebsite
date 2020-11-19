@@ -57,7 +57,7 @@ const lazyLoading = () => {
           heights[2] +
           heights[3] +
           heights[4] +
-          heights[5]
+          2 * heights[5]
     ) {
       document.querySelector('.socials-f').style.color = '#fff';
       document.querySelector('.socials-b').style.color = '#fff';
