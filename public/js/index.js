@@ -49,9 +49,15 @@ const lazyLoading = () => {
     }
     // Change socials sidebar
     if (
-      window.pageYOffset > heights[0] + heights[1] + heights[2] &&
+      window.pageYOffset >
+        heights[0] + heights[1] + heights[2] + heights[3] + heights[4] &&
       window.pageYOffset <
-        heights[0] + heights[1] + heights[2] + heights[3] + heights[4] / 2
+        heights[0] +
+          heights[1] +
+          heights[2] +
+          heights[3] +
+          heights[4] +
+          heights[5]
     ) {
       document.querySelector('.socials-f').style.color = '#fff';
       document.querySelector('.socials-b').style.color = '#fff';
