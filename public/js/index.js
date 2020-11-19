@@ -41,7 +41,7 @@ const lazyLoading = () => {
         heights[3] +
         heights[4] +
         heights[5] +
-        2 * heights[6]
+        3 * heights[6]
     ) {
       document.querySelector('.socials-sidebar').style.visibility = 'hidden';
     } else {
