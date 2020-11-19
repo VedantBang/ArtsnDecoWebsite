@@ -5,12 +5,10 @@ const displayStats = async () => {
     ).json();
 
     for (let i = 0; i < response.data.length; i++) {
-      const stat = `<div class="col-md-3 col-sm-6 col-xs-6">
-      <div class="number">
+      const stat = `<div class="col-md-3 col-sm-6 col-6">
         <img src="${response.data[i].icon}" alt="stat icon" class="stats-icon">
         <h3 class="white-text"><span class="counter">${response.data[i].number}</span></h3>
         <span class="white-text">${response.data[i].text}</span>
-      </div>
     </div>`;
 
             $(`.stats-main-content`).append(stat);

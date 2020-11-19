@@ -282,18 +282,7 @@
 }
 /* End Of Our Works */
 
-/* Jumbotron */
-.stat {
-  font-size: 64px;
-  color: #2a375e;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typing 4.5s steps(40, end);
-  font-family: "Sofa-Sans-Display-Black";
-}
-
+/* stats*/
 #testimonial-section {
   height: auto;
   background-image: url("../assets/images/statsbg.jpg");
@@ -313,17 +302,15 @@
 .counter {
   font-family: "Montserrat", sans-serif;
   color: white;
-  font-size: 40px;
 }
 .white-text {
-  font-size: 14px;
   font-family: varela round, sans-serif;
   color: white;
+  word-wrap: break-word;
 }
 
 .stats-icon {
   width: auto;
-  max-height: 100px;
 }
 
 .overlay1 {
@@ -336,16 +323,7 @@
   flex-direction: column;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-/* End Of Jumbotron */
+/* End Of stats */
 
 /* Creativity */
 .swiper-container {
@@ -506,6 +484,15 @@
   .social-media-links {
     display: flex !important;
   }
+  .counter {
+    font-size: 28px;
+  }
+  .white-text {
+    font-size: 14px;
+  }
+  .stats-icon {
+    max-height: 70px;
+  }
 }
 
 @media screen and (min-width: 320px) {
@@ -594,6 +581,15 @@
   }
   #creativity {
     padding: 3rem 0rem 0rem 0rem;
+  }
+  .counter {
+    font-size: 40px;
+  }
+  .white-text {
+    font-size: 14px;
+  }
+  .stats-icon {
+    max-height: 100px;
   }
 }
 
