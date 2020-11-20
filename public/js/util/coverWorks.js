@@ -124,8 +124,8 @@ const coverWorks = (fest) => {
 
 const specialCoverWorks = (response, fest) => {
     for (let i = 0; i < response.data.length; i++) {
-        const cover = `<div class="bottom-card col-12 col-md-4 other-cards">
-  <a
+        const cover = `<div class="bottom-card other-cards">
+        <a
     href="posts.html"
     type="button"
     onclick="festByYear('${response.data[i].year}', '${fest}', '${
@@ -138,6 +138,7 @@ const specialCoverWorks = (response, fest) => {
       alt="${response.data[i].coverImage.title}"
       class="img-fluid"
     />
+    <div class="other-blackOverlay"></div>
     <span class="cover-text year">${response.data[i].year}</span>
     <br />
     <span class="cover-text theme">${
