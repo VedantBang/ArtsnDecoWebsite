@@ -132,6 +132,7 @@ html {
     display: flex;
     margin: 0 auto 30px;
     justify-content: space-between;
+    z-index: 100000;
 }
 
 .nav-link-mobile {
