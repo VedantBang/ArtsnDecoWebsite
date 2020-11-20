@@ -21,25 +21,47 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="index.html">
-      <img id="logo-img" src="./assets/images/Original Logo.png" alt="AnD_logo" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
+  <div class="navbar-desktop">
+    <nav class="navbar navDesktop navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img id="logo-img" src="./assets/images/Original Logo.png" alt="AnD_logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="d-md-none">
+    <nav class="navbar navbar-mobile navbar-light w-100">
+      <a class="navbar-brand" href="index.html">
+        <img id="logo-img" src="./assets/images/Original Logo.png" alt="AnD_logo" />
+      </a>
+      <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavMobile">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavMobile">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item exclude-in-nav-link">
+            <a class="nav-link" href="index.html"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
   <!-- End of Navbar -->
 
   <!-- Our Works -->
-  <div class="container-fluid mt-2 pt-5 mb-4">
+  <div class="container-fluid mt-2 pt-5 mb-4" id="our-works-heading">
     <div class="row justify-content-center">
       <p class="col-12 our-works text-uppercase text-center">Our Works</p>
       <p class="col-12 text-center secondary-text">Check out the marvels</p>
@@ -66,7 +88,7 @@
 
   <div id="page-bg">
     <!-- Fest Navigation Panel (Fest Tabs) -->
-    <div id="fest-nav" class="pb-5">
+    <div id="fest-nav" class="pb-5 pl-3 pr-3">
       <div class="container p-2">
         <nav>
           <div class="nav justify-content-center pt-4" id="nav-tab">

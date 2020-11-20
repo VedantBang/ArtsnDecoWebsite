@@ -1,6 +1,28 @@
 /* Navbar Specific Styling */
-.navbar {
+
+.navDesktop {
     padding: 0 60px;
+}
+
+.navbar-mobile {
+    position: absolute;
+    padding-right: 25px;
+    top: 0.5em;
+    left: 0;
+    display: flex;
+    margin: 0 auto 30px;
+    justify-content: space-between;
+}
+
+.nav-link-mobile {
+    background-color: #2a375e;
+    text-align: center;
+    border-bottom: 1px solid #2a375e;
+}
+
+.exclude-in-nav-link {
+    background-color: #2a375e;
+    text-align: center;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -9,12 +31,34 @@
     font-size: 17px;
     color: #2a375e;
     letter-spacing: 0.8px;
-    padding-bottom: 4px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+.navbar-mobile .navbar-nav .nav-item .nav-link {
+    font-family: 'Sofa-Sans-Regular';
+    margin: 0 20px;
+    font-size: 17px;
+    color: #fff;
+    letter-spacing: 0.8px;
+    padding-top: 20px;
+    padding-bottom: 12px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
     color: #2a375e;
     border-bottom: 4px solid #13b2d6;
+    padding-bottom: 8px;
+}
+
+.navbar-mobile .navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+    border-bottom: 4px solid #13b2d6;
+    padding-bottom: 8px;
+}
+
+.active {
+    color: #fff !important;
 }
 
 /* .active-link {
@@ -34,6 +78,7 @@
     line-height: 72px;
     color: #2a375e;
 }
+
 .secondary-text {
     margin-top: -5px;
     margin-bottom: 0;
@@ -280,6 +325,8 @@ a:hover {
 .tab-content,
 .row {
     justify-content: center;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #main-content {
@@ -291,6 +338,9 @@ a:hover {
 
 /*Media queries for grid*/
 @media screen and (min-width: 1550px) {
+    .navbar-desktop {
+        display: block;
+    }
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto;
@@ -766,15 +816,23 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+    #our-works-heading {
+        margin: 100px 0 25px !important;
+    }
+    .navbar-desktop {
+        display: none;
+    }
     .grid-container {
         display: grid;
         grid-template-columns: 1fr;
     }
-
     .grid-item1,
     .grid-item {
         height: 100%;
         width: 100%;
+    }
+    #specials-heading {
+        margin-left: 0px;
     }
     #main-cover {
         grid-row-start: 1;

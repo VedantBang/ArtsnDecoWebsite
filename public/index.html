@@ -41,7 +41,7 @@
 
   <!-- Navbar -->
   <div class="navbar-desktop">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navDesktop navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="index.html">
         <img id="logo-img" src="./assets/images/Original Logo-min.png" alt="AnD_logo" />
       </a>
@@ -54,7 +54,7 @@
             <a class="nav-link" href="#about-us">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="our-works.html">Our Works</a>
+            <a class="nav-link" href="#our-works">Our Works</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#team">Team</a>
@@ -71,7 +71,7 @@
 
   <!-- Hero Section For Mobiles -->
   <div class="overlay d-md-none">
-    <nav class="navbar navbar-mobile w-100">
+    <nav class="navbar navbar-dark navbar-mobile w-100">
       <a class="navbar-brand" href="index.html">
         <img id="logo-img" src="./assets/images/Original Logo-min.png" alt="AnD_logo" />
       </a>
@@ -80,25 +80,29 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavMobile">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item  nav-link-mobile">
             <a class="nav-link" href="#about-us">About Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="our-works.html">Our Works</a>
+          <li class="nav-item nav-link-mobile">
+            <a class="nav-link" href="#our-works">Our Works</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item exclude-in-nav-link">
             <a class="nav-link" href="#team">Team</a>
           </li>
         </ul>
       </div>
     </nav>
-    <div class="side-text">Department of</div>
-    <h1 class="text-center main-text">Arts n Decoration</h1>
-    <div class="side-text">BITS Pilani K K Birla Goa Campus</div>
-    <a id="cta" href="#about-us">EXPLORE NOW!</a>
-    <button data-toggle="modal" data-target="#bg-video" id="see-us-in-action">
-      See Us In Action <i class="fas fa-play-circle"></i>
-    </button>
+    <div id="hero-mobile-text">
+      <div class="text-center side-text">Department of</div>
+      <h1 class="text-center main-text">Arts n Decoration</h1>
+      <div class="text-center side-text">BITS Pilani K. K. Birla Goa Campus</div>
+    </div>
+    <div id="hero-mobile-buttons">
+      <a id="cta" href="#our-works">Check out our work</a>
+      <button type="button" data-toggle="modal" data-target="#bg-video" id="see-us-in-action">
+        See us in action <i class="fas fa-play-circle"></i>
+      </button>
+    </div>
   </div>
   <!-- End Of Hero Section For Mobiles -->
 
@@ -126,7 +130,7 @@
       <div class="hero-head text-uppercase text-center">
         Arts n Decoration
       </div>
-      <div class="hero-subhead-two">BITS Pilani K K Birla Goa Campus</div>
+      <div class="hero-subhead-two">BITS Pilani K. K. Birla Goa Campus</div>
     </div>
   </div>
   <!-- End of Hero Section -->
@@ -151,7 +155,7 @@
 
   <!-- About Us -->
   <div class="container" id="about-us">
-    <div class="row p-sm-5 mt-5">
+    <div class="row pl-sm-5 pr-sm-5 mt-5">
       <div class="col-12">
         <p class="heading-top">Get to know us</p>
       </div>
@@ -230,7 +234,7 @@
             <span class="cover-text text">Quark 2019</span>
           </div>
         </div>
-        <div class="our-works-home-column">
+        <div class="our-works-home-column d-none d-md-block">
           <div class="gallery-div">
             <img src="./assets/images/gallery/4.jpg" alt="">
             <div class="blackOverlay"></div>
@@ -247,7 +251,7 @@
             <span class="cover-text text">Quark 2017</span>
           </div>
         </div>
-        <div class="our-works-home-column">
+        <div class="our-works-home-column d-none d-md-block">
           <div class="gallery-div">
             <img src="./assets/images/gallery/7.JPG" alt="">
             <div class="blackOverlay"></div>
@@ -384,7 +388,7 @@
   <div class="footer">
     <div class="container pt-5 mt-5">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-6 mt-4">
+        <div class="col-12 col-md-6 mt-4" id="drop-a-line">
           <p class="heading-top ml-sm-5 pl-sm-5">Drop a line</p>
           <h3 class="heading text-center">Get In Touch</h3>
           <img src="./assets/images/wiggly-line.png" alt="wiggly-line" class="wiggly-line mx-auto d-block" />

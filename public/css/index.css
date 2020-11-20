@@ -80,13 +80,17 @@
     z-index: -100;
 }
 
+#hero-mobile-text {
+    margin: 130px 0 25px;
+}
+
 .overlay {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     display: flex;
     align-items: center;
@@ -96,36 +100,68 @@
 }
 
 .side-text {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
-    letter-spacing: 2px;
-    font-size: 30px;
+    font-family: 'Sofa-Sans-Regular-DP';
+    font-size: 16px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    height: fit-content;
+    padding: 0 20px;
 }
 
 .main-text {
     font-family: 'Guttenbay';
-    font-size: 96px;
+    font-size: 64px;
+    text-shadow: 2px 2px 10px #000;
+    word-spacing: 15px;
+    transform: rotate(-8deg);
+    height: fit-content;
+    line-height: 5rem;
+    margin: 45px 10px 50px 0;
+    padding: auto 30px;
+    text-transform: uppercase;
 }
 
-#cta,
-#see-us-in-action {
-    border-radius: 3px;
-    border: 0.5px solid #fff;
-    font-size: 1em;
-    font-family: 'Nunito';
-    color: #fff;
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 100px #f1f1f1;
-    font-size: 12px;
-    padding: 0.4rem 1rem;
+#hero-mobile-buttons {
+    padding: 0 auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#cta {
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Sofa-Sans-Regular';
+    color: #2a375e;
+    padding: 12px 12px 6px;
+    margin: 0 5px 15px;
+    background-color: aliceblue;
     cursor: pointer !important;
     text-decoration: none;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    width: 200px;
+}
+
+#see-us-in-action {
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Sofa-Sans-Regular';
+    color: aliceblue;
+    padding: 12px 19px 6px;
+    margin: 0 5px 15px;
+    background-color: #2a375e;
+    cursor: pointer !important;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    width: 200px;
 }
 
 #cta:hover,
 #see-us-in-action:hover {
     cursor: pointer;
-    box-shadow: 0px 5px 100px #f1f1f1;
 }
 
 /* End of Hero Section for Mobile Screens */
@@ -431,7 +467,6 @@
 .footer {
     background-image: url('../assets/images/background.jpg');
     background-size: cover;
-    padding: 6rem;
     margin-top: 6rem;
 }
 
@@ -439,8 +474,10 @@
 .contact-name,
 .nunito {
     font-family: 'Nunito';
-    font-size: 18px;
+    font-size: 17px;
+    color: #2a375e;
 }
+
 /* End Of Footer */
 
 /* Media Queries */
@@ -449,7 +486,8 @@
         display: none;
     }
     .heading-top {
-        font-size: 18px;
+        font-size: 24px;
+        margin-top: 20px;
     }
     .heading {
         font-size: 26px;
@@ -460,26 +498,37 @@
     #jumbotron-bg {
         padding: 6rem 1rem;
     }
-    .stats {
+    /* #stats {
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         overflow-x: scroll;
+        margin-bottom: 50px !important;
+    } */
+    #stats {
+        margin-bottom: 25px;
     }
     .stat {
         font-size: 24px;
         animation: typing 2.5s steps(40, end);
     }
     .wiggly-line {
-        transform: scale(0.7);
+        width: 150px;
+    }
+    .wiggly-line-sideways {
+        margin-left: -5px;
+        width: 150px;
     }
     #creativity {
         padding: 2rem 1rem 0rem 1rem;
     }
     .footer {
-        padding: 6rem 1rem;
+        padding: 0 1rem 6rem;
+    }
+    #drop-a-line {
+        margin-bottom: 1.5rem;
     }
     .contact {
         display: flex;
@@ -487,7 +536,7 @@
         justify-content: center;
     }
     .nunito {
-        font-size: 14px;
+        font-size: 17px;
     }
     .social-media-links {
         display: flex !important;
@@ -500,6 +549,10 @@
     }
     .stats-icon {
         max-height: 70px;
+    }
+    .our-works-home-column {
+        flex: 100%;
+        max-width: 100%;
     }
 }
 
@@ -529,10 +582,15 @@
 
 @media screen and (min-width: 540px) {
     .heading-top {
-        font-size: 20px;
+        font-size: 28px;
+        padding-left: 0;
     }
     .heading {
         font-size: 46px;
+        padding-left: 0;
+    }
+    .wiggly-line {
+        padding-left: 0;
     }
     .card-title {
         font-size: 34px;
@@ -550,7 +608,7 @@
         width: 1000px !important;
     }
     .nunito {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
 
@@ -570,6 +628,7 @@
     }
     .heading-top {
         font-size: 22px;
+        margin-top: 0px;
     }
     .heading {
         font-size: 50px;
@@ -599,6 +658,13 @@
     .stats-icon {
         max-height: 85px;
         margin-bottom: 15px;
+    }
+    .our-works-home-column {
+        flex: 33.33%;
+        max-width: 33.33%;
+    }
+    .footer {
+        padding: 2rem 1rem 8rem;
     }
 }
 
