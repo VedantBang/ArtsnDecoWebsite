@@ -89,8 +89,6 @@ const displayStatTableRows = () => {
                       type="button"
                       class="btn btn-sm btn-danger safari-issue"
                       onclick="deleteStatFromDom(this)"
-                      onmouseenter="deleteStatWarning()"
-                      onmouseleave="removeDeleteStatWarning()"
                     >
                       <i class="fas fa-trash alt"></i>
                     </button>
@@ -108,16 +106,6 @@ const removeDeleteWarning = () => {
   document.querySelector('.delete-warning-alert').style.visibility = 'hidden';
 };
 
-const deleteStatWarning = () => {
-  document.querySelector('.delete-stat-warning-alert').style.visibility =
-    'visible';
-};
-
-const removeDeleteStatWarning = () => {
-  document.querySelector('.delete-stat-warning-alert').style.visibility =
-    'hidden';
-};
-
 // Deleting row from DOM
 function deleteFromDom(r) {
   removeDeleteWarning();
@@ -125,6 +113,5 @@ function deleteFromDom(r) {
 }
 
 function deleteStatFromDom(r) {
-  removeDeleteStatWarning();
   r.parentNode.parentNode.remove();
 }

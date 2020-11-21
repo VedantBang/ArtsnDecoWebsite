@@ -509,11 +509,7 @@
     } */
     #stats {
         margin-bottom: 25px;
-    }
-    .stat {
-        font-size: 24px;
-        animation: typing 2.5s steps(40, end);
-    }
+    }   
     .wiggly-line {
         width: 150px;
     }
