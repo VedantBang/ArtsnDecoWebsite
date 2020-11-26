@@ -52,7 +52,7 @@ const lazyLoading = () => {
       document.querySelector('.socials-text').style.color = '#fff';
     }
     // Getting stats on appropriate scrolling
-    if (window.pageYOffset > heights[0] + heights[1] && !done[2]) {
+    if (window.pageYOffset > heights[0] + heights[1] + heights[2] && !done[2]) {
       displayStats();
       done[2] = true;
     }
