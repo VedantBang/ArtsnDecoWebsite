@@ -95,7 +95,7 @@ router.get('/images', async (req,res,next) => {
 
 router.get('/totalvisits', async (req,res,next) => {
 	try{
-		let { visits } = await User.findOne({}, { visits:1, _id:0 });
+		let { visits } = await User.findOne({ username: "artsndeco" }, { visits:1, _id:0 });
 		res.status(200).json({ ok:1, visits });
 	} catch(err){ next(err); }
 });
