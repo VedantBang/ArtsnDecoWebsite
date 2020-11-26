@@ -26,7 +26,7 @@ const displayStats = async () => {
 
       $(`.stats-main-content`).append(stat);
 
-      animateValue(document.getElementById(`stat-${i}`), 0, number, 4000);
+      animateValue(document.getElementById(`stat-${i}`), 0, number, 3000);
     }
   } catch (err) {
     console.log(err);
