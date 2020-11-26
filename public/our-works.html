@@ -1,167 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arts 'n' Deco</title>
 
-  <title>Arts 'n' Deco</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 
-  <!-- Font Awesome CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/our-works.css" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/our-works.css" />
-</head>
+  <body>
+    <!-- Navbar -->
 
-<body>
-  <!-- Navbar -->
-
-  <div class="navbar-desktop">
-    <nav class="navbar navDesktop navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="./assets/images/Original Logo.png" alt="AnD_logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <div class="d-md-none">
-    <nav class="navbar navbar-mobile navbar-light w-100">
-      <a class="navbar-brand" href="index.html">
-        <img id="logo-img" src="./assets/images/Original Logo.png" alt="AnD_logo" />
-      </a>
-      <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavMobile">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavMobile">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item exclude-in-nav-link">
-            <a class="nav-link" href="index.html"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <!-- End of Navbar -->
-
-  <!-- Our Works -->
-  <div class="container-fluid mt-2 pt-5 mb-4" id="our-works-heading">
-    <div class="row justify-content-center">
-      <p class="col-12 our-works text-uppercase text-center">Our Works</p>
-      <p class="col-12 text-center secondary-text">Check out the marvels</p>
+    <div class="navbar-desktop">
+      <nav class="navbar navDesktop navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="logo-img"
+            src="./assets/images/Original Logo.png"
+            alt="AnD_logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><i class="fas fa-arrow-left mr-2"></i>Back to Home</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  </div>
-  <!-- End Of Our Works -->
 
-  <!-- Socials Sidebar -->
-  <div class="socials-sidebar d-none d-sm-block">
-    <div class="container">
-      <div class="row">
-        <div class="socials-text">Follow Us</div>
-        <div class="social-line"></div>
-        <a href="https://www.instagram.com/artsndeco/" target="blank"><span><i
-              class="fab fa-instagram socials-i"></i></span></a>
-        <a href="http://artsndeco.blogspot.com/" target="blank"><span><i
-              class="fab fa-blogger-b socials-b"></i></span></a>
-        <a href="https://www.facebook.com/artsndecobitsg/" target="blank">
-          <span><i class="fab fa-facebook-f socials-f"></i></span></a>
-      </div>
+    <div class="d-md-none">
+      <nav class="navbar navbar-mobile navbar-light w-100">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="logo-img"
+            src="./assets/images/Original Logo.png"
+            alt="AnD_logo"
+          />
+        </a>
+        <button
+          class="custom-toggler navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavMobile"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavMobile">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item exclude-in-nav-link">
+              <a class="nav-link" href="index.html"
+                ><i class="fas fa-arrow-left mr-2"></i>Back to Home</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  </div>
-  <!-- End of Socials Sidebar -->
 
-  <div id="page-bg">
-    <!-- Fest Navigation Panel (Fest Tabs) -->
-    <div id="fest-nav" class="pb-5 pl-3 pr-3">
-      <div class="container p-2">
-        <nav>
-          <div class="nav justify-content-center pt-4" id="nav-tab">
-            <a class="nav-item nav-link col-6 col-md-3 safari-issue" id="waves-tab" data-toggle="tab" href="#waves">
-              <img src="./assets/images/icons8-disco-ball-100.png" alt="waves-logo" />
-              <div class="col text-center fest-name">Waves</div>
-            </a>
-            <a class="nav-item nav-link col-6 col-md-3 safari-issue" id="quark-tab" data-toggle="tab" href="#quark">
-              <img src="./assets/images/icons8-arduino-uno-board-100.png" alt="quark-logo" />
-              <div class="col text-center fest-name">Quark</div>
-            </a>
-            <a class="nav-item nav-link col-6 col-md-3 safari-issue" id="spree-tab" data-toggle="tab" href="#spree">
-              <img src="./assets/images/icons8-volleyball-100.png" alt="spree-logo" />
-              <div class="col text-center fest-name">Spree</div>
-            </a>
-            <a class="nav-item nav-link col-6 col-md-3 safari-issue" id="other-tab" data-toggle="tab" href="#other">
-              <img src="./assets/images/icons8-star-filled-100.png" alt="other-logo" />
-              <div class="col text-center fest-name">Specials</div>
-            </a>
-          </div>
-        </nav>
+    <!-- End of Navbar -->
+
+    <!-- Our Works -->
+    <div class="container-fluid mt-2 pt-5 mb-4" id="our-works-heading">
+      <div class="row justify-content-center">
+        <p class="col-12 our-works text-uppercase text-center">Our Works</p>
+        <p class="col-12 text-center secondary-text">Check out the marvels</p>
       </div>
     </div>
-    <!-- End Of Fest Navigation Panel (Fest Tabs) -->
+    <!-- End Of Our Works -->
 
-    <!-- Fest Navigation -->
-    <div id="main-content" class="container-fluid">
-      <div class="tab-content">
-        <div class="tab-pane fade container-fluid" id="waves">
-          <div class="row">
-            <h2 class="col-12 fest pt-5">Waves</h2>
-            <div class="grid-container row waves-gallery"></div>
-          </div>
-        </div>
-        <div class="tab-pane fade container-fluid" id="quark">
-          <div class="row">
-            <h2 class="col-12 fest pt-5">Quark</h2>
-            <div class="grid-container row quark-gallery"></div>
-          </div>
-        </div>
-        <div class="tab-pane fade container-fluid" id="spree">
-          <div class="row">
-            <h2 class="col-12 fest pt-5">Spree</h2>
-            <div class="grid-container row spree-gallery"></div>
-          </div>
-        </div>
-        <div class="tab-pane fade container-fluid" id="other">
-          <div class="row">
-            <h2 class="col-12 fest pt-5" id="specials-heading">Specials</h2>
-            <div class="grid-container row other-gallery"></div>
-          </div>
+    <!-- Socials Sidebar -->
+    <div class="socials-sidebar d-none d-sm-block">
+      <div class="container">
+        <div class="row">
+          <div class="socials-text">Follow Us</div>
+          <div class="social-line"></div>
+          <a href="https://www.instagram.com/artsndeco/" target="blank"
+            ><span><i class="fab fa-instagram socials-i"></i></span
+          ></a>
+          <a href="http://artsndeco.blogspot.com/" target="blank"
+            ><span><i class="fab fa-blogger-b socials-b"></i></span
+          ></a>
+          <a href="https://www.facebook.com/artsndecobitsg/" target="blank">
+            <span><i class="fab fa-facebook-f socials-f"></i></span
+          ></a>
         </div>
       </div>
     </div>
-    <!-- End Of Fest Navigation -->
-  </div>
+    <!-- End of Socials Sidebar -->
 
-  <!-- Bootstrap, jQuery and Popper JS scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-  <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+    <div id="page-bg">
+      <!-- Fest Navigation Panel (Fest Tabs) -->
+      <div id="fest-nav" class="pb-5 pl-3 pr-3">
+        <div class="container p-2">
+          <nav>
+            <div class="nav justify-content-center pt-4" id="nav-tab">
+              <a
+                class="nav-item nav-link col-6 col-md-3 safari-issue"
+                id="waves-tab"
+                data-toggle="tab"
+                href="#waves"
+              >
+                <img
+                  src="./assets/images/icons8-disco-ball-100.png"
+                  alt="waves-logo"
+                />
+                <div class="col text-center fest-name">Waves</div>
+              </a>
+              <a
+                class="nav-item nav-link col-6 col-md-3 safari-issue"
+                id="quark-tab"
+                data-toggle="tab"
+                href="#quark"
+              >
+                <img
+                  src="./assets/images/icons8-arduino-uno-board-100.png"
+                  alt="quark-logo"
+                />
+                <div class="col text-center fest-name">Quark</div>
+              </a>
+              <a
+                class="nav-item nav-link col-6 col-md-3 safari-issue"
+                id="spree-tab"
+                data-toggle="tab"
+                href="#spree"
+              >
+                <img
+                  src="./assets/images/icons8-volleyball-100.png"
+                  alt="spree-logo"
+                />
+                <div class="col text-center fest-name">Spree</div>
+              </a>
+              <a
+                class="nav-item nav-link col-6 col-md-3 safari-issue"
+                id="other-tab"
+                data-toggle="tab"
+                href="#other"
+              >
+                <img
+                  src="./assets/images/icons8-star-filled-100.png"
+                  alt="other-logo"
+                />
+                <div class="col text-center fest-name">Specials</div>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End Of Fest Navigation Panel (Fest Tabs) -->
 
-  <!-- Custom scripts -->
-  <script src="./js/util/url.js"></script>
-  <script src="./js/util/coverWorks.js"></script>
-  <script src="./js/ourWorks.js"></script>
-</body>
+      <!-- Fest Navigation -->
+      <div id="main-content" class="container-fluid">
+        <div class="tab-content">
+          <div class="tab-pane fade container-fluid" id="waves">
+            <div class="row">
+              <h2 class="col-12 fest pt-5">Waves</h2>
+              <div class="grid-container row waves-gallery"></div>
+            </div>
+          </div>
+          <div class="tab-pane fade container-fluid" id="quark">
+            <div class="row">
+              <h2 class="col-12 fest pt-5">Quark</h2>
+              <div class="grid-container row quark-gallery"></div>
+            </div>
+          </div>
+          <div class="tab-pane fade container-fluid" id="spree">
+            <div class="row">
+              <h2 class="col-12 fest pt-5">Spree</h2>
+              <div class="grid-container row spree-gallery"></div>
+            </div>
+          </div>
+          <div class="tab-pane fade container-fluid" id="other">
+            <div class="row">
+              <h2 class="col-12 fest pt-5" id="specials-heading">Specials</h2>
+              <div class="grid-container row other-gallery"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Of Fest Navigation -->
+    </div>
 
+    <!-- Bootstrap, jQuery and Popper JS scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- End Of Bootstrap, jOqery and Popper JS scripts -->
+
+    <!-- Custom scripts -->
+    <script src="./js/util/url.js"></script>
+    <script src="./js/util/coverWorks.js"></script>
+    <script src="./js/ourWorks.js"></script>
+  </body>
 </html>

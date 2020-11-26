@@ -339,6 +339,13 @@
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
+
+.counter-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: white;
+}
+
 .white-text {
     font-family: 'Nunito';
     color: white;
