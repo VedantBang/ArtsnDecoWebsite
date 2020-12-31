@@ -1,21 +1,32 @@
 {
-	"name": "artsndeco",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
+  "name": "artsndecowebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/bin/www",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
 		"start": "node ./bin/www",
 		"local": "node ./bin/www local",
 		"docker": "node ./bin/www docker",
 		"backup": "remoteurl=$(cat .env | head -n 1 | sed 's/MONGOURL=//' | sed 's/\\(\\?.*\\)//') && mongodump --uri $remoteurl"
 	},
-	"dependencies": {
-		"bcrypt": "^5.0.0",
-		"dotenv": "^8.2.0",
-		"express": "~4.16.1",
-		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^5.11.9",
-		"morgan": "~1.9.1",
-		"multer": "^1.4.2",
-		"node": "^14.7.0"
-	}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VedantBang/ArtsnDecoWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VedantBang/ArtsnDecoWebsite/issues"
+  },
+  "homepage": "https://github.com/VedantBang/ArtsnDecoWebsite#readme"
 }
