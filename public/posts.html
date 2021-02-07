@@ -27,9 +27,24 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/posts.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
   </head>
 
   <body>
+    <!-- Show Loader in the beginning -->
+    <div class="parent-wrapper loader">
+      <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+      </div>
+    </div>
+    <!-- End Loader -->
+
     <div class="bg-image">
       <a href="our-works.html" class="close"
         ><i class="fas fa-times text-white"></i
@@ -75,5 +90,6 @@
     <!-- Custom scripts -->
     <script src="./js/util/url.js"></script>
     <script src="./js/displayFestByYear.js"></script>
+    <script src="./js/util/loader.js"></script>
   </body>
 </html>

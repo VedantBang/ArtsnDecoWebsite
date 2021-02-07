@@ -20,11 +20,25 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/our-works.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- Show Loader in the beginning -->
+    <div class="parent-wrapper loader">
+      <div class="wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+      </div>
+    </div>
+    <!-- End Loader -->
 
+    <!-- Navbar -->
     <div class="navbar-desktop">
       <nav class="navbar navDesktop navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="index.html">
@@ -82,7 +96,6 @@
         </div>
       </nav>
     </div>
-
     <!-- End of Navbar -->
 
     <!-- Our Works -->
@@ -228,5 +241,6 @@
     <script src="./js/util/url.js"></script>
     <script src="./js/util/coverWorks.js"></script>
     <script src="./js/ourWorks.js"></script>
+    <script src="./js/util/loader.js"></script>
   </body>
 </html>
